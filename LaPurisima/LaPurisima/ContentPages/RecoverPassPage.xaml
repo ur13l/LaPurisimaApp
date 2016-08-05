@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="LaPurisima.RecoverPassPage"
+	xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima">
+	<ContentPage.Content>
+		<StackLayout
+			Padding="40,10,40,10">
+			<Image
+				HeightRequest="250"
+				HorizontalOptions="FillAndExpand"
+				Source="logo.png" />
+			<StackLayout
+				Spacing="15"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand">
+				<Label
+					HorizontalOptions="Center"
+					Text="{i18n:Translate WriteMailLabel}"
+					TextColor="#000000" />
+				<StackLayout
+					Spacing="15"
+					Orientation="Vertical">
+					<Entry
+						x:Name="EntryEmail"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="{i18n:Translate MailLabel}" />
+				</StackLayout>
+				<StackLayout
+					Spacing="15"
+					Orientation="Vertical">
+					<Button
+						Text="{i18n:Translate RecuperarButtonText}"
+						TextColor="#A4A4A4"
+						BackgroundColor="White" />
+				</StackLayout>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns     ="http://xamarin.com/schemas/2014/forms"
+	xmlns:x    ="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class    ="LaPurisima.Profile"
+	xmlns:i18n ="clr-namespace:LaPurisima;assembly=LaPurisima"
+	xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem
+			Text   ="{i18n:Translate EditText}"
+			Clicked="EditClicked" />
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout
+				Padding="40,10,40,10">
+				<Image
+					HorizontalOptions="FillAndExpand"
+					Source           ="profile.jpg"
+					HeightRequest    ="50" />
+				<StackLayout
+					Spacing          ="15"
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions  ="FillAndExpand">
+					<StackLayout
+						Spacing    ="30"
+						Orientation="Vertical">
+					</StackLayout>
+					<StackLayout
+						Spacing    ="10"
+						Orientation="Vertical">
+						<Label
+							HorizontalOptions="Center"
+							Text             ="{i18n:Translate NombreProfileText}"
+							TextColor        ="#000000">
+							<Label.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+						</Label>
+						<Entry
+							x:Name           ="EntryNameProfile"
+							HorizontalOptions="FillAndExpand"
+							Placeholder      ="{i18n:Translate NameAltaText}">
+							<Entry.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</Entry>
+					</StackLayout>
+					<StackLayout
+						Spacing    ="10"
+						Orientation="Vertical">
+						<Label
+							HorizontalOptions="Center"
+							Text             ="{i18n:Translate CalleAltaText}"
+							TextColor        ="#000000">
+							<Label.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+						</Label>
+						<Entry
+							x:Name           ="EntryCalleProfile"
+							HorizontalOptions="FillAndExpand"
+							Placeholder      ="{i18n:Translate CalleAltaText}">
+							<Entry.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</Entry>
+					</StackLayout>
+					<StackLayout
+						Spacing    ="10"
+						Orientation="Vertical">
+						<Label
+							HorizontalOptions="Center"
+							Text             ="{i18n:Translate ColoniaAltaText}"
+							TextColor        ="#000000">
+							<Label.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+						</Label>
+						<Entry
+							x:Name           ="EntryColoniaProfile"
+							HorizontalOptions="FillAndExpand"
+							Placeholder      ="{i18n:Translate ColoniaAltaText}">
+							<Entry.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</Entry>
+					</StackLayout>
+					<StackLayout
+						Spacing    ="10"
+						Orientation="Vertical">
+						<Label
+							HorizontalOptions="Center"
+							Text             ="{i18n:Translate BetweenAltaText}"
+							TextColor        ="#000000">
+							<Label.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+						</Label>
+						<Entry
+							x:Name           ="EntryBetweenProfile"
+							HorizontalOptions="FillAndExpand"
+							Placeholder      ="{i18n:Translate BetweenAltaText}">
+							<Entry.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</Entry>
+					</StackLayout>
+					<StackLayout
+						Spacing    ="10"
+						Orientation="Vertical">
+						<Label
+							HorizontalOptions="Center"
+							Text             ="{i18n:Translate CPAltaText}"
+							TextColor        ="#000000">
+							<Label.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+						</Label>
+						<Entry
+							x:Name           ="EntryCPProfile"
+							HorizontalOptions="FillAndExpand"
+							Placeholder      ="{i18n:Translate CPAltaText}">
+							<Entry.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</Entry>
+					</StackLayout>
+					<StackLayout
+						Spacing    ="10"
+						Orientation="Vertical">
+						<Button
+							Text           ="{i18n:Translate GuardarProfileText}"
+							TextColor      ="#3F92DC"
+							BackgroundColor="White"
+							IsVisible      ="false">
+							<Button.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Button.FontFamily>
+						</Button>
+					</StackLayout>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

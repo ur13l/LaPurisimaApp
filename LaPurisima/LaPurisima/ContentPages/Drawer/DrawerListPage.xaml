@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="LaPurisima.DrawerListPage"
+	BackgroundColor="White">
+	<ContentPage.Content>
+		<StackLayout
+			Margin="0,0,0,0">
+			<StackLayout
+				HorizontalOptions="FillAndExpand"
+				Orientation="Vertical"
+				Spacing="5"
+				BackgroundColor="#0493DB"
+				Padding="0,0,0,5">
+				<Image
+					Source="profile.jpeg"
+					HorizontalOptions="Center"
+					HeightRequest="70"
+					WidthRequest="70"
+					Margin="10" />
+				<Label
+					Text="Nombre"
+					HorizontalOptions="Center"
+					TextColor="White" />
+				<Label
+					Text="E-mail"
+					HorizontalOptions="Center"
+					TextColor="White" />
+				<StackLayout.IsVisible>
+					<OnPlatform
+						x:TypeArguments="x:Boolean">
+						<OnPlatform.iOS>false</OnPlatform.iOS>
+						<OnPlatform.Android>true</OnPlatform.Android>
+					</OnPlatform>
+				</StackLayout.IsVisible>
+			</StackLayout>
+			<ListView
+				Margin="0,15,0,0"
+				x:Name="ListView"
+				VerticalOptions="FillAndExpand"
+				HorizontalOptions="FillAndExpand"
+				BackgroundColor="White">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout
+								BackgroundColor="White"
+								Orientation="Horizontal"
+								HeightRequest="60"
+								Spacing="0"
+								HorizontalOptions="FillAndExpand"
+								Padding="5">
+								<Label
+									Text="{Binding Label}"
+									VerticalOptions="Center"
+									TextColor="#707070"
+									FontAttributes="Bold" />
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

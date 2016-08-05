@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+	x:Class="LaPurisima.MakeOrderPage">
+	<ContentPage.Content>
+		<StackLayout>
+			<maps:Map
+				HorizontalOptions="FillAndExpand"
+				HeightRequest="200"
+				x:Name="Map"
+				IsShowingUser="true"
+				MapType="Satellite" />
+			<StackLayout
+				Orientation="Vertical">
+				<Label
+					Text="Calle"
+					HorizontalOptions="Center"
+					FontSize="24"
+					TextColor="#929292">
+					<Label.FontFamily>
+						<OnPlatform
+							x:TypeArguments="x:String">
+							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+						</OnPlatform>
+					</Label.FontFamily>
+				</Label>
+				<Label
+					Text="Rio escondido #215"
+					HorizontalOptions="Center"
+					FontSize="24"
+					TextColor="#929292">
+					<Label.FontFamily>
+						<OnPlatform
+							x:TypeArguments="x:String">
+							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+						</OnPlatform>
+					</Label.FontFamily>
+				</Label>
+				<Label
+					Text="Colonia"
+					HorizontalOptions="Center"
+					FontSize="24"
+					TextColor="#929292">
+					<Label.FontFamily>
+						<OnPlatform
+							x:TypeArguments="x:String">
+							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+						</OnPlatform>
+					</Label.FontFamily>
+				</Label>
+				<Label
+					Text="Potales de San Diego"
+					HorizontalOptions="Center"
+					FontSize="24"
+					TextColor="#929292">
+					<Label.FontFamily>
+						<OnPlatform
+							x:TypeArguments="x:String">
+							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+						</OnPlatform>
+					</Label.FontFamily>
+				</Label>
+				<Label
+					Text="Cantidad 2"
+					HorizontalOptions="Center"
+					FontSize="24"
+					TextColor="#929292">
+					<Label.FontFamily>
+						<OnPlatform
+							x:TypeArguments="x:String">
+							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+						</OnPlatform>
+					</Label.FontFamily>
+				</Label>
+				<Button
+					Text="Hacer Pedido"
+					TextColor="#3F92DC"
+					BackgroundColor="White" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

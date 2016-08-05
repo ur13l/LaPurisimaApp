@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns     ="http://xamarin.com/schemas/2014/forms"
+	xmlns:x    ="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class    ="LaPurisima.VerifyCodePass"
+	xmlns:i18n ="clr-namespace:LaPurisima;assembly=LaPurisima"
+	xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout
+				Padding="40,10,40,10">
+				<Image
+					HorizontalOptions="FillAndExpand"
+					Source           ="logo.png"
+					HeightRequest    ="200" />
+				<StackLayout
+					Spacing          ="15"
+					HorizontalOptions="FillAndExpand"
+					VerticalOptions  ="FillAndExpand">
+					<StackLayout
+						Spacing    ="15"
+						Orientation="Vertical">
+						<Label
+							HorizontalOptions="Center"
+							Text             ="{i18n:Translate IngresaText}"
+							TextColor        ="#000000">
+							<Label.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+						</Label>
+						<local:BorderlessEntry
+							x:Name           ="EntryCode"
+							HorizontalOptions="Center"
+							MaxLenght="5"
+							Placeholder      ="{i18n:Translate CodeLabelText}">
+							<Entry.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</local:BorderlessEntry>
+						<Button
+							Text           ="{i18n:Translate VerifyCodeText}"
+							TextColor      ="#3F92DC"
+							BackgroundColor="White">
+							<Button.FontFamily>
+								<OnPlatform
+									x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Button.FontFamily>
+						</Button>
+					</StackLayout>
+					<StackLayout
+						Spacing    ="15"
+						Orientation="Vertical">
+						<Entry x:Name="EntryVerPass" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate NuevoPassText}" IsVisible ="false">
+						<Entry.FontFamily>
+							<OnPlatform x:TypeArguments="x:String">
+								<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+								<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+							</OnPlatform>
+						</Entry.FontFamily>
+					</Entry>
+						<Entry x:Name="EntryVerConfPass" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate NuevoPassConfText}"  IsVisible ="false">
+						<Entry.FontFamily>
+							<OnPlatform x:TypeArguments="x:String">
+								<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+								<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+							</OnPlatform>
+						</Entry.FontFamily>
+					</Entry>
+						<Button
+							Text           ="{i18n:Translate CambiarText}"
+							TextColor      ="#3F92DC"
+							BackgroundColor="White" 
+							IsVisible ="false"/>
+					</StackLayout>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>
