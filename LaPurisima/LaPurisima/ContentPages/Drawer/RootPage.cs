@@ -20,6 +20,9 @@ namespace LaPurisima
 					case DrawerPage.Orders:
 						Detail = new NavigationPage(new OrdersPage());
 						break;
+					case DrawerPage.Profile:
+						Detail = new NavigationPage(new Profile());
+						break;
 					case DrawerPage.Settings:
 
 						break;

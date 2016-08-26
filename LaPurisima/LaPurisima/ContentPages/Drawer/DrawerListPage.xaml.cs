@@ -10,6 +10,7 @@ namespace LaPurisima
 	{
 		MakeOrder,
 		Orders,
+		Profile,
 		Settings,
 	}
 
@@ -38,16 +39,16 @@ namespace LaPurisima
 				Page = DrawerPage.Orders,
 			});
 
+			list.Add(new ItemDrawer()
+			{
+				Label = "Perfil",
+				Page = DrawerPage.Profile,
+			});
+
 			if (Device.OS == TargetPlatform.iOS)
 			{
 				Icon = "menu_icon.png";
 				var x = Icon;
-
-				list.Add(new ItemDrawer()
-				{
-					Label = "Ajustes",
-					Page = DrawerPage.Settings,
-				});
 			}
 
 			ListView.ItemsSource = list;
