@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace LaPurisima
 {
@@ -8,12 +9,19 @@ namespace LaPurisima
 		{
 			InitializeComponent();
 
+
 			MainPage = new NavigationPage(new LoginPage());
 		}
 
 		protected override void OnStart()
 		{
 			// Handle when your app starts
+			Test();
+		}
+
+		async void Test()
+		{
+			//var user = await ClientLaPurisima.LoginUser("ur13l.infante@gmail.com", "123asdZXC");
 		}
 
 		protected override void OnSleep()

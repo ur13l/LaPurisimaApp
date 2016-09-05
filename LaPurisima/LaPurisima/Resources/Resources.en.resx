@@ -170,6 +170,12 @@
 	    <value>Edit</value>
 	    <comment>Edit</comment>
 	</data>
+	<data
+		name="NewUserText"
+		xml:space="preserve">
+	    <value>Sign up</value>
+	    <comment>label for new user</comment>
+	</data> 
 </root>
 
 

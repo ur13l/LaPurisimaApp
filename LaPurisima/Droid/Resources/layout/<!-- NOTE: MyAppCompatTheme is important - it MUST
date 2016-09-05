@@ -1,0 +1,13 @@
+<!-- NOTE: MyAppCompatTheme is important - it MUST apply an AppCompat theme of some sort -->
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.TextInputLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:id="@+id/textInputLayout"
+  android:theme="@style/MyAppCompatTheme">
+  <EditText
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:singleLine="true" />
+</android.support.design.widget.TextInputLayout>

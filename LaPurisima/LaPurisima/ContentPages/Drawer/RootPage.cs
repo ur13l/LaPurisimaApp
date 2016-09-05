@@ -10,7 +10,7 @@ namespace LaPurisima
 		{
 
 			var drawer = new DrawerListPage();
-			drawer.PageSelected += (pageType) =>
+			drawer.PageSelected += async (pageType) =>
 			{
 				switch (pageType)
 				{
@@ -24,8 +24,12 @@ namespace LaPurisima
 						Detail = new NavigationPage(new Profile());
 						break;
 					case DrawerPage.Settings:
-
 						break;
+					case DrawerPage.LogOut:
+						PropertiesManager.LogOut();
+						await Navigation.PopModalAsync();
+						break;
+						
 				}
 
 				IsPresented = false;
