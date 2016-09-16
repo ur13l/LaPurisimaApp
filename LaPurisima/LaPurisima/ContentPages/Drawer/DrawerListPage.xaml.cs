@@ -12,6 +12,7 @@ namespace LaPurisima
 		Orders,
 		Profile,
 		Settings,
+		LogOut,
 	}
 
 	public partial class DrawerListPage : ContentPage
@@ -43,6 +44,12 @@ namespace LaPurisima
 			{
 				Label = "Perfil",
 				Page = DrawerPage.Profile,
+			});
+
+			list.Add(new ItemDrawer()
+			{
+				Label = "Cerrar sesión",
+				Page = DrawerPage.LogOut,
 			});
 
 			if (Device.OS == TargetPlatform.iOS)

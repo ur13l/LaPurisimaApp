@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage
+<local:BasePage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="LaPurisima.LoginPage"
+	xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima"
 	xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima">
-	<ContentPage.Content>
+	<local:BasePage.Content>
 		<ScrollView>
 			<StackLayout
 				Padding="40,10,40,10">
@@ -46,9 +47,9 @@
 						Text="{i18n:Translate NewUserText}"
 						TextColor="#3F92DC"
 						BackgroundColor="White"
-						Clicked="ForgotPassClicked" />
+						Clicked="SignUpClicked" />
 				</StackLayout>
 			</StackLayout>
 		</ScrollView>
-	</ContentPage.Content>
-</ContentPage>
+	</local:BasePage.Content>
+</local:BasePage>

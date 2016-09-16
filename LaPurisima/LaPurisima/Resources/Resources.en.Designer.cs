@@ -196,5 +196,11 @@ namespace LaPurisima.Resources {
                 return ResourceManager.GetString("EditText", resourceCulture);
             }
         }
+        
+        internal static string NewUserText {
+            get {
+                return ResourceManager.GetString("NewUserText", resourceCulture);
+            }
+        }
     }
 }
