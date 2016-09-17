@@ -208,5 +208,17 @@ namespace LaPurisima.Resources {
                 return ResourceManager.GetString("EditText", resourceCulture);
             }
         }
+        
+        internal static string ErrorMessageEmail {
+            get {
+                return ResourceManager.GetString("ErrorMessageEmail", resourceCulture);
+            }
+        }
+        
+        internal static string ErrorMessageDoesntExist {
+            get {
+                return ResourceManager.GetString("ErrorMessageDoesntExist", resourceCulture);
+            }
+        }
     }
 }

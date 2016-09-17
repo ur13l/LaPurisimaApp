@@ -7,7 +7,9 @@ namespace LaPurisima
 {
 	public partial class VerifyCodePass : ContentPage
 	{
-		public VerifyCodePass()
+		String Email;
+
+		public VerifyCodePass(String email)
 		{
 			InitializeComponent();
 		}

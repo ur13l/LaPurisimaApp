@@ -41,6 +41,26 @@ namespace LaPurisima
 			return jsonResponse;
 		}
 
+
+		public static async Task<string> ForgotEmail(string mail)
+		{
+			var jsonResponse = await PostObject<User, User>(new User()
+			{
+				email = mail,
+			}, WEB_METHODS.Forgot);
+
+			if (jsonResponse == null)
+			{
+				return null;
+			}
+
+			return jsonResponse;
+		}
+
+
+
+
+
 		public static async Task<string> PostObject<T,K>(object item, WEB_METHODS method)
 		{
 			try
@@ -83,6 +103,18 @@ namespace LaPurisima
 			}
 
 			return false;
+		}
+
+
+		public static bool IsErrorFalse(string json)
+		{
+			if (!json.Contains("false"))
+			{
+				return false;
+			}
+			else {
+				return true;
+			}
 		}
 
 

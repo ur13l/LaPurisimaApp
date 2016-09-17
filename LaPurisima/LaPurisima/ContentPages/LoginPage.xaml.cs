@@ -22,6 +22,13 @@ namespace LaPurisima
 			} 
 		}
 
+		public LoginPage(string email)
+		{
+			InitializeComponent();
+			EntryEmail.Text = email;
+
+		}
+
 		async void SignUpClicked(object sender, System.EventArgs e)
 		{
 			await Navigation.PushAsync(new UserSignUp());

@@ -176,6 +176,18 @@
 	    <value>Sign up</value>
 	    <comment>label for new user</comment>
 	</data> 
+	<data
+		name="ErrorMessageEmail"
+		xml:space="preserve">
+	    <value>Verify your e-mail</value>
+	    <comment>Error message</comment>
+	</data> 
+	<data
+		name="ErrorMessageDoesntExist"
+		xml:space="preserve">
+	    <value>This e-mail doesn't exist</value>
+	    <comment>Error message</comment>
+	</data> 
+	
 </root>
-
 

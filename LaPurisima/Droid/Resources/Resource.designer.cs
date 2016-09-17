@@ -26,7 +26,6 @@ namespace LaPurisima.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LaPurisima.Droid.Resource.Attribute.actionBarSize;
 			global::AndroidHUD.Resource.Attribute.ahBarColor = global::LaPurisima.Droid.Resource.Attribute.ahBarColor;
 			global::AndroidHUD.Resource.Attribute.ahBarLength = global::LaPurisima.Droid.Resource.Attribute.ahBarLength;
 			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::LaPurisima.Droid.Resource.Attribute.ahBarWidth;
@@ -64,6 +63,7 @@ namespace LaPurisima.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LaPurisima.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation

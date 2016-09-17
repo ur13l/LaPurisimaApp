@@ -180,4 +180,16 @@
 	    <value>Editar</value>
 	    <comment>Edit</comment>
 	</data> 
+	<data
+		name="ErrorMessageEmail"
+		xml:space="preserve">
+	    <value>Verifica tu correo</value>
+	    <comment>Error message</comment>
+	</data> 
+	<data
+		name="ErrorMessageDoesntExist"
+		xml:space="preserve">
+	    <value>El correo no existe</value>
+	    <comment>Error message</comment>
+	</data> 
 </root>
