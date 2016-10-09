@@ -28,7 +28,7 @@ namespace LaPurisima
 
 		public static async Task<string> LoginUser(string mail, string pass)
 		{
-			var jsonResponse = await PostObject<User, User>(new User()
+			var jsonResponse = await PostObject<User>(new User()
 			{
 				email = mail,
 				password = pass,
@@ -44,7 +44,7 @@ namespace LaPurisima
 
 		public static async Task<string> ForgotEmail(string mail)
 		{
-			var jsonResponse = await PostObject<User, User>(new User()
+			var jsonResponse = await PostObject<User>(new User()
 			{
 				email = mail,
 			}, WEB_METHODS.Forgot);
@@ -58,15 +58,48 @@ namespace LaPurisima
 		}
 
 
+		public static async Task<string> UpdateUser(User user)
+		{
+			var jsonResponse = await PostObject<User>(new User()
+			{
+				id = null,
+				nombre = user.nombre,
+				calle = user.calle,
+				codigo_postal = user.codigo_postal,
+				colonia = user.colonia,
+				referencia = user.referencia,
+				api_token = user.api_token,
+				//imagen_usuario = usser.imagen_usuario
+			}, WEB_METHODS.Update,true);
 
+			if (jsonResponse == null)
+			{
+				return null;
+			}
+			return jsonResponse;
+		}
 
-
-		public static async Task<string> PostObject<T,K>(object item, WEB_METHODS method)
+		public static async Task<string> PostObject<T>(object item, WEB_METHODS method,bool igonoreIfnull = false)
 		{
 			try
 			{
 				var client = GetHttpClient();
-				var json = JsonConvert.SerializeObject((T)item);
+				string json = null;
+
+				if (igonoreIfnull)
+				{
+					
+					json = JsonConvert.SerializeObject((T)item,
+							Newtonsoft.Json.Formatting.None,
+							new JsonSerializerSettings
+							{
+								NullValueHandling = NullValueHandling.Ignore
+							});
+				}
+				else {
+					json = JsonConvert.SerializeObject((T)item);
+				}
+
 				HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
 				client.BaseAddress = new Uri(Config.URL);
 				var response = await client.PostAsync(Config.GetURLForMethod(method), content);
