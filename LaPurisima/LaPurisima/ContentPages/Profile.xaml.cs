@@ -13,6 +13,7 @@ namespace LaPurisima
 
 			InitiViews();
 
+
 			Title = "Perfil";
 
 		}

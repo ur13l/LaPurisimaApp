@@ -71,6 +71,7 @@ namespace LaPurisima.Droid
 			{
 				NativeView.EditText.Enabled = Element.IsEnabled;
 			}
+
 		}
 
 		private void EditTextOnTextChanged(object sender, TextChangedEventArgs textChangedEventArgs)
@@ -122,7 +123,14 @@ namespace LaPurisima.Droid
 
 		protected override View CreateNativeControl()
 		{
-			return LayoutInflater.From(Context).Inflate(Resource.Layout.TextInputLayout, null);
+
+			var view = LayoutInflater.From(Context).Inflate(Resource.Layout.TextInputLayout, null);;
+			if (Element != null)
+			{
+				((TextInputLayout)view).EditText.Enabled = Element.IsEnabled;
+			}
+
+			return view;
 		}
 	}
 }

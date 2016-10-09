@@ -180,4 +180,100 @@
 	    <value>Editar</value>
 	    <comment>Edit</comment>
 	</data> 
+	<data
+		name="LoadingText"
+		xml:space="preserve">
+	    <value>Validando</value>
+	    <comment>Loading</comment>
+	</data> 
+	<data
+		name="ErrorTitleText"
+		xml:space="preserve">
+	    <value>Error</value>
+	    <comment>Error message title</comment>
+	</data> 
+	<data
+		name="VerifyMailPassLabel"
+		xml:space="preserve">
+	    <value>Verifica e-mail y contraseña</value>
+	    <comment>Error verfiy message</comment>
+	</data> 
+	<data
+		name="VerifyMailLabel"
+		xml:space="preserve">
+	    <value>Verifica tu e-mail</value>
+	    <comment>Error verfiy message</comment>
+	</data> 
+	<data
+		name="EnterPassLabel"
+		xml:space="preserve">
+	    <value>Verifica tu contraseña</value>
+	    <comment>Error verfiy message</comment>
+	</data> 
+	<data
+		name="OkButtonLabel"
+		xml:space="preserve">
+	    <value>Aceptar</value>
+	    <comment>Ok button label</comment>
+	</data> 
+	<data
+		name="EnterPassLabel"
+		xml:space="preserve">
+	    <value>Ingresa una contraseña</value>
+	    <comment>Entrer pass    label</comment>
+	</data>
+	<data
+		name="EnterNameLabel"
+		xml:space="preserve">
+	    <value>Ingresa una nombre de usuario</value>
+	    <comment>Entrer a name label</comment>
+	</data>
+	<data
+		name="EnterMailLabel"
+		xml:space="preserve">
+	    <value>Ingresa un correo</value>
+	    <comment>Entrer a name label</comment>
+	</data>
+	<data
+		name="EnterPassLabel"
+		xml:space="preserve">
+	    <value>Ingresa una contraseña</value>
+	    <comment>Entrer a name label</comment>
+	</data>
+	<data
+		name="ConfirmPassLabel"
+		xml:space="preserve">
+	    <value>Repite la contraseña</value>
+	    <comment>Entrer a name label</comment>
+	</data>
+	<data
+		name="EnterMatchingPassLabel"
+		xml:space="preserve">
+	    <value>Las contraseñas no coinciden</value>
+	    <comment>Entrer matching passwords label</comment>
+	</data>
+	<data
+		name="EnterStreetLabel"
+		xml:space="preserve">
+	    <value>Ingresa una calle</value>
+	    <comment>Entrer Street label</comment>
+	</data>
+	<data
+		name="EnterColonyLabel"
+		xml:space="preserve">
+	    <value>Ingresa una colonia</value>
+	    <comment>Entrer Street label</comment>
+	</data>
+	<data
+		name="UseMapLabel"
+		xml:space="preserve">
+	    <value>Mapa</value>
+	    <comment>Entrer Street label</comment>
+	</data>
+	<data
+		name="UserLocationLabel"
+		xml:space="preserve">
+	    <value>Ubicación</value>
+	    <comment>Entrer Street label</comment>
+	</data>
 </root>

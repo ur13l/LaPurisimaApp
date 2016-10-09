@@ -136,12 +136,14 @@
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-40x40%401x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-76x76%401x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Renders\" />
     <Folder Include="Resources\Assets.xcassets\app_icon.imageset\" />
     <Folder Include="Providers\" />
+    <Folder Include="Assets.xcassets\location.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -157,12 +159,16 @@
     <Compile Include="Localize.cs" />
     <Compile Include="Renders\BorderlessEntryImpl.cs" />
     <Compile Include="Providers\ProgressView.cs" />
+    <Compile Include="Renders\TintedImageImpl.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\profile.jpg" />
     <BundleResource Include="Resources\logo.png" />
     <BundleResource Include="Resources\menu_icon.png" />
     <BundleResource Include="Resources\menu_icon%402x.png" />
+    <BundleResource Include="Resources\location.png" />
+    <BundleResource Include="Resources\location%402x.png" />
+    <BundleResource Include="Resources\location%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="btprogresshud">

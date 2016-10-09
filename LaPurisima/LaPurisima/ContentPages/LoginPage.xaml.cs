@@ -44,7 +44,7 @@ namespace LaPurisima
 			{
 				var progressDependency = DependencyService.Get<IProgress>();
 				if(progressDependency != null)
-					progressDependency.ShowProgress("Validando");
+					progressDependency.ShowProgress(Localize.GetString("LoadingText", ""));
 				if (ShowProgress != null)
 					ShowProgress("Validando");
 				var response = await ClientLaPurisima.LoginUser(EntryEmail.Text, EntryPass.Text);
@@ -72,7 +72,7 @@ namespace LaPurisima
 		{
 			if (ClientLaPurisima.IsError(response))
 			{
-				DisplayAlert("Error", "Verifica usuario y contraseña", "ok");
+				DisplayAlert(Localize.GetString("ErrorTitleText", ""), Localize.GetString("VerifyMailPassLabel", ""), Localize.GetString("OkButtonLabel", ""));
 				return false;
 			}
 			else {
@@ -84,7 +84,7 @@ namespace LaPurisima
 		{
 			if (string.IsNullOrEmpty(EntryEmail.Text) || !Regex.IsMatch(EntryEmail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
 			{
-				DisplayAlert("Error", "Verifica tu e-mail", "ok");
+				DisplayAlert("Error",Localize.GetString("VerifyMailLabel", ""), Localize.GetString("OkButtonLabel", ""));
 
 				return false;
 			}
@@ -92,7 +92,7 @@ namespace LaPurisima
 
 			if (string.IsNullOrEmpty(EntryPass.Text))
 			{
-				DisplayAlert("Error", "Ingresa una contraseña", "ok");
+				DisplayAlert("Error", Localize.GetString("EnterPassLabel", ""),Localize.GetString("OkButtonLabel", ""));
 				return false;
 			}
 

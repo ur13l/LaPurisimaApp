@@ -20,7 +20,6 @@ namespace LaPurisima.iOS
 			}
 		}
 
-
 	}
 }
 

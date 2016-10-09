@@ -15,7 +15,7 @@ namespace LaPurisima
 				switch (pageType)
 				{
 					case DrawerPage.MakeOrder:
-						Detail = new NavigationPage(new MakeOrderPage());
+						Detail = new NavigationPage(new CarouselOrder());
 						break;
 					case DrawerPage.Orders:
 						Detail = new NavigationPage(new OrdersPage());
@@ -35,7 +35,7 @@ namespace LaPurisima
 				IsPresented = false;
 			};
 			Master = drawer;
-			Detail = new NavigationPage(new MakeOrderPage());
+			Detail = new NavigationPage(new CarouselOrder());
 
 			MasterBehavior = MasterBehavior.Popover;
 

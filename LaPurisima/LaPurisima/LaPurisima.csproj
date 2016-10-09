@@ -110,6 +110,11 @@
     <Compile Include="PropertiesManager.cs" />
     <Compile Include="Providers\IProgress.cs" />
     <Compile Include="ContentPages\BasePage.cs" />
+    <Compile Include="CustomViews\TintedImage.cs" />
+    <Compile Include="ContentPages\CarouselOrder.cs" />
+    <Compile Include="UpdateHelper.cs" />
+    <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Producto.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -121,6 +126,7 @@
     <Folder Include="Services\" />
     <Folder Include="Models\" />
     <Folder Include="Providers\" />
+    <Folder Include="ContentPages\OrderPage\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

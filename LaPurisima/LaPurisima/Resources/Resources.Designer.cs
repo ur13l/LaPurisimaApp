@@ -208,5 +208,89 @@ namespace LaPurisima.Resources {
                 return ResourceManager.GetString("EditText", resourceCulture);
             }
         }
+        
+        internal static string LoadingText {
+            get {
+                return ResourceManager.GetString("LoadingText", resourceCulture);
+            }
+        }
+        
+        internal static string ErrorTitleText {
+            get {
+                return ResourceManager.GetString("ErrorTitleText", resourceCulture);
+            }
+        }
+        
+        internal static string VerifyMailPassLabel {
+            get {
+                return ResourceManager.GetString("VerifyMailPassLabel", resourceCulture);
+            }
+        }
+        
+        internal static string VerifyMailLabel {
+            get {
+                return ResourceManager.GetString("VerifyMailLabel", resourceCulture);
+            }
+        }
+        
+        internal static string EnterPassLabel {
+            get {
+                return ResourceManager.GetString("EnterPassLabel", resourceCulture);
+            }
+        }
+        
+        internal static string OkButtonLabel {
+            get {
+                return ResourceManager.GetString("OkButtonLabel", resourceCulture);
+            }
+        }
+        
+        internal static string EnterNameLabel {
+            get {
+                return ResourceManager.GetString("EnterNameLabel", resourceCulture);
+            }
+        }
+        
+        internal static string EnterMailLabel {
+            get {
+                return ResourceManager.GetString("EnterMailLabel", resourceCulture);
+            }
+        }
+        
+        internal static string ConfirmPassLabel {
+            get {
+                return ResourceManager.GetString("ConfirmPassLabel", resourceCulture);
+            }
+        }
+        
+        internal static string EnterMatchingPassLabel {
+            get {
+                return ResourceManager.GetString("EnterMatchingPassLabel", resourceCulture);
+            }
+        }
+        
+        internal static string EnterStreetLabel {
+            get {
+                return ResourceManager.GetString("EnterStreetLabel", resourceCulture);
+            }
+        }
+        
+        internal static string EnterColonyLabel {
+            get {
+                return ResourceManager.GetString("EnterColonyLabel", resourceCulture);
+            }
+        }
+        
+        internal static string UseMapLabel {
+            get {
+                return ResourceManager.GetString("UseMapLabel", resourceCulture);
+            }
+        }
+        
+        internal static string UserLocationLabel {
+            get {
+                return ResourceManager.GetString("UserLocationLabel", resourceCulture);
+            }
+        }
     }
 }

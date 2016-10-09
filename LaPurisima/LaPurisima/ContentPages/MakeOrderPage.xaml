@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -6,12 +6,12 @@
 	x:Class="LaPurisima.MakeOrderPage">
 	<ContentPage.Content>
 		<StackLayout>
-			<!--<maps:Map
+			<maps:Map
 				HorizontalOptions="FillAndExpand"
 				HeightRequest="200"
 				x:Name="Map"
 				IsShowingUser="true"
-				MapType="Satellite" />-->
+				MapType="Satellite" />
 			<StackLayout
 				Orientation="Vertical">
 				<Label

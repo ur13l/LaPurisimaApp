@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>LaPurisima.Droid</RootNamespace>
     <AssemblyName>LaPurisima.Droid</AssemblyName>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -113,6 +113,7 @@
     <Compile Include="SplashActivity.cs" />
     <Compile Include="Renders\LoginPageRenderer.cs" />
     <Compile Include="Renders\MaterialEntryRenderer_Droid.cs" />
+    <Compile Include="Renders\TintedImageImpl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -135,6 +136,9 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\layout\TextInputLayout.axml" />
+    <AndroidResource Include="Resources\drawable-mdpi\location.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\location.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\location.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-xhdpi\" />
