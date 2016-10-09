@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Class="LaPurisima.RecoverPassPage"
+	xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" 
 	xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima">
-	<ContentPage.Content>
+	<local:BasePage.Content>
 		<StackLayout
 			Padding="40,10,40,10">
 			<Image
@@ -32,10 +33,11 @@
 					Orientation="Vertical">
 					<Button
 						Text="{i18n:Translate RecuperarButtonText}"
-						TextColor="#A4A4A4"
-						BackgroundColor="White" />
+						TextColor="#A4A4A4" 
+						BackgroundColor="White"
+						Clicked="ResetClicked"/>
 				</StackLayout>
 			</StackLayout>
 		</StackLayout>
-	</ContentPage.Content>
-</ContentPage>
+	</local:BasePage.Content>
+</local:BasePage>

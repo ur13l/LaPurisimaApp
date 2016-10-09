@@ -181,6 +181,7 @@
 	    <comment>Edit</comment>
 	</data> 
 	<data
+<<<<<<< HEAD
 		name="LoadingText"
 		xml:space="preserve">
 	    <value>Validando</value>
@@ -276,4 +277,16 @@
 	    <value>Ubicación</value>
 	    <comment>Entrer Street label</comment>
 	</data>
+	<data
+		name="ErrorMessageEmail"
+		xml:space="preserve">
+	    <value>Verifica tu correo</value>
+	    <comment>Error message</comment>
+	</data> 
+	<data
+		name="ErrorMessageDoesntExist"
+		xml:space="preserve">
+	    <value>El correo no existe</value>
+	    <comment>Error message</comment>
+	</data>  
 </root>

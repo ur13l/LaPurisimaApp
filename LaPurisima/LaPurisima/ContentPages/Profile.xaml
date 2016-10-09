@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.Profile" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.Profile" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
 	<ContentPage.ToolbarItems>
 		<ToolbarItem x:Name="EditButton" Text="{i18n:Translate EditText}" Clicked="EditClicked" />
 	</ContentPage.ToolbarItems>
-	<ContentPage.Content>
+	<local:BasePage.Content>
 		<ScrollView>
 			<StackLayout Padding="40,10,40,10">
 				<Image HorizontalOptions="FillAndExpand" Source="profile.jpg" HeightRequest="50" />
@@ -119,5 +119,5 @@
 				</StackLayout>
 			</StackLayout>
 		</ScrollView>
-	</ContentPage.Content>
-</ContentPage>
+	</local:BasePage.Content>
+</local:BasePage>
