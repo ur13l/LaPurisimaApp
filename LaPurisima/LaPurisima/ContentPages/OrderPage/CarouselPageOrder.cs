@@ -3,14 +3,14 @@ using Xamarin.Forms;
 
 namespace LaPurisima
 {
-	public class CarouselOrder : CarouselPage
+	public class CarouselPageOrder : CarouselPage
 	{
-		public CarouselOrder()
+		public CarouselPageOrder()
 		{
 
-			var pagina1 = new MakeOrderPage();
+			var pagina1 = new SelectProductoPage();
 			var pagina2 = new MakeOrderPage();
-			var pagina3 = new Profile();
+			var pagina3 = new ConfirmOrderPage();
 
 
 			Children.Add(pagina1);

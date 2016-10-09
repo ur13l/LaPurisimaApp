@@ -54,13 +54,19 @@
     <EmbeddedResource Include="ContentPages\Profile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\MakeOrderPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="ContentPages\Drawer\DrawerListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="ContentPages\OrdersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\OrderPage\MakeOrderPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\OrderPage\ConfirmOrderPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\OrderPage\SelectProductoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -94,9 +100,6 @@
     <Compile Include="ContentPages\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentPages\MakeOrderPage.xaml.cs">
-      <DependentUpon>MakeOrderPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ContentPages\Drawer\DrawerListPage.xaml.cs">
       <DependentUpon>DrawerListPage.xaml</DependentUpon>
     </Compile>
@@ -111,10 +114,19 @@
     <Compile Include="Providers\IProgress.cs" />
     <Compile Include="ContentPages\BasePage.cs" />
     <Compile Include="CustomViews\TintedImage.cs" />
-    <Compile Include="ContentPages\CarouselOrder.cs" />
     <Compile Include="UpdateHelper.cs" />
     <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="ContentPages\OrderPage\CarouselPageOrder.cs" />
+    <Compile Include="ContentPages\OrderPage\MakeOrderPage.xaml.cs">
+      <DependentUpon>MakeOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPages\OrderPage\ConfirmOrderPage.cs">
+      <DependentUpon>ConfirmOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPages\OrderPage\SelectProductoPage.xaml.cs">
+      <DependentUpon>SelectProductoPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

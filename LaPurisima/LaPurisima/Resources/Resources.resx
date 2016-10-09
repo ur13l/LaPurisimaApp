@@ -180,8 +180,7 @@
 	    <value>Editar</value>
 	    <comment>Edit</comment>
 	</data> 
-	<data
-<<<<<<< HEAD
+	<data 
 		name="LoadingText"
 		xml:space="preserve">
 	    <value>Validando</value>

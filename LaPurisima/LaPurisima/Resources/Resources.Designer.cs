@@ -209,7 +209,6 @@ namespace LaPurisima.Resources {
             }
         }
         
-<<<<<<< HEAD
         internal static string LoadingText {
             get {
                 return ResourceManager.GetString("LoadingText", resourceCulture);
@@ -291,7 +290,9 @@ namespace LaPurisima.Resources {
         internal static string UserLocationLabel {
             get {
                 return ResourceManager.GetString("UserLocationLabel", resourceCulture);
-=======
+            }
+        }
+        
         internal static string ErrorMessageEmail {
             get {
                 return ResourceManager.GetString("ErrorMessageEmail", resourceCulture);
@@ -301,7 +302,6 @@ namespace LaPurisima.Resources {
         internal static string ErrorMessageDoesntExist {
             get {
                 return ResourceManager.GetString("ErrorMessageDoesntExist", resourceCulture);
->>>>>>> 09dc8fd21edb34833bbb0a8776f8b294b6bc8a30
             }
         }
     }
