@@ -77,7 +77,7 @@ namespace LaPurisima.Droid
 		private void EditTextOnTextChanged(object sender, TextChangedEventArgs textChangedEventArgs)
 		{
 			Element.Text = textChangedEventArgs.Text.ToString();
-			NativeView.EditText.SetSelection(Element.Text.Length);
+			NativeView.EditText.SetSelection((Element.Text==null)?0:Element.Text.Length);
 		}
 
 		private void SetText()

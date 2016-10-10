@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace LaPurisima
 {
-	public partial class ConfirmOrderPage : ContentPage
+	public partial class ConfirmOrderPage : BasePage
 	{
 		Pedido _pedido;
 

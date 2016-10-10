@@ -288,4 +288,23 @@
 	    <value>El correo no existe</value>
 	    <comment>Error message</comment>
 	</data>  
+	<!--ORDERD-->
+	<data
+		name="product_selection"
+		xml:space="preserve">
+	    <value>Productos</value>
+	    <comment></comment>
+	</data>  
+	<data
+		name="location_selection"
+		xml:space="preserve">
+	    <value>Ubicación</value>
+	    <comment></comment>
+	</data>  
+	<data
+		name="confirm_order"
+		xml:space="preserve">
+	    <value>Confirma el pedido</value>
+	    <comment></comment>
+	</data>  
 </root>

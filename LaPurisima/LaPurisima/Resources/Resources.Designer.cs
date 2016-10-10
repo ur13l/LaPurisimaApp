@@ -304,5 +304,23 @@ namespace LaPurisima.Resources {
                 return ResourceManager.GetString("ErrorMessageDoesntExist", resourceCulture);
             }
         }
+        
+        internal static string product_selection {
+            get {
+                return ResourceManager.GetString("product_selection", resourceCulture);
+            }
+        }
+        
+        internal static string location_selection {
+            get {
+                return ResourceManager.GetString("location_selection", resourceCulture);
+            }
+        }
+        
+        internal static string confirm_order {
+            get {
+                return ResourceManager.GetString("confirm_order", resourceCulture);
+            }
+        }
     }
 }

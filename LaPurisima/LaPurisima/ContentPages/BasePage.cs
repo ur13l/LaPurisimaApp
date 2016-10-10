@@ -7,6 +7,10 @@ namespace LaPurisima
 	{
 		public Action<string> ShowProgress;
 		public Action HideProgress;
+
+		public Action<ContentPage> NextPage;
+		public Action<ContentPage> PreviousPage;
+		public Action<int> GoToPage;
 	}
 }
 

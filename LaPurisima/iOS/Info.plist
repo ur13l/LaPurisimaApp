@@ -42,5 +42,15 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcons.appiconset</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Estamos usando tu ubicación</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Podemos usar tu ubicación</string>
+	<key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+  </dict>
+
 </dict>
 </plist>

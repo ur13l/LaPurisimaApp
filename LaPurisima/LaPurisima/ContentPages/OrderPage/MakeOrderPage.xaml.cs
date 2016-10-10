@@ -6,7 +6,7 @@ using Xamarin.Forms.Maps;
 
 namespace LaPurisima
 {
-	public partial class MakeOrderPage : ContentPage
+	public partial class MakeOrderPage : BasePage
 	{
 		public MakeOrderPage()
 		{
@@ -17,6 +17,11 @@ namespace LaPurisima
 
 			//Map.MoveToRegion(
 			//MapSpan.FromCenterAndRadius(new Position(26.9034632, -101.4199217), Distance.FromMiles(1.7)));
+		}
+
+		void MakeOrder(object sender, System.EventArgs e)
+		{
+			NextPage(this);
 		}
 	}
 }

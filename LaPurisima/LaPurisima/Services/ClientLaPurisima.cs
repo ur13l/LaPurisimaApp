@@ -34,7 +34,8 @@ namespace LaPurisima
 				password = pass,
 			}, WEB_METHODS.Autenticate);
 
-			if (jsonResponse == null){
+			if (jsonResponse == null)
+			{
 				return null;
 			}
 
@@ -70,7 +71,7 @@ namespace LaPurisima
 				referencia = user.referencia,
 				api_token = user.api_token,
 				//imagen_usuario = usser.imagen_usuario
-			}, WEB_METHODS.Update,true);
+			}, WEB_METHODS.Update, true);
 
 			if (jsonResponse == null)
 			{
@@ -79,7 +80,8 @@ namespace LaPurisima
 			return jsonResponse;
 		}
 
-		public static async Task<string> PostObject<T>(object item, WEB_METHODS method,bool igonoreIfnull = false)
+
+		public static async Task<string> PostObject<T>(object item, WEB_METHODS method, bool igonoreIfnull = false)
 		{
 			try
 			{
@@ -88,7 +90,7 @@ namespace LaPurisima
 
 				if (igonoreIfnull)
 				{
-					
+
 					json = JsonConvert.SerializeObject((T)item,
 							Newtonsoft.Json.Formatting.None,
 							new JsonSerializerSettings
@@ -115,6 +117,39 @@ namespace LaPurisima
 			catch (Exception ex)
 			{
 				return null;
+			}
+		}
+
+		public static async Task<T> GetObject<T>(WEB_METHODS method, string where = null, bool igonoreIfnull = false)
+		{
+			try
+			{
+				var client = GetHttpClient();
+
+				client.BaseAddress = new Uri(Config.URL);
+				var response = await client.GetAsync(Config.GetURLForMethod(method) + where);
+
+				if (response.IsSuccessStatusCode)
+				{
+					var resultString = await response.Content.ReadAsStringAsync(); 
+
+					if (igonoreIfnull)
+					{
+						return JsonConvert.DeserializeObject<T>(resultString,
+								new JsonSerializerSettings
+								{
+									NullValueHandling = NullValueHandling.Ignore
+								});
+					}
+					else {
+						return JsonConvert.DeserializeObject<T>(resultString);
+					}
+				}
+				return default(T);
+			}
+			catch (Exception ex)
+			{
+				return default(T);
 			}
 		}
 

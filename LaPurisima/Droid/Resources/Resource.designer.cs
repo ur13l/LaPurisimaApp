@@ -64,6 +64,111 @@ namespace LaPurisima.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LaPurisima.Droid.Resource.Attribute.actionBarSize;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circleColor = global::LaPurisima.Droid.Resource.Attribute.circleColor;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circularProgressBarStyle = global::LaPurisima.Droid.Resource.Attribute.circularProgressBarStyle;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_gravity = global::LaPurisima.Droid.Resource.Attribute.circular_gravity;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_indeterminate = global::LaPurisima.Droid.Resource.Attribute.circular_indeterminate;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_indeterminate_interval = global::LaPurisima.Droid.Resource.Attribute.circular_indeterminate_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_marker_progress = global::LaPurisima.Droid.Resource.Attribute.circular_marker_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_progress = global::LaPurisima.Droid.Resource.Attribute.circular_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_progress_background_color = global::LaPurisima.Droid.Resource.Attribute.circular_progress_background_color;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_progress_color = global::LaPurisima.Droid.Resource.Attribute.circular_progress_color;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.circular_stroke_width = global::LaPurisima.Droid.Resource.Attribute.circular_stroke_width;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.indeterminate = global::LaPurisima.Droid.Resource.Attribute.indeterminate;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.indeterminate_interval = global::LaPurisima.Droid.Resource.Attribute.indeterminate_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.innerSize = global::LaPurisima.Droid.Resource.Attribute.innerSize;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.max = global::LaPurisima.Droid.Resource.Attribute.max;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.pinned = global::LaPurisima.Droid.Resource.Attribute.pinned;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.pinnedDrawable = global::LaPurisima.Droid.Resource.Attribute.pinnedDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.progress = global::LaPurisima.Droid.Resource.Attribute.progress;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.progressButtonStyle = global::LaPurisima.Droid.Resource.Attribute.progressButtonStyle;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.progressColor = global::LaPurisima.Droid.Resource.Attribute.progressColor;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.shadowDrawable = global::LaPurisima.Droid.Resource.Attribute.shadowDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Attribute.unpinnedDrawable = global::LaPurisima.Droid.Resource.Attribute.unpinnedDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Color.progress_default_circle_color = global::LaPurisima.Droid.Resource.Color.progress_default_circle_color;
+			global::com.refractored.monodroidtoolkit.Resource.Color.progress_default_progress_color = global::LaPurisima.Droid.Resource.Color.progress_default_progress_color;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_background_dark = global::LaPurisima.Droid.Resource.Color.refractored_background_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_background_holo_dark = global::LaPurisima.Droid.Resource.Color.refractored_background_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_background_holo_light = global::LaPurisima.Droid.Resource.Color.refractored_background_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_background_light = global::LaPurisima.Droid.Resource.Color.refractored_background_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_dark = global::LaPurisima.Droid.Resource.Color.refractored_bright_foreground_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_dark_disabled = global::LaPurisima.Droid.Resource.Color.refractored_bright_foreground_dark_disabled;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_disabled_holo_dark = global::LaPurisima.Droid.Resource.Color.refractored_bright_foreground_disabled_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_disabled_holo_light = global::LaPurisima.Droid.Resource.Color.refractored_bright_foreground_disabled_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_holo_dark = global::LaPurisima.Droid.Resource.Color.refractored_bright_foreground_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_holo_light = global::LaPurisima.Droid.Resource.Color.refractored_bright_foreground_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_bright_foreground_light = global::LaPurisima.Droid.Resource.Color.refractored_bright_foreground_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_dim_foreground_disabled_holo_dark = global::LaPurisima.Droid.Resource.Color.refractored_dim_foreground_disabled_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_dim_foreground_disabled_holo_light = global::LaPurisima.Droid.Resource.Color.refractored_dim_foreground_disabled_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_dim_foreground_holo_dark = global::LaPurisima.Droid.Resource.Color.refractored_dim_foreground_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_dim_foreground_holo_light = global::LaPurisima.Droid.Resource.Color.refractored_dim_foreground_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_highlighted_text_holo_dark = global::LaPurisima.Droid.Resource.Color.refractored_highlighted_text_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_highlighted_text_holo_light = global::LaPurisima.Droid.Resource.Color.refractored_highlighted_text_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_hint_foreground_holo_dark = global::LaPurisima.Droid.Resource.Color.refractored_hint_foreground_holo_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_hint_foreground_holo_light = global::LaPurisima.Droid.Resource.Color.refractored_hint_foreground_holo_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_blue_bright = global::LaPurisima.Droid.Resource.Color.refractored_holo_blue_bright;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_blue_dark = global::LaPurisima.Droid.Resource.Color.refractored_holo_blue_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_blue_light = global::LaPurisima.Droid.Resource.Color.refractored_holo_blue_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_green_dark = global::LaPurisima.Droid.Resource.Color.refractored_holo_green_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_green_light = global::LaPurisima.Droid.Resource.Color.refractored_holo_green_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_orange_dark = global::LaPurisima.Droid.Resource.Color.refractored_holo_orange_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_orange_light = global::LaPurisima.Droid.Resource.Color.refractored_holo_orange_light;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_purple = global::LaPurisima.Droid.Resource.Color.refractored_holo_purple;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_red_dark = global::LaPurisima.Droid.Resource.Color.refractored_holo_red_dark;
+			global::com.refractored.monodroidtoolkit.Resource.Color.refractored_holo_red_light = global::LaPurisima.Droid.Resource.Color.refractored_holo_red_light;
+			global::com.refractored.monodroidtoolkit.Resource.Dimension.progress_inner_size = global::LaPurisima.Droid.Resource.Dimension.progress_inner_size;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.pin_progress_pinned = global::LaPurisima.Droid.Resource.Drawable.pin_progress_pinned;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.pin_progress_shadow = global::LaPurisima.Droid.Resource.Drawable.pin_progress_shadow;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.pin_progress_unpinned = global::LaPurisima.Droid.Resource.Drawable.pin_progress_unpinned;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.scrubber_control_normal_holo = global::LaPurisima.Droid.Resource.Drawable.scrubber_control_normal_holo;
+			global::com.refractored.monodroidtoolkit.Resource.Drawable.scrubber_control_pressed_holo = global::LaPurisima.Droid.Resource.Drawable.scrubber_control_pressed_holo;
+			global::com.refractored.monodroidtoolkit.Resource.Id.bottom = global::LaPurisima.Droid.Resource.Id.bottom;
+			global::com.refractored.monodroidtoolkit.Resource.Id.center = global::LaPurisima.Droid.Resource.Id.center;
+			global::com.refractored.monodroidtoolkit.Resource.Id.center_horizontal = global::LaPurisima.Droid.Resource.Id.center_horizontal;
+			global::com.refractored.monodroidtoolkit.Resource.Id.center_vertical = global::LaPurisima.Droid.Resource.Id.center_vertical;
+			global::com.refractored.monodroidtoolkit.Resource.Id.clip = global::LaPurisima.Droid.Resource.Id.clip;
+			global::com.refractored.monodroidtoolkit.Resource.Id.clip_horizontal = global::LaPurisima.Droid.Resource.Id.clip_horizontal;
+			global::com.refractored.monodroidtoolkit.Resource.Id.clip_vertical = global::LaPurisima.Droid.Resource.Id.clip_vertical;
+			global::com.refractored.monodroidtoolkit.Resource.Id.end = global::LaPurisima.Droid.Resource.Id.end;
+			global::com.refractored.monodroidtoolkit.Resource.Id.fill = global::LaPurisima.Droid.Resource.Id.fill;
+			global::com.refractored.monodroidtoolkit.Resource.Id.fill_horizontal = global::LaPurisima.Droid.Resource.Id.fill_horizontal;
+			global::com.refractored.monodroidtoolkit.Resource.Id.fill_vertical = global::LaPurisima.Droid.Resource.Id.fill_vertical;
+			global::com.refractored.monodroidtoolkit.Resource.Id.left = global::LaPurisima.Droid.Resource.Id.left;
+			global::com.refractored.monodroidtoolkit.Resource.Id.right = global::LaPurisima.Droid.Resource.Id.right;
+			global::com.refractored.monodroidtoolkit.Resource.Id.start = global::LaPurisima.Droid.Resource.Id.start;
+			global::com.refractored.monodroidtoolkit.Resource.Id.top = global::LaPurisima.Droid.Resource.Id.top;
+			global::com.refractored.monodroidtoolkit.Resource.Integer.circular_indeterminent_interval = global::LaPurisima.Droid.Resource.Integer.circular_indeterminent_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Integer.progressbutton_indeterminent_interval = global::LaPurisima.Droid.Resource.Integer.progressbutton_indeterminent_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Style.CircularProgressBar = global::LaPurisima.Droid.Resource.Style.CircularProgressBar;
+			global::com.refractored.monodroidtoolkit.Resource.Style.CircularProgressBarLight = global::LaPurisima.Droid.Resource.Style.CircularProgressBarLight;
+			global::com.refractored.monodroidtoolkit.Resource.Style.ProgressButton = global::LaPurisima.Droid.Resource.Style.ProgressButton;
+			global::com.refractored.monodroidtoolkit.Resource.Style.ProgressButton_Pin = global::LaPurisima.Droid.Resource.Style.ProgressButton_Pin;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_gravity = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar_circular_gravity;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_indeterminate = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar_circular_indeterminate;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_indeterminate_interval = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar_circular_indeterminate_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_marker_progress = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar_circular_marker_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_progress = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar_circular_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_progress_background_color = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar_circular_progress_background_color;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_progress_color = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar_circular_progress_color;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.HoloCircularProgressBar_circular_stroke_width = global::LaPurisima.Droid.Resource.Styleable.HoloCircularProgressBar_circular_stroke_width;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton = global::LaPurisima.Droid.Resource.Styleable.ProgressButton;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_android_clickable = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_android_clickable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_android_focusable = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_android_focusable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_android_selectableItemBackground = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_android_selectableItemBackground;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_circleColor = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_circleColor;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_indeterminate = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_indeterminate;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_indeterminate_interval = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_indeterminate_interval;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_innerSize = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_innerSize;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_max = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_max;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_pinned = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_pinned;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_pinnedDrawable = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_pinnedDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_progress = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_progress;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_progressColor = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_progressColor;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_shadowDrawable = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_shadowDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_unpinnedDrawable = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_unpinnedDrawable;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.Theme = global::LaPurisima.Droid.Resource.Styleable.Theme;
+			global::com.refractored.monodroidtoolkit.Resource.Styleable.Theme_circularProgressBarStyle = global::LaPurisima.Droid.Resource.Styleable.Theme_circularProgressBarStyle;
 		}
 		
 		public partial class Animation
@@ -235,41 +340,41 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0100df
 			public const int activityChooserViewStyle = 2130772191;
 			
-			// aapt resource value: 0x7f010156
-			public const int ahBarColor = 2130772310;
+			// aapt resource value: 0x7f01016b
+			public const int ahBarColor = 2130772331;
 			
-			// aapt resource value: 0x7f01015e
-			public const int ahBarLength = 2130772318;
+			// aapt resource value: 0x7f010173
+			public const int ahBarLength = 2130772339;
 			
-			// aapt resource value: 0x7f01015d
-			public const int ahBarWidth = 2130772317;
+			// aapt resource value: 0x7f010172
+			public const int ahBarWidth = 2130772338;
 			
-			// aapt resource value: 0x7f01015b
-			public const int ahCircleColor = 2130772315;
+			// aapt resource value: 0x7f010170
+			public const int ahCircleColor = 2130772336;
 			
-			// aapt resource value: 0x7f01015a
-			public const int ahDelayMillis = 2130772314;
+			// aapt resource value: 0x7f01016f
+			public const int ahDelayMillis = 2130772335;
 			
-			// aapt resource value: 0x7f01015c
-			public const int ahRadius = 2130772316;
+			// aapt resource value: 0x7f010171
+			public const int ahRadius = 2130772337;
 			
-			// aapt resource value: 0x7f010157
-			public const int ahRimColor = 2130772311;
+			// aapt resource value: 0x7f01016c
+			public const int ahRimColor = 2130772332;
 			
-			// aapt resource value: 0x7f010158
-			public const int ahRimWidth = 2130772312;
+			// aapt resource value: 0x7f01016d
+			public const int ahRimWidth = 2130772333;
 			
-			// aapt resource value: 0x7f010159
-			public const int ahSpinSpeed = 2130772313;
+			// aapt resource value: 0x7f01016e
+			public const int ahSpinSpeed = 2130772334;
 			
-			// aapt resource value: 0x7f010153
-			public const int ahText = 2130772307;
+			// aapt resource value: 0x7f010168
+			public const int ahText = 2130772328;
 			
-			// aapt resource value: 0x7f010154
-			public const int ahTextColor = 2130772308;
+			// aapt resource value: 0x7f010169
+			public const int ahTextColor = 2130772329;
 			
-			// aapt resource value: 0x7f010155
-			public const int ahTextSize = 2130772309;
+			// aapt resource value: 0x7f01016a
+			public const int ahTextSize = 2130772330;
 			
 			// aapt resource value: 0x7f010102
 			public const int alertDialogButtonGroupStyle = 2130772226;
@@ -409,8 +514,38 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f01010d
 			public const int checkedTextViewStyle = 2130772237;
 			
+			// aapt resource value: 0x7f010156
+			public const int circleColor = 2130772310;
+			
 			// aapt resource value: 0x7f010016
 			public const int circleCrop = 2130771990;
+			
+			// aapt resource value: 0x7f010167
+			public const int circularProgressBarStyle = 2130772327;
+			
+			// aapt resource value: 0x7f01015f
+			public const int circular_gravity = 2130772319;
+			
+			// aapt resource value: 0x7f010165
+			public const int circular_indeterminate = 2130772325;
+			
+			// aapt resource value: 0x7f010166
+			public const int circular_indeterminate_interval = 2130772326;
+			
+			// aapt resource value: 0x7f010162
+			public const int circular_marker_progress = 2130772322;
+			
+			// aapt resource value: 0x7f010161
+			public const int circular_progress = 2130772321;
+			
+			// aapt resource value: 0x7f010164
+			public const int circular_progress_background_color = 2130772324;
+			
+			// aapt resource value: 0x7f010163
+			public const int circular_progress_color = 2130772323;
+			
+			// aapt resource value: 0x7f010160
+			public const int circular_stroke_width = 2130772320;
 			
 			// aapt resource value: 0x7f01012f
 			public const int closeIcon = 2130772271;
@@ -646,11 +781,20 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0100e6
 			public const int imageButtonStyle = 2130772198;
 			
+			// aapt resource value: 0x7f01015d
+			public const int indeterminate = 2130772317;
+			
 			// aapt resource value: 0x7f010094
 			public const int indeterminateProgressStyle = 2130772116;
 			
+			// aapt resource value: 0x7f01015e
+			public const int indeterminate_interval = 2130772318;
+			
 			// aapt resource value: 0x7f01009f
 			public const int initialActivityCount = 2130772127;
+			
+			// aapt resource value: 0x7f01015b
+			public const int innerSize = 2130772315;
 			
 			// aapt resource value: 0x7f010062
 			public const int insetForeground = 2130772066;
@@ -747,6 +891,9 @@ namespace LaPurisima.Droid
 			
 			// aapt resource value: 0x7f010000
 			public const int mapType = 2130771968;
+			
+			// aapt resource value: 0x7f010155
+			public const int max = 2130772309;
 			
 			// aapt resource value: 0x7f010064
 			public const int maxActionInlineWidth = 2130772068;
@@ -853,6 +1000,12 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0100f5
 			public const int panelMenuListWidth = 2130772213;
 			
+			// aapt resource value: 0x7f01015c
+			public const int pinned = 2130772316;
+			
+			// aapt resource value: 0x7f010158
+			public const int pinnedDrawable = 2130772312;
+			
 			// aapt resource value: 0x7f0100e2
 			public const int popupMenuStyle = 2130772194;
 			
@@ -868,11 +1021,20 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f010058
 			public const int pressedTranslationZ = 2130772056;
 			
+			// aapt resource value: 0x7f010154
+			public const int progress = 2130772308;
+			
 			// aapt resource value: 0x7f010095
 			public const int progressBarPadding = 2130772117;
 			
 			// aapt resource value: 0x7f010093
 			public const int progressBarStyle = 2130772115;
+			
+			// aapt resource value: 0x7f010153
+			public const int progressButtonStyle = 2130772307;
+			
+			// aapt resource value: 0x7f010157
+			public const int progressColor = 2130772311;
 			
 			// aapt resource value: 0x7f010136
 			public const int queryBackground = 2130772278;
@@ -918,6 +1080,9 @@ namespace LaPurisima.Droid
 			
 			// aapt resource value: 0x7f0100db
 			public const int selectableItemBackgroundBorderless = 2130772187;
+			
+			// aapt resource value: 0x7f01015a
+			public const int shadowDrawable = 2130772314;
 			
 			// aapt resource value: 0x7f010124
 			public const int showAsAction = 2130772260;
@@ -1141,6 +1306,9 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f01000c
 			public const int uiZoomGestures = 2130771980;
 			
+			// aapt resource value: 0x7f010159
+			public const int unpinnedDrawable = 2130772313;
+			
 			// aapt resource value: 0x7f01005a
 			public const int useCompatPadding = 2130772058;
 			
@@ -1233,32 +1401,32 @@ namespace LaPurisima.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f06005d
-			public const int abc_background_cache_hint_selector_material_dark = 2131099741;
+			// aapt resource value: 0x7f06007c
+			public const int abc_background_cache_hint_selector_material_dark = 2131099772;
 			
-			// aapt resource value: 0x7f06005e
-			public const int abc_background_cache_hint_selector_material_light = 2131099742;
+			// aapt resource value: 0x7f06007d
+			public const int abc_background_cache_hint_selector_material_light = 2131099773;
 			
-			// aapt resource value: 0x7f06005f
-			public const int abc_color_highlight_material = 2131099743;
+			// aapt resource value: 0x7f06007e
+			public const int abc_color_highlight_material = 2131099774;
 			
 			// aapt resource value: 0x7f06001f
 			public const int abc_input_method_navigation_guard = 2131099679;
 			
-			// aapt resource value: 0x7f060060
-			public const int abc_primary_text_disable_only_material_dark = 2131099744;
+			// aapt resource value: 0x7f06007f
+			public const int abc_primary_text_disable_only_material_dark = 2131099775;
 			
-			// aapt resource value: 0x7f060061
-			public const int abc_primary_text_disable_only_material_light = 2131099745;
+			// aapt resource value: 0x7f060080
+			public const int abc_primary_text_disable_only_material_light = 2131099776;
 			
-			// aapt resource value: 0x7f060062
-			public const int abc_primary_text_material_dark = 2131099746;
+			// aapt resource value: 0x7f060081
+			public const int abc_primary_text_material_dark = 2131099777;
 			
-			// aapt resource value: 0x7f060063
-			public const int abc_primary_text_material_light = 2131099747;
+			// aapt resource value: 0x7f060082
+			public const int abc_primary_text_material_light = 2131099778;
 			
-			// aapt resource value: 0x7f060064
-			public const int abc_search_url_text = 2131099748;
+			// aapt resource value: 0x7f060083
+			public const int abc_search_url_text = 2131099779;
 			
 			// aapt resource value: 0x7f060020
 			public const int abc_search_url_text_normal = 2131099680;
@@ -1269,14 +1437,14 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f060022
 			public const int abc_search_url_text_selected = 2131099682;
 			
-			// aapt resource value: 0x7f060065
-			public const int abc_secondary_text_material_dark = 2131099749;
+			// aapt resource value: 0x7f060084
+			public const int abc_secondary_text_material_dark = 2131099780;
 			
-			// aapt resource value: 0x7f060066
-			public const int abc_secondary_text_material_light = 2131099750;
+			// aapt resource value: 0x7f060085
+			public const int abc_secondary_text_material_light = 2131099781;
 			
-			// aapt resource value: 0x7f06005b
-			public const int accent = 2131099739;
+			// aapt resource value: 0x7f06007a
+			public const int accent = 2131099770;
 			
 			// aapt resource value: 0x7f060023
 			public const int accent_material_dark = 2131099683;
@@ -1335,8 +1503,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f060008
 			public const int common_action_bar_splitter = 2131099656;
 			
-			// aapt resource value: 0x7f060067
-			public const int common_google_signin_btn_text_dark = 2131099751;
+			// aapt resource value: 0x7f060086
+			public const int common_google_signin_btn_text_dark = 2131099782;
 			
 			// aapt resource value: 0x7f060009
 			public const int common_google_signin_btn_text_dark_default = 2131099657;
@@ -1350,8 +1518,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f06000a
 			public const int common_google_signin_btn_text_dark_pressed = 2131099658;
 			
-			// aapt resource value: 0x7f060068
-			public const int common_google_signin_btn_text_light = 2131099752;
+			// aapt resource value: 0x7f060087
+			public const int common_google_signin_btn_text_light = 2131099783;
 			
 			// aapt resource value: 0x7f06000d
 			public const int common_google_signin_btn_text_light_default = 2131099661;
@@ -1365,8 +1533,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f06000e
 			public const int common_google_signin_btn_text_light_pressed = 2131099662;
 			
-			// aapt resource value: 0x7f060069
-			public const int common_plus_signin_btn_text_dark = 2131099753;
+			// aapt resource value: 0x7f060088
+			public const int common_plus_signin_btn_text_dark = 2131099784;
 			
 			// aapt resource value: 0x7f060000
 			public const int common_plus_signin_btn_text_dark_default = 2131099648;
@@ -1380,8 +1548,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f060001
 			public const int common_plus_signin_btn_text_dark_pressed = 2131099649;
 			
-			// aapt resource value: 0x7f06006a
-			public const int common_plus_signin_btn_text_light = 2131099754;
+			// aapt resource value: 0x7f060089
+			public const int common_plus_signin_btn_text_light = 2131099785;
 			
 			// aapt resource value: 0x7f060004
 			public const int common_plus_signin_btn_text_light_default = 2131099652;
@@ -1491,11 +1659,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f060046
 			public const int material_grey_900 = 2131099718;
 			
-			// aapt resource value: 0x7f060059
-			public const int primary = 2131099737;
+			// aapt resource value: 0x7f060078
+			public const int primary = 2131099768;
 			
-			// aapt resource value: 0x7f06005a
-			public const int primaryDark = 2131099738;
+			// aapt resource value: 0x7f060079
+			public const int primaryDark = 2131099769;
 			
 			// aapt resource value: 0x7f060047
 			public const int primary_dark_material_dark = 2131099719;
@@ -1521,6 +1689,99 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f06004e
 			public const int primary_text_disabled_material_light = 2131099726;
 			
+			// aapt resource value: 0x7f060059
+			public const int progress_default_circle_color = 2131099737;
+			
+			// aapt resource value: 0x7f06005a
+			public const int progress_default_progress_color = 2131099738;
+			
+			// aapt resource value: 0x7f06005b
+			public const int refractored_background_dark = 2131099739;
+			
+			// aapt resource value: 0x7f060060
+			public const int refractored_background_holo_dark = 2131099744;
+			
+			// aapt resource value: 0x7f060061
+			public const int refractored_background_holo_light = 2131099745;
+			
+			// aapt resource value: 0x7f06005c
+			public const int refractored_background_light = 2131099740;
+			
+			// aapt resource value: 0x7f06005d
+			public const int refractored_bright_foreground_dark = 2131099741;
+			
+			// aapt resource value: 0x7f06005f
+			public const int refractored_bright_foreground_dark_disabled = 2131099743;
+			
+			// aapt resource value: 0x7f060064
+			public const int refractored_bright_foreground_disabled_holo_dark = 2131099748;
+			
+			// aapt resource value: 0x7f060065
+			public const int refractored_bright_foreground_disabled_holo_light = 2131099749;
+			
+			// aapt resource value: 0x7f060062
+			public const int refractored_bright_foreground_holo_dark = 2131099746;
+			
+			// aapt resource value: 0x7f060063
+			public const int refractored_bright_foreground_holo_light = 2131099747;
+			
+			// aapt resource value: 0x7f06005e
+			public const int refractored_bright_foreground_light = 2131099742;
+			
+			// aapt resource value: 0x7f060067
+			public const int refractored_dim_foreground_disabled_holo_dark = 2131099751;
+			
+			// aapt resource value: 0x7f06006a
+			public const int refractored_dim_foreground_disabled_holo_light = 2131099754;
+			
+			// aapt resource value: 0x7f060066
+			public const int refractored_dim_foreground_holo_dark = 2131099750;
+			
+			// aapt resource value: 0x7f060069
+			public const int refractored_dim_foreground_holo_light = 2131099753;
+			
+			// aapt resource value: 0x7f06006c
+			public const int refractored_highlighted_text_holo_dark = 2131099756;
+			
+			// aapt resource value: 0x7f06006d
+			public const int refractored_highlighted_text_holo_light = 2131099757;
+			
+			// aapt resource value: 0x7f060068
+			public const int refractored_hint_foreground_holo_dark = 2131099752;
+			
+			// aapt resource value: 0x7f06006b
+			public const int refractored_hint_foreground_holo_light = 2131099755;
+			
+			// aapt resource value: 0x7f060077
+			public const int refractored_holo_blue_bright = 2131099767;
+			
+			// aapt resource value: 0x7f060071
+			public const int refractored_holo_blue_dark = 2131099761;
+			
+			// aapt resource value: 0x7f06006e
+			public const int refractored_holo_blue_light = 2131099758;
+			
+			// aapt resource value: 0x7f060072
+			public const int refractored_holo_green_dark = 2131099762;
+			
+			// aapt resource value: 0x7f06006f
+			public const int refractored_holo_green_light = 2131099759;
+			
+			// aapt resource value: 0x7f060076
+			public const int refractored_holo_orange_dark = 2131099766;
+			
+			// aapt resource value: 0x7f060075
+			public const int refractored_holo_orange_light = 2131099765;
+			
+			// aapt resource value: 0x7f060074
+			public const int refractored_holo_purple = 2131099764;
+			
+			// aapt resource value: 0x7f060073
+			public const int refractored_holo_red_dark = 2131099763;
+			
+			// aapt resource value: 0x7f060070
+			public const int refractored_holo_red_light = 2131099760;
+			
 			// aapt resource value: 0x7f06004f
 			public const int ripple_material_dark = 2131099727;
 			
@@ -1545,11 +1806,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f060056
 			public const int switch_thumb_disabled_material_light = 2131099734;
 			
-			// aapt resource value: 0x7f06006b
-			public const int switch_thumb_material_dark = 2131099755;
+			// aapt resource value: 0x7f06008a
+			public const int switch_thumb_material_dark = 2131099786;
 			
-			// aapt resource value: 0x7f06006c
-			public const int switch_thumb_material_light = 2131099756;
+			// aapt resource value: 0x7f06008b
+			public const int switch_thumb_material_light = 2131099787;
 			
 			// aapt resource value: 0x7f060057
 			public const int switch_thumb_normal_material_dark = 2131099735;
@@ -1557,8 +1818,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f060058
 			public const int switch_thumb_normal_material_light = 2131099736;
 			
-			// aapt resource value: 0x7f06005c
-			public const int window_background = 2131099740;
+			// aapt resource value: 0x7f06007b
+			public const int window_background = 2131099771;
 			
 			static Color()
 			{
@@ -1920,6 +2181,9 @@ namespace LaPurisima.Droid
 			
 			// aapt resource value: 0x7f090073
 			public const int notification_subtext_size = 2131296371;
+			
+			// aapt resource value: 0x7f090074
+			public const int progress_inner_size = 2131296372;
 			
 			static Dimension()
 			{
@@ -2555,20 +2819,35 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0200ce
 			public const int mr_ic_play_light = 2130837710;
 			
-			// aapt resource value: 0x7f0200d3
-			public const int notification_template_icon_bg = 2130837715;
+			// aapt resource value: 0x7f0200d8
+			public const int notification_template_icon_bg = 2130837720;
 			
 			// aapt resource value: 0x7f0200cf
-			public const int profile = 2130837711;
+			public const int pin_progress_pinned = 2130837711;
 			
 			// aapt resource value: 0x7f0200d0
-			public const int roundedbg = 2130837712;
+			public const int pin_progress_shadow = 2130837712;
 			
 			// aapt resource value: 0x7f0200d1
-			public const int roundedbgdark = 2130837713;
+			public const int pin_progress_unpinned = 2130837713;
 			
 			// aapt resource value: 0x7f0200d2
-			public const int splash_centered = 2130837714;
+			public const int profile = 2130837714;
+			
+			// aapt resource value: 0x7f0200d3
+			public const int roundedbg = 2130837715;
+			
+			// aapt resource value: 0x7f0200d4
+			public const int roundedbgdark = 2130837716;
+			
+			// aapt resource value: 0x7f0200d5
+			public const int scrubber_control_normal_holo = 2130837717;
+			
+			// aapt resource value: 0x7f0200d6
+			public const int scrubber_control_pressed_holo = 2130837718;
+			
+			// aapt resource value: 0x7f0200d7
+			public const int splash_centered = 2130837719;
 			
 			static Drawable()
 			{
@@ -2583,35 +2862,35 @@ namespace LaPurisima.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b009a
-			public const int action0 = 2131427482;
+			// aapt resource value: 0x7f0b009b
+			public const int action0 = 2131427483;
 			
-			// aapt resource value: 0x7f0b0065
-			public const int action_bar = 2131427429;
+			// aapt resource value: 0x7f0b0066
+			public const int action_bar = 2131427430;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_bar_activity_content = 2131427330;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int action_bar_container = 2131427428;
+			// aapt resource value: 0x7f0b0065
+			public const int action_bar_container = 2131427429;
 			
-			// aapt resource value: 0x7f0b0060
-			public const int action_bar_root = 2131427424;
+			// aapt resource value: 0x7f0b0061
+			public const int action_bar_root = 2131427425;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int action_bar_spinner = 2131427331;
 			
+			// aapt resource value: 0x7f0b0047
+			public const int action_bar_subtitle = 2131427399;
+			
 			// aapt resource value: 0x7f0b0046
-			public const int action_bar_subtitle = 2131427398;
+			public const int action_bar_title = 2131427398;
 			
-			// aapt resource value: 0x7f0b0045
-			public const int action_bar_title = 2131427397;
+			// aapt resource value: 0x7f0b0067
+			public const int action_context_bar = 2131427431;
 			
-			// aapt resource value: 0x7f0b0066
-			public const int action_context_bar = 2131427430;
-			
-			// aapt resource value: 0x7f0b009e
-			public const int action_divider = 2131427486;
+			// aapt resource value: 0x7f0b009f
+			public const int action_divider = 2131427487;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int action_menu_divider = 2131427332;
@@ -2619,17 +2898,17 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0005
 			public const int action_menu_presenter = 2131427333;
 			
+			// aapt resource value: 0x7f0b0063
+			public const int action_mode_bar = 2131427427;
+			
 			// aapt resource value: 0x7f0b0062
-			public const int action_mode_bar = 2131427426;
-			
-			// aapt resource value: 0x7f0b0061
-			public const int action_mode_bar_stub = 2131427425;
-			
-			// aapt resource value: 0x7f0b0047
-			public const int action_mode_close_button = 2131427399;
+			public const int action_mode_bar_stub = 2131427426;
 			
 			// aapt resource value: 0x7f0b0048
-			public const int activity_chooser_view_content = 2131427400;
+			public const int action_mode_close_button = 2131427400;
+			
+			// aapt resource value: 0x7f0b0049
+			public const int activity_chooser_view_content = 2131427401;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int adjust_height = 2131427350;
@@ -2637,8 +2916,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0017
 			public const int adjust_width = 2131427351;
 			
-			// aapt resource value: 0x7f0b0054
-			public const int alertTitle = 2131427412;
+			// aapt resource value: 0x7f0b0055
+			public const int alertTitle = 2131427413;
 			
 			// aapt resource value: 0x7f0b0040
 			public const int always = 2131427392;
@@ -2652,11 +2931,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b001f
 			public const int bottom = 2131427359;
 			
-			// aapt resource value: 0x7f0b004f
-			public const int buttonPanel = 2131427407;
+			// aapt resource value: 0x7f0b0050
+			public const int buttonPanel = 2131427408;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int cancel_action = 2131427483;
+			// aapt resource value: 0x7f0b009c
+			public const int cancel_action = 2131427484;
 			
 			// aapt resource value: 0x7f0b0020
 			public const int center = 2131427360;
@@ -2667,11 +2946,14 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0022
 			public const int center_vertical = 2131427362;
 			
-			// aapt resource value: 0x7f0b005d
-			public const int checkbox = 2131427421;
+			// aapt resource value: 0x7f0b005e
+			public const int checkbox = 2131427422;
 			
-			// aapt resource value: 0x7f0b00a1
-			public const int chronometer = 2131427489;
+			// aapt resource value: 0x7f0b00a2
+			public const int chronometer = 2131427490;
+			
+			// aapt resource value: 0x7f0b0045
+			public const int clip = 2131427397;
 			
 			// aapt resource value: 0x7f0b0029
 			public const int clip_horizontal = 2131427369;
@@ -2682,50 +2964,50 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0041
 			public const int collapseActionView = 2131427393;
 			
-			// aapt resource value: 0x7f0b0055
-			public const int contentPanel = 2131427413;
+			// aapt resource value: 0x7f0b0056
+			public const int contentPanel = 2131427414;
+			
+			// aapt resource value: 0x7f0b005c
+			public const int custom = 2131427420;
 			
 			// aapt resource value: 0x7f0b005b
-			public const int custom = 2131427419;
-			
-			// aapt resource value: 0x7f0b005a
-			public const int customPanel = 2131427418;
+			public const int customPanel = 2131427419;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int dark = 2131427348;
 			
-			// aapt resource value: 0x7f0b0063
-			public const int decor_content_parent = 2131427427;
+			// aapt resource value: 0x7f0b0064
+			public const int decor_content_parent = 2131427428;
 			
-			// aapt resource value: 0x7f0b004b
-			public const int default_activity_button = 2131427403;
+			// aapt resource value: 0x7f0b004c
+			public const int default_activity_button = 2131427404;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int design_bottom_sheet = 2131427445;
+			// aapt resource value: 0x7f0b0076
+			public const int design_bottom_sheet = 2131427446;
+			
+			// aapt resource value: 0x7f0b007d
+			public const int design_menu_item_action_area = 2131427453;
 			
 			// aapt resource value: 0x7f0b007c
-			public const int design_menu_item_action_area = 2131427452;
+			public const int design_menu_item_action_area_stub = 2131427452;
 			
 			// aapt resource value: 0x7f0b007b
-			public const int design_menu_item_action_area_stub = 2131427451;
+			public const int design_menu_item_text = 2131427451;
 			
 			// aapt resource value: 0x7f0b007a
-			public const int design_menu_item_text = 2131427450;
-			
-			// aapt resource value: 0x7f0b0079
-			public const int design_navigation_view = 2131427449;
+			public const int design_navigation_view = 2131427450;
 			
 			// aapt resource value: 0x7f0b0032
 			public const int disableHome = 2131427378;
 			
-			// aapt resource value: 0x7f0b0067
-			public const int edit_query = 2131427431;
+			// aapt resource value: 0x7f0b0068
+			public const int edit_query = 2131427432;
 			
 			// aapt resource value: 0x7f0b0023
 			public const int end = 2131427363;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int end_padder = 2131427494;
+			// aapt resource value: 0x7f0b00a7
+			public const int end_padder = 2131427495;
 			
 			// aapt resource value: 0x7f0b0018
 			public const int enterAlways = 2131427352;
@@ -2736,11 +3018,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b001a
 			public const int exitUntilCollapsed = 2131427354;
 			
-			// aapt resource value: 0x7f0b0049
-			public const int expand_activities_button = 2131427401;
+			// aapt resource value: 0x7f0b004a
+			public const int expand_activities_button = 2131427402;
 			
-			// aapt resource value: 0x7f0b005c
-			public const int expanded_menu = 2131427420;
+			// aapt resource value: 0x7f0b005d
+			public const int expanded_menu = 2131427421;
 			
 			// aapt resource value: 0x7f0b002b
 			public const int fill = 2131427371;
@@ -2763,8 +3045,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b000b
 			public const int hybrid = 2131427339;
 			
-			// aapt resource value: 0x7f0b004d
-			public const int icon = 2131427405;
+			// aapt resource value: 0x7f0b004e
+			public const int icon = 2131427406;
 			
 			// aapt resource value: 0x7f0b0010
 			public const int icon_only = 2131427344;
@@ -2772,11 +3054,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0042
 			public const int ifRoom = 2131427394;
 			
-			// aapt resource value: 0x7f0b004a
-			public const int image = 2131427402;
+			// aapt resource value: 0x7f0b004b
+			public const int image = 2131427403;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int info = 2131427493;
+			// aapt resource value: 0x7f0b00a6
+			public const int info = 2131427494;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int item_touch_helper_previous_elevation = 2131427329;
@@ -2787,29 +3069,29 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0015
 			public const int light = 2131427349;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int line1 = 2131427487;
+			// aapt resource value: 0x7f0b00a0
+			public const int line1 = 2131427488;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int line3 = 2131427491;
+			// aapt resource value: 0x7f0b00a4
+			public const int line3 = 2131427492;
 			
 			// aapt resource value: 0x7f0b0030
 			public const int listMode = 2131427376;
 			
-			// aapt resource value: 0x7f0b004c
-			public const int list_item = 2131427404;
-			
-			// aapt resource value: 0x7f0b007f
-			public const int loadingImage = 2131427455;
-			
-			// aapt resource value: 0x7f0b007d
-			public const int loadingProgressBar = 2131427453;
+			// aapt resource value: 0x7f0b004d
+			public const int list_item = 2131427405;
 			
 			// aapt resource value: 0x7f0b0080
-			public const int loadingProgressWheel = 2131427456;
+			public const int loadingImage = 2131427456;
 			
-			// aapt resource value: 0x7f0b009d
-			public const int media_actions = 2131427485;
+			// aapt resource value: 0x7f0b007e
+			public const int loadingProgressBar = 2131427454;
+			
+			// aapt resource value: 0x7f0b0081
+			public const int loadingProgressWheel = 2131427457;
+			
+			// aapt resource value: 0x7f0b009e
+			public const int media_actions = 2131427486;
 			
 			// aapt resource value: 0x7f0b003f
 			public const int middle = 2131427391;
@@ -2817,83 +3099,83 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b002d
 			public const int mini = 2131427373;
 			
-			// aapt resource value: 0x7f0b008c
-			public const int mr_art = 2131427468;
-			
-			// aapt resource value: 0x7f0b0081
-			public const int mr_chooser_list = 2131427457;
-			
-			// aapt resource value: 0x7f0b0084
-			public const int mr_chooser_route_desc = 2131427460;
+			// aapt resource value: 0x7f0b008d
+			public const int mr_art = 2131427469;
 			
 			// aapt resource value: 0x7f0b0082
-			public const int mr_chooser_route_icon = 2131427458;
-			
-			// aapt resource value: 0x7f0b0083
-			public const int mr_chooser_route_name = 2131427459;
-			
-			// aapt resource value: 0x7f0b0089
-			public const int mr_close = 2131427465;
-			
-			// aapt resource value: 0x7f0b008f
-			public const int mr_control_divider = 2131427471;
-			
-			// aapt resource value: 0x7f0b0095
-			public const int mr_control_play_pause = 2131427477;
-			
-			// aapt resource value: 0x7f0b0098
-			public const int mr_control_subtitle = 2131427480;
-			
-			// aapt resource value: 0x7f0b0097
-			public const int mr_control_title = 2131427479;
-			
-			// aapt resource value: 0x7f0b0096
-			public const int mr_control_title_container = 2131427478;
-			
-			// aapt resource value: 0x7f0b008a
-			public const int mr_custom_control = 2131427466;
-			
-			// aapt resource value: 0x7f0b008b
-			public const int mr_default_control = 2131427467;
-			
-			// aapt resource value: 0x7f0b0086
-			public const int mr_dialog_area = 2131427462;
+			public const int mr_chooser_list = 2131427458;
 			
 			// aapt resource value: 0x7f0b0085
-			public const int mr_expandable_area = 2131427461;
+			public const int mr_chooser_route_desc = 2131427461;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int mr_group_expand_collapse = 2131427481;
+			// aapt resource value: 0x7f0b0083
+			public const int mr_chooser_route_icon = 2131427459;
 			
-			// aapt resource value: 0x7f0b008d
-			public const int mr_media_main_control = 2131427469;
+			// aapt resource value: 0x7f0b0084
+			public const int mr_chooser_route_name = 2131427460;
 			
-			// aapt resource value: 0x7f0b0088
-			public const int mr_name = 2131427464;
-			
-			// aapt resource value: 0x7f0b008e
-			public const int mr_playback_control = 2131427470;
-			
-			// aapt resource value: 0x7f0b0087
-			public const int mr_title_bar = 2131427463;
+			// aapt resource value: 0x7f0b008a
+			public const int mr_close = 2131427466;
 			
 			// aapt resource value: 0x7f0b0090
-			public const int mr_volume_control = 2131427472;
+			public const int mr_control_divider = 2131427472;
+			
+			// aapt resource value: 0x7f0b0096
+			public const int mr_control_play_pause = 2131427478;
+			
+			// aapt resource value: 0x7f0b0099
+			public const int mr_control_subtitle = 2131427481;
+			
+			// aapt resource value: 0x7f0b0098
+			public const int mr_control_title = 2131427480;
+			
+			// aapt resource value: 0x7f0b0097
+			public const int mr_control_title_container = 2131427479;
+			
+			// aapt resource value: 0x7f0b008b
+			public const int mr_custom_control = 2131427467;
+			
+			// aapt resource value: 0x7f0b008c
+			public const int mr_default_control = 2131427468;
+			
+			// aapt resource value: 0x7f0b0087
+			public const int mr_dialog_area = 2131427463;
+			
+			// aapt resource value: 0x7f0b0086
+			public const int mr_expandable_area = 2131427462;
+			
+			// aapt resource value: 0x7f0b009a
+			public const int mr_group_expand_collapse = 2131427482;
+			
+			// aapt resource value: 0x7f0b008e
+			public const int mr_media_main_control = 2131427470;
+			
+			// aapt resource value: 0x7f0b0089
+			public const int mr_name = 2131427465;
+			
+			// aapt resource value: 0x7f0b008f
+			public const int mr_playback_control = 2131427471;
+			
+			// aapt resource value: 0x7f0b0088
+			public const int mr_title_bar = 2131427464;
 			
 			// aapt resource value: 0x7f0b0091
-			public const int mr_volume_group_list = 2131427473;
+			public const int mr_volume_control = 2131427473;
 			
-			// aapt resource value: 0x7f0b0093
-			public const int mr_volume_item_icon = 2131427475;
+			// aapt resource value: 0x7f0b0092
+			public const int mr_volume_group_list = 2131427474;
 			
 			// aapt resource value: 0x7f0b0094
-			public const int mr_volume_slider = 2131427476;
+			public const int mr_volume_item_icon = 2131427476;
+			
+			// aapt resource value: 0x7f0b0095
+			public const int mr_volume_slider = 2131427477;
 			
 			// aapt resource value: 0x7f0b0039
 			public const int multiply = 2131427385;
 			
-			// aapt resource value: 0x7f0b0078
-			public const int navigation_header_container = 2131427448;
+			// aapt resource value: 0x7f0b0079
+			public const int navigation_header_container = 2131427449;
 			
 			// aapt resource value: 0x7f0b0043
 			public const int never = 2131427395;
@@ -2907,8 +3189,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b001d
 			public const int parallax = 2131427357;
 			
-			// aapt resource value: 0x7f0b0051
-			public const int parentPanel = 2131427409;
+			// aapt resource value: 0x7f0b0052
+			public const int parentPanel = 2131427410;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int pin = 2131427358;
@@ -2919,8 +3201,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0008
 			public const int progress_horizontal = 2131427336;
 			
-			// aapt resource value: 0x7f0b005f
-			public const int radio = 2131427423;
+			// aapt resource value: 0x7f0b0060
+			public const int radio = 2131427424;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int right = 2131427366;
@@ -2934,53 +3216,53 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b001b
 			public const int scroll = 2131427355;
 			
-			// aapt resource value: 0x7f0b0059
-			public const int scrollIndicatorDown = 2131427417;
-			
-			// aapt resource value: 0x7f0b0056
-			public const int scrollIndicatorUp = 2131427414;
+			// aapt resource value: 0x7f0b005a
+			public const int scrollIndicatorDown = 2131427418;
 			
 			// aapt resource value: 0x7f0b0057
-			public const int scrollView = 2131427415;
+			public const int scrollIndicatorUp = 2131427415;
+			
+			// aapt resource value: 0x7f0b0058
+			public const int scrollView = 2131427416;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int scrollable = 2131427375;
 			
-			// aapt resource value: 0x7f0b0069
-			public const int search_badge = 2131427433;
-			
-			// aapt resource value: 0x7f0b0068
-			public const int search_bar = 2131427432;
-			
 			// aapt resource value: 0x7f0b006a
-			public const int search_button = 2131427434;
+			public const int search_badge = 2131427434;
 			
-			// aapt resource value: 0x7f0b006f
-			public const int search_close_btn = 2131427439;
+			// aapt resource value: 0x7f0b0069
+			public const int search_bar = 2131427433;
 			
 			// aapt resource value: 0x7f0b006b
-			public const int search_edit_frame = 2131427435;
+			public const int search_button = 2131427435;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int search_go_btn = 2131427441;
+			// aapt resource value: 0x7f0b0070
+			public const int search_close_btn = 2131427440;
 			
 			// aapt resource value: 0x7f0b006c
-			public const int search_mag_icon = 2131427436;
-			
-			// aapt resource value: 0x7f0b006d
-			public const int search_plate = 2131427437;
-			
-			// aapt resource value: 0x7f0b006e
-			public const int search_src_text = 2131427438;
+			public const int search_edit_frame = 2131427436;
 			
 			// aapt resource value: 0x7f0b0072
-			public const int search_voice_btn = 2131427442;
+			public const int search_go_btn = 2131427442;
+			
+			// aapt resource value: 0x7f0b006d
+			public const int search_mag_icon = 2131427437;
+			
+			// aapt resource value: 0x7f0b006e
+			public const int search_plate = 2131427438;
+			
+			// aapt resource value: 0x7f0b006f
+			public const int search_src_text = 2131427439;
 			
 			// aapt resource value: 0x7f0b0073
-			public const int select_dialog_listview = 2131427443;
+			public const int search_voice_btn = 2131427443;
 			
-			// aapt resource value: 0x7f0b005e
-			public const int shortcut = 2131427422;
+			// aapt resource value: 0x7f0b0074
+			public const int select_dialog_listview = 2131427444;
+			
+			// aapt resource value: 0x7f0b005f
+			public const int shortcut = 2131427423;
 			
 			// aapt resource value: 0x7f0b0034
 			public const int showCustom = 2131427380;
@@ -2991,20 +3273,20 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0036
 			public const int showTitle = 2131427382;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int sliding_tabs = 2131427495;
+			// aapt resource value: 0x7f0b00a8
+			public const int sliding_tabs = 2131427496;
+			
+			// aapt resource value: 0x7f0b0078
+			public const int snackbar_action = 2131427448;
 			
 			// aapt resource value: 0x7f0b0077
-			public const int snackbar_action = 2131427447;
-			
-			// aapt resource value: 0x7f0b0076
-			public const int snackbar_text = 2131427446;
+			public const int snackbar_text = 2131427447;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int snap = 2131427356;
 			
-			// aapt resource value: 0x7f0b0050
-			public const int spacer = 2131427408;
+			// aapt resource value: 0x7f0b0051
+			public const int spacer = 2131427409;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int split_action_bar = 2131427337;
@@ -3024,11 +3306,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0027
 			public const int start = 2131427367;
 			
-			// aapt resource value: 0x7f0b009c
-			public const int status_bar_latest_event_content = 2131427484;
+			// aapt resource value: 0x7f0b009d
+			public const int status_bar_latest_event_content = 2131427485;
 			
-			// aapt resource value: 0x7f0b0070
-			public const int submit_area = 2131427440;
+			// aapt resource value: 0x7f0b0071
+			public const int submit_area = 2131427441;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int tabMode = 2131427377;
@@ -3036,41 +3318,41 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b000f
 			public const int terrain = 2131427343;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int text = 2131427492;
+			// aapt resource value: 0x7f0b00a5
+			public const int text = 2131427493;
 			
-			// aapt resource value: 0x7f0b00a2
-			public const int text2 = 2131427490;
-			
-			// aapt resource value: 0x7f0b00a8
-			public const int textInputLayout = 2131427496;
-			
-			// aapt resource value: 0x7f0b0058
-			public const int textSpacerNoButtons = 2131427416;
-			
-			// aapt resource value: 0x7f0b007e
-			public const int textViewStatus = 2131427454;
-			
-			// aapt resource value: 0x7f0b00a0
-			public const int time = 2131427488;
-			
-			// aapt resource value: 0x7f0b004e
-			public const int title = 2131427406;
-			
-			// aapt resource value: 0x7f0b0053
-			public const int title_template = 2131427411;
+			// aapt resource value: 0x7f0b00a3
+			public const int text2 = 2131427491;
 			
 			// aapt resource value: 0x7f0b00a9
-			public const int toolbar = 2131427497;
+			public const int textInputLayout = 2131427497;
+			
+			// aapt resource value: 0x7f0b0059
+			public const int textSpacerNoButtons = 2131427417;
+			
+			// aapt resource value: 0x7f0b007f
+			public const int textViewStatus = 2131427455;
+			
+			// aapt resource value: 0x7f0b00a1
+			public const int time = 2131427489;
+			
+			// aapt resource value: 0x7f0b004f
+			public const int title = 2131427407;
+			
+			// aapt resource value: 0x7f0b0054
+			public const int title_template = 2131427412;
+			
+			// aapt resource value: 0x7f0b00aa
+			public const int toolbar = 2131427498;
 			
 			// aapt resource value: 0x7f0b0028
 			public const int top = 2131427368;
 			
-			// aapt resource value: 0x7f0b0052
-			public const int topPanel = 2131427410;
+			// aapt resource value: 0x7f0b0053
+			public const int topPanel = 2131427411;
 			
-			// aapt resource value: 0x7f0b0074
-			public const int touch_outside = 2131427444;
+			// aapt resource value: 0x7f0b0075
+			public const int touch_outside = 2131427445;
 			
 			// aapt resource value: 0x7f0b000a
 			public const int up = 2131427338;
@@ -3081,8 +3363,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0b0000
 			public const int view_offset_helper = 2131427328;
 			
-			// aapt resource value: 0x7f0b0092
-			public const int volume_item_container = 2131427474;
+			// aapt resource value: 0x7f0b0093
+			public const int volume_item_container = 2131427475;
 			
 			// aapt resource value: 0x7f0b0012
 			public const int wide = 2131427346;
@@ -3121,6 +3403,9 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f080009
 			public const int cancel_button_image_alpha = 2131230729;
 			
+			// aapt resource value: 0x7f08000c
+			public const int circular_indeterminent_interval = 2131230732;
+			
 			// aapt resource value: 0x7f080004
 			public const int design_snackbar_text_max_lines = 2131230724;
 			
@@ -3135,6 +3420,9 @@ namespace LaPurisima.Droid
 			
 			// aapt resource value: 0x7f080003
 			public const int mr_controller_volume_group_list_fade_out_duration_ms = 2131230723;
+			
+			// aapt resource value: 0x7f08000b
+			public const int progressbutton_indeterminent_interval = 2131230731;
 			
 			// aapt resource value: 0x7f08000a
 			public const int status_bar_notification_info_maxnum = 2131230730;
@@ -4046,11 +4334,17 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0a001a
 			public const int CardView_Light = 2131361818;
 			
-			// aapt resource value: 0x7f0a0172
-			public const int MyTheme = 2131362162;
+			// aapt resource value: 0x7f0a0174
+			public const int CircularProgressBar = 2131362164;
 			
-			// aapt resource value: 0x7f0a0173
-			public const int MyTheme_Base = 2131362163;
+			// aapt resource value: 0x7f0a0175
+			public const int CircularProgressBarLight = 2131362165;
+			
+			// aapt resource value: 0x7f0a0176
+			public const int MyTheme = 2131362166;
+			
+			// aapt resource value: 0x7f0a0177
+			public const int MyTheme_Base = 2131362167;
 			
 			// aapt resource value: 0x7f0a004b
 			public const int Platform_AppCompat = 2131361867;
@@ -4081,6 +4375,12 @@ namespace LaPurisima.Droid
 			
 			// aapt resource value: 0x7f0a004f
 			public const int Platform_Widget_AppCompat_Spinner = 2131361871;
+			
+			// aapt resource value: 0x7f0a0172
+			public const int ProgressButton = 2131362162;
+			
+			// aapt resource value: 0x7f0a0173
+			public const int ProgressButton_Pin = 2131362163;
 			
 			// aapt resource value: 0x7f0a005c
 			public const int RtlOverlay_DialogWindowTitle_AppCompat = 2131361884;
@@ -4394,8 +4694,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0a0003
 			public const int Theme_MediaRouter_LightControlPanel = 2131361795;
 			
-			// aapt resource value: 0x7f0a0174
-			public const int Theme_Splash = 2131362164;
+			// aapt resource value: 0x7f0a0178
+			public const int Theme_Splash = 2131362168;
 			
 			// aapt resource value: 0x7f0a0127
 			public const int ThemeOverlay_AppCompat = 2131362087;
@@ -5705,6 +6005,41 @@ namespace LaPurisima.Droid
 			// aapt resource value: 2
 			public const int ForegroundLinearLayout_foregroundInsidePadding = 2;
 			
+			public static int[] HoloCircularProgressBar = new int[]
+			{
+					2130772319,
+					2130772320,
+					2130772321,
+					2130772322,
+					2130772323,
+					2130772324,
+					2130772325,
+					2130772326};
+			
+			// aapt resource value: 0
+			public const int HoloCircularProgressBar_circular_gravity = 0;
+			
+			// aapt resource value: 6
+			public const int HoloCircularProgressBar_circular_indeterminate = 6;
+			
+			// aapt resource value: 7
+			public const int HoloCircularProgressBar_circular_indeterminate_interval = 7;
+			
+			// aapt resource value: 3
+			public const int HoloCircularProgressBar_circular_marker_progress = 3;
+			
+			// aapt resource value: 2
+			public const int HoloCircularProgressBar_circular_progress = 2;
+			
+			// aapt resource value: 5
+			public const int HoloCircularProgressBar_circular_progress_background_color = 5;
+			
+			// aapt resource value: 4
+			public const int HoloCircularProgressBar_circular_progress_color = 4;
+			
+			// aapt resource value: 1
+			public const int HoloCircularProgressBar_circular_stroke_width = 1;
+			
 			public static int[] LinearLayoutCompat = new int[]
 			{
 					16842927,
@@ -6069,9 +6404,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
 			
-			public static int[] ProgressWheel = new int[]
+			public static int[] ProgressButton = new int[]
 			{
-					2130772307,
+					16842970,
+					16842981,
+					16843534,
 					2130772308,
 					2130772309,
 					2130772310,
@@ -6083,6 +6420,63 @@ namespace LaPurisima.Droid
 					2130772316,
 					2130772317,
 					2130772318};
+			
+			// aapt resource value: 1
+			public const int ProgressButton_android_clickable = 1;
+			
+			// aapt resource value: 0
+			public const int ProgressButton_android_focusable = 0;
+			
+			// aapt resource value: 2
+			public const int ProgressButton_android_selectableItemBackground = 2;
+			
+			// aapt resource value: 5
+			public const int ProgressButton_circleColor = 5;
+			
+			// aapt resource value: 12
+			public const int ProgressButton_indeterminate = 12;
+			
+			// aapt resource value: 13
+			public const int ProgressButton_indeterminate_interval = 13;
+			
+			// aapt resource value: 10
+			public const int ProgressButton_innerSize = 10;
+			
+			// aapt resource value: 4
+			public const int ProgressButton_max = 4;
+			
+			// aapt resource value: 11
+			public const int ProgressButton_pinned = 11;
+			
+			// aapt resource value: 7
+			public const int ProgressButton_pinnedDrawable = 7;
+			
+			// aapt resource value: 3
+			public const int ProgressButton_progress = 3;
+			
+			// aapt resource value: 6
+			public const int ProgressButton_progressColor = 6;
+			
+			// aapt resource value: 9
+			public const int ProgressButton_shadowDrawable = 9;
+			
+			// aapt resource value: 8
+			public const int ProgressButton_unpinnedDrawable = 8;
+			
+			public static int[] ProgressWheel = new int[]
+			{
+					2130772328,
+					2130772329,
+					2130772330,
+					2130772331,
+					2130772332,
+					2130772333,
+					2130772334,
+					2130772335,
+					2130772336,
+					2130772337,
+					2130772338,
+					2130772339};
 			
 			// aapt resource value: 3
 			public const int ProgressWheel_ahBarColor = 3;
@@ -6491,6 +6885,13 @@ namespace LaPurisima.Droid
 			
 			// aapt resource value: 2
 			public const int TextInputLayout_hintTextAppearance = 2;
+			
+			public static int[] Theme = new int[]
+			{
+					2130772327};
+			
+			// aapt resource value: 0
+			public const int Theme_circularProgressBarStyle = 0;
 			
 			public static int[] Toolbar = new int[]
 			{

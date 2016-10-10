@@ -5,17 +5,57 @@ namespace LaPurisima
 {
 	public class CarouselPageOrder : CarouselPage
 	{
+		ConfirmOrderPage _confirmOrder;
+
+
 		public CarouselPageOrder()
 		{
 
 			var pagina1 = new SelectProductoPage();
 			var pagina2 = new MakeOrderPage();
-			var pagina3 = new ConfirmOrderPage();
+			_confirmOrder = new ConfirmOrderPage();
 
+			pagina1.NextPage = NextPage;
+			pagina2.NextPage = NextPage;
+			_confirmOrder.NextPage = NextPage;
 
 			Children.Add(pagina1);
 			Children.Add(pagina2);
-			Children.Add(pagina3);
+			Children.Add(_confirmOrder);
+
+			Title = Localize.GetString("product_selection", "");
+		}
+
+		protected override void OnCurrentPageChanged()
+		{
+			base.OnCurrentPageChanged();
+			var n = Children.IndexOf(CurrentPage);
+			switch (n)
+			{
+				case 0:
+					Title = Localize.GetString("product_selection","");
+					break;
+				case 1:
+					Title = Localize.GetString("location_selection", "");
+					break;
+				case 2:
+					Title = Localize.GetString("confirm_order", "");
+					break;
+				default:
+					Title = Localize.GetString("product_selection", "");
+					break;
+			}
+
+			if (n == 2)
+				_confirmOrder.UpdateView();
+		}
+
+		void NextPage(ContentPage obj)
+		{
+			var n = Children.IndexOf(obj);
+			if (Children.Count > n)
+				CurrentPage = Children[n + 1];
+
 		}
 	}
 }
