@@ -35,7 +35,7 @@ namespace LaPurisima
 			EntryNameProfile.IsEnabled = false;
 			EntryCalleProfile.IsEnabled = false;
 			EntryColoniaProfile.IsEnabled = false;
-			var user = PropertiesManager.GetUserInfo()
+			var user = PropertiesManager.GetUserInfo();
 			EntryNameProfile.Text = user.nombre;
 			EntryCalleProfile.Text = user.calle;
 			EntryColoniaProfile.Text = user.colonia;

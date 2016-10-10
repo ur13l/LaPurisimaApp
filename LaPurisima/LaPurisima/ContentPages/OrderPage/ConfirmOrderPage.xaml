@@ -6,7 +6,8 @@
 	xmlns:i18n ="clr-namespace:LaPurisima;assembly=LaPurisima"
 	xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
 	<local:BasePage.Content>
-		<StackLayout>
+		<StackLayout
+			BackgroundColor="#fff">
 			<Image
 				HorizontalOptions="FillAndExpand"
 				Source           ="logo.png" />
@@ -116,33 +117,45 @@
 								HorizontalOptions="FillAndExpand"
 								Padding          ="5">
 								<StackLayout
-									Orientation      ="Horizontal"
+									Orientation      ="Vertical"
 									HorizontalOptions="StartAndExpand">
 									<Label
-										Text           ="{Binding cantidad}"
-										VerticalOptions="Center" />
+										Text          ="{Binding cantidad,StringFormat='Cantidad {0}'}"
+										FontSize      ="20"
+										FontAttributes="Bold" />
 									<Label
-										Text           ="{Binding nombre}"
-										VerticalOptions="Center" />
+										Text          ="{Binding nombre,StringFormat='Producto {0}'}"
+										FontSize      ="20"
+										FontAttributes="Bold" />
 								</StackLayout>
 								<Label
-									Text           ="{Binding precio}"
-									VerticalOptions="Center" />
+									Text           ="{Binding precio, StringFormat='Total: {0} pesos'}"
+									VerticalOptions="Center"
+									FontSize       ="30"
+									FontAttributes ="Bold" />
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<StackLayout Spacing="10" Orientation="Vertical">
-						<Button x:Name="SaveButton" Text="{i18n:Translate Ask}" TextColor="#3F92DC" BackgroundColor="White" Clicked="Pedir">
-							<Button.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Button.FontFamily>
-						</Button>
-					</StackLayout>
+			<StackLayout
+				Spacing    ="10"
+				Orientation="Vertical">
+				<Button
+					x:Name         ="SaveButton"
+					Text           ="{i18n:Translate Ask}"
+					TextColor      ="#3F92DC"
+					BackgroundColor="White"
+					Clicked        ="Pedir">
+					<Button.FontFamily>
+						<OnPlatform
+							x:TypeArguments="x:String">
+							<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+							<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+						</OnPlatform>
+					</Button.FontFamily>
+				</Button>
+			</StackLayout>
 		</StackLayout>
 	</local:BasePage.Content>
 </local:BasePage>
