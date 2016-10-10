@@ -42,6 +42,46 @@ namespace LaPurisima
 		}
 
 
+		public static async Task<string> AskOrder(Pedido _pedido)
+		{
+			var jsonResponse = await PostObject<Pedido>(new Pedido()
+			{
+				api_token = _pedido.api_token,
+				latitud = _pedido.latitud,
+				longitud = _pedido.longitud,
+				direccion = _pedido.direccion,
+				detalles = _pedido.detalles,
+			}, WEB_METHODS.Ask);
+
+			if (jsonResponse == null)
+			{
+				return null;
+			}
+
+			return jsonResponse;
+		}
+
+
+			/*
+{
+    "api_token": "neMdEyQE9xz7SKaRFObZm7fY3bCcNw7TxNvTGokk5abi1SH7Lq8SEfxJOtav",
+    "latitud": "180",
+    "longitud": "130",
+    "direccion": "Conocida",
+    "detalles": [
+        {
+            "producto_id": 52,
+            "cantidad": 1
+        },
+        {
+            "producto_id": 62,
+            "cantidad": 2
+        }
+    ]
+}*/
+
+
+
 		public static async Task<string> ForgotEmail(string mail)
 		{
 			var jsonResponse = await PostObject<User>(new User()

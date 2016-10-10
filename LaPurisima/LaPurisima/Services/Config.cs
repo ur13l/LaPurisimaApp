@@ -3,7 +3,7 @@ namespace LaPurisima
 {
 	public enum WEB_METHODS
 	{
-		Autenticate,Forgot,Update
+		Autenticate,Forgot,Update,Ask
 	}
 
 	public class Config
@@ -22,6 +22,8 @@ namespace LaPurisima
 					return "password/email";
 				case WEB_METHODS.Update:
 					return "usuario/update";	
+				case WEB_METHODS.Ask:
+					return "pedido/nuevo";
 				default:
 					
 					break;

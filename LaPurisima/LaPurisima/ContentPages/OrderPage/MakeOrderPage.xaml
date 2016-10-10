@@ -6,12 +6,6 @@
 	x:Class="LaPurisima.MakeOrderPage">
 	<ContentPage.Content>
 		<StackLayout>
-			<maps:Map
-				HorizontalOptions="FillAndExpand"
-				HeightRequest="200"
-				x:Name="Map"
-				IsShowingUser="true"
-				MapType="Satellite" />
 			<StackLayout
 				Orientation="Vertical">
 				<Label

@@ -288,4 +288,11 @@
 	    <value>El correo no existe</value>
 	    <comment>Error message</comment>
 	</data>  
+
+	<data
+		name="Ask"
+		xml:space="preserve">
+	    <value>Pedir</value>
+	    <comment>ask a service</comment>
+	</data> 
 </root>

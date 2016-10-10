@@ -214,5 +214,11 @@ namespace LaPurisima.Resources {
                 return ResourceManager.GetString("ErrorMessageDoesntExist", resourceCulture);
             }
         }
+        
+        internal static string Ask {
+            get {
+                return ResourceManager.GetString("Ask", resourceCulture);
+            }
+        }
     }
 }

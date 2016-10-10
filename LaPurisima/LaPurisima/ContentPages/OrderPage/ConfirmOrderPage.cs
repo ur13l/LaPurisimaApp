@@ -5,24 +5,53 @@ using Xamarin.Forms;
 
 namespace LaPurisima
 {
-	public partial class ConfirmOrderPage : ContentPage
+	public partial class ConfirmOrderPage : BasePage
 	{
 		Pedido _pedido;
+
+
+		async void Pedir(object sender, System.EventArgs e)
+		{
+			var progressDependency = DependencyService.Get<IProgress>();
+			if (progressDependency != null)
+				progressDependency.ShowProgress(Localize.GetString("LoadingText", ""));
+			if (ShowProgress != null)
+				ShowProgress("Validando");
+			var response = await ClientLaPurisima.AskOrder(_pedido);
+			DisplayAlert(Localize.GetString("ErrorTitleText", ""), Localize.GetString("VerifyMailPassLabel", ""), Localize.GetString("OkButtonLabel", ""));
+			if (progressDependency != null)
+				progressDependency.Dismiss();
+			if (HideProgress != null)
+				HideProgress();
+
+		}
+
+
+
 
 		public ConfirmOrderPage(Pedido pedido = null)
 		{
 			InitializeComponent();
-
-			if(pedido == null)
-			_pedido = new Pedido()
-			{
-				direccion = "conocida",
-				detalles = new List<Producto>()
+			EntryNameProfile.IsEnabled = false;
+			EntryCalleProfile.IsEnabled = false;
+			EntryColoniaProfile.IsEnabled = false;
+			var user = PropertiesManager.GetUserInfo()
+			EntryNameProfile.Text = user.nombre;
+			EntryCalleProfile.Text = user.calle;
+			EntryColoniaProfile.Text = user.colonia;
+			if (pedido == null)
+				_pedido = new Pedido()
+				{
+					api_token = user.api_token,
+					longitud = "100.22",
+					latitud = "-2.242",
+					direccion = "conocida",
+					detalles = new List<Producto>()
 				{
 					new Producto(){
 						nombre = "p1",
 						cantidad = 3,
-							precio = 40,
+						precio = 40,
 					},
 					new Producto(){
 						nombre = "p2",
@@ -30,7 +59,11 @@ namespace LaPurisima
 						precio = 40,
 					},
 				},
-			};
+				};
+			ListView.ItemsSource = _pedido.detalles;
 		}
 	}
 }
+
+
+
