@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -20,10 +20,12 @@
 					WidthRequest="70"
 					Margin="10" />
 				<Label
+						x:Name="_labelNombre"
 					Text="Nombre"
 					HorizontalOptions="Center"
 					TextColor="White" />
 				<Label
+						x:Name="_labelMail"
 					Text="E-mail"
 					HorizontalOptions="Center"
 					TextColor="White" />

@@ -1,90 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<local:BasePage
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-	x:Class="LaPurisima.MakeOrderPage"
-		xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" >
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" x:Class="LaPurisima.MakeOrderPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
 	<ContentPage.Content>
-		<StackLayout>
-			<maps:Map
-				HorizontalOptions="FillAndExpand"
-				HeightRequest="200"
-				x:Name="Map"
-				IsShowingUser="true"
-				MapType="Satellite" />
-			<StackLayout
-				Orientation="Vertical">
-				<Label
-					Text="Calle"
-					HorizontalOptions="Center"
-					FontSize="24"
-					TextColor="#929292">
-					<Label.FontFamily>
-						<OnPlatform
-							x:TypeArguments="x:String">
-							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-						</OnPlatform>
-					</Label.FontFamily>
-				</Label>
-				<Label
-					Text="Rio escondido #215"
-					HorizontalOptions="Center"
-					FontSize="24"
-					TextColor="#929292">
-					<Label.FontFamily>
-						<OnPlatform
-							x:TypeArguments="x:String">
-							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-						</OnPlatform>
-					</Label.FontFamily>
-				</Label>
-				<Label
-					Text="Colonia"
-					HorizontalOptions="Center"
-					FontSize="24"
-					TextColor="#929292">
-					<Label.FontFamily>
-						<OnPlatform
-							x:TypeArguments="x:String">
-							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-						</OnPlatform>
-					</Label.FontFamily>
-				</Label>
-				<Label
-					Text="Potales de San Diego"
-					HorizontalOptions="Center"
-					FontSize="24"
-					TextColor="#929292">
-					<Label.FontFamily>
-						<OnPlatform
-							x:TypeArguments="x:String">
-							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-						</OnPlatform>
-					</Label.FontFamily>
-				</Label>
-				<Label
-					Text="Cantidad 2"
-					HorizontalOptions="Center"
-					FontSize="24"
-					TextColor="#929292">
-					<Label.FontFamily>
-						<OnPlatform
-							x:TypeArguments="x:String">
-							<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-							<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-						</OnPlatform>
-					</Label.FontFamily>
-				</Label>
-				<Button
-					Text="Hacer Pedido"
-					TextColor="#3F92DC"
-					BackgroundColor="White" Clicked="MakeOrder"/>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<local:CustomMap x:Name="Map" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsShowingUser="true" MapType="Street" />
+				<Image HeightRequest="50" TranslationY="-15" VerticalOptions="Center" HorizontalOptions="Center" Source="pin.png" />
+				<BoxView HeightRequest="4" WidthRequest="4" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Red"  />
+				<Button x:Name="_confirmLocationBtn" TranslationY="40" Scale="0" Text="Confirmar ubicacion" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+			</Grid>
+			<StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+				<Grid Padding="10" HorizontalOptions="FillAndExpand">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="1*" />
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<Label Grid.Row="0" Grid.Column="0" Text="Calle" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="End" FontSize="18" TextColor="Black" FontAttributes="Bold">
+						<Label.FontFamily>
+							<OnPlatform x:TypeArguments="x:String">
+								<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+								<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+							</OnPlatform>
+						</Label.FontFamily>
+					</Label>
+					<Label Grid.Row="0" Grid.Column="1" Text=" " x:Name="_street" HorizontalOptions="End" FontSize="18" TextColor="#929292" LineBreakMode="TailTruncation">
+						<Label.FontFamily>
+							<OnPlatform x:TypeArguments="x:String">
+								<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+								<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+							</OnPlatform>
+						</Label.FontFamily>
+					</Label>
+					<Label Grid.Row="0" Grid.Column="2" Text="#" HorizontalTextAlignment="End" FontSize="18" TextColor="Black" FontAttributes="Bold">
+						<Label.FontFamily>
+							<OnPlatform x:TypeArguments="x:String">
+								<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+								<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+							</OnPlatform>
+						</Label.FontFamily>
+					</Label>
+					<Label Grid.Row="0" Grid.Column="3" Text=" " x:Name="_number" HorizontalOptions="End" FontSize="18" TextColor="#929292">
+						<Label.FontFamily>
+							<OnPlatform x:TypeArguments="x:String">
+								<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+								<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+							</OnPlatform>
+						</Label.FontFamily>
+					</Label>
+				</Grid>
+				<BoxView BackgroundColor="#c9c9c9" HeightRequest="0.5" />
+				<Grid Padding="10" HorizontalOptions="FillAndExpand">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="1*" />
+					</Grid.ColumnDefinitions>
+					<Label Grid.Row="0" Grid.Column="0" Text="Colonia" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="End" FontSize="18" TextColor="Black" FontAttributes="Bold">
+						<Label.FontFamily>
+							<OnPlatform x:TypeArguments="x:String">
+								<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+								<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+							</OnPlatform>
+						</Label.FontFamily>
+					</Label>
+					<Label Grid.Row="0" Grid.Column="1" Text=" " x:Name="_colony" HorizontalOptions="End" FontSize="18" TextColor="#929292">
+						<Label.FontFamily>
+							<OnPlatform x:TypeArguments="x:String">
+								<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
+								<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
+							</OnPlatform>
+						</Label.FontFamily>
+					</Label>
+				</Grid>
+				<Button Text="Hacer Pedido" TextColor="#3F92DC" BackgroundColor="White" Clicked="MakeOrder" />
 			</StackLayout>
-		</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </local:BasePage>

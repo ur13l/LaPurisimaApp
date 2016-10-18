@@ -2819,35 +2819,41 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0200ce
 			public const int mr_ic_play_light = 2130837710;
 			
-			// aapt resource value: 0x7f0200d8
-			public const int notification_template_icon_bg = 2130837720;
+			// aapt resource value: 0x7f0200da
+			public const int notification_template_icon_bg = 2130837722;
 			
 			// aapt resource value: 0x7f0200cf
-			public const int pin_progress_pinned = 2130837711;
+			public const int pin = 2130837711;
 			
 			// aapt resource value: 0x7f0200d0
-			public const int pin_progress_shadow = 2130837712;
+			public const int pin_progress_pinned = 2130837712;
 			
 			// aapt resource value: 0x7f0200d1
-			public const int pin_progress_unpinned = 2130837713;
+			public const int pin_progress_shadow = 2130837713;
 			
 			// aapt resource value: 0x7f0200d2
-			public const int profile = 2130837714;
+			public const int pin_progress_unpinned = 2130837714;
 			
 			// aapt resource value: 0x7f0200d3
-			public const int roundedbg = 2130837715;
+			public const int placeholder_image = 2130837715;
 			
 			// aapt resource value: 0x7f0200d4
-			public const int roundedbgdark = 2130837716;
+			public const int profile = 2130837716;
 			
 			// aapt resource value: 0x7f0200d5
-			public const int scrubber_control_normal_holo = 2130837717;
+			public const int roundedbg = 2130837717;
 			
 			// aapt resource value: 0x7f0200d6
-			public const int scrubber_control_pressed_holo = 2130837718;
+			public const int roundedbgdark = 2130837718;
 			
 			// aapt resource value: 0x7f0200d7
-			public const int splash_centered = 2130837719;
+			public const int scrubber_control_normal_holo = 2130837719;
+			
+			// aapt resource value: 0x7f0200d8
+			public const int scrubber_control_pressed_holo = 2130837720;
+			
+			// aapt resource value: 0x7f0200d9
+			public const int splash_centered = 2130837721;
 			
 			static Drawable()
 			{

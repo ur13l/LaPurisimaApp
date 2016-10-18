@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Xamarin.Forms;
 
 namespace LaPurisima
 {
-	public partial class UserSignUp : ContentPage
+	public partial class UserSignUp : BasePage
 	{
 		public UserSignUp()
 		{
@@ -19,6 +20,38 @@ namespace LaPurisima
 		{
 			if (await Validate())
 			{
+				var user = new User()
+				{
+					calle = EntryCalleAlta.Text,
+					colonia = EntryColoniaAlta.Text,
+					codigo_postal = EntryCPAlta.Text,
+					email = EntryEmailAlta.Text,
+					created_at = DateTime.Now.ToString("yy-MMM-dd ddd"),
+					nombre = EntryNameAlta.Text,
+					password = EntryPassAlta.Text,
+					referencia = Referencias.Text,
+					tipo_usuario_id = 2,
+				};
+ 
+				ShowProgress("Validando");
+
+				var resp = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.CrearUsuario, true);
+				if (ClientLaPurisima.IsGood(resp))
+				{
+					//await DisplayAlert("", "Usuario Creado Correctamente", "OK");
+					var response = await ClientLaPurisima.LoginUser(user.email, user.password);
+					var userInfo = JsonConvert.DeserializeObject<User>(response);
+					PropertiesManager.SaveUserInfo(userInfo);
+
+					ShowProgressType(IProgressType.Done);
+					await Task.Delay(1000);
+					HideProgress();
+					await Navigation.PushModalAsync(new RootPage());
+				}
+				else {
+					HideProgress();
+					await DisplayAlert("Error", ClientLaPurisima.GetMessageForError(ClientLaPurisima.GetWebError(resp)), "OK");
+				}
 
 			}
 			else {
@@ -39,7 +72,7 @@ namespace LaPurisima
 
 
 			//mail
-			if (ValidateEntry(EntryEmailAlta, "VerifyMailLabel", @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
+			if (!ValidateEntry(EntryEmailAlta, "VerifyMailLabel", @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
 			{
 				return false;
 			}
@@ -52,7 +85,7 @@ namespace LaPurisima
 			}
 
 			//confirm pass
-			if (!ValidateEntry(EntryPassConfAlta, "ConfirmPassLabel"))
+			if (!ValidateEntry(EntryPassConfAlta, "EnterPassLabel"))
 			{
 				return false;
 			}
@@ -62,11 +95,6 @@ namespace LaPurisima
 			{
 				EntryPassAlta.Focus();
 				ShowErrorMessage("EnterMatchingPassLabel");
-				return false;
-			}
-
-			if (!ValidateEntry(EntryPassConfAlta, "ConfirmPassLabel"))
-			{
 				return false;
 			}
 
@@ -89,12 +117,11 @@ namespace LaPurisima
 			if (string.IsNullOrEmpty(entry.Text))
 			{
 				valid = false;
-				return false;
 			}
 
 			if (!string.IsNullOrEmpty(regex))
 			{
-				valid = !Regex.IsMatch(entry.Text, regex, options);
+				valid = Regex.IsMatch(entry.Text, regex, options);
 			}
 
 			if (!valid)
@@ -108,7 +135,8 @@ namespace LaPurisima
 
 		public async void ShowErrorMessage(string label)
 		{
-			await DisplayAlert("Error", Localize.GetString(label, ""), Localize.GetString("OkButtonLabel", ""));
+			var message = Localize.GetString(label, "");
+			await DisplayAlert("Error", message, Localize.GetString("OkButtonLabel", ""));
 		}
 
 		//https://maps.googleapis.com/maps/api/geocode/json?language=es&latlng=21.1165064,-101.6781424

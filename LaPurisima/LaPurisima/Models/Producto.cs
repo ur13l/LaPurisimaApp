@@ -35,6 +35,8 @@ namespace LaPurisima
 		}
 		[Ignored]
 		public int cantidad { get; set; }
+		[Ignored]
+		public int total { get { return cantidad * precio; }}
 		#endregion
 	}
 }

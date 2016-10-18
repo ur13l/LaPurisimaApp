@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.ConfirmOrderPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" >
-	<ContentPage.Content>
-		<Label Text="confirmar pedido" HorizontalOptions="Center" VerticalOptions="Center"/>
-	</ContentPage.Content>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.ConfirmOrderPage" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
+	<local:BasePage.Content>
+		<ScrollView>
+			<StackLayout BackgroundColor="#fff">
+				<Image HorizontalOptions="Center" Source="logo.png" HeightRequest="90" />
+				<StackLayout Spacing="10" Orientation="Vertical">
+					<Label HorizontalOptions="Center" Text="{i18n:Translate NameAltaText}" TextColor="#000000" />
+					<Entry x:Name="EntryNameProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate NameAltaText}" />
+				</StackLayout>
+				<StackLayout Spacing="10" Orientation="Vertical">
+					<Label HorizontalOptions="Center" Text="{i18n:Translate CalleAltaText}" TextColor="#000000" />
+					<Entry x:Name="EntryCalleProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CalleAltaText}" />
+				</StackLayout>
+				<StackLayout Spacing="10" Orientation="Vertical">
+					<Label HorizontalOptions="Center" Text="{i18n:Translate ColoniaAltaText}" TextColor="#000000" />
+					<Entry x:Name="EntryColoniaProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}" />
+				</StackLayout>
+				<Label Text="Productos: " HorizontalOptions="Start" FontSize="22" FontAttributes="Bold" Margin="10" />
+				<ListView x:Name="_listView" HasUnevenRows="true" Margin="15,5,0,0">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<StackLayout BackgroundColor="White" Orientation="Horizontal" HeightRequest="45" Spacing="0" HorizontalOptions="FillAndExpand" Padding="5">
+									<Label Text="{Binding nombre}" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" />
+									<Label Text="{Binding cantidad,StringFormat='({0})'}" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" />
+									<Label Text="{Binding total,StringFormat=': ${0}'}" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" />
+								</StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+					<ListView.Footer>
+						<Label x:Name="_totalLabel" Text="Total:" HorizontalOptions="End" FontSize="22" FontAttributes="Bold" />
+					</ListView.Footer>
+				</ListView>
+				<StackLayout Spacing="10" Orientation="Vertical">
+					<Button x:Name="SaveButton" Text="Continuar" TextColor="#3F92DC" BackgroundColor="White" Clicked="Pedir" />
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</local:BasePage.Content>
 </local:BasePage>

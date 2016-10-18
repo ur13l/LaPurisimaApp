@@ -2,7 +2,8 @@
 using Xamarin.Forms.Platform.Android;
 using LaPurisima;
 using LaPurisima.Droid;
-using com.refractored.monodroidtoolkit.imageloader;
+using UniversalImageLoader.Core;
+//using com.refractored.monodroidtoolkit.imageloader;
 
 [assembly: ExportRenderer(typeof(CustomImage), typeof(CustomImageRenderer))]
 namespace LaPurisima.Droid
@@ -11,13 +12,15 @@ namespace LaPurisima.Droid
 	{
 		ImageLoader imageLoader;
 
+
 		protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
 		{
 			base.OnElementChanged(e);
 			if (Control != null && Element != null)
 			{
 				CustomImage customImage = e.NewElement as CustomImage;
-				imageLoader = ImageLoaderCache.GetImageLoader(this);
+				imageLoader = ImageLoader.Instance;
+
 				SetImageUrl(customImage.ImageUrl);
 			}
 		}
@@ -40,22 +43,28 @@ namespace LaPurisima.Droid
 			}
 			if (imageUrl != null)
 			{
-				imageLoader.DisplayImage(imageUrl, Control, -1);
+				var b = new DisplayImageOptions.Builder();
+				b.DecodingOptions(new Android.Graphics.BitmapFactory.Options()
+				{
+					
+					InSampleSize = 50,
+				});
+				imageLoader.DisplayImage(imageUrl, Control, b.Build());
 			}
 		}
 	}
 
-	public static class ImageLoaderCache
-	{
-		static ImageLoader ilLoader;
+	//public static class ImageLoaderCache
+	//{
+	//	static ImageLoader ilLoader;
 
-		public static ImageLoader GetImageLoader(CustomImageRenderer customImageRenderer)
-		{
-			if (ilLoader == null)
-			{
-				ilLoader = new ImageLoader(global::Android.App.Application.Context, 300, 40);
-			}
-			return ilLoader;
-		}
-	}
+	//	public static ImageLoader GetImageLoader(CustomImageRenderer customImageRenderer)
+	//	{
+	//		if (ilLoader == null)
+	//		{
+	//			ilLoader = new ImageLoader(global::Android.App.Application.Context, 64, 40);
+	//		}
+	//		return ilLoader;
+	//	}
+	//}
 }

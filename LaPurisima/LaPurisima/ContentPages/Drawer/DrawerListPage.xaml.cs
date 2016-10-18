@@ -52,6 +52,8 @@ namespace LaPurisima
 				Page = DrawerPage.LogOut,
 			});
 
+			UpdateView();
+
 			if (Device.OS == TargetPlatform.iOS)
 			{
 				Icon = "menu_icon.png";
@@ -70,6 +72,15 @@ namespace LaPurisima
 
 		}
 
+		public void UpdateView()
+		{
+			if (PropertiesManager.IsLogedIn())
+			{
+				var user = PropertiesManager.GetUserInfo();
+				_labelMail.Text = user.email;
+				_labelNombre.Text = user.nombre;
+			}
+		}
 
 		class ItemDrawer
 		{

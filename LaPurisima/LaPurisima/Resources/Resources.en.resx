@@ -188,6 +188,13 @@
 	    <value>This e-mail doesn't exist</value>
 	    <comment>Error message</comment>
 	</data> 
+
+	<data
+		name="MakeOrder"
+		xml:space="preserve">
+	    <value>Make order</value>
+	    <comment>ask a service</comment>
+	</data> 
 	
 </root>
 

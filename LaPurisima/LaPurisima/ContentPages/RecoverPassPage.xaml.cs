@@ -22,8 +22,8 @@ namespace LaPurisima
 				var progressDependency = DependencyService.Get<IProgress>();
 				if (progressDependency != null)
 					progressDependency.ShowProgress("Validando");
-				if (ShowProgress != null)
-					ShowProgress("Validando");
+				if (ShowProgressMessage != null)
+					ShowProgressMessage("Validando");
 				var response = await ClientLaPurisima.ForgotEmail(EntryEmail.Text);
 				if (ValidateResponse(response))
 				{
@@ -33,8 +33,8 @@ namespace LaPurisima
 
 				if (progressDependency != null)
 					progressDependency.Dismiss();
-				if (HideProgress != null)
-					HideProgress();
+				if (HideProgressAction != null)
+					HideProgressAction();
 			}
 
 		}

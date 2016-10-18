@@ -84,6 +84,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>5dbe9993-96c8-45b1-94d6-d6450f4fd8e8</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -184,6 +185,10 @@
     <BundleResource Include="Resources\location.png" />
     <BundleResource Include="Resources\location%402x.png" />
     <BundleResource Include="Resources\location%403x.png" />
+    <BundleResource Include="Resources\placeholder_image.png" />
+    <BundleResource Include="Resources\pin.png" />
+    <BundleResource Include="Resources\pin%402x.png" />
+    <BundleResource Include="Resources\pin%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="btprogresshud">

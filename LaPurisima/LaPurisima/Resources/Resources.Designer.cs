@@ -281,6 +281,12 @@ namespace LaPurisima.Resources {
             }
         }
         
+        internal static string References {
+            get {
+                return ResourceManager.GetString("References", resourceCulture);
+            }
+        }
+        
         internal static string UseMapLabel {
             get {
                 return ResourceManager.GetString("UseMapLabel", resourceCulture);
@@ -320,6 +326,60 @@ namespace LaPurisima.Resources {
         internal static string confirm_order {
             get {
                 return ResourceManager.GetString("confirm_order", resourceCulture);
+            }
+        }
+        
+        internal static string Ask {
+            get {
+                return ResourceManager.GetString("Ask", resourceCulture);
+            }
+        }
+        
+        internal static string MakeOrder {
+            get {
+                return ResourceManager.GetString("MakeOrder", resourceCulture);
+            }
+        }
+        
+        internal static string MakeOrderAgain {
+            get {
+                return ResourceManager.GetString("MakeOrderAgain", resourceCulture);
+            }
+        }
+        
+        internal static string OrderMade {
+            get {
+                return ResourceManager.GetString("OrderMade", resourceCulture);
+            }
+        }
+        
+        internal static string ErrorMakingOrder {
+            get {
+                return ResourceManager.GetString("ErrorMakingOrder", resourceCulture);
+            }
+        }
+        
+        internal static string ErrorEmailExists {
+            get {
+                return ResourceManager.GetString("ErrorEmailExists", resourceCulture);
+            }
+        }
+        
+        internal static string ErrorServerResponse {
+            get {
+                return ResourceManager.GetString("ErrorServerResponse", resourceCulture);
+            }
+        }
+        
+        internal static string DoneLabel {
+            get {
+                return ResourceManager.GetString("DoneLabel", resourceCulture);
+            }
+        }
+        
+        internal static string LogedInLabel {
+            get {
+                return ResourceManager.GetString("LogedInLabel", resourceCulture);
             }
         }
     }

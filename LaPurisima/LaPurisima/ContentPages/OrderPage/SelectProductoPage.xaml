@@ -4,46 +4,59 @@
 		<Grid>
 			<Grid.RowDefinitions>
 				<!--<RowDefinition Height="60" />-->
+				<RowDefinition Height="Auto" />
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
-			<ListView Grid.Row="0" Grid.Column="0" x:Name="_listView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true">
-				<ListView.Header>
-					 <!--Grid.Row="0" Grid.Column="0"-->
-					<SearchBar x:Name="_searchBar" HeightRequest="60" HorizontalOptions="FillAndExpand" />
-				</ListView.Header>
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<ViewCell>
-							<StackLayout BackgroundColor="White" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" Padding="5">
-								<local:CustomImage ImageUrl="{Binding imagen}" WidthRequest="90"/>
-								<StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
-									<Label Text="{Binding nombre}" FontSize="20" FontAttributes="Bold"/>
-									<Label Text="{Binding descripcion}"  FontSize="12"/>
-									<Label Text="{Binding precio,StringFormat='${0}'}" HorizontalOptions="End" />
-								</StackLayout>
-								<StackLayout Orientation="Vertical" Spacing="0">
-									<Button Text="+1" Clicked="AddCantidad" />
-									<Button Text="-1" Clicked="SubstractCantidad" />
-								</StackLayout>
-								<Entry Text="{Binding cantidad,StringFormat='{0}'}" Keyboard="Numeric" VerticalOptions="Center" FontSize="25" WidthRequest="30"/>
-							</StackLayout>
-						</ViewCell>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-				<ListView.Footer>
-					<StackLayout  Orientation="Horizontal">
-				<Label Text="Total:" />
-				<Label x:Name="_totalLabel" Text="$0" />
-				<Button Text="Continuar"  Clicked="ContinueClicked"/>
+			<SearchBar Grid.Row="0" Grid.Column="0" x:Name="_searchBar" HeightRequest="60" HorizontalOptions="FillAndExpand" />
+			<Frame Grid.Row="1" Grid.Column="0" x:Name="_listContainer" BackgroundColor="#66c9c9c9" Margin="10" Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<Frame.Content>
+					<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+						<ListView x:Name="_listView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HasUnevenRows="true" IsPullToRefreshEnabled="true">
+							<ListView.ItemTemplate>
+								<DataTemplate>
+									<ViewCell>
+										<Grid BackgroundColor="White" ColumnSpacing="7" HorizontalOptions="FillAndExpand">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="50" />
+												<ColumnDefinition Width="1*" />
+												<ColumnDefinition Width="60" />
+												<ColumnDefinition Width="55" />
+											</Grid.ColumnDefinitions>
+											<local:CustomImage Grid.Row="0" Grid.Column="0" Source="placeholder_image.png" ImageUrl="{Binding imagen}" WidthRequest="90" HeightRequest="90" Aspect="AspectFit" />
+											<StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalOptions="StartAndExpand" VerticalOptions="Center">
+												<Label Text="{Binding nombre}" FontSize="20" FontAttributes="Bold" />
+												<Label Text="{Binding descripcion}" FontSize="12" />
+												<Label Text="{Binding precio,StringFormat='${0}'}" HorizontalOptions="End" />
+											</StackLayout>
+											<StackLayout Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand8">
+												<Grid WidthRequest="60">
+													<Grid.RowDefinitions>
+														<RowDefinition Height="1*" />
+														<RowDefinition Height="1*" />
+													</Grid.RowDefinitions>
+													<Button Grid.Row="0" Grid.Column="0" Text="+" Clicked="AddCantidad" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+													<Button Grid.Row="1" Grid.Column="0" Text="-" Clicked="SubstractCantidad" BackgroundColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+												</Grid>
+												<Entry Text="{Binding cantidad,StringFormat='{0}'}" Keyboard="Numeric" VerticalOptions="Center" FontSize="25" WidthRequest="30" />
+											</StackLayout>
+											<Label Grid.Row="0" Grid.Column="3" Text="{Binding Total, StringFormat='${0}'}" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" />
+										</Grid>
+									</ViewCell>
+								</DataTemplate>
+							</ListView.ItemTemplate> 
+						</ListView>
+						<Label x:Name="_labelNoResutls" Text="No hay resultados :(" FontSize="43" VerticalOptions="Center" HorizontalOptions="Center" />
+					</Grid>
+				</Frame.Content>
+			</Frame>
+			<StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical">
+				<StackLayout Orientation="Horizontal" HorizontalOptions="End">
+					<Label Text="Total:" FontSize="27" />
+					<Label x:Name="_totalLabel" Text="$0" FontSize="30" HorizontalOptions="End" FontAttributes="Bold" />
+				</StackLayout>
+				<Button Text="Continuar" Clicked="ContinueClicked" />
 			</StackLayout>
-				</ListView.Footer>
-			</ListView>
-			<!--<StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
-				<Label Text="Total:" />
-				<Label Text="$40" />
-				<Button Text="Continuar" />
-			</StackLayout>-->
 		</Grid>
 	</local:BasePage.Content>
 </local:BasePage>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
@@ -49,26 +50,20 @@ namespace LaPurisima
 
 			if (ValidateUI())
 			{
-				var progressDependency = DependencyService.Get<IProgress>();
-				if(progressDependency != null)
-					progressDependency.ShowProgress(Localize.GetString("LoadingText", ""));
-				if (ShowProgress != null)
-					ShowProgress("Validando");
+				ShowProgress("Validando");
 				var response = await ClientLaPurisima.LoginUser(EntryEmail.Text, EntryPass.Text);
 				
 				if (ValidateResponse(response))
 				{
-					
 					var user = JsonConvert.DeserializeObject<User>(response);
 					PropertiesManager.SaveUserInfo(user);
-
+					ShowProgress(IProgressType.LogedIn);
+					await Task.Delay(600);
+					HideProgress();
 					await Navigation.PushModalAsync(new RootPage());
 				}
 
-				if(progressDependency!=null)
-					progressDependency.Dismiss();
-				if (HideProgress != null)
-					HideProgress();
+				HideProgress();
 			}
 
 			clicked = false;

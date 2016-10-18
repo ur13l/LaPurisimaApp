@@ -15,7 +15,7 @@ namespace LaPurisima
 			ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
 		}
 
-		public static string GetString(string key, string comment)
+		public static string GetString(string key, string comment = null)
 		{
 			ResourceManager temp = new ResourceManager("LaPurisima.Resources.Resources", typeof(Localize).GetTypeInfo().Assembly);
 

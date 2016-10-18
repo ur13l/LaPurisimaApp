@@ -38,15 +38,16 @@ namespace LaPurisima.iOS
 			{
 				return;
 			}
-			if (imageUrl != null)
+			if (!string.IsNullOrEmpty(imageUrl))
 			{
 				//Control.Image = UIImage.FromBundle(imageUrl);
 
-				Control.Image = await LoadImage(imageUrl);
-			}
-			else {
-
-			}
+				try
+				{
+					Control.Image = await LoadImage(imageUrl);
+				}
+				catch (System.Exception ex) { System.Diagnostics.Debug.WriteLine(ex.Message);};
+			} 
 		}
 
 		public async Task<UIImage> LoadImage(string imageUrl)

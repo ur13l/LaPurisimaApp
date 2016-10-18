@@ -214,5 +214,11 @@ namespace LaPurisima.Resources {
                 return ResourceManager.GetString("ErrorMessageDoesntExist", resourceCulture);
             }
         }
+        
+        internal static string MakeOrder {
+            get {
+                return ResourceManager.GetString("MakeOrder", resourceCulture);
+            }
+        }
     }
 }

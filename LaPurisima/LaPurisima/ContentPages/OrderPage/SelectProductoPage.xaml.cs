@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace LaPurisima
@@ -32,6 +33,14 @@ namespace LaPurisima
 			UpdateHelper.UpdateInfo();
 
 			GetProductos();
+
+			_listView.Refreshing += (sender, e) =>
+			{
+				_listView.IsRefreshing = true;
+				GetProductosWeb();
+			};
+
+
 			UpdateView();
 		}
 
@@ -44,40 +53,46 @@ namespace LaPurisima
 		void UpdateView()
 		{
 			if (HelperOrdenPage.Pedido != null && _items != null)
-				foreach (var item in HelperOrdenPage.Pedido.detalles)
+				foreach (var item in HelperOrdenPage.Pedido.productos)
 					foreach (var n in _items.Where(x => x.id == item.id))
-							n.cantidad = item.cantidad;
+						n.cantidad = item.cantidad;
 
 			UpdateOrder();
 		}
 
 		void UpdateOrder()
 		{
-			if (HelperOrdenPage.Pedido == null)
+			if (HelperOrdenPage.Pedido == null && PropertiesManager.GetUserInfo() != null)
 				HelperOrdenPage.Pedido = new Pedido()
 				{
 					api_token = PropertiesManager.GetUserInfo().api_token,
-					detalles = new List<Producto>()
+					cliente_id = (int)PropertiesManager.GetUserInfo().id,
+					productos = new List<Producto>()
 					{
 
 					},
 				};
 			else
-				HelperOrdenPage.Pedido.detalles = new List<Producto>()
+				HelperOrdenPage.Pedido.productos = new List<Producto>()
 				{
 
 				};
 
 			foreach (var item in _items)
 			{
-				HelperOrdenPage.Pedido.detalles.Add(new Producto(){
+				HelperOrdenPage.Pedido.productos.Add(new Producto()
+				{
 					id = item.id,
 					cantidad = item.cantidad,
+					precio = item.precio,
+					nombre = item.nombre,
+					descripcion = item.descripcion,
+					imagen = item.imagen,
 				});
 			}
 
-			var total = _items.Sum(x=>x.cantidad*x.precio);
-			_totalLabel.Text = string.Format("${0}",total);
+			var total = _items.Sum(x => x.cantidad * x.precio);
+			AnimateText(_totalLabel, string.Format("${0}", total));
 		}
 
 		void AddCantidad(object sender, System.EventArgs e)
@@ -85,38 +100,93 @@ namespace LaPurisima
 			var stackView = (Button)sender;
 			ItemLista item = (ItemLista)stackView.BindingContext;
 			int n = 0;
+			string total = "";
 			foreach (var p in _collection.Where(x => x.id == item.id))
 			{
 				p.cantidad++;
 				n = p.cantidad;
+				total = "$" + p.Total + "";
 			}
 
 
 			var stackEntry = (StackLayout)(stackView.Parent.Parent);
-			var entry = (Entry)stackEntry.Children[3];
+			var entry = (Entry)stackEntry.Children[1];
 			entry.Text = string.Format("{0}", n);
-			//GetProductos(_searchBar.Text); 
+			var gridLabel = (Grid)(stackView.Parent.Parent.Parent);
+			var label = (Label)gridLabel.Children[3];
+			label.Text = total;
 			UpdateOrder();
 		}
 
 		void SubstractCantidad(object sender, System.EventArgs e)
 		{
-			   var stackView = (Button)sender;
+			var stackView = (Button)sender;
 			ItemLista item = (ItemLista)stackView.BindingContext;
 			int n = 0;
+			string total = "";
 			foreach (var p in _collection.Where(x => x.id == item.id))
 			{
 				p.cantidad--;
 				if (p.cantidad < 0)
 					p.cantidad = 0;
 				n = p.cantidad;
+				total = "$"+p.Total + "";
 			}
 
 
 			var stackEntry = (StackLayout)(stackView.Parent.Parent);
-			var entry = (Entry)stackEntry.Children[3];
+			var entry = (Entry)stackEntry.Children[1];
 			entry.Text = string.Format("{0}", n);
+			var gridLabel = (Grid)(stackView.Parent.Parent.Parent);
+			var label = (Label)gridLabel.Children[3];
+			label.Text = total;
 			UpdateOrder();
+		}
+
+		async void GetProductosWeb()
+		{
+
+			_productos = await ClientLaPurisima.GetObject<List<Producto>>(WEB_METHODS.GetProductos);
+			if (_productos == null)
+				return;
+
+			_items.Clear();
+
+			foreach (var item in _productos)
+			{
+				_items.Add(new ItemLista()
+				{
+					id = item.id,
+					contenido = item.contenido,
+					created_at = item.created_at,
+					deleted_at = item.deleted_at,
+					descripcion = item.descripcion,
+					imagen = item.imagen,
+					nombre = item.nombre,
+					precio = item.precio,
+					stock = item.stock,
+					updated_at = item.updated_at,
+				});
+			}
+
+			_collection = new ObservableCollection<ItemLista>(_items);
+
+			_listView.ItemsSource = _collection;
+
+			_listView.IsRefreshing = false;
+
+			UpdateView();
+		}
+
+		async void ShowNoResults(bool v)
+		{
+			if (v)
+			{
+				await _labelNoResutls.FadeTo(1, 250, Easing.SinIn);
+			}
+			else {
+				await _labelNoResutls.FadeTo(0, 200, Easing.SpringOut);
+			}
 		}
 
 		List<Producto> _productos;
@@ -159,9 +229,21 @@ namespace LaPurisima
 				_listView.ItemsSource = _collection;
 			}
 
+			ShowNoResults(_collection.Count == 0);
 
 			if (Device.OS == TargetPlatform.Android)
 				UpdateView();
+		}
+
+		async void AnimateText(Label label, string newText)
+		{
+			var color = label.TextColor;
+			await Task.WhenAll(
+				label.ColorTo(Color.Gray, Color.Black, c => label.TextColor = c, 200),
+
+				label.ColorTo(Color.Black, Color.Gray, c => label.TextColor = c, 200));
+
+			label.Text = newText;
 		}
 
 
@@ -181,6 +263,19 @@ namespace LaPurisima
 			public override string ToString()
 			{
 				return string.Format("[Producto: id={0}, nombre={1}, descripcion={2}, stock={3}, contenido={4}, precio={5}, imagen={6}, created_at={7}, updated_at={8}, deleted_at={9}, producto_id={10}, cantidad={11}]", id, nombre, descripcion, stock, contenido, precio, imagen, created_at, updated_at, deleted_at, producto_id, cantidad);
+			}
+
+			public string Total
+			{
+				get
+				{
+					return "" + cantidad * precio;
+				}
+
+				set
+				{
+					
+				}
 			}
 
 			#region PEDIDO

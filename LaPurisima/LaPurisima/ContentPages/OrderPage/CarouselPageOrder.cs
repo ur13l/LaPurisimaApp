@@ -8,7 +8,7 @@ namespace LaPurisima
 		ConfirmOrderPage _confirmOrder;
 
 
-		public CarouselPageOrder()
+		public CarouselPageOrder(RootPage rootPage)
 		{
 
 			var pagina1 = new SelectProductoPage();
@@ -17,7 +17,19 @@ namespace LaPurisima
 
 			pagina1.NextPage = NextPage;
 			pagina2.NextPage = NextPage;
-			_confirmOrder.NextPage = NextPage;
+			_confirmOrder.NextPage = (obj)=>
+			{ 
+				HelperOrdenPage.city = null;
+				HelperOrdenPage.colony = null;
+				HelperOrdenPage.country = null;
+				HelperOrdenPage.Pedido = null;
+				HelperOrdenPage.postalcode = null;
+				HelperOrdenPage.state = null;
+				HelperOrdenPage.street = null;
+				HelperOrdenPage.streetNumber = null;
+				 
+				rootPage.Detail = new NavigationPage(new CarouselPageOrder(rootPage));
+			};
 
 			Children.Add(pagina1);
 			Children.Add(pagina2);
@@ -46,7 +58,7 @@ namespace LaPurisima
 					break;
 			}
 
-			if (n == 2)
+			//if (n == 2)
 				_confirmOrder.UpdateView();
 		}
 
