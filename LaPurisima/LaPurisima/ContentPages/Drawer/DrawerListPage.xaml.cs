@@ -23,6 +23,8 @@ namespace LaPurisima
 		{
 			InitializeComponent();
 
+			var user = PropertiesManager.GetUserInfo();
+			_emailLabel.Text = user.email;
 
 			Title = "     ";
 

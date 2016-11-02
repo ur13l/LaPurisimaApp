@@ -9,7 +9,7 @@
 		<StackLayout
 			BackgroundColor="#fff">
 			<Image
-				HorizontalOptions="FillAndExpand"
+				HorizontalOptions="Center"
 				Source           ="logo.png" />
 			<StackLayout
 				Spacing    ="10"
@@ -101,6 +101,12 @@
 						</OnPlatform>
 					</Entry.FontFamily>
 				</Entry>
+				<Label
+					HorizontalOptions="Center"
+					Text             ="{i18n:Translate Carrito}"
+					TextColor        ="#000000">
+					<Label.FontFamily>
+						</Label.FontFamily></Label>
 			</StackLayout>
 			<ListView
 				x:Name           ="ListView"
@@ -145,7 +151,7 @@
 					x:Name         ="SaveButton"
 					Text           ="{i18n:Translate Ask}"
 					TextColor      ="#3F92DC"
-					BackgroundColor="White"
+					BackgroundColor = "#F2F2F2"
 					Clicked        ="Pedir">
 					<Button.FontFamily>
 						<OnPlatform

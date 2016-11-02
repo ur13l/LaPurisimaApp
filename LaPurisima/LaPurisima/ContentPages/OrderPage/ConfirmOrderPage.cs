@@ -49,14 +49,14 @@ namespace LaPurisima
 					detalles = new List<Producto>()
 				{
 					new Producto(){
-						nombre = "p1",
-						cantidad = 3,
-						precio = 40,
+						nombre = "Garrafón Grande",
+						cantidad = 2,
+						precio = 80,
 					},
 					new Producto(){
-						nombre = "p2",
+						nombre = "Garrafón Chico",
 						cantidad = 1,
-						precio = 40,
+						precio = 10,
 					},
 				},
 				};

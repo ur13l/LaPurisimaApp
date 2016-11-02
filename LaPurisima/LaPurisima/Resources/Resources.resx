@@ -128,14 +128,14 @@
 	<data
 		name="CalleAltaText"
 		xml:space="preserve">
-	    <value>Street</value>
-	    <comment>Street</comment>
+	    <value>Calle</value>
+	    <comment>Calle</comment>
 	</data>
 	<data
 		name="ColoniaAltaText"
 		xml:space="preserve">
 	    <value>Colonia</value>
-	    <comment>Colony</comment>
+	    <comment>Colonia</comment>
 	</data>
 	<data
 		name="CPAltaText"
@@ -147,7 +147,7 @@
 		name="BetweenAltaText"
 		xml:space="preserve">
 	    <value>Entre Calles</value>
-	    <comment>Between Streets</comment>
+	    <comment>Entre calles</comment>
 	</data>
 	<data
 		name="UploadImageButtonText"
@@ -294,5 +294,12 @@
 		xml:space="preserve">
 	    <value>Pedir</value>
 	    <comment>ask a service</comment>
+	</data> 
+
+		<data
+		name="Carrito"
+		xml:space="preserve">
+	    <value>Carrito de Compras</value>
+	    <comment>carrito </comment>
 	</data> 
 </root>
