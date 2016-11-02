@@ -70,23 +70,18 @@ namespace LaPurisima
 
 
 			ToolbarItems.Add(EditButton);
-			var progressDependency = DependencyService.Get<IProgress>();
-			if (progressDependency != null)
-				progressDependency.ShowProgress("Validando");
-			if (ShowProgress != null)
-				ShowProgress("Validando");
+
+			ShowProgress("Validando");
 			var response = await ClientLaPurisima.UpdateUser(user);
 			if (ValidateResponse(response))
 			{
-				await DisplayAlert("Error", Localize.GetString("ErrorMessageDoesntExist", ""), "ok");
+				//await DisplayAlert("Error", Localize.GetString("ErrorMessageDoesntExist", ""), "ok");
 				PropertiesManager.SaveUserInfo(user);
 			}
 
-			if (progressDependency != null)
-				progressDependency.Dismiss();
-			if (HideProgress != null)
-				HideProgress();
-			
+
+			ShowProgress(IProgressType.Done);
+			HideProgress();
 		}
 
 

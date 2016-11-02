@@ -8,7 +8,7 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="LaPurisima" android:icon="@drawable/icon" android:theme="@style/MyTheme" android:hardwareAccelerated="true">
+	<application android:label="La Purisima" android:icon="@drawable/icon" android:theme="@style/MyTheme" android:hardwareAccelerated="true">
 		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAE1G3VoqkvvK4Z7dCVF0kxlSzJB2122UI" />
 	</application>
 </manifest>

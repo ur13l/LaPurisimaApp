@@ -215,9 +215,9 @@ namespace LaPurisima.Resources {
             }
         }
         
-        internal static string Ask {
+        internal static string MakeOrder {
             get {
-                return ResourceManager.GetString("Ask", resourceCulture);
+                return ResourceManager.GetString("MakeOrder", resourceCulture);
             }
         }
         

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.UserSignUp" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" Title="{i18n:Translate NewUserText}">
-	<ContentPage.Content>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.UserSignUp" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" Title="{i18n:Translate NewUserText}">
+	<local:BasePage.Content>
 		<ScrollView>
 			<StackLayout Padding="40,10,40,10">
 				<Image HorizontalOptions="FillAndExpand" Source="logo.png" HeightRequest="200" />
@@ -88,20 +88,27 @@
 									</Entry.FontFamily>
 								</Entry>
 							</StackLayout>
-							<StackLayout Grid.Column="1" Grid.Row="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
-								<local:TintedImage  Source="location.png" TintColor="#0592DC" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="Center" />
-								<Label Text="{i18n:Translate UseMapLabel}"  WidthRequest="40" FontSize="11" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+							<StackLayout Grid.Column="1" Grid.Row="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsVisible="false">
+								<local:TintedImage Source="location.png" TintColor="#0592DC" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="Center" />
+								<Label Text="{i18n:Translate UseMapLabel}" WidthRequest="40" FontSize="11" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
 							</StackLayout>
 						</Grid>
-						<Entry x:Name="EntryBetweenAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate BetweenAltaText}">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
-						</Entry>
-						<Button Text="{i18n:Translate UploadImageButtonText}" TextColor="#3F92DC" BackgroundColor="White">
+						<Frame HorizontalOptions="FillAndExpand" BackgroundColor="#66c9c9c9">
+							<Frame.Content>
+								<StackLayout HorizontalOptions="FillAndExpand">
+									<Label Text="{i18n:Translate References}" TextColor="Black" FontSize="24" Margin="10" />
+									<Editor x:Name="Referencias" HorizontalOptions="FillAndExpand" HeightRequest="65">
+										<Editor.FontFamily>
+											<OnPlatform x:TypeArguments="x:String">
+												<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+												<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+											</OnPlatform>
+										</Editor.FontFamily>
+									</Editor>
+								</StackLayout>
+							</Frame.Content>
+						</Frame>
+						<Button Text="{i18n:Translate UploadImageButtonText}" TextColor="#3F92DC" BackgroundColor="White" IsVisible="false">
 							<Button.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -121,5 +128,5 @@
 				</StackLayout>
 			</StackLayout>
 		</ScrollView>
-	</ContentPage.Content>
-</ContentPage>
+	</local:BasePage.Content>
+</local:BasePage>

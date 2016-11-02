@@ -6,16 +6,19 @@ namespace LaPurisima
 {
 	public class RootPage : MasterDetailPage
 	{
+
+		DrawerListPage _drawer;
+
 		public RootPage()
 		{
 
-			var drawer = new DrawerListPage();
-			drawer.PageSelected += async (pageType) =>
+			_drawer = new DrawerListPage();
+			_drawer.PageSelected += async (pageType) =>
 			{
 				switch (pageType)
 				{
 					case DrawerPage.MakeOrder:
-						Detail = new NavigationPage(new CarouselPageOrder());
+						Detail = new NavigationPage(new CarouselPageOrder(this));
 						break;
 					case DrawerPage.Orders:
 						Detail = new NavigationPage(new OrdersPage());
@@ -34,11 +37,17 @@ namespace LaPurisima
 
 				IsPresented = false;
 			};
-			Master = drawer;
-			Detail = new NavigationPage(new CarouselPageOrder());
+			Master = _drawer;
+			Detail = new NavigationPage(new CarouselPageOrder(this));
 
-			MasterBehavior = MasterBehavior.Popover;  
+			MasterBehavior = MasterBehavior.Popover;
+
+			IsPresentedChanged += (sender, e) =>
+			{
+				_drawer.UpdateView();
+			};
 		}
+
 	}
 }
 

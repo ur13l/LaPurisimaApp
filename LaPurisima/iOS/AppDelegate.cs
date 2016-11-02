@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
-using UIKit;
+using UIKit; 
 
 namespace LaPurisima.iOS
 {
@@ -16,6 +16,7 @@ namespace LaPurisima.iOS
 			Xamarin.FormsMaps.Init();
 
 			LoadApplication(new App());
+
 
 
 			return base.FinishedLaunching(app, options);

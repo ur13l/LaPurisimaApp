@@ -20,12 +20,18 @@
 					WidthRequest="70"
 					Margin="10" />
 				<Label
+						x:Name="_labelNombre"
 					Text="Nombre"
 					HorizontalOptions="Center"
 					TextColor="White" />
 				<Label
+<<<<<<< HEAD
 					x:Name="_emailLabel"
 					Text=""
+=======
+						x:Name="_labelMail"
+					Text="E-mail"
+>>>>>>> 4c3dc91b74cf26526d1acda474aae613743d5d0e
 					HorizontalOptions="Center"
 					TextColor="White" />
 				<StackLayout.IsVisible>
