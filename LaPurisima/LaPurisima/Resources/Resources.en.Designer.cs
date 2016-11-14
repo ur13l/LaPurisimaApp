@@ -220,5 +220,11 @@ namespace LaPurisima.Resources {
                 return ResourceManager.GetString("MakeOrder", resourceCulture);
             }
         }
+        
+        internal static string Carrito {
+            get {
+                return ResourceManager.GetString("Carrito", resourceCulture);
+            }
+        }
     }
 }

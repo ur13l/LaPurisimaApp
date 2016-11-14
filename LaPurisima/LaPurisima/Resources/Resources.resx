@@ -85,13 +85,21 @@
 	    <value>Repetir Contraseña</value>
 	    <comment>Repeat Password</comment>
 	</data>
+<<<<<<< HEAD
+	<data
+		name="CalleAltaText"
+		xml:space="preserve">
+	    <value>Calle</value>
+	    <comment>Calle</comment>
+=======
 	<data name="CalleAltaText" xml:space="preserve">
 	    <value>Street</value>
 	    <comment>Street</comment>
+>>>>>>> 4c3dc91b74cf26526d1acda474aae613743d5d0e
 	</data>
 	<data name="ColoniaAltaText" xml:space="preserve">
 	    <value>Colonia</value>
-	    <comment>Colony</comment>
+	    <comment>Colonia</comment>
 	</data>
 	<data name="CPAltaText" xml:space="preserve">
 	    <value>Código Postal</value>
@@ -99,7 +107,7 @@
 	</data>
 	<data name="BetweenAltaText" xml:space="preserve">
 	    <value>Entre Calles</value>
-	    <comment>Between Streets</comment>
+	    <comment>Entre calles</comment>
 	</data>
 	<data name="UploadImageButtonText" xml:space="preserve">
 	    <value>Subir Imagen</value>
@@ -206,6 +214,16 @@
 	<data name="Ask" xml:space="preserve">
 	    <value>Pedir</value>
 	    <comment>ask a service</comment>
+<<<<<<< HEAD
+	</data> 
+
+		<data
+		name="Carrito"
+		xml:space="preserve">
+	    <value>Carrito de Compras</value>
+	    <comment>carrito </comment>
+	</data> 
+=======
 	</data>
 		<data name="MakeOrder" xml:space="preserve">
 	    <value>Hacer Pedido</value>
@@ -241,4 +259,5 @@
 	    <comment></comment>
 	</data>
 
+>>>>>>> 4c3dc91b74cf26526d1acda474aae613743d5d0e
 </root>

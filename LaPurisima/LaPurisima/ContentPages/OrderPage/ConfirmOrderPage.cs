@@ -65,6 +65,32 @@ namespace LaPurisima
 			EntryColoniaProfile.IsEnabled = false;
 			var user = PropertiesManager.GetUserInfo();
 			EntryNameProfile.Text = user.nombre;
+<<<<<<< HEAD
+			EntryCalleProfile.Text = user.calle;
+			EntryColoniaProfile.Text = user.colonia;
+			if (pedido == null)
+				_pedido = new Pedido()
+				{
+					api_token = user.api_token,
+					longitud = "100.22",
+					latitud = "-2.242",
+					direccion = "conocida",
+					detalles = new List<Producto>()
+				{
+					new Producto(){
+						nombre = "Garrafón Grande",
+						cantidad = 2,
+						precio = 80,
+					},
+					new Producto(){
+						nombre = "Garrafón Chico",
+						cantidad = 1,
+						precio = 10,
+					},
+				},
+				};
+			ListView.ItemsSource = _pedido.detalles;
+=======
 			EntryCalleProfile.Text = string.Format("{0} #{1}", HelperOrdenPage.street, HelperOrdenPage.streetNumber);
 			//EntryColoniaProfile.Text = string.Format("{0} {1},{2}", HelperOrdenPage.colony, HelperOrdenPage.city,HelperOrdenPage.state);
 
@@ -97,6 +123,7 @@ namespace LaPurisima
 			_listView.ItemsSource = HelperOrdenPage.Pedido.productos;
 			_listView.HeightRequest = (HelperOrdenPage.Pedido.productos.Count() * 60) + 60;
 			_totalLabel.Text = string.Format("Total: ${0}", HelperOrdenPage.Pedido.productos.Sum(x => x.total));
+>>>>>>> 4c3dc91b74cf26526d1acda474aae613743d5d0e
 		}
 	}
 }
