@@ -10,7 +10,7 @@
 				<local:CustomMap x:Name="Map" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsShowingUser="true" MapType="Street" />
 				<Image HeightRequest="50" TranslationY="-15" VerticalOptions="Center" HorizontalOptions="Center" Source="pin.png" />
 				<BoxView HeightRequest="4" WidthRequest="4" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Red"  />
-				<Button x:Name="_confirmLocationBtn" TranslationY="40" Scale="0" Text="Confirmar ubicacion" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+				<Button x:Name="_confirmLocationBtn" Scale="0" Text="Confirmar ubicacion" VerticalOptions="End" HorizontalOptions="FillAndExpand" />
 			</Grid>
 			<StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical">
 				<Grid Padding="10" HorizontalOptions="FillAndExpand">

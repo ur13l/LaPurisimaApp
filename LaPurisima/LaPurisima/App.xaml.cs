@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Realms;
 using Xamarin.Forms;
 
 namespace LaPurisima
@@ -9,6 +10,28 @@ namespace LaPurisima
 		public App()
 		{
 			InitializeComponent();
+
+			RealmConfiguration realmConfiguration = RealmConfiguration.DefaultConfiguration;
+
+			try
+			{
+				var x = Realm.GetInstance();
+			}
+			catch (RealmMigrationNeededException e)
+			{
+				try
+				{
+					Realm.DeleteRealm(realmConfiguration);
+					//Realm file has been deleted.
+					var y = Realm.GetInstance(realmConfiguration);
+				}
+				catch (Exception ex)
+				{
+					throw ex;
+				}
+			}
+
+
 
 
 			MainPage = new NavigationPage(new LoginPage());
@@ -23,6 +46,8 @@ namespace LaPurisima
 			Test();
 		}
 
+
+
 		async void Test()
 		{
 			//var user = await ClientLaPurisima.LoginUser("ur13l.infante@gmail.com", "123asdZXC");
@@ -32,7 +57,7 @@ namespace LaPurisima
 				var token = PropertiesManager.GetUserInfo().api_token;
 				System.Diagnostics.Debug.WriteLine(token);
 			}
-		}	
+		}
 
 		protected override void OnSleep()
 		{

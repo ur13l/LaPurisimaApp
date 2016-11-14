@@ -97,8 +97,8 @@ namespace LaPurisima
 
 		void AddCantidad(object sender, System.EventArgs e)
 		{
-			var stackView = (Button)sender;
-			ItemLista item = (ItemLista)stackView.BindingContext;
+			var button = (Button)sender;
+			ItemLista item = (ItemLista)button.BindingContext;
 			int n = 0;
 			string total = "";
 			foreach (var p in _collection.Where(x => x.id == item.id))
@@ -109,19 +109,19 @@ namespace LaPurisima
 			}
 
 
-			var stackEntry = (StackLayout)(stackView.Parent.Parent);
-			var entry = (Entry)stackEntry.Children[1];
-			entry.Text = string.Format("{0}", n);
-			var gridLabel = (Grid)(stackView.Parent.Parent.Parent);
-			var label = (Label)gridLabel.Children[3];
-			label.Text = total;
+			var stackEntry = (StackLayout)(button.Parent);
+			var label = (Label)stackEntry.Children[1];
+			label.Text = string.Format("{0}", n);
+			//var gridLabel = (Grid)(button.Parent.Parent.Parent);
+			//var label = (Label)gridLabel.Children[3];
+			//label.Text = total;
 			UpdateOrder();
 		}
 
 		void SubstractCantidad(object sender, System.EventArgs e)
 		{
-			var stackView = (Button)sender;
-			ItemLista item = (ItemLista)stackView.BindingContext;
+			var button = (Button)sender;
+			ItemLista item = (ItemLista)button.BindingContext;
 			int n = 0;
 			string total = "";
 			foreach (var p in _collection.Where(x => x.id == item.id))
@@ -130,16 +130,13 @@ namespace LaPurisima
 				if (p.cantidad < 0)
 					p.cantidad = 0;
 				n = p.cantidad;
-				total = "$"+p.Total + "";
+				total = "$" + p.Total + "";
 			}
 
 
-			var stackEntry = (StackLayout)(stackView.Parent.Parent);
-			var entry = (Entry)stackEntry.Children[1];
-			entry.Text = string.Format("{0}", n);
-			var gridLabel = (Grid)(stackView.Parent.Parent.Parent);
-			var label = (Label)gridLabel.Children[3];
-			label.Text = total;
+			var stackEntry = (StackLayout)(button.Parent);
+			var label = (Label)stackEntry.Children[1];
+			label.Text = string.Format("{0}", n);
 			UpdateOrder();
 		}
 
@@ -254,7 +251,7 @@ namespace LaPurisima
 			public string descripcion { get; set; }
 			public int stock { get; set; }
 			public int contenido { get; set; }
-			public int precio { get; set; }
+			public double precio { get; set; }
 			public string imagen { get; set; }
 			public string created_at { get; set; }
 			public string updated_at { get; set; }
@@ -274,7 +271,7 @@ namespace LaPurisima
 
 				set
 				{
-					
+
 				}
 			}
 
@@ -284,10 +281,7 @@ namespace LaPurisima
 			{
 				get
 				{
-					if (id != null)
-						return id;
-
-					return -1;
+					return id;
 				}
 			}
 

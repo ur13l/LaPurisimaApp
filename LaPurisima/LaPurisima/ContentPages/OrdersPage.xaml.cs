@@ -85,6 +85,9 @@ namespace LaPurisima
 
 			if (_pedidos != null)
 			{
+
+				_pedidos = _pedidos.Where(x=>x.cliente_id == PropertiesManager.GetUserInfo().id).ToList();
+
 				System.Diagnostics.Debug.WriteLine(_pedidos.Count);
 
 				_itemsList.Clear();
@@ -99,32 +102,7 @@ namespace LaPurisima
 
 
 			ListView.IsRefreshing = false;
-		}
-
-		//class OrderItem
-		//{
-		//	public int id { get; set; }
-		//	public string Direccion { get; set; }
-		//	public string Fecha { get; set; }
-		//	public double Total { get; set; }
-		//	string image = "logo.png";
-
-		//	public string Image
-		//	{
-		//		get
-		//		{
-		//			return image;
-		//		}
-
-		//		set
-		//		{
-		//			image = value;
-		//		}
-		//	}
-
-		//	public double? latitud { get; set; }
-		//	public double? longitud { get; set; }
-		//}
+		} 
 	}
 }
 
