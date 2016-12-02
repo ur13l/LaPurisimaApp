@@ -8,7 +8,7 @@ using Xamarin.Forms;
 namespace LaPurisima
 {
 
-	public partial class OrdersPage : ContentPage
+	public partial class OrdersPage : BasePage
 	{
 
 		public static List<Pedido> _pedidos = null;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.OrdersPage">
-	<ContentPage.Content>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.OrdersPage">
+	<local:BasePage.Content>
 		<StackLayout>
 			<Label Text="HISTORICO DE PEDIDOS" FontSize="35" HorizontalOptions="Center" Margin="15" />
 			<Frame HorizontalOptions="FillAndExpand" BackgroundColor="#66c9c9c9" Padding="0" Margin="15" HasShadow="true"  OutlineColor="Black" VerticalOptions="FillAndExpand">
@@ -35,5 +35,5 @@
 				</Frame.Content>
 			</Frame>
 		</StackLayout>
-	</ContentPage.Content>
-</ContentPage>
+	</local:BasePage.Content>
+</local:BasePage>

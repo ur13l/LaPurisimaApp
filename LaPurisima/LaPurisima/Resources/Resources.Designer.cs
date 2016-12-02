@@ -335,11 +335,12 @@ namespace LaPurisima.Resources {
             }
         }
         
-<<<<<<< HEAD
         internal static string Carrito {
             get {
                 return ResourceManager.GetString("Carrito", resourceCulture);
-=======
+            }
+        }
+        
         internal static string MakeOrder {
             get {
                 return ResourceManager.GetString("MakeOrder", resourceCulture);
@@ -385,7 +386,6 @@ namespace LaPurisima.Resources {
         internal static string LogedInLabel {
             get {
                 return ResourceManager.GetString("LogedInLabel", resourceCulture);
->>>>>>> 4c3dc91b74cf26526d1acda474aae613743d5d0e
             }
         }
     }

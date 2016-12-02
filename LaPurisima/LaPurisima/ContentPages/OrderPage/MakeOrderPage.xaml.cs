@@ -28,7 +28,7 @@ namespace LaPurisima
 				SaveInfo();
 			};
 
-			Map.PropertyChanged += (sender, e) =>
+		/*	Map.PropertyChanged += (sender, e) =>
 			{
 				//System.Diagnostics.Debug.WriteLine(e.PropertyName);
 				if (e.PropertyName == "VisibleRegion")
@@ -36,9 +36,8 @@ namespace LaPurisima
 					UpdatePoints(Map.VisibleRegion.Center);
 				}
 			};
-			Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));
+			Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));*/
 		}
-
 		Position _lastPosition;
 		async void UpdatePoints(Position position)
 		{
@@ -75,8 +74,8 @@ namespace LaPurisima
 
 		void SaveInfo()
 		{
-			HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
-			HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
+			//HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
+		//	HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
 			HelperOrdenPage.street = street;
 			HelperOrdenPage.city = city;
 			HelperOrdenPage.streetNumber = streetNumber;

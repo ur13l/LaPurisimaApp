@@ -134,6 +134,7 @@
     <Compile Include="Models\GoogleMapsLocation.cs" />
     <Compile Include="CustomViews\CustomMap.cs" />
     <Compile Include="Models\Repartidor.cs" />
+    <Compile Include="ContentPages\OrderingDriver\CarouselOrdering.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -147,6 +148,7 @@
     <Folder Include="Providers\" />
     <Folder Include="ContentPages\OrderPage\" />
     <Folder Include="Helpers\" />
+    <Folder Include="ContentPages\OrderingDriver\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DotNetCross.Memory.Unsafe">

@@ -23,36 +23,71 @@ namespace LaPurisima
 		{
 			InitializeComponent();
 
-			var user = PropertiesManager.GetUserInfo();
-			_emailLabel.Text = user.email;
 
 			Title = "     ";
 
+
+
+
 			var list = new List<ItemDrawer>();
 
-			list.Add(new ItemDrawer()
-			{
-				Label = "Hacer Pedido",
-				Page = DrawerPage.MakeOrder,
-			});
 
-			list.Add(new ItemDrawer()
-			{
-				Label = "Pedidos",
-				Page = DrawerPage.Orders,
-			});
 
-			list.Add(new ItemDrawer()
+			if (PropertiesManager.GetUserInfo().tipo_usuario_id == 3)
 			{
-				Label = "Perfil",
-				Page = DrawerPage.Profile,
-			});
 
-			list.Add(new ItemDrawer()
-			{
-				Label = "Cerrar sesión",
-				Page = DrawerPage.LogOut,
-			});
+				list.Add(new ItemDrawer()
+				{
+					Label = "Pedidos",
+					Page = DrawerPage.Orders,
+				});
+
+				list.Add(new ItemDrawer()
+				{
+					Label = "Hacer Pedido",
+					Page = DrawerPage.MakeOrder,
+				});
+
+				list.Add(new ItemDrawer()
+				{
+					Label = "Perfil",
+					Page = DrawerPage.Profile,
+				});
+
+				list.Add(new ItemDrawer()
+				{
+					Label = "Cerrar sesión",
+					Page = DrawerPage.LogOut,
+				});
+
+			}
+			else {
+
+				list.Add(new ItemDrawer()
+				{
+					Label = "Hacer Pedido",
+					Page = DrawerPage.MakeOrder,
+				});
+
+				list.Add(new ItemDrawer()
+				{
+					Label = "Pedidos",
+					Page = DrawerPage.Orders,
+				});
+
+				list.Add(new ItemDrawer()
+				{
+					Label = "Perfil",
+					Page = DrawerPage.Profile,
+				});
+
+				list.Add(new ItemDrawer()
+				{
+					Label = "Cerrar sesión",
+					Page = DrawerPage.LogOut,
+				});
+
+			}
 
 			UpdateView();
 
