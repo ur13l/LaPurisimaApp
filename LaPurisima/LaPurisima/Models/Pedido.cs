@@ -5,20 +5,37 @@ using System.Collections.Generic;
 namespace LaPurisima
 {
 
+
+
 	public class Pedido
 	{
-		public string api_token { get; set; }
+		public string api_token;
+
 		public double? latitud { get; set; }
 		public double? longitud { get; set; }
 		public string direccion { get; set; }
+		//public int status { get; set; }
 		public string fecha { get; set; }
+		public string created_at { get; set; }
+		public string updated_at { get; set; }
+		public string deleted_at { get; set; }
+		//p+ublic List<string> detalles { get; set; }
 
 		[Newtonsoft.Json.JsonIgnore]
 		public DateTime fechaDateTime
 		{
 			get
 			{
-				return DateTime.Parse(fecha);
+				try
+				{
+					return DateTime.Parse(fecha);
+				}
+				catch (Exception ex)
+				{
+					
+				}
+
+				return DateTime.MinValue;
 			}
 		}
 		public List<Producto> productos { get; set; }
@@ -32,9 +49,6 @@ namespace LaPurisima
 		public int cliente_id { get; set; }
 		public int? conductor_id { get; set; }
 
-		public string created_at { get; set; }
-		public string updated_at { get; set; }
-		public string deleted_at { get; set; }
 
 		[Newtonsoft.Json.JsonIgnore]
 		public string ProductosLabel
@@ -94,13 +108,26 @@ namespace LaPurisima
 
 	}
 
+	//public class Pedido
+	//{
+	//	public string api_token { get; set; }
+	//	public double? latitud { get; set; }
+	//	public double? longitud { get; set; }
+	//	public string direccion { get; set; }
+	//	public string fecha { get; set; }
+
+
+
+
+	//}
+
 	public class DetallePedido
 	{
 		public int id { get; set; }
 		public int producto_id { get; set; }
-		public int precio { get; set; }
+		public double precio { get; set; }
 		public int cantidad { get; set; }
-		public int total { get { return cantidad * precio; } }
+		public double total { get { return cantidad * precio; } }
 		public Producto producto { get; set; }
 
 	}
