@@ -114,6 +114,12 @@
 	    <comment>E-mail</comment>
 	</data>
 	<data
+		name     ="TelAltaText"
+		xml:space="preserve">
+	    <value>Correo</value>
+	    <comment>E-mail</comment>
+	</data>
+	<data
 		name     ="PassAltaText"
 		xml:space="preserve">
 	    <value>Contraseña</value>
@@ -223,6 +229,12 @@
 	    <comment>Entrer a name label</comment>
 	</data>
 	<data
+		name     ="EnterTelLabel"
+		xml:space="preserve">
+	    <value>Ingresa un teléfono</value>
+	    <comment></comment>
+	</data>
+	<data
 		name     ="EnterMailLabel"
 		xml:space="preserve">
 	    <value>Ingresa un correo</value>
@@ -283,6 +295,12 @@
 	    <comment>Error message</comment>
 	</data>
 	<!--ORDERD-->
+	<data
+		name     ="orders"
+		xml:space="preserve">
+	    <value>Pedidos</value>
+	    <comment></comment>
+	</data>
 	<data
 		name     ="product_selection"
 		xml:space="preserve">

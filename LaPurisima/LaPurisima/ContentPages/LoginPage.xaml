@@ -22,7 +22,8 @@
 						<Entry
 							x:Name="EntryEmail"
 							HorizontalOptions="FillAndExpand"
-							Placeholder="{i18n:Translate MailLabel}" />
+							Placeholder="{i18n:Translate MailLabel}" 
+							Keyboard="Email"/>
 						<Entry
 							x:Name="EntryPass"
 							HorizontalOptions="FillAndExpand"

@@ -68,6 +68,12 @@
     <EmbeddedResource Include="ContentPages\OrderPage\SelectProductoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\OrdersForDriver\DriverOrders.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\OrdersForDriver\OrderDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -106,15 +112,10 @@
     <Compile Include="ContentPages\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Services\ClientLaPurisima.cs" />
-    <Compile Include="Services\Config.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="PropertiesManager.cs" />
     <Compile Include="Providers\IProgress.cs" />
     <Compile Include="ContentPages\BasePage.cs" />
     <Compile Include="CustomViews\TintedImage.cs" />
-    <Compile Include="Models\Pedido.cs" />
-    <Compile Include="Models\Producto.cs" />
     <Compile Include="ContentPages\OrderPage\CarouselPageOrder.cs" />
     <Compile Include="ContentPages\OrderPage\MakeOrderPage.xaml.cs">
       <DependentUpon>MakeOrderPage.xaml</DependentUpon>
@@ -131,10 +132,22 @@
     <Compile Include="CustomViews\CustomEntry.cs" />
     <Compile Include="CustomViews\CustomImage.cs" />
     <Compile Include="Helpers\LocationHelper.cs" />
-    <Compile Include="Models\GoogleMapsLocation.cs" />
     <Compile Include="CustomViews\CustomMap.cs" />
-    <Compile Include="Models\Repartidor.cs" />
-    <Compile Include="ContentPages\OrderingDriver\CarouselOrdering.cs" />
+    <Compile Include="ContentPages\OrdersForDriver\CarouselOrdering.cs" />
+    <Compile Include="ContentPages\OrdersForDriver\DriverOrders.xaml.cs">
+      <DependentUpon>DriverOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPages\OrdersForDriver\OrderDetails.xaml.cs">
+      <DependentUpon>OrderDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\AutoAdjustLabel.cs" />
+    <Compile Include="ContentPages\Services\ClientLaPurisima.cs" />
+    <Compile Include="ContentPages\Services\Config.cs" />
+    <Compile Include="ContentPages\Models\GoogleMapsLocation.cs" />
+    <Compile Include="ContentPages\Models\Pedido.cs" />
+    <Compile Include="ContentPages\Models\Producto.cs" />
+    <Compile Include="ContentPages\Models\Repartidor.cs" />
+    <Compile Include="ContentPages\Models\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -143,12 +156,13 @@
     <Folder Include="ContentPages\" />
     <Folder Include="CustomViews\" />
     <Folder Include="ContentPages\Drawer\" />
-    <Folder Include="Services\" />
-    <Folder Include="Models\" />
     <Folder Include="Providers\" />
     <Folder Include="ContentPages\OrderPage\" />
     <Folder Include="Helpers\" />
-    <Folder Include="ContentPages\OrderingDriver\" />
+    <Folder Include="ContentPages\OrdersForDriver\" />
+    <Folder Include="Data\" />
+    <Folder Include="ContentPages\Services\" />
+    <Folder Include="ContentPages\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DotNetCross.Memory.Unsafe">
@@ -169,9 +183,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Realm">
-      <HintPath>..\packages\Realm.0.78.1\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
-    </Reference>
     <Reference Include="Remotion.Linq">
       <HintPath>..\packages\Remotion.Linq.2.1.1\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
     </Reference>
@@ -187,6 +198,9 @@
     <Reference Include="Xamarin.Forms.Maps">
       <HintPath>..\packages\Xamarin.Forms.Maps.2.3.0.107\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
+    <Reference Include="Realm">
+      <HintPath>..\packages\Realm.0.80.0\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -194,6 +208,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
-  <Import Project="..\packages\Realm.0.78.1\build\Realm.targets" Condition="Exists('..\packages\Realm.0.78.1\build\Realm.targets')" />
   <Import Project="..\packages\Xamarin.Forms.2.3.0.107\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.0.107\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Realm.0.80.0\build\Realm.targets" Condition="Exists('..\packages\Realm.0.80.0\build\Realm.targets')" />
 </Project>

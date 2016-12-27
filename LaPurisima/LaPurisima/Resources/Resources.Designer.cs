@@ -143,6 +143,12 @@ namespace LaPurisima.Resources {
             }
         }
         
+        internal static string TelAltaText {
+            get {
+                return ResourceManager.GetString("TelAltaText", resourceCulture);
+            }
+        }
+        
         internal static string PassAltaText {
             get {
                 return ResourceManager.GetString("PassAltaText", resourceCulture);
@@ -251,6 +257,12 @@ namespace LaPurisima.Resources {
             }
         }
         
+        internal static string EnterTelLabel {
+            get {
+                return ResourceManager.GetString("EnterTelLabel", resourceCulture);
+            }
+        }
+        
         internal static string EnterMailLabel {
             get {
                 return ResourceManager.GetString("EnterMailLabel", resourceCulture);
@@ -308,6 +320,12 @@ namespace LaPurisima.Resources {
         internal static string ErrorMessageDoesntExist {
             get {
                 return ResourceManager.GetString("ErrorMessageDoesntExist", resourceCulture);
+            }
+        }
+        
+        internal static string orders {
+            get {
+                return ResourceManager.GetString("orders", resourceCulture);
             }
         }
         

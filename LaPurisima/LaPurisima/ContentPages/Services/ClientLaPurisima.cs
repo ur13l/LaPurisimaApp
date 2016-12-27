@@ -134,6 +134,26 @@ namespace LaPurisima
 			return list;
 		}
 
+		public static async Task<List<Pedido>> GetPedidosRepartidor(User user)
+		{
+			var jsonResponse = await PostObject<User>(user, WEB_METHODS.GetPedidosRepartidor);
+			var list = new List<Pedido>();
+			if (jsonResponse == null)
+			{
+				return null;
+			}
+			try
+			{
+
+				list = JsonConvert.DeserializeObject<List<Pedido>>(jsonResponse);
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return list;
+		}
+
 		public static async Task<GoogleMapsLocation> GetAddresForPosition(Position position)
 		{
 			try
@@ -202,6 +222,7 @@ namespace LaPurisima
 				if (response.IsSuccessStatusCode)
 				{
 					var resultString = await response.Content.ReadAsStringAsync();
+
 
 					if (igonoreIfnull)
 					{

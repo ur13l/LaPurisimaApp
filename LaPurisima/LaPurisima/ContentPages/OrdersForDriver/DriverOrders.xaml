@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.DriverOrders">
+	<local:BasePage.Content>
+		<Grid>
+			<!--<Label Text="PEDIDOS PENDIENTES" FontSize="35" HorizontalOptions="Center" Margin="15" />-->
+			<ListView x:Name="ListView" HorizontalOptions="FillAndExpand" HasUnevenRows="true" IsPullToRefreshEnabled="true">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout BackgroundColor="White" Orientation="Vertical" Spacing="0" HorizontalOptions="FillAndExpand" Padding="5">
+								<Grid BackgroundColor="White" HorizontalOptions="FillAndExpand" Padding="5">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="1*" />
+										<ColumnDefinition Width="Auto" />
+									</Grid.ColumnDefinitions>
+									<StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+										<Label Text="{Binding direccionLabel}" />
+										<local:AutoAdjustLabel Text="{Binding ProductosLabel}" />
+									</StackLayout>
+									<local:AutoAdjustLabel Grid.Column="1" Text="{Binding Total, StringFormat='Total: ${0}'}" VerticalOptions="Center" FontSize="25" />
+								</Grid>
+								<Label Text="{Binding fechaDateTime, StringFormat='{}{0:dd/MMM/yyyy a \\la\\s h:mm tt}'}" HorizontalOptions="End" />
+								<StackLayout.GestureRecognizers>
+									<TapGestureRecognizer Tapped="TapItem" />
+								</StackLayout.GestureRecognizers>
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Label x:Name="_labelNoResutls" Text="No hay pedidos" FontSize="43" VerticalOptions="Center" HorizontalOptions="Center" />
+		</Grid>
+	</local:BasePage.Content>
+</local:BasePage>

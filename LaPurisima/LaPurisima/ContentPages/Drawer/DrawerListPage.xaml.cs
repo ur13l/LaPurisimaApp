@@ -10,6 +10,7 @@ namespace LaPurisima
 	{
 		MakeOrder,
 		Orders,
+		DriverOrders,
 		Profile,
 		Settings,
 		LogOut,
@@ -33,13 +34,13 @@ namespace LaPurisima
 
 
 
-			if (PropertiesManager.GetUserInfo().tipo_usuario_id == 3)
+			//CONDUCTOR
+			if (PropertiesManager.GetUserInfo().tipo_usuario_id == 2)
 			{
-
 				list.Add(new ItemDrawer()
 				{
-					Label = "Pedidos",
-					Page = DrawerPage.Orders,
+					Label = "Pedidos pendientes",
+					Page = DrawerPage.DriverOrders,
 				});
 
 				list.Add(new ItemDrawer()

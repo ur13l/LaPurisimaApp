@@ -17,37 +17,102 @@ namespace LaPurisima
 
 			Title = "Hacer un pedido";
 
-			_confirmLocationBtn.Clicked += async (sender, e) =>
+			_confirmLocationBtn.Clicked += (sender, e) =>
 			{
-				await Task.WhenAll(new Task[] { _confirmLocationBtn.ScaleTo(0, 250, Easing.SinIn) });
+				_confirmLocationBtn.IsVisible = false;
+				//Device.BeginInvokeOnMainThread(async () =>
+				//{
+				//	await Task.WhenAll(new Task[] { _confirmLocationBtn.FadeTo(0, 250, Easing.SinIn), _confirmLocationBtn.TranslateTo(0, 50) });
+				//});
 
-				var googleMaps = await ClientLaPurisima.GetAddresForPosition(_lastPosition);
-				//System.Diagnostics.Debug.WriteLine(googleMaps);
-				Traverse(googleMaps);
+				//var googleMaps = await ClientLaPurisima.GetAddresForPosition(_lastPosition);
+				////System.Diagnostics.Debug.WriteLine(googleMaps);
+				//Traverse(googleMaps);
 				UpdateView();
 				SaveInfo();
 			};
 
-		/*	Map.PropertyChanged += (sender, e) =>
-			{
-				//System.Diagnostics.Debug.WriteLine(e.PropertyName);
-				if (e.PropertyName == "VisibleRegion")
+			Map.PropertyChanged += async (sender, e) =>
 				{
-					UpdatePoints(Map.VisibleRegion.Center);
-				}
-			};
-			Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));*/
+					//System.Diagnostics.Debug.WriteLine(e.PropertyName);
+					if (e.PropertyName == "VisibleRegion")
+					{
+						//onetime
+						UpdatePoints(Map.VisibleRegion.Center);
+						//everytime
+
+
+						Device.BeginInvokeOnMainThread(() =>
+						{
+							_progress.IsVisible = true;
+						});
+
+						var googleMaps = await ClientLaPurisima.GetAddresForPosition(_lastPosition);
+						//System.Diagnostics.Debug.WriteLine(googleMaps);
+						Traverse(googleMaps);
+
+						Device.BeginInvokeOnMainThread(() =>
+					   {
+						   _progress.IsVisible = false;
+					   });
+
+						UpdateView();
+						//SaveInfo();
+					}
+				};
+			Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));
+
+
+			_street.Completed += (sender, e) =>
+		  {
+			  SearchByAddress();
+
+		  };
+
+			_number.Completed += (sender, e) =>
+		   {
+
+			   SearchByAddress();
+		   };
 		}
+
+		async void SearchByAddress()
+		{
+			 
+				try
+				{
+
+					var resultModel = await ClientLaPurisima.GetObject<GoogleMapsLocation>(WEB_METHODS.GetAddressCoordenates, false, string.Format("{0}+{1}+,{2},+{3}+{4}", _number.Text, String.Join("+", _street.Text.Split(' ')), _colony.Text, "Monclova", "Coahuila"));
+				Map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(resultModel.results[0].geometry.location.lat, resultModel.results[0].geometry.location.lng), Distance.FromKilometers(2)));
+					Traverse(resultModel);
+					UpdateView();
+					
+					
+				}
+				catch
+				{
+					_error.IsVisible = true;
+					await Task.Delay(300);
+					_error.IsVisible = false;
+				}
+			 
+			 
+		}
+
 		Position _lastPosition;
 		async void UpdatePoints(Position position)
 		{
 			_lastPosition = position;
-			if (_confirmLocationBtn.Scale < 1)
-			{
-				await Task.WhenAll(new Task[] {_confirmLocationBtn.ScaleTo(1, 250, Easing.SinIn) });
-			}
+			//if (_confirmLocationBtn.Opacity < 1)
+			//{
+			//	Device.BeginInvokeOnMainThread(async () =>
+			//	{
+			//		await Task.WhenAll(new Task[] { _confirmLocationBtn.FadeTo(1, 250, Easing.SinIn), _confirmLocationBtn.TranslateTo(0, 0) });
+			//	});
 
-			//_confirmLocationBtn.IsVisible = true;
+			//}
+
+			_confirmLocationBtn.IsVisible = true;
 		}
 
 		void UpdateView()
@@ -61,7 +126,7 @@ namespace LaPurisima
 			//await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 		}
 
-		async void AnimateText(Label label, string newText)
+		async void AnimateText(Entry label, string newText)
 		{
 			var color = label.TextColor;
 			await Task.WhenAll(
@@ -74,8 +139,8 @@ namespace LaPurisima
 
 		void SaveInfo()
 		{
-			//HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
-		//	HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
+			HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
+			HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
 			HelperOrdenPage.street = street;
 			HelperOrdenPage.city = city;
 			HelperOrdenPage.streetNumber = streetNumber;

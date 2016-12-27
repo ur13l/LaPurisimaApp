@@ -46,6 +46,14 @@
 								</OnPlatform>
 							</Entry.FontFamily>
 						</Entry>
+						<Entry x:Name="EntryTelAlta" Keyboard="Email" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate TelAltaText}">
+							<Entry.FontFamily>
+								<OnPlatform x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</Entry>
 						<Label HorizontalOptions="Start" Text="{i18n:Translate UserLocationLabel}" TextColor="#000000">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">

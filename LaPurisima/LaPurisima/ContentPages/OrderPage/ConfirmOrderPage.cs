@@ -12,9 +12,19 @@ namespace LaPurisima
 		async void Pedir(object sender, System.EventArgs e)
 		{
 
-			ShowProgress("Validando");
+			Device.BeginInvokeOnMainThread(()=>ShowProgress("Validando"));
 
-			HelperOrdenPage.Pedido.direccion = string.Format("{0} #{1}, {2}", HelperOrdenPage.street, HelperOrdenPage.streetNumber, HelperOrdenPage.colony);
+
+			
+
+
+			string refe = "";
+			if (!string.IsNullOrEmpty(_referencias.Text))
+			{
+				refe = "Referencias: "+_referencias.Text;
+			}
+
+			HelperOrdenPage.Pedido.direccion = string.Format("{0} #{1}, {2}. {3}", HelperOrdenPage.street, HelperOrdenPage.streetNumber, HelperOrdenPage.colony,refe);
 			HelperOrdenPage.Pedido.detalles = new List<DetallePedido>();
 			foreach (var prod in HelperOrdenPage.Pedido.productos)
 			{
@@ -60,9 +70,9 @@ namespace LaPurisima
 
 		internal void UpdateView()
 		{
-			EntryNameProfile.IsEnabled = false;
-			EntryCalleProfile.IsEnabled = false;
-			EntryColoniaProfile.IsEnabled = false;
+			//EntryNameProfile.IsEnabled = false;
+			//EntryCalleProfile.IsEnabled = false;
+			//EntryColoniaProfile.IsEnabled = false;
 			var user = PropertiesManager.GetUserInfo();
 			EntryNameProfile.Text = user.nombre;
 			EntryCalleProfile.Text = string.Format("{0} #{1}", HelperOrdenPage.street, HelperOrdenPage.streetNumber);
@@ -100,6 +110,3 @@ namespace LaPurisima
 		}
 	}
 }
-
-
-

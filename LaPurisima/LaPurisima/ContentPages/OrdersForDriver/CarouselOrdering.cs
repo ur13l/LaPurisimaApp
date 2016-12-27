@@ -29,7 +29,7 @@ namespace LaPurisima
 			switch (n)
 			{
 				case 0:
-					Title = Localize.GetString("product_selection","");
+					Title = Localize.GetString("orders","");
 					break;
 				case 1:
 					Title = Localize.GetString("location_selection", "");
