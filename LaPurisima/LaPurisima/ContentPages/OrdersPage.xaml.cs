@@ -73,7 +73,7 @@ namespace LaPurisima
 		{
 			var stack = (StackLayout)sender;
 			//await Task.WhenAll(new Task[]{stack.ScaleTo(1.2), stack.ScaleTo(1) });
-			await stack.ScaleTo(1.1,100,Easing.SinIn);
+			await stack.ScaleTo(0.9,100,Easing.SinIn);
 			await stack.ScaleTo(1, 100, Easing.SinIn);
 		}
 

@@ -3,10 +3,10 @@ namespace LaPurisima
 {
 	public enum WEB_METHODS
 	{
-		Autenticate, 
-		PassForgot, 
+		Autenticate,
+		PassForgot,
 		CrearUsuario,
-		UsuarioUpdate, 
+		UsuarioUpdate,
 		PedidoNuevo,
 		GetProductos,
 		GetProductosWhere,
@@ -50,7 +50,26 @@ namespace LaPurisima
 				case WEB_METHODS.GetLocationName:
 					return "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApnytpG7fVfQV7QdoeWJ0oY561v1iliV4&language=es&latlng=";
 				case WEB_METHODS.GetPedidosUsuario:
-					return "https://lapurisimaweb.herokuapp.com/pedido/usuario";
+					var user = PropertiesManager.GetUserInfo();
+					if (user != null)
+					{
+						//return "https://lapurisimaweb.herokuapp.com/pedido/usuario";
+						switch (user.tipo_usuario_id)
+						{
+							case 0:
+								return "pedido/usuario";
+							case 1:
+								return "pedido/usuario";
+							case 2:
+								return "pedido/repartidor";
+							default:
+								return "pedido/usuario";
+						}
+					}
+					else {
+						return null;
+					}
+					break;
 				default:
 
 					break;

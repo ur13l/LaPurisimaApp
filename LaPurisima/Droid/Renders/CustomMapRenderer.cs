@@ -18,16 +18,16 @@ namespace LaPurisima.Droid
 			base.OnElementPropertyChanged(sender, e);
 			var formsMap = (CustomMap)sender;
 
-			var map = ((MapView)Control).Map;
+			//var map = ((MapView)Control).Map;
 
-			map.MyLocationEnabled = true;
+		//	map.MyLocationEnabled = true;
 
 			if (e.PropertyName.Equals("VisibleRegion") && !_isDrawnDone)
 			{
-				map.Clear();
-				map.MarkerClick += HandleMarkerClick;
-				map.MyLocationEnabled = formsMap.IsShowingUser;
-				map.SetOnInfoWindowClickListener(this);
+				//map.Clear();
+				//map.MarkerClick += HandleMarkerClick;
+				//map.MyLocationEnabled = formsMap.IsShowingUser;
+				//map.SetOnInfoWindowClickListener(this);
 
 				var formsPins = formsMap.Pins;
 
@@ -39,8 +39,8 @@ namespace LaPurisima.Droid
 					markerWithIcon.SetSnippet(formsPin.Address);
 					markerWithIcon.InvokeIcon(BitmapDescriptorFactory.DefaultMarker());
 
-					var m = map.AddMarker(markerWithIcon);
-					m.ShowInfoWindow();
+					//var m = map.AddMarker(markerWithIcon);
+				//	m.ShowInfoWindow();
 				}
 
 				_isDrawnDone = true;
