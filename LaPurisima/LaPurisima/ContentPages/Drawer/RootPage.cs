@@ -9,8 +9,16 @@ namespace LaPurisima
 
 		DrawerListPage _drawer;
 
+		protected override void OnPropertyChanged(string propertyName = null)
+		{
+			base.OnPropertyChanged(propertyName);
+			System.Diagnostics.Debug.WriteLine(propertyName);
+		}
+
 		public RootPage()
 		{
+
+
 
 			_drawer = new DrawerListPage();
 			_drawer.PageSelected += async (pageType) =>
@@ -21,25 +29,50 @@ namespace LaPurisima
 						Detail = new NavigationPage(new CarouselPageOrder(this));
 						break;
 					case DrawerPage.Orders:
-						//Detail = new NavigationPage(new OrdersPage());
-						Detail = new NavigationPage(new CarouselOrdering(this));
+						Detail = new NavigationPage(new OrdersPage());
 						break;
-					case DrawerPage.Profile:      
+					case DrawerPage.DriverOrders:
+						Detail = new NavigationPage(new DriverOrders());
+						break;
+					case DrawerPage.Profile:
 						Detail = new NavigationPage(new Profile());
 						break;
 					case DrawerPage.Settings:
 						break;
 					case DrawerPage.LogOut:
+
+						var user = PropertiesManager.GetUserInfo();
+						if (user != null)
+						{
+							if (user.tipo_usuario_id == 2)
+							{
+								try
+								{
+									user.status = 2; //inactivo
+									var res = ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
+								}
+								catch (Exception ex)
+								{
+									System.Diagnostics.Debug.WriteLine("error updating status. " + ex.Message);
+								}
+							}
+						}
+
+
 						PropertiesManager.LogOut();
-						await Navigation.PopModalAsync();
+						await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
 						break;
-						
+
 				}
 
 				IsPresented = false;
 			};
 			Master = _drawer;
-			Detail = new NavigationPage(new CarouselPageOrder(this));
+
+			if (PropertiesManager.GetUserInfo().tipo_usuario_id == 2)
+				Detail = new ShadowNavigationPage(new DriverOrders());
+			else
+				Detail = new ShadowNavigationPage(new CarouselPageOrder(this));
 
 			MasterBehavior = MasterBehavior.Popover;
 
@@ -50,6 +83,46 @@ namespace LaPurisima
 		}
 
 	}
+
+	public class ShadowNavigationPage : NavigationPage
+	{
+
+		public ShadowNavigationPage(Page page):base(page)
+		{
+			
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+			Effects.Add(new ShadowEffect()
+			{
+				Radius = 5,
+				DistanceX = 0,
+				DistanceY = 0,
+				Color = Color.Black
+			});
+		}
+	}
+
+
+
+	public class ShadowEffect : RoutingEffect
+	{
+		public float Radius { get; set; }
+
+		public Color Color { get; set; }
+
+		public float DistanceX { get; set; }
+
+		public float DistanceY { get; set; }
+
+		public ShadowEffect() : base("MyProject.PanelShadowEffect")
+		{
+		}
+	}
+
 }
 
 

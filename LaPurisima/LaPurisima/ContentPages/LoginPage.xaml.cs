@@ -17,10 +17,7 @@ namespace LaPurisima
 
 			NavigationPage.SetBackButtonTitle(this, "Atrás"); 
 
-			if (PropertiesManager.IsLogedIn())
-			{
-				Navigation.PushModalAsync(new RootPage());
-			} 
+
 		}
 
 		public LoginPage(string email)
@@ -56,6 +53,21 @@ namespace LaPurisima
 				if (ValidateResponse(response))
 				{
 					var user = JsonConvert.DeserializeObject<User>(response);
+
+					if (user.tipo_usuario_id == 2)
+					{
+						try
+						{
+							user.status = 1; //activo
+							var res = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
+						}
+						catch (Exception ex)
+						{
+							System.Diagnostics.Debug.WriteLine("error updating status. " + ex.Message);
+						}
+					}
+
+
 					PropertiesManager.SaveUserInfo(user);
 					ShowProgress(IProgressType.LogedIn);
 					await Task.Delay(600);

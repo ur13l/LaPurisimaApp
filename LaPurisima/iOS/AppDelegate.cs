@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using Realms;
 using UIKit;
 
@@ -15,6 +16,8 @@ namespace LaPurisima.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 			Xamarin.FormsMaps.Init();
+
+			KeyboardOverlapRenderer.Init();
 
 			LoadApplication(new App());
 

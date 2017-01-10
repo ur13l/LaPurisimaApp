@@ -30,7 +30,7 @@ namespace LaPurisima
 					nombre = EntryNameAlta.Text,
 					password = EntryPassAlta.Text,
 					referencia = Referencias.Text,
-					tipo_usuario_id = 2,
+					tipo_usuario_id = 3,
 				};
  
 				ShowProgress("Validando");
@@ -66,6 +66,11 @@ namespace LaPurisima
 
 			//name
 			if (!ValidateEntry(EntryNameAlta, "EnterNameLabel"))
+			{
+				return false;
+			}
+
+			if (!ValidateEntry(EntryTelAlta, "EnterTelLabel"))
 			{
 				return false;
 			}

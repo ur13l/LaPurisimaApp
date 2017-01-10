@@ -12,6 +12,12 @@ namespace LaPurisima
 		GetProductosWhere,
 		GetLocationName,
 		GetPedidosUsuario,
+		GetPedidosRepartidor,
+		GetPedidosSolicitados,
+		SetStatusRepartidor,
+		CancelarPedido,
+		FinalizarPedido,
+		GetAddressCoordenates,
 	}
 
 	public enum WEB_ERROR
@@ -48,28 +54,21 @@ namespace LaPurisima
 				case WEB_METHODS.GetProductosWhere:
 					return "producto/get?search=";
 				case WEB_METHODS.GetLocationName:
-					return "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApnytpG7fVfQV7QdoeWJ0oY561v1iliV4&language=es&latlng=";
+					return "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyApnytpG7fVfQV7QdoeWJ0oY561v1iliV4&language=es-ES&latlng=";
 				case WEB_METHODS.GetPedidosUsuario:
-					var user = PropertiesManager.GetUserInfo();
-					if (user != null)
-					{
-						//return "https://lapurisimaweb.herokuapp.com/pedido/usuario";
-						switch (user.tipo_usuario_id)
-						{
-							case 0:
-								return "pedido/usuario";
-							case 1:
-								return "pedido/usuario";
-							case 2:
-								return "pedido/repartidor";
-							default:
-								return "pedido/usuario";
-						}
-					}
-					else {
-						return null;
-					}
-					break;
+					return "pedido/usuario";
+				case WEB_METHODS.GetPedidosRepartidor:
+					return "/pedido/repartidor";
+				case WEB_METHODS.GetPedidosSolicitados:
+					return "/pedido/solicitados";
+				case WEB_METHODS.SetStatusRepartidor:
+					return "/repartidor/status";
+				case WEB_METHODS.CancelarPedido:
+					return "/pedido/cancelar";
+				case WEB_METHODS.FinalizarPedido:
+					return "/pedido/finalizar";
+				case WEB_METHODS.GetAddressCoordenates:
+					return "http://maps.google.com/maps/api/geocode/json?address=";
 				default:
 
 					break;
@@ -80,4 +79,3 @@ namespace LaPurisima
 
 	}
 }
-

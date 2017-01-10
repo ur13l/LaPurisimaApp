@@ -8,7 +8,7 @@ using Xamarin.Forms.Platform.Android;
 using TextChangedEventArgs = Android.Text.TextChangedEventArgs;
 using View = Android.Views.View;
 
-[assembly: ExportRenderer(typeof(Entry), typeof(MaterialEntryRenderer_Droid))]
+//[assembly: ExportRenderer(typeof(Entry), typeof(MaterialEntryRenderer_Droid))]
 
 namespace LaPurisima.Droid
 {
