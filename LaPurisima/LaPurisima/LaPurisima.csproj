@@ -38,40 +38,40 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\LoginPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\RecoverPassPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\VerifyCodePass.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\UserSignUp.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="ContentPages\Profile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="ContentPages\Drawer\DrawerListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\OrdersPage.xaml">
+    <EmbeddedResource Include="ContentPages\NewOrderPage\MakeOrderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\OrderPage\MakeOrderPage.xaml">
+    <EmbeddedResource Include="ContentPages\NewOrderPage\ConfirmOrderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\OrderPage\ConfirmOrderPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\OrderPage\SelectProductoPage.xaml">
+    <EmbeddedResource Include="ContentPages\NewOrderPage\SelectProductoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="ContentPages\OrdersForDriver\DriverOrders.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\OrdersForDriver\OrderDetails.xaml">
+    <EmbeddedResource Include="ContentPages\Orders\OrderDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\Orders\OrdersPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\Login\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\Login\UserSignUp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\RecoverPass\RecoverPassPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\RecoverPass\VerifyCodePass.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -86,22 +86,10 @@
     <Compile Include="Localization\Extentions\TranslateExtension.cs" />
     <Compile Include="Localization\ILocalize.cs" />
     <Compile Include="Localization\Localize.cs" />
-    <Compile Include="ContentPages\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ContentPages\RecoverPassPage.xaml.cs">
-      <DependentUpon>RecoverPassPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ContentPages\VerifyCodePass.xaml.cs">
-      <DependentUpon>VerifyCodePass.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CustomViews\BorderlessEntry.cs" />
-    <Compile Include="ContentPages\UserSignUp.xaml.cs">
-      <DependentUpon>UserSignUp.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ContentPages\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
@@ -109,26 +97,23 @@
       <DependentUpon>DrawerListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContentPages\Drawer\RootPage.cs" />
-    <Compile Include="ContentPages\OrdersPage.xaml.cs">
-      <DependentUpon>OrdersPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PropertiesManager.cs" />
     <Compile Include="Providers\IProgress.cs" />
     <Compile Include="ContentPages\BasePage.cs" />
     <Compile Include="CustomViews\TintedImage.cs" />
-    <Compile Include="ContentPages\OrderPage\CarouselPageOrder.cs" />
-    <Compile Include="ContentPages\OrderPage\MakeOrderPage.xaml.cs">
+    <Compile Include="ContentPages\NewOrderPage\CarouselPageOrder.cs" />
+    <Compile Include="ContentPages\NewOrderPage\MakeOrderPage.xaml.cs">
       <DependentUpon>MakeOrderPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentPages\OrderPage\ConfirmOrderPage.cs">
+    <Compile Include="ContentPages\NewOrderPage\ConfirmOrderPage.cs">
       <DependentUpon>ConfirmOrderPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentPages\OrderPage\SelectProductoPage.xaml.cs">
+    <Compile Include="ContentPages\NewOrderPage\SelectProductoPage.xaml.cs">
       <DependentUpon>SelectProductoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\UpdateHelper.cs" />
     <Compile Include="Helpers\RealmHelper.cs" />
-    <Compile Include="ContentPages\OrderPage\HelperOrdenPage.cs" />
+    <Compile Include="ContentPages\NewOrderPage\HelperOrdenPage.cs" />
     <Compile Include="CustomViews\CustomEntry.cs" />
     <Compile Include="CustomViews\CustomImage.cs" />
     <Compile Include="Helpers\LocationHelper.cs" />
@@ -137,17 +122,32 @@
     <Compile Include="ContentPages\OrdersForDriver\DriverOrders.xaml.cs">
       <DependentUpon>DriverOrders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ContentPages\OrdersForDriver\OrderDetails.xaml.cs">
+    <Compile Include="CustomViews\AutoAdjustLabel.cs" />
+    <Compile Include="Data\Services\ClientLaPurisima.cs" />
+    <Compile Include="Data\Services\Config.cs" />
+    <Compile Include="Data\Models\GoogleMapsLocation.cs" />
+    <Compile Include="Data\Models\Pedido.cs" />
+    <Compile Include="Data\Models\Producto.cs" />
+    <Compile Include="Data\Models\Repartidor.cs" />
+    <Compile Include="Data\Models\User.cs" />
+    <Compile Include="ContentPages\Orders\OrderDetails.xaml.cs">
       <DependentUpon>OrderDetails.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomViews\AutoAdjustLabel.cs" />
-    <Compile Include="ContentPages\Services\ClientLaPurisima.cs" />
-    <Compile Include="ContentPages\Services\Config.cs" />
-    <Compile Include="ContentPages\Models\GoogleMapsLocation.cs" />
-    <Compile Include="ContentPages\Models\Pedido.cs" />
-    <Compile Include="ContentPages\Models\Producto.cs" />
-    <Compile Include="ContentPages\Models\Repartidor.cs" />
-    <Compile Include="ContentPages\Models\User.cs" />
+    <Compile Include="ContentPages\Orders\OrdersPage.xaml.cs">
+      <DependentUpon>OrdersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPages\Login\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPages\Login\UserSignUp.xaml.cs">
+      <DependentUpon>UserSignUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPages\RecoverPass\RecoverPassPage.xaml.cs">
+      <DependentUpon>RecoverPassPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContentPages\RecoverPass\VerifyCodePass.xaml.cs">
+      <DependentUpon>VerifyCodePass.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -157,12 +157,15 @@
     <Folder Include="CustomViews\" />
     <Folder Include="ContentPages\Drawer\" />
     <Folder Include="Providers\" />
-    <Folder Include="ContentPages\OrderPage\" />
+    <Folder Include="ContentPages\NewOrderPage\" />
     <Folder Include="Helpers\" />
     <Folder Include="ContentPages\OrdersForDriver\" />
     <Folder Include="Data\" />
-    <Folder Include="ContentPages\Services\" />
-    <Folder Include="ContentPages\Models\" />
+    <Folder Include="Data\Services\" />
+    <Folder Include="Data\Models\" />
+    <Folder Include="ContentPages\Orders\" />
+    <Folder Include="ContentPages\Login\" />
+    <Folder Include="ContentPages\RecoverPass\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="DotNetCross.Memory.Unsafe">
@@ -200,6 +203,12 @@
     </Reference>
     <Reference Include="Realm">
       <HintPath>..\packages\Realm.0.80.0\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.0.0-beta12\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.0.0-beta12\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.Geolocator.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

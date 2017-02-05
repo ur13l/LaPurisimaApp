@@ -34,7 +34,7 @@ namespace LaPurisima
 
 			if (PropertiesManager.IsLogedIn())
 			{
-				
+
 				MainPage = new RootPage();
 			}
 			else {
@@ -67,6 +67,28 @@ namespace LaPurisima
 					{
 						System.Diagnostics.Debug.WriteLine("error updating status. " + ex.Message);
 					}
+
+					LocationHelper.Instance.Geolocator.PositionChanged += async (sender, e) =>
+					{
+
+						//var res = await LocationHelper.GetLocation(e.Position.Latitude, e.Position.Longitude);
+
+						//if (res != null && res.results != null && res.results.Count > 0)
+						//{
+						//	_location.Text = res.results[0].formatted_address + "\n" + e.Position.Latitude + " " + e.Position.Longitude;
+						//}
+						try
+						{
+							user.status = 1; //activo
+							user.latitud = e.Position.Latitude;
+							user.longitud = e.Position.Longitude;
+							var res = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
+						}
+						catch (Exception ex)
+						{
+							System.Diagnostics.Debug.WriteLine("error updating status. " + ex.Message);
+						}
+					};
 				}
 			}
 

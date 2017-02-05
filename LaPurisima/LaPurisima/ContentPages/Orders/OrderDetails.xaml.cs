@@ -42,7 +42,7 @@ namespace LaPurisima
 				}
 				else {
 					HideProgress();
-					ShowProgressType(IProgressType.Done);
+					ShowProgress(IProgressType.Done);
 					await Task.Delay(600);
 					HideProgress();
 					//await DisplayAlert("", "Pedido actualizado correctamente", "ok");
@@ -57,14 +57,18 @@ namespace LaPurisima
 			var user = PropertiesManager.GetUserInfo();
 			if (user != null)
 			{
-
+				ShowProgress("Cancelando");
 				_pedido.api_token = user.api_token;
 				var res = await ClientLaPurisima.PostObject<Pedido>(_pedido, WEB_METHODS.CancelarPedido);
 				if (ClientLaPurisima.IsErrorFalse(res))
 				{
-					await DisplayAlert("", "Error al actualizar el pedido", "ok");
+					HideProgress();
+					await DisplayAlert("", "Error al cancelar el pedido", "ok");
 				}
 				else {
+					ShowProgress(IProgressType.Done);
+					await Task.Delay(600);
+					HideProgress();
 					await DisplayAlert("", "Pedido cancelado correctamente", "ok");
 					await Navigation.PopAsync();
 				}

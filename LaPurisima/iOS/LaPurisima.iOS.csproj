@@ -131,6 +131,12 @@
     <Reference Include="Realm">
       <HintPath>..\packages\Realm.0.80.0\lib\Xamarin.iOS10\Realm.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.0.0-beta12\lib\Xamarin.iOS10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.0.0-beta12\lib\Xamarin.iOS10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LaPurisima\LaPurisima.csproj">

@@ -70,11 +70,12 @@ namespace LaPurisima
 			//if (_pedidos == null)
 				_pedidos = await ClientLaPurisima.GetPedidos(PropertiesManager.GetUserInfo());
 
+			var user = PropertiesManager.GetUserInfo();
 
-			if (_pedidos != null)
+			if (_pedidos != null && user != null)
 			{
 
-				_pedidos = _pedidos.Where(x=>x.cliente_id == PropertiesManager.GetUserInfo().id).ToList();
+				_pedidos = _pedidos.Where(x=>x.cliente_id == user.id).ToList();
 
 				System.Diagnostics.Debug.WriteLine(_pedidos.Count);
 

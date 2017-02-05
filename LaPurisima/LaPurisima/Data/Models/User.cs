@@ -21,6 +21,8 @@ namespace LaPurisima
 		public string password { get; set; }
 
 		public int status { get; set; }
+		public double latitud { get; set; }
+		public double longitud { get; set; }
 	}
 }
 

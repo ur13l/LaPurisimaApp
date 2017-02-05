@@ -59,8 +59,7 @@
 					<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="3">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="70" />
-							<ColumnDefinition Width="1*" />
-							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="1*" /> 
 						</Grid.ColumnDefinitions>
 						<Label Grid.Column="0" Text="Colonia" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center">
 							<Label.FontFamily>
@@ -77,14 +76,7 @@
 									<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
 								</OnPlatform>
 							</Entry.FontFamily>
-						</Entry>
-						<Picker Grid.Column="2" x:Name="_picker" Title="Municipio" HorizontalOptions="FillAndExpand" >
-							<Picker.Items>
-								<x:String>Monclova</x:String>
-								<x:String>Castaños</x:String>
-								<x:String>Frontera</x:String>
-							</Picker.Items>
-						</Picker>
+						</Entry> 
 					</Grid>
 					<Button Text="Hacer Pedido" TextColor="White" BackgroundColor="Green" Clicked="MakeOrder" />
 				</StackLayout>

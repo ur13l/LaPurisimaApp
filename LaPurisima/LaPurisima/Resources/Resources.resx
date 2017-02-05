@@ -116,8 +116,8 @@
 	<data
 		name     ="TelAltaText"
 		xml:space="preserve">
-	    <value>Correo</value>
-	    <comment>E-mail</comment>
+	    <value>Telefono</value>
+	    <comment>Telefono</comment>
 	</data>
 	<data
 		name     ="PassAltaText"
@@ -381,6 +381,4 @@
 	    <value>Usuario Valido</value>
 	    <comment></comment>
 	</data>
-
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4c3dc91b74cf26526d1acda474aae613743d5d0e
 </root>
