@@ -3,10 +3,10 @@ namespace LaPurisima
 {
 	public enum WEB_METHODS
 	{
-		Autenticate, 
-		PassForgot, 
+		Autenticate,
+		PassForgot,
 		CrearUsuario,
-		UsuarioUpdate, 
+		UsuarioUpdate,
 		PedidoNuevo,
 		GetProductos,
 		GetProductosWhere,
@@ -79,4 +79,3 @@ namespace LaPurisima
 
 	}
 }
-
