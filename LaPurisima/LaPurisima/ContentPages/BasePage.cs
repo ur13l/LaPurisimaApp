@@ -17,7 +17,7 @@ namespace LaPurisima
 
 		protected BasePage()
 		{
-			var progressDependency = DependencyService.Get<IProgress>();
+			progressDependency = DependencyService.Get<IProgress>();
 		}
 
 		public void ShowProgress(string message)

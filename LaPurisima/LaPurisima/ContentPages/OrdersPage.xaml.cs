@@ -52,14 +52,10 @@ namespace LaPurisima
 		async void TapItem(object sender, System.EventArgs e)
 		{
 			var stack = (StackLayout)sender;
-<<<<<<< HEAD
 			//await Task.WhenAll(new Task[]{stack.ScaleTo(1.2), stack.ScaleTo(1) });
-			await stack.ScaleTo(0.9,100,Easing.SinIn);
-=======
-
-			await stack.ScaleTo(1.1,100,Easing.SinIn);
->>>>>>> 96dd7e47df8cd9c2f743702cf2cbf26fe66bb56c
-			await stack.ScaleTo(1, 100, Easing.SinIn);
+		//	await stack.ScaleTo(0.9, 100, Easing.SinIn);
+		//	await stack.ScaleTo(1.1,100,Easing.SinIn);
+			await stack.ScaleTo(1.1, 100, Easing.SinIn);
 
 
 			if (stack.BindingContext is Pedido)
