@@ -11,6 +11,7 @@
 				Padding="40,10,40,10">
 				<Image
 					HorizontalOptions="FillAndExpand"
+					HeightRequest = "200"
 					Source="logo.png" />
 				<StackLayout
 					Spacing="15"
@@ -18,7 +19,8 @@
 					VerticalOptions="FillAndExpand">
 					<StackLayout
 						Spacing="15"
-						Orientation="Vertical">
+						Orientation="Vertical"
+							 Margin="20">
 						<Entry
 							x:Name="EntryEmail"
 							HorizontalOptions="FillAndExpand"

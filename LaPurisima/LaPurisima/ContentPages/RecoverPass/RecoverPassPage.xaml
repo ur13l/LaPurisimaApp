@@ -9,13 +9,14 @@
 		<StackLayout
 			Padding="40,10,40,10">
 			<Image
-				HeightRequest="250"
+				HeightRequest="200"
 				HorizontalOptions="FillAndExpand"
 				Source="logo.png" />
 			<StackLayout
 				Spacing="15"
 				HorizontalOptions="FillAndExpand"
-				VerticalOptions="FillAndExpand">
+				VerticalOptions="FillAndExpand"
+			    Margin="20">
 				<Label
 					HorizontalOptions="Center"
 					Text="{i18n:Translate WriteMailLabel}"

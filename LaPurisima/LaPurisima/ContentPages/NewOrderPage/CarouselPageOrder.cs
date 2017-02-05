@@ -12,6 +12,7 @@ namespace LaPurisima
 		{
 
 			var pagina1 = new SelectProductoPage();
+
 			var pagina2 = new MakeOrderPage();
 			_confirmOrder = new ConfirmOrderPage();
 

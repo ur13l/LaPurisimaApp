@@ -300,7 +300,8 @@ namespace LaPurisima
 
 		public static bool IsErrorFalse(string json)
 		{
-			if (!json.Contains("false"))
+			
+			if ( json == null || !json.Contains("false") )
 			{
 				return false;
 			}

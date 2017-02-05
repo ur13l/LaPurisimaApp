@@ -10,8 +10,8 @@
 					WidthRequest="70"
 					Margin="10" />-->
 				<Image HorizontalOptions="Center" Source="logo.png" HeightRequest="90" Margin="10" />
-				<Label x:Name="_labelNombre" Text="Nombre" HorizontalOptions="Center" TextColor="#0493DB" />
-				<Label x:Name="_labelMail" Text="E-mail" HorizontalOptions="Center" TextColor="#0493DB" />
+				<Label x:Name="_labelNombre" Text="Nombre" HorizontalOptions="Center" FontSize="18"   TextColor="#848484" />
+				<Label x:Name="_labelMail" Text="E-mail" HorizontalOptions="Center"  FontSize="18" TextColor="#848484" />
 				<!--<StackLayout.IsVisible>
 					<OnPlatform
 						x:TypeArguments="x:Boolean">
@@ -20,17 +20,20 @@
 					</OnPlatform>
 				</StackLayout.IsVisible>-->
 			</StackLayout>
-			<ListView Margin="0,15,0,0" x:Name="ListView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" HasUnevenRows="true">
+			<ListView Margin="0,15,0,0" x:Name="ListView"  SeparatorVisibility="Default" SeparatorColor="#d2d2d2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" HasUnevenRows="true">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
-							<StackLayout BackgroundColor="White" Orientation="Horizontal" HeightRequest="60" Spacing="0" HorizontalOptions="FillAndExpand" Padding="5">
-								<Label Text="{Binding Label}" VerticalOptions="Center" TextColor="#0493DB" FontSize="22">
+							<StackLayout BackgroundColor="White" Orientation="Horizontal" HeightRequest="40" Spacing="0" HorizontalOptions="FillAndExpand" Padding="5">
+								<Label Text="{Binding Label}" VerticalOptions="Center" TextColor="#0493DB" FontSize="18">
 								</Label>
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
+				<ListView.Footer>
+					<BoxView HeightRequest="0" />
+				</ListView.Footer>
 			</ListView>
 		</StackLayout>
 	</ContentPage.Content>
