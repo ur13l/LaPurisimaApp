@@ -1,61 +1,96 @@
-﻿//using System;
-//using Xamarin.Forms;
-//using Xamarin.Forms.Maps;
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using LaPurisima;
+using Newtonsoft.Json;
+using Plugin.Geolocator;
+using Plugin.Geolocator.Abstractions;
+using Xamarin.Forms;
 
-//namespace LaPurisima
-//{
-//	public class LocationHelper
-//	{
+namespace LaPurisima
+{
+	public class LocationHelper
+	{
 
-//		public Position CurrentPosition = null;
-//		public Xamarin Geolocator;
+		public Position CurrentPosition = null;
+		public IGeolocator Geolocator;
 
-//		static LocationHelper _instance;
-//		public static LocationHelper Instance
-//		{
-//			get
-//			{
-//				if (_instance == null)
-//				{
-//					_instance = new LocationHelper();
-//				}
+		static LocationHelper _instance;
+		public static LocationHelper Instance
+		{
+			get
+			{
+				if (_instance == null)
+				{
+					_instance = new LocationHelper();
+				}
 
-//				return _instance;
-//			}
-//		}
+				return _instance;
+			}
+		}
 
-//		private LocationHelper()
-//		{
-//			SetupGeoLocator();
-//		}
+		private LocationHelper()
+		{
+			SetupGeoLocator();
+		}
 
-//		void SetupGeoLocator()
-//		{
-//			if (Geolocator != null)
-//				return;
-//			Geolocator = DependencyService.Get<IGeolocator>();
-//			Geolocator.DesiredAccuracy = 100;
+		void SetupGeoLocator()
+		{
+			if (Geolocator != null)
+				return;
+			Geolocator = CrossGeolocator.Current;
+			Geolocator.DesiredAccuracy = 100;
 
-//			Geolocator.PositionChanged += (sender, e) =>
-//			{
-//				CurrentPosition = e.Position;
-//				System.Diagnostics.Debug.WriteLine("PositionChanged {0} {1}", e.Position.Latitude, e.Position.Longitude);
-//			};
+			Geolocator.PositionChanged += (sender, e) =>
+			{
+				CurrentPosition = e.Position;
+				System.Diagnostics.Debug.WriteLine("PositionChanged {0} {1}", e.Position.Latitude, e.Position.Longitude);
+			};
 
-//			Geolocator.StartListening(1, 1);
-//		}
+			Geolocator.StartListeningAsync(1, 1);
+		}
 
-		 
 
-//		//public static double DistanceBetween(Position a, Position b)
-//		//{
-//		//	double d = Math.Acos(
-//		//	   (Math.Sin(a.Latitude) * Math.Sin(b.Latitude)) +
-//		//	   (Math.Cos(a.Latitude) * Math.Cos(b.Latitude))
-//		//	   * Math.Cos(b.Longitude - a.Longitude));
-//		//	return 6378137 * d;
-//		//}
+		const string strGeoCodingUrl = "http://maps.googleapis.com/maps/api/geocode/json?language=es&latlng=";
 
-//	}
-//}
 
+		public static async Task<GoogleMapsLocation> GetLocation(double latitue, double longitude)
+		{
+			var list = new List<string>();
+
+			var strResult = await fnDownloadString(strGeoCodingUrl + latitue + "," + longitude);
+			if (strResult == "Exception")
+			{
+				return null;
+			}
+			return JsonConvert.DeserializeObject<GoogleMapsLocation>(strResult);
+		}
+
+
+		static async Task<string> fnDownloadString(string strUri)
+		{
+			var client = new HttpClient();
+			string strResultData;
+			try
+			{
+				strResultData = await client.GetStringAsync(new Uri(strUri));
+				System.Diagnostics.Debug.WriteLine(strResultData);
+			}
+			catch
+			{
+				strResultData = "Exception";
+			}
+			finally
+			{
+				client.Dispose();
+				client = null;
+			}
+
+			return strResultData;
+		}
+
+
+
+	}
+}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace LaPurisima
 {
@@ -23,7 +24,7 @@ namespace LaPurisima
 				if (direccion != null)
 				{
 					if (direccion.Contains("Referencias:"))
-						return direccion.Substring(0,direccion.IndexOf("Referencias:"));
+						return direccion.Substring(0, direccion.IndexOf("Referencias:"));
 					else {
 						return direccion;
 					}
@@ -65,7 +66,7 @@ namespace LaPurisima
 		public Repartidor repartidor { get; set; }
 
 		public int id { get; set; }
-		public int id_pedido { get { return id;} }
+		public int id_pedido { get { return id; } }
 		public int cliente_id { get; set; }
 		public int? conductor_id { get; set; }
 
@@ -124,6 +125,54 @@ namespace LaPurisima
 			set
 			{
 
+			}
+		}
+
+		public string StatusLabel
+		{
+			get
+			{
+				switch (status)
+				{
+					case 1:
+						return "Solicitado";
+					case 2:
+						return "Asignado";
+					case 3:
+						return "En camino";
+					case 4:
+						return "Entregado";
+					case 5:
+						return "Cancelado";
+					case 6:
+						return "Fallido";
+					default:
+						return "";
+				}
+			}
+		}
+
+		public Color StatusColor
+		{
+			get
+			{
+				switch (status)
+				{
+					case 1:
+						return Color.FromHex("#777777");
+					case 2:
+						return Color.FromHex("#347AB7");
+					case 3:
+						return Color.FromHex("#347AB7");
+					case 4:
+						return Color.FromHex("#5CB85C");
+					case 5:
+						return Color.FromHex("#AF1619");
+					case 6:
+						return Color.FromHex("#AF1619");
+					default:
+						return Color.FromHex("#777777");
+				}
 			}
 		}
 

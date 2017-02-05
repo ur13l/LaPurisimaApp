@@ -62,60 +62,48 @@
 								</OnPlatform>
 							</Label.FontFamily>
 						</Label>
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="1*" />
-								<ColumnDefinition Width="Auto" />
-							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="Auto" />
-							</Grid.RowDefinitions>
-							<StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical">
-								<Entry x:Name="EntryCalleAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CalleAltaText}">
-									<Entry.FontFamily>
-										<OnPlatform x:TypeArguments="x:String">
-											<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-											<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-										</OnPlatform>
-									</Entry.FontFamily>
-								</Entry>
-								<Entry x:Name="EntryColoniaAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}">
-									<Entry.FontFamily>
-										<OnPlatform x:TypeArguments="x:String">
-											<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-											<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-										</OnPlatform>
-									</Entry.FontFamily>
-								</Entry>
-								<Entry x:Name="EntryCPAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CPAltaText}">
-									<Entry.FontFamily>
-										<OnPlatform x:TypeArguments="x:String">
-											<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-											<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-										</OnPlatform>
-									</Entry.FontFamily>
-								</Entry>
-							</StackLayout>
-							<StackLayout Grid.Column="1" Grid.Row="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsVisible="false">
-								<local:TintedImage Source="location.png" TintColor="#0592DC" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="Center" />
-								<Label Text="{i18n:Translate UseMapLabel}" WidthRequest="40" FontSize="11" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
-							</StackLayout>
-						</Grid>
-						<Frame HorizontalOptions="FillAndExpand" BackgroundColor="#66c9c9c9">
-							<Frame.Content>
-								<StackLayout HorizontalOptions="FillAndExpand">
-									<Label Text="{i18n:Translate References}" TextColor="Black" FontSize="24" Margin="10" />
-									<Editor x:Name="Referencias" HorizontalOptions="FillAndExpand" HeightRequest="65">
-										<Editor.FontFamily>
-											<OnPlatform x:TypeArguments="x:String">
-												<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-												<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-											</OnPlatform>
-										</Editor.FontFamily>
-									</Editor>
-								</StackLayout>
-							</Frame.Content>
-						</Frame>
+						<StackLayout Orientation="Vertical">
+							<Entry x:Name="EntryCalleAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CalleAltaText}">
+								<Entry.FontFamily>
+									<OnPlatform x:TypeArguments="x:String">
+										<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+										<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+									</OnPlatform>
+								</Entry.FontFamily>
+							</Entry>
+							<Entry x:Name="EntryColoniaAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}">
+								<Entry.FontFamily>
+									<OnPlatform x:TypeArguments="x:String">
+										<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+										<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+									</OnPlatform>
+								</Entry.FontFamily>
+							</Entry>
+							<Entry x:Name="EntryCPAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CPAltaText}">
+								<Entry.FontFamily>
+									<OnPlatform x:TypeArguments="x:String">
+										<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+										<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+									</OnPlatform>
+								</Entry.FontFamily>
+							</Entry>
+						</StackLayout>
+						<Label HorizontalOptions="Start" Text="{i18n:Translate References}" TextColor="#000000">
+							<Label.FontFamily>
+								<OnPlatform x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Label.FontFamily>
+						</Label>
+						<Entry x:Name="Referencias" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate References}">
+							<Entry.FontFamily>
+								<OnPlatform x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</Entry>
 						<Button Text="{i18n:Translate UploadImageButtonText}" TextColor="#3F92DC" BackgroundColor="White" IsVisible="false">
 							<Button.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">

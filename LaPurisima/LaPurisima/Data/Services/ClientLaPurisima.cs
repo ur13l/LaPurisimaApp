@@ -193,10 +193,10 @@ namespace LaPurisima
 				HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
 				client.BaseAddress = new Uri(Config.URL);
 				var response = await client.PostAsync(Config.GetURLForMethod(method), content);
-
+				var resultString = await response.Content.ReadAsStringAsync();
 				if (response.IsSuccessStatusCode)
 				{
-					var resultString = await response.Content.ReadAsStringAsync();
+					
 					//var result = JsonConvert.DeserializeObject<K>(resultString); 
 					return resultString;
 				}

@@ -17,7 +17,7 @@
 										<Label Text="{Binding direccionLabel}" />
 										<local:AutoAdjustLabel Text="{Binding ProductosLabel}" />
 									</StackLayout>
-									<local:AutoAdjustLabel Grid.Column="1" Text="{Binding Total, StringFormat='Total: ${0}'}" VerticalOptions="Center" FontSize="25" />
+									<local:AutoAdjustLabel Grid.Column="1" Text="{Binding total, StringFormat='Total: ${0}'}" VerticalOptions="Center" FontSize="25" />
 								</Grid>
 								<Label Text="{Binding fechaDateTime, StringFormat='{}{0:dd/MMM/yyyy a \\la\\s h:mm tt}'}" HorizontalOptions="End" />
 								<StackLayout.GestureRecognizers>

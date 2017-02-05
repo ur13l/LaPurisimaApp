@@ -46,7 +46,9 @@ namespace LaPurisima.iOS
 				{
 					Control.Image = await LoadImage(imageUrl);
 				}
-				catch (System.Exception ex) { System.Diagnostics.Debug.WriteLine(ex.Message);};
+				catch (System.Exception ex) { 
+					System.Diagnostics.Debug.WriteLine(ex.Message);
+				};
 			} 
 		}
 

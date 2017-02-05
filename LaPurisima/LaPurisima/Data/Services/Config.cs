@@ -31,7 +31,7 @@ namespace LaPurisima
 
 	public class Config
 	{
-		public static string URL = "https://lapurisimaweb.herokuapp.com/";
+		public static string URL = "http://10.0.3.2/lapurisimaweb/public/";//"https://lapurisimaweb.herokuapp.com/";
 
 
 		public static string GetURLForMethod(WEB_METHODS method)
@@ -44,7 +44,7 @@ namespace LaPurisima
 				case WEB_METHODS.PassForgot:
 					return "password/email";
 				case WEB_METHODS.CrearUsuario:
-					return "/usuario/create";
+					return "usuario/create";
 				case WEB_METHODS.UsuarioUpdate:
 					return "usuario/update";
 				case WEB_METHODS.PedidoNuevo:
@@ -58,15 +58,15 @@ namespace LaPurisima
 				case WEB_METHODS.GetPedidosUsuario:
 					return "pedido/usuario";
 				case WEB_METHODS.GetPedidosRepartidor:
-					return "/pedido/repartidor";
+					return "pedido/repartidor";
 				case WEB_METHODS.GetPedidosSolicitados:
-					return "/pedido/solicitados";
+					return "pedido/solicitados";
 				case WEB_METHODS.SetStatusRepartidor:
-					return "/repartidor/status";
+					return "repartidor/status";
 				case WEB_METHODS.CancelarPedido:
-					return "/pedido/cancelar";
+					return "pedido/cancelar";
 				case WEB_METHODS.FinalizarPedido:
-					return "/pedido/finalizar";
+					return "pedido/finalizar";
 				case WEB_METHODS.GetAddressCoordenates:
 					return "http://maps.google.com/maps/api/geocode/json?address=";
 				default:

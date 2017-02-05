@@ -71,7 +71,7 @@
 						</Entry>
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
-						<Label HorizontalOptions="Center" Text="{i18n:Translate BetweenAltaText}" TextColor="#000000">
+						<Label HorizontalOptions="Center" Text="{i18n:Translate References}" TextColor="#000000">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -79,7 +79,7 @@
 								</OnPlatform>
 							</Label.FontFamily>
 						</Label>
-						<Entry x:Name="EntryBetweenProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate BetweenAltaText}">
+						<Entry x:Name="EntryBetweenProfile" HorizontalOptions="FillAndExpand" Text="{i18n:Translate References}">
 							<Entry.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>

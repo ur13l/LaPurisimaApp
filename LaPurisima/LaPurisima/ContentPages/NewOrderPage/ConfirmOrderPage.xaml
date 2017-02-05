@@ -38,6 +38,7 @@
 							<Label x:Name="_totalLabel" Text="Total:" HorizontalOptions="End" FontSize="22" FontAttributes="Bold" />
 						</ListView.Footer>
 					</ListView>
+					
 				</StackLayout>
 			</ScrollView>
 			<Button x:Name="SaveButton" Text="Hacer pedido" TextColor="White" BackgroundColor="Green" Clicked="Pedir" />
