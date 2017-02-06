@@ -91,6 +91,15 @@ namespace LaPurisima
 			}
 
 			var total = _items.Sum(x => x.cantidad * x.precio);
+
+			if (total == 0)
+			{
+				footerTotal.IsVisible = false;
+			}
+			else {
+				footerTotal.IsVisible = true;
+			}
+
 			AnimateText(_totalLabel, string.Format("${0}", total));
 		}
 
@@ -180,6 +189,7 @@ namespace LaPurisima
 			if (v)
 			{
 				await _labelNoResutls.FadeTo(1, 250, Easing.SinIn);
+
 			}
 			else {
 				await _labelNoResutls.FadeTo(0, 200, Easing.SpringOut);

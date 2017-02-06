@@ -85,11 +85,11 @@ namespace LaPurisima
 
 					if (detalles.Count > 1)
 					{
-						str += string.Join(Environment.NewLine, detalles.GetRange(0, detalles.Count).Select(x => string.Format(Environment.NewLine + "-({0}) {1} {2}", x.cantidad, x.producto.nombre, GetStringContenido(x.producto.contenido))));
+						str += string.Join("", detalles.GetRange(0, detalles.Count).Select(x => string.Format("{0} {1}  \n", x.cantidad, x.producto.nombre)));
 						//str += string.Format(Environment.NewLine + "-{0}", detalles.Last().producto.nombre);
 					}
 					else if (detalles.Count > 0)
-						str = string.Format(Environment.NewLine + "-({0}) {1} {2}", detalles.Last().cantidad, detalles.Last().producto.nombre, detalles.Last().producto.contenido);
+						str = string.Format("{0} {1} ", detalles.Last().cantidad, detalles.Last().producto.nombre);
 
 				}
 

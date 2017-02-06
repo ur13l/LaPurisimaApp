@@ -25,7 +25,7 @@ namespace LaPurisima
 			ListView.ItemsSource = _itemsList;
 			ListView.IsRefreshing = true;
 
-			Title = "HISTORICO DE PEDIDOS";
+			Title = "Historial de Pedidos";
 
 
 			InitViews();

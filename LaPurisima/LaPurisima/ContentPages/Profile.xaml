@@ -11,7 +11,7 @@
 					<StackLayout Spacing="30" Orientation="Vertical">
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
-						<Label HorizontalOptions="Center" Text="{i18n:Translate NombreProfileText}" TextColor="#000000" >
+						<Label HorizontalOptions="Start" Text="{i18n:Translate NombreProfileText}" TextColor="#4F4F4F" >
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -35,7 +35,7 @@
 						</Entry>
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
-						<Label HorizontalOptions="Center" Text="{i18n:Translate CalleAltaText}" TextColor="#000000">
+						<Label HorizontalOptions="Start" Text="{i18n:Translate CalleAltaText}" TextColor="#4F4F4F">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -53,7 +53,7 @@
 						</Entry>
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
-						<Label HorizontalOptions="Center" Text="{i18n:Translate ColoniaAltaText}" TextColor="#000000">
+						<Label HorizontalOptions="Start" Text="{i18n:Translate ColoniaAltaText}" TextColor="#4F4F4F">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -71,7 +71,7 @@
 						</Entry>
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
-						<Label HorizontalOptions="Center" Text="{i18n:Translate References}" TextColor="#000000">
+						<Label HorizontalOptions="Start" Text="{i18n:Translate References}" TextColor="#4F4F4F">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -89,7 +89,7 @@
 						</Entry>
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
-						<Label HorizontalOptions="Center" Text="{i18n:Translate CPAltaText}" TextColor="#000000">
+						<Label HorizontalOptions="Start" Text="{i18n:Translate CPAltaText}" TextColor="#4F4F4F">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -107,7 +107,7 @@
 						</Entry>
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
-						<Button x:Name="SaveButton" Text="{i18n:Translate GuardarProfileText}" TextColor="#3F92DC" BackgroundColor="White" IsVisible="false" Clicked="SaveInfo">
+						<Button x:Name="SaveButton" Text="{i18n:Translate GuardarProfileText}" TextColor="White" BackgroundColor="#31B404" IsVisible="false" Clicked="SaveInfo">
 							<Button.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>

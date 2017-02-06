@@ -14,12 +14,12 @@
 										<ColumnDefinition Width="Auto" />
 									</Grid.ColumnDefinitions>
 									<StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="StartAndExpand">
-										<Label Text="{Binding direccionLabel}" />
-										<local:AutoAdjustLabel Text="{Binding ProductosLabel}" />
+										<Label Text="{Binding direccionLabel}" TextColor="#4F4F4F" />
+										<Label 	Text ="{Binding fechaDateTime, StringFormat='{}{0:d \\de MMMM yyyy a \\la\\s h:mm tt}'}"  TextColor="#4F4F4F" HorizontalOptions="End" />
+										<local:AutoAdjustLabel Text="{Binding ProductosLabel}"  TextColor="#848484" />
 									</StackLayout>
-									<local:AutoAdjustLabel Grid.Column="1" Text="{Binding total, StringFormat='Total: ${0}'}" VerticalOptions="Center" FontSize="25" />
+									<local:AutoAdjustLabel Grid.Column="1" Text="{Binding total, StringFormat='${0}'}" TextColor="#4F4F4F" VerticalOptions="Center" FontSize="20" />
 								</Grid>
-								<Label Text="{Binding fechaDateTime, StringFormat='{}{0:dd/MMM/yyyy a \\la\\s h:mm tt}'}" HorizontalOptions="End" />
 								<StackLayout.GestureRecognizers>
 									<TapGestureRecognizer Tapped="TapItem" />
 								</StackLayout.GestureRecognizers>
@@ -28,7 +28,7 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<Label x:Name="_labelNoResutls" Text="No hay pedidos" FontSize="43" VerticalOptions="Center" HorizontalOptions="Center" />
+			<Label x:Name="_labelNoResutls" Text="No se han encontrado pedidos" FontSize="20" TextColor="#4F4F4F" VerticalOptions="Center" HorizontalOptions="Center" />
 		</Grid>
 	</local:BasePage.Content>
 </local:BasePage>
