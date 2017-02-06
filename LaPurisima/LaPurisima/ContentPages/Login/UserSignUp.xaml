@@ -2,11 +2,11 @@
 <local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.UserSignUp" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" Title="{i18n:Translate NewUserText}">
 	<local:BasePage.Content>
 		<ScrollView>
-			<StackLayout Padding="40,10,40,10">
-				<Image HorizontalOptions="FillAndExpand" Source="logo.png" HeightRequest="200" />
+			<StackLayout Padding="25,10,25,10">
+				<Image WidthRequest="100" Source="logo.png" Aspect="AspectFit" Margin="30" />
 				<StackLayout Spacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 					<StackLayout Spacing="15" Orientation="Vertical">
-						<Label HorizontalOptions="Center" Text="{i18n:Translate MensajeAltaText}" TextColor="#000000">
+						<Label HorizontalOptions="Center" Text="{i18n:Translate MensajeAltaText}" TextColor="#4F4F4F">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -54,7 +54,7 @@
 								</OnPlatform>
 							</Entry.FontFamily>
 						</Entry>
-						<Label HorizontalOptions="Start" Text="{i18n:Translate UserLocationLabel}" TextColor="#000000">
+						<Label HorizontalOptions="Start" Text="{i18n:Translate UserLocationLabel}" TextColor="#4F4F4F">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -88,7 +88,7 @@
 								</Entry.FontFamily>
 							</Entry>
 						</StackLayout>
-						<Label HorizontalOptions="Start" Text="{i18n:Translate References}" TextColor="#000000">
+						<Label HorizontalOptions="Start" Text="{i18n:Translate References}" TextColor="#4F4F4F">
 							<Label.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
@@ -112,7 +112,7 @@
 								</OnPlatform>
 							</Button.FontFamily>
 						</Button>
-						<Button Text="{i18n:Translate RegistrarButtonText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="SignUpClicked">
+						<Button Text="{i18n:Translate RegistrarButtonText}" TextColor="White" BackgroundColor="#31B404" Clicked="SignUpClicked">
 							<Button.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>

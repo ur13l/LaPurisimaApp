@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace LaPurisima
 {
@@ -7,7 +8,7 @@ namespace LaPurisima
 	{
 		
 
-		public static async void UpdateInfo()
+		public static async Task UpdateInfo()
 		{
 			var productos = await ClientLaPurisima.GetObject<List<Producto>>(WEB_METHODS.GetProductos);
 			RealmHelper.SetProductos(productos);

@@ -132,12 +132,14 @@ namespace LaPurisima
 			//		},
 			//	},
 			//	};+
+			if (HelperOrdenPage.Pedido != null && HelperOrdenPage.Pedido.productos != null)
+			{
+				HelperOrdenPage.Pedido.productos.RemoveAll(x => x.cantidad <= 0);
 
-			HelperOrdenPage.Pedido.productos.RemoveAll(x => x.cantidad <= 0);
-
-			_listView.ItemsSource = HelperOrdenPage.Pedido.productos;
-			_listView.HeightRequest = (HelperOrdenPage.Pedido.productos.Count() * 60) + 60;
-			_totalLabel.Text = string.Format("Total: ${0}", HelperOrdenPage.Pedido.productos.Sum(x => x.total));
+				_listView.ItemsSource = HelperOrdenPage.Pedido.productos;
+				_listView.HeightRequest = (HelperOrdenPage.Pedido.productos.Count() * 60) + 60;
+				_totalLabel.Text = string.Format("Total: ${0}", HelperOrdenPage.Pedido.productos.Sum(x => x.total));
+			}
 		}
 	}
 }

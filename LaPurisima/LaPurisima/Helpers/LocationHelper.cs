@@ -48,7 +48,7 @@ namespace LaPurisima
 				System.Diagnostics.Debug.WriteLine("PositionChanged {0} {1}", e.Position.Latitude, e.Position.Longitude);
 			};
 
-			Geolocator.StartListeningAsync(1, 1);
+			Geolocator.StartListeningAsync(50, 50);
 		}
 
 

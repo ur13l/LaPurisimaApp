@@ -27,7 +27,7 @@ namespace LaPurisima
 				HelperOrdenPage.state = null;
 				HelperOrdenPage.street = null;
 				HelperOrdenPage.streetNumber = null;
-				 
+
 				rootPage.Detail = new NavigationPage(new CarouselPageOrder(rootPage));
 			};
 

@@ -20,7 +20,7 @@ namespace LaPurisima
 			InitViews();
 		}
 
-		void InitViews()
+		async void InitViews()
 		{
 			_searchBar.TextChanged += (sender, e) =>
 			{
@@ -30,9 +30,6 @@ namespace LaPurisima
 			{
 				_listView.SelectedItem = null;
 			};
-			UpdateHelper.UpdateInfo();
-
-			GetProductos();
 
 			_listView.Refreshing += (sender, e) =>
 			{
@@ -40,7 +37,9 @@ namespace LaPurisima
 				GetProductosWeb();
 			};
 
-
+			GetProductos();
+			await UpdateHelper.UpdateInfo();
+			GetProductos();
 			UpdateView();
 		}
 
@@ -169,6 +168,7 @@ namespace LaPurisima
 			_collection = new ObservableCollection<ItemLista>(_items);
 
 			_listView.ItemsSource = _collection;
+			ShowNoResults(_collection.Count == 0);
 
 			_listView.IsRefreshing = false;
 

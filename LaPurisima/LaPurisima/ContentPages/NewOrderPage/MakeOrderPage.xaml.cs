@@ -78,25 +78,25 @@ namespace LaPurisima
 
 		async void SearchByAddress()
 		{
-			 
-				try
-				{
 
-					var resultModel = await ClientLaPurisima.GetObject<GoogleMapsLocation>(WEB_METHODS.GetAddressCoordenates, false, string.Format("{0}+{1}+,{2},+{3}+{4}", _number.Text, String.Join("+", _street.Text.Split(' ')), _colony.Text, "Monclova", "Coahuila"));
+			try
+			{
+
+				var resultModel = await ClientLaPurisima.GetObject<GoogleMapsLocation>(WEB_METHODS.GetAddressCoordenates, false, string.Format("{0}+{1}+,{2},+{3}+{4}", _number.Text, String.Join("+", _street.Text.Split(' ')), _colony.Text, "Monclova", "Coahuila"));
 				Map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(resultModel.results[0].geometry.location.lat, resultModel.results[0].geometry.location.lng), Distance.FromKilometers(2)));
-					Traverse(resultModel);
-					UpdateView();
-					
-					
-				}
-				catch
-				{
-					_error.IsVisible = true;
-					await Task.Delay(300);
-					_error.IsVisible = false;
-				}
-			 
-			 
+				Traverse(resultModel);
+				UpdateView();
+
+
+			}
+			catch
+			{
+				_error.IsVisible = true;
+				await Task.Delay(300);
+				_error.IsVisible = false;
+			}
+
+
 		}
 
 		Position _lastPosition;
@@ -160,12 +160,12 @@ namespace LaPurisima
 
 			foreach (var result in googleMaps.results)
 			{
-				System.Diagnostics.Debug.WriteLine(string.Format("result: formatted_address: {0}, types: [{1}]", result.formatted_address, String.Join(" ", result.types)));
+				//System.Diagnostics.Debug.WriteLine(string.Format("result: formatted_address: {0}, types: [{1}]", result.formatted_address, String.Join(" ", result.types)));
 
 				int ncomp = 0;
 				foreach (var addresComponent in result.address_components)
 				{
-					System.Diagnostics.Debug.WriteLine(string.Format(" addresComponent[{0}]: formatted_address: {1}, short_name:{2} types: [{3}]", ncomp, addresComponent.long_name, addresComponent.short_name, String.Join(" ", addresComponent.types)));
+					//System.Diagnostics.Debug.WriteLine(string.Format(" addresComponent[{0}]: formatted_address: {1}, short_name:{2} types: [{3}]", ncomp, addresComponent.long_name, addresComponent.short_name, String.Join(" ", addresComponent.types)));
 
 
 					foreach (var item in addresComponent.types)

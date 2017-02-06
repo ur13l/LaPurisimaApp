@@ -7,8 +7,12 @@ namespace LaPurisima
 {
 	public partial class App : Application
 	{
+
+		public static App CurrentApp { get; set; }
+
 		public App()
 		{
+			CurrentApp = this;
 			InitializeComponent();
 
 			RealmConfiguration realmConfiguration = RealmConfiguration.DefaultConfiguration;
@@ -34,7 +38,6 @@ namespace LaPurisima
 
 			if (PropertiesManager.IsLogedIn())
 			{
-
 				MainPage = new RootPage();
 			}
 			else {
@@ -48,10 +51,10 @@ namespace LaPurisima
 		{
 			// Handle when your app starts
 			UpdateUserStatus();
-			Test();
+			//Test();
 		}
 
-		async void UpdateUserStatus()
+		public async void UpdateUserStatus()
 		{
 			var user = PropertiesManager.GetUserInfo();
 			if (user != null)
@@ -70,19 +73,13 @@ namespace LaPurisima
 
 					LocationHelper.Instance.Geolocator.PositionChanged += async (sender, e) =>
 					{
-
-						//var res = await LocationHelper.GetLocation(e.Position.Latitude, e.Position.Longitude);
-
-						//if (res != null && res.results != null && res.results.Count > 0)
-						//{
-						//	_location.Text = res.results[0].formatted_address + "\n" + e.Position.Latitude + " " + e.Position.Longitude;
-						//}
 						try
 						{
 							user.status = 1; //activo
 							user.latitud = e.Position.Latitude;
 							user.longitud = e.Position.Longitude;
 							var res = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
+							System.Diagnostics.Debug.WriteLine("RES UPDATE STATUS REPARIDOR: " +res);
 						}
 						catch (Exception ex)
 						{
@@ -91,18 +88,17 @@ namespace LaPurisima
 					};
 				}
 			}
-
 		}
 
 		async void Test()
 		{
 			//var user = await ClientLaPurisima.LoginUser("ur13l.infante@gmail.com", "123asdZXC");
-			UpdateHelper.UpdateInfo();
-			if (PropertiesManager.GetUserInfo() != null)
-			{
-				var token = PropertiesManager.GetUserInfo().api_token;
-				System.Diagnostics.Debug.WriteLine(token);
-			}
+			//UpdateHelper.UpdateInfo();
+			//if (PropertiesManager.GetUserInfo() != null)
+			//{
+			//	var token = PropertiesManager.GetUserInfo().api_token;
+			//	System.Diagnostics.Debug.WriteLine(token);
+			//}
 		}
 
 		protected override void OnSleep()

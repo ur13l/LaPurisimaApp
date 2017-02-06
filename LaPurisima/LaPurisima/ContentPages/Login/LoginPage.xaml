@@ -1,54 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<local:BasePage
-	xmlns="http://xamarin.com/schemas/2014/forms"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	x:Class="LaPurisima.LoginPage"
-	xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima"
-	xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima">
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.LoginPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima">
 	<local:BasePage.Content>
 		<ScrollView>
-			<StackLayout
-				Padding="40,10,40,10">
-				<Image
-					HorizontalOptions="FillAndExpand"
-					Source="logo.png" />
-				<StackLayout
-					Spacing="15"
-					HorizontalOptions="FillAndExpand"
-					VerticalOptions="FillAndExpand">
-					<StackLayout
-						Spacing="15"
-						Orientation="Vertical">
-						<Entry
-							x:Name="EntryEmail"
-							HorizontalOptions="FillAndExpand"
-							Placeholder="{i18n:Translate MailLabel}" 
-							Keyboard="Email"/>
-						<Entry
-							x:Name="EntryPass"
-							HorizontalOptions="FillAndExpand"
-							Placeholder="{i18n:Translate PassLabel}"
-							IsPassword="true" />
+			<StackLayout Padding="25,10,25,10">
+				<Image WidthRequest="130" Source="logo.png" Aspect="AspectFit" Margin="30" />
+				<StackLayout Spacing="8" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+					<StackLayout Spacing="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
+						<Entry x:Name="EntryEmail" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate MailLabel}" Keyboard="Email" />
+						<Entry x:Name="EntryPass" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate PassLabel}" IsPassword="true" />
 					</StackLayout>
-					<StackLayout
-						Spacing="15"
-						Orientation="Vertical">
-						<Button
-							Text="{i18n:Translate LoginButtonText}"
-							TextColor="#3F92DC"
-							BackgroundColor="White"
-							Clicked="LoginClicked" />
-						<Button
-							Text="{i18n:Translate ForgotPassButtonText}"
-							TextColor="#3F92DC"
-							BackgroundColor="White"
-							Clicked="ForgotPassClicked" />
-					</StackLayout>
-					<Button
-						Text="{i18n:Translate NewUserText}"
-						TextColor="#3F92DC"
-						BackgroundColor="White"
-						Clicked="SignUpClicked" />
+					<Button Text="{i18n:Translate LoginButtonText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="LoginClicked" />
+					<Button Text="{i18n:Translate ForgotPassButtonText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="ForgotPassClicked" />
+					<Button Text="{i18n:Translate NewUserText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="SignUpClicked" />
 				</StackLayout>
 			</StackLayout>
 		</ScrollView>
