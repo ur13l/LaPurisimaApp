@@ -10,7 +10,7 @@
 				x:Name                ="ListView"
 				HorizontalOptions     ="FillAndExpand"
 				HasUnevenRows         ="true"
-				IsPullToRefreshEnabled="true">
+				>
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
@@ -33,7 +33,7 @@
 										HorizontalOptions="StartAndExpand"
 										Spacing          ="2">
 										<Label
-											Text     ="{Binding direccion}"
+											Text     ="{Binding direccionLabel}"
 											TextColor="#4F4F4F" />
 										<Label
 											Text     ="{Binding fechaDateTime, StringFormat='{}{0:d \\de MMMM yyyy a \\la\\s h:mm tt}'}"
@@ -51,7 +51,7 @@
 									</StackLayout>
 									<Label
 										Grid.Column      ="1"
-										Text             ="{Binding total, StringFormat='${0}'}"
+										Text             ="{Binding Total, StringFormat='{}{0:C}'}"
 										TextColor        ="#4F4F4F"
 										VerticalOptions  ="Center"
 										FontSize         ="20"

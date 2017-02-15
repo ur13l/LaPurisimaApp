@@ -26,10 +26,12 @@ namespace LaPurisima
 				_entregar.IsVisible = false;
 				_contNombre.IsVisible = false;
 			}
+
 		}
 
 		async void Entregar(object sender, System.EventArgs e)
 		{
+			OrdersPage.Changed = true;
 			var user = PropertiesManager.GetUserInfo();
 			if (user != null)
 			{
@@ -54,6 +56,7 @@ namespace LaPurisima
 
 		async void Cancelar(object sender, System.EventArgs e)
 		{
+			OrdersPage.Changed = true;
 			var user = PropertiesManager.GetUserInfo();
 			if (user != null)
 			{
@@ -87,7 +90,8 @@ namespace LaPurisima
 					_nombreCliente.Text = _pedido.cliente.nombre;
 				}
 
-				_direccion.Text = _pedido.direccion;
+				_direccion.Text = _pedido.direccionLabel;
+				_referencias.Text = _pedido.referenciasLabel;
 				var productos = new List<Producto>();
 
 				foreach (var item in _pedido.detalles)
@@ -98,7 +102,19 @@ namespace LaPurisima
 
 				_listView.ItemsSource = productos;
 				_listView.HeightRequest = (productos.Count * 60) + 60;
-				_totalLabel.Text = string.Format("Total: ${0}", productos.Sum(x => x.total));
+
+				var precio = _pedido.total;
+				_precioLabel.Text = string.Format("{0:C}", precio);
+				_descuentoLabel.Text = string.Format("{0:C}", _pedido.total - _pedido.Total);
+				var total = _pedido.Total;
+				_totalLabel.Text = string.Format("{0:C}", total);
+
+				if (_pedido.detalles_descuento !=null&& _pedido.detalles_descuento.Count == 0)
+				{
+					_descuento1.IsVisible = false;
+					_descuento2.IsVisible = false;
+					_precioLbl.Text = "Total:";
+				}
 
 
 				if (_pedido.status == 1 || _pedido.status == 2 || _pedido.status == 3)

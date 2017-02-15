@@ -33,7 +33,7 @@ namespace LaPurisima
 					{
 						producto_id = prod.id,
 						cantidad = prod.cantidad,
-						precio = prod.precio
+						producto = prod,
 					});
 				}
 				var response = await ClientLaPurisima.MakeOrder(HelperOrdenPage.Pedido);
