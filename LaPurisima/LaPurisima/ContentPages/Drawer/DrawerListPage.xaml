@@ -24,9 +24,8 @@
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
-							<StackLayout BackgroundColor="White" Orientation="Horizontal" HeightRequest="40" Spacing="0" HorizontalOptions="FillAndExpand" Padding="5">
-								<Label Text="{Binding Label}" VerticalOptions="Center" TextColor="#0493DB" FontSize="18">
-								</Label>
+							<StackLayout BackgroundColor="White" Orientation="Horizontal" Spacing="0" HorizontalOptions="FillAndExpand" Padding="8">
+								<Label Text="{Binding Label}" VerticalOptions="Center" TextColor="#0493DB" FontSize="18" />
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>

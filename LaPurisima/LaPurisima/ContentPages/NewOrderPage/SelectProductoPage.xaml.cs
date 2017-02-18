@@ -201,7 +201,7 @@ namespace LaPurisima
 
 		async void GetProductos(string where = null)
 		{
-			if (_productos == null)
+			if (_productos == null || _productos.Count ==0)
 			{
 				_productos = RealmHelper.GetProductos();
 				_items = new List<ItemLista>();

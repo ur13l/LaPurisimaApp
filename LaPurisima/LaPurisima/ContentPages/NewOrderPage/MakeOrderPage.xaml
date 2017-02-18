@@ -17,66 +17,24 @@
 				<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
 					<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="2">
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="50" />
+							<ColumnDefinition Width="Auto" />
 							<ColumnDefinition Width="1*" />
 							<ColumnDefinition Width="20" />
-							<ColumnDefinition Width="100" />
+							<ColumnDefinition Width="80" />
 						</Grid.ColumnDefinitions>
-						<Label Grid.Row="0" Grid.Column="0" Text="Calle" HorizontalOptions="Center" HorizontalTextAlignment="End" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center">
-							<Label.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-									<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-								</OnPlatform>
-							</Label.FontFamily>
-						</Label>
-						<Entry Grid.Row="0" Grid.Column="1" Text=" " x:Name="_street" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-									<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
-						</Entry>
-						<Label Grid.Row="0" Grid.Column="2" Text="#" HorizontalTextAlignment="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center">
-							<Label.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-									<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-								</OnPlatform>
-							</Label.FontFamily>
-						</Label>
-						<Entry Grid.Row="0" Grid.Column="3" Text=" " x:Name="_number" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-									<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
-						</Entry>
+						<Label Grid.Row="0" Grid.Column="0" Text="Calle" HorizontalOptions="Center" HorizontalTextAlignment="End" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center"/>
+						<Entry Grid.Row="0" Grid.Column="1" Text=" " x:Name="_street" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292"/>
+						<Label Grid.Row="0" Grid.Column="2" Text="#" HorizontalTextAlignment="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+						<Entry Grid.Row="0" Grid.Column="3" Text=" " x:Name="_number" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292"/>
 					</Grid>
 					<BoxView BackgroundColor="#c9c9c9" HeightRequest="0.5" />
 					<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="3">
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="70" />
+							<ColumnDefinition Width="Auto" />
 							<ColumnDefinition Width="1*" /> 
 						</Grid.ColumnDefinitions>
-						<Label Grid.Column="0" Text="Colonia" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center">
-							<Label.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-									<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-								</OnPlatform>
-							</Label.FontFamily>
-						</Label>
-						<Entry Grid.Column="1" Text=" " x:Name="_colony" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>AppleSDGothicNeo-Light </OnPlatform.iOS>
-									<OnPlatform.Android>sans-serif-light</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
-						</Entry> 
+						<Label Grid.Column="0" Text="Colonia" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+						<Entry Grid.Column="1" Text=" " x:Name="_colony" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292"/>
 					</Grid>
 					<Button Text="Hacer Pedido" TextColor="White" BackgroundColor="#31B404" Clicked="MakeOrder" />
 				</StackLayout>

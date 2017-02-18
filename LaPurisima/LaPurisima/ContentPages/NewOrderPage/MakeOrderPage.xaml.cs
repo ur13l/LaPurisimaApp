@@ -29,8 +29,9 @@ namespace LaPurisima
 				////System.Diagnostics.Debug.WriteLine(googleMaps);
 				//Traverse(googleMaps);
 				UpdateView();
-				SaveInfo();
+				SaveInfo(new Position(-1,-1));
 			};
+
 
 			Map.PropertyChanged += async (sender, e) =>
 				{
@@ -74,6 +75,34 @@ namespace LaPurisima
 
 			   SearchByAddress();
 		   };
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			GetLocation();
+		}
+
+		async void GetLocation()
+		{
+
+			if (LocationHelper.Instance.CurrentPosition != null)
+			{
+				START_POINT = new Position(LocationHelper.Instance.CurrentPosition.Latitude, LocationHelper.Instance.CurrentPosition.Longitude);
+				START_DISTANCE = Distance.FromKilometers(0.3);
+			}
+			else {
+				var l = await LocationHelper.Instance.Geolocator.GetPositionAsync(10000);
+				START_POINT = new Position(l.Latitude, l.Longitude);
+				START_DISTANCE = Distance.FromKilometers(0.3);
+			}
+
+			Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));
+
+			var googleMaps = await ClientLaPurisima.GetAddresForPosition(START_POINT);
+			//System.Diagnostics.Debug.WriteLine(googleMaps);
+			Traverse(googleMaps);
+			SaveInfo(START_POINT);
 		}
 
 		async void SearchByAddress()
@@ -137,8 +166,26 @@ namespace LaPurisima
 			label.Text = newText;
 		}
 
-		void SaveInfo()
+		void SaveInfo(Position p)
 		{
+
+			if (HelperOrdenPage.Pedido == null&& PropertiesManager.GetUserInfo() != null)
+				HelperOrdenPage.Pedido = new Pedido()
+				{
+					api_token = PropertiesManager.GetUserInfo().api_token,
+					cliente_id = (int)PropertiesManager.GetUserInfo().id,
+					productos = new List<Producto>()
+					{
+
+					},
+				};
+
+			if (p.Latitude != -1)
+			{
+				HelperOrdenPage.Pedido.latitud = p.Latitude;
+				HelperOrdenPage.Pedido.longitud = p.Longitude;
+			}
+
 			HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
 			HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
 			HelperOrdenPage.street = street;

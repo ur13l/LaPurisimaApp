@@ -31,9 +31,9 @@ namespace LaPurisima
 
 	public class Config
 	{
-		public static string URL = "http://10.0.3.2/lapurisimaweb/public/";
+		//public static string URL = "http://10.0.3.2/lapurisimaweb/public/";
 		//public static string URL = "http://localhost/lapurisimaweb/public/";
-		//public static string URL = "https://lapurisimaweb.herokuapp.com/";
+		public static string URL = "https://lapurisimaweb.herokuapp.com/";
 		public static string GetURLForMethod(WEB_METHODS method)
 		{
 

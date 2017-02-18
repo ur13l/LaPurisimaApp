@@ -79,13 +79,16 @@ namespace LaPurisima
 							user.latitud = e.Position.Latitude;
 							user.longitud = e.Position.Longitude;
 							var res = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
-							System.Diagnostics.Debug.WriteLine("RES UPDATE STATUS REPARIDOR: " +res);
+							System.Diagnostics.Debug.WriteLine("RES UPDATE STATUS REPARIDOR: " + res);
 						}
 						catch (Exception ex)
 						{
 							System.Diagnostics.Debug.WriteLine("error updating status. " + ex.Message);
 						}
 					};
+				}
+				else {
+					var x = LocationHelper.Instance.Geolocator;
 				}
 			}
 		}

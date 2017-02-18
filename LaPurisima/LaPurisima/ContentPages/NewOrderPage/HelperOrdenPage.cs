@@ -14,6 +14,9 @@ namespace LaPurisima
 		public static string state { get; set; }
 		public static string postalcode { get; set; }
 
+		public static double latitud { get; set; }
+		public static double longitud { get; set; }
+
 		public static Pedido Pedido { get; set;}
 	}
 }
