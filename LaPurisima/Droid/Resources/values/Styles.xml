@@ -25,6 +25,6 @@
 		<item
 			name="android:windowBackground">@drawable/splash_centered</item>
 		<item
-			name="android:windowNoTitle">false</item>
+			name="android:windowNoTitle">true</item>
 	</style>
 </resources>
