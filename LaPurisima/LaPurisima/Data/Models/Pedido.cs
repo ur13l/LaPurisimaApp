@@ -177,7 +177,7 @@ namespace LaPurisima
 				foreach (var d in detalles_descuento)
 				{
 					//if(d.descuento.producto_id
-					if (d.descuento.producto_id != null)
+					if ( d.descuento!=null && d.descuento.producto_id != null)
 					{
 
 						var dd = detalles.Where(x => x.producto_id == d.descuento.producto_id).FirstOrDefault();
@@ -199,12 +199,15 @@ namespace LaPurisima
 					}
 					else {
 
-						if (d.descuento.descuento_porcentaje > 0)
+						if (d.descuento != null)
 						{
-							descuento += (total * ((double)d.descuento.descuento_porcentaje / 100.0));
-						}
-						else {
-							descuento += d.descuento.descuento;
+							if (d.descuento.descuento_porcentaje > 0)
+							{
+								descuento += (total * ((double)d.descuento.descuento_porcentaje / 100.0));
+							}
+							else {
+								descuento += d.descuento.descuento;
+							}
 						}
 					}
 				}
