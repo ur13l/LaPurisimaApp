@@ -1,5 +1,6 @@
 ﻿using System;
 using Realms;
+using Xamarin.Forms;
 
 namespace LaPurisima
 {
@@ -35,7 +36,63 @@ public class Producto : Realms.RealmObject
 		[Ignored]
 		public int cantidad { get; set; }
 		[Ignored]
-		public double total { get { return  (cantidad * precio); } }
+		public double total { get {
+				var t = (cantidad * precio);
+				return t;
+			}
+		}
+		[Ignored]
+		public string totalLabel
+		{
+			get
+			{
+				var t = (cantidad * precio);
+				string s = String.Format("{0:$#,##0.00}", total);
+				return s;
+			}
+		}
+		bool _isImageVisible = true;
+		[Ignored]
+		public bool IsImageVisible
+		{
+			get
+			{
+				return _isImageVisible;
+			}
+			set
+			{
+				_isImageVisible = value;
+			}
+		}
+		[Ignored]
+		public Color CostoColor
+		{
+			get
+			{
+				if (precio > 0)
+				{
+					return Color.FromHex("#848484");
+				}
+				else {
+					return Color.Green;
+				}
+			}
+		}
+
+		[Ignored]
+		public Color BGColor
+		{
+			get
+			{
+				if (precio > 0)
+				{
+					return Color.White;
+				}
+				else {
+					return Color.FromHex("#FAFAFA");
+				}
+			}
+		}
 		#endregion
 	}
 	//public class Producto : Realms.RealmObject

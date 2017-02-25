@@ -189,6 +189,7 @@
     <Compile Include="Renders\PlataformEffect\PanelShadowEffect.cs" />
     <Compile Include="Renders\AutoAdjustLabelRenderer.cs" />
     <Compile Include="Renders\ListViewRenderer.cs" />
+    <Compile Include="Providers\ValidUrl.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\profile.jpg" />

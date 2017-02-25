@@ -159,6 +159,7 @@
     <Compile Include="Renders\CustomMapRenderer.cs" />
     <Compile Include="LaPurisimaApp.cs" />
     <Compile Include="Providers\ProgressView.cs" />
+    <Compile Include="Providers\ValidUrl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

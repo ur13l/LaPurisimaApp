@@ -17,6 +17,7 @@
 										<Label Text="{Binding direccionLabel}" TextColor="#4F4F4F" />
 										<Label 	Text ="{Binding fechaDateTime, StringFormat='{}{0:d \\de MMMM yyyy a \\la\\s h:mm tt}'}"  TextColor="#4F4F4F" HorizontalOptions="End" />
 										<local:AutoAdjustLabel Text="{Binding ProductosLabel}"  TextColor="#848484" />
+										<Label Text="{Binding Distancia}" FontSize="14"  TextColor="#848484" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="End"/>
 									</StackLayout>
 									<local:AutoAdjustLabel Grid.Column="1" Text="{Binding Total, StringFormat='${0}'}" TextColor="#4F4F4F" VerticalOptions="Center" FontSize="20" />
 								</Grid>
