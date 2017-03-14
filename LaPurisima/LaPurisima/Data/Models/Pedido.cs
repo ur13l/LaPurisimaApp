@@ -188,11 +188,11 @@ namespace LaPurisima
 							if (d.descuento.descuento_porcentaje > 0)
 							{
 								var n = p.precio * ((double)d.descuento.descuento_porcentaje / 100);
-								descuento += n * d.cantidad;
+								descuento += n * ((d.cantidad!=null)?(int)d.cantidad:1);
 							}
 							else {
-								var n = d.descuento.descuento;
-								descuento += n * d.cantidad;
+								if(d.descuento.descuento!=null)
+									descuento += ((int) d.descuento.descuento) * ((d.cantidad != null) ? (int)d.cantidad : 1);
 							}
 						}
 
@@ -206,7 +206,8 @@ namespace LaPurisima
 								descuento += (total * ((double)d.descuento.descuento_porcentaje / 100.0));
 							}
 							else {
-								descuento += d.descuento.descuento;
+								if(d.descuento.descuento!=null)
+									descuento += (int) d.descuento.descuento;
 							}
 						}
 					}
@@ -316,15 +317,15 @@ namespace LaPurisima
 	public class Descuento
 	{
 		public int id { get; set; }
-		public int user_id { get; set; }
-		public int producto_id { get; set; }
-		public int descuento { get; set; }
-		public int descuento_porcentaje { get; set; }
+		public int? user_id { get; set; }
+		public int? producto_id { get; set; }
+		public int? descuento { get; set; }
+		public int? descuento_porcentaje { get; set; }
 		public string fecha_vencimiento { get; set; }
-		public int usos_restantes { get; set; }
+		public int? usos_restantes { get; set; }
 		public string created_at { get; set; }
 		public string updated_at { get; set; }
-		public object deleted_at { get; set; }
+		public string deleted_at { get; set; }
 		public string descripcion { get; set; }
 	}
 
@@ -336,7 +337,7 @@ namespace LaPurisima
 		public Descuento descuento { get; set; }
 		public string created_at { get; set; }
 		public string updated_at { get; set; }
-		public int cantidad { get; set; }
+		public int? cantidad { get; set; }
 	}
 
 

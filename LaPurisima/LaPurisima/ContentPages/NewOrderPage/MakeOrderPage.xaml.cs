@@ -198,13 +198,16 @@ namespace LaPurisima
 
 			HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
 			HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
-			HelperOrdenPage.street = street;
+			//HelperOrdenPage.street = street;
+			//HelperOrdenPage.city = city;
+			//HelperOrdenPage.streetNumber = streetNumber;
+			HelperOrdenPage.street = _street.Text;
 			HelperOrdenPage.city = city;
-			HelperOrdenPage.streetNumber = streetNumber;
+			HelperOrdenPage.streetNumber = _number.Text;
 			HelperOrdenPage.country = country;
 			HelperOrdenPage.postalcode = postalCode;
 			HelperOrdenPage.state = state;
-			HelperOrdenPage.colony = colony;
+			HelperOrdenPage.colony = _colony.Text;
 		}
 
 		void Traverse(GoogleMapsLocation googleMaps)

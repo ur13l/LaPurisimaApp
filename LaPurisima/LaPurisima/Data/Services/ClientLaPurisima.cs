@@ -105,7 +105,7 @@ namespace LaPurisima
 				colonia = user.colonia,
 				referencia = user.referencia,
 				api_token = user.api_token,
-				//imagen_usuario = usser.imagen_usuario
+				imagen_usuario = "data:image/png;base64,"+user.imagen_usuario
 			}, WEB_METHODS.UsuarioUpdate, true);
 
 			if (jsonResponse == null)

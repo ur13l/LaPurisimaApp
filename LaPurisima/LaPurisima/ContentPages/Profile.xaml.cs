@@ -15,24 +15,47 @@ namespace LaPurisima
 			InitiViews();
 
 
+			ImageSourceChanged = () =>
+			{
+				if (LastView is FFImageLoading.Forms.CachedImage)
+					(LastView as FFImageLoading.Forms.CachedImage).Source = Source;
+
+				_imageView.Source = Source;
+
+				//await PostLastFoto();
+			};
+
+
+
 			Title = "Perfil";
+		}
+
+
+		async void ChangePicture(object sender, EventArgs e)
+		{
+			if(SaveButton.IsVisible)
+				TakePictureActionSheet(_imageView);
 		}
 
 		void InitiViews()
 		{
-			if (PropertiesManager.GetUserInfo() != null)
+			var user = PropertiesManager.GetUserInfo();
+			if (user != null)
 			{
-				EntryNameProfile.Text = PropertiesManager.GetUserInfo().nombre;
-				EntryCalleProfile.Text = PropertiesManager.GetUserInfo().calle;
-				EntryColoniaProfile.Text = PropertiesManager.GetUserInfo().colonia;
-				if (PropertiesManager.GetUserInfo().referencia == null)
+				EntryNameProfile.Text = user.nombre;
+				EntryCalleProfile.Text = user.calle;
+				EntryColoniaProfile.Text = user.colonia;
+				if (user.referencia == null)
 				{
 					EntryBetweenProfile.Text = "";
 				}
 				else {
-					EntryBetweenProfile.Text = PropertiesManager.GetUserInfo().referencia;
+					EntryBetweenProfile.Text = user.referencia;
 				}
-				EntryCPProfile.Text = PropertiesManager.GetUserInfo().codigo_postal;
+				EntryCPProfile.Text = user.codigo_postal;
+
+				if(user.imagen_usuario!=null)
+					_imageView.Source = user.Image;
 			}
 
 			EntryNameProfile.IsEnabled = false;
@@ -67,6 +90,8 @@ namespace LaPurisima
 			user.referencia = EntryBetweenProfile.Text;
 			user.codigo_postal = EntryCPProfile.Text;
 
+			if (Base64Image != null)
+				user.imagen_usuario = Base64Image;
 
 
 			ToolbarItems.Add(EditButton);
@@ -104,12 +129,5 @@ namespace LaPurisima
 			}
 		}
 
-
-
-
-
-
-
 	}
 }
-

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using Realms;
@@ -16,6 +15,10 @@ namespace LaPurisima.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 			Xamarin.FormsMaps.Init();
+
+			FFImageLoading.Forms.Touch.CachedImageRenderer.Init();
+			var dummy = new FFImageLoading.Forms.Touch.CachedImageRenderer();
+			var ignore = new FFImageLoading.Transformations.CircleTransformation();
 
 			KeyboardOverlapRenderer.Init();
 
