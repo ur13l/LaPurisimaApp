@@ -27,6 +27,7 @@ namespace LaPurisima
 					codigo_postal = EntryCPAlta.Text,
 					email = EntryEmailAlta.Text,
 					created_at = DateTime.Now.ToString("yy-MMM-dd ddd"),
+					telefono = EntryTelAlta.Text,
 					nombre = EntryNameAlta.Text,
 					password = EntryPassAlta.Text,
 					referencia = Referencias.Text,
@@ -43,7 +44,8 @@ namespace LaPurisima
 					var userInfo = JsonConvert.DeserializeObject<User>(response);
 					PropertiesManager.SaveUserInfo(userInfo);
 
-					ShowProgressType(IProgressType.Done);
+					//ShowProgressType(IProgressType.Done);
+					ShowProgress(IProgressType.Done);
 					await Task.Delay(1000);
 					HideProgress();
 					await Navigation.PushModalAsync(new RootPage());

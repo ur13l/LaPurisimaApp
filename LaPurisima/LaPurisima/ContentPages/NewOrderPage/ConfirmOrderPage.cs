@@ -131,7 +131,7 @@ namespace LaPurisima
 			//			precio = 40,
 			//		},
 			//	},
-			//	};+
+			//	};+x
 			if (HelperOrdenPage.Pedido != null && HelperOrdenPage.Pedido.productos != null)
 			{
 				HelperOrdenPage.Pedido.productos.RemoveAll(x => x.cantidad <= 0);

@@ -180,19 +180,19 @@ namespace LaPurisima
 					if ( d.descuento!=null && d.descuento.producto_id != null)
 					{
 
-						var dd = detalles.Where(x => x.producto_id == d.descuento.producto_id).FirstOrDefault();
-						if (dd.producto != null)
+						var detalle = detalles.Where(x => x.producto_id == d.descuento.producto_id).FirstOrDefault();
+						if (detalle.producto != null)
 						{
-							var p = dd.producto;
+							var p = detalle.producto;
 
 							if (d.descuento.descuento_porcentaje > 0)
 							{
 								var n = p.precio - (((double)d.descuento.descuento_porcentaje * 100) / p.precio);
-								descuento += n * dd.cantidad;
+								descuento += n * detalle.cantidad;
 							}
 							else {
 								var n = d.descuento.descuento;
-								descuento += n * dd.cantidad;
+								descuento += n * detalle.cantidad;
 							}
 						}
 
