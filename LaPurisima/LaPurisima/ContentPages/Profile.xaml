@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.Profile" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.Profile" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima"
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+		xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
 	<ContentPage.ToolbarItems>
 		<ToolbarItem x:Name="EditButton" Text="{i18n:Translate EditText}" Clicked="EditClicked" />
 	</ContentPage.ToolbarItems>
 	<local:BasePage.Content>
 		<ScrollView>
 			<StackLayout Padding="40,10,40,10">
-				<Image HorizontalOptions="FillAndExpand" Source="profile.jpg" HeightRequest="50" />
-				<StackLayout Spacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-					<StackLayout Spacing="30" Orientation="Vertical">
-					</StackLayout>
+				<ffimageloading:CachedImage x:Name="_imageView" Source="profile.jpg" HeightRequest="75" WidthRequest="75" HorizontalOptions="Center" VerticalOptions="Center" DownsampleToViewSize="true">
+						<ffimageloading:CachedImage.Transformations>
+							<fftransformations:CircleTransformation />
+						</ffimageloading:CachedImage.Transformations>
+					<ffimageloading:CachedImage.GestureRecognizers>
+						<TapGestureRecognizer Tapped="ChangePicture" />
+					</ffimageloading:CachedImage.GestureRecognizers>
+					</ffimageloading:CachedImage>
+				<StackLayout Spacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> 
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="{i18n:Translate NombreProfileText}" TextColor="#4F4F4F" >
 							<Label.FontFamily>

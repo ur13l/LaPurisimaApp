@@ -84,10 +84,10 @@ namespace LaPurisima
 			{
 
 				//solicitados, asignados o en camino que no tengan mas de 7 dias
-				_pedidos = _pedidos.Where(x => x.cliente_id == user.id
+				_pedidos = _pedidos.Where(x => x.cliente_id == user.id).OrderByDescending(x => x.fechaDateTime).ToList();
 										  //&& x.status <=3 
-										  && ((DateTime.Now - x.fechaDateTime).TotalDays <= 7)).
-								   OrderByDescending(x => x.fechaDateTime).ToList();
+										  //&& ((DateTime.Now - x.fechaDateTime).TotalDays <= 7)).
+								   //OrderByDescending(x => x.fechaDateTime).ToList();
 
 				_itemsList.Clear();
 				foreach (var item in _pedidos)

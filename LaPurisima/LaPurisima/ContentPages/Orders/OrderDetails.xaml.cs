@@ -187,7 +187,8 @@ namespace LaPurisima
 						}
 						else {
 							var n = des.descuento.descuento;
-							descuento += n;
+							if(n!=null)
+								descuento += (int)n;
 						}
 
 

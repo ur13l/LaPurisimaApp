@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using Newtonsoft.Json;
+
 namespace LaPurisima
 {
 
@@ -23,6 +26,21 @@ namespace LaPurisima
 		public int status { get; set; }
 		public double latitud { get; set; }
 		public double longitud { get; set; }
+
+
+		[JsonIgnore]
+		public Xamarin.Forms.ImageSource Image
+		{
+			get
+			{
+				if (imagen_usuario != null)
+				{
+					return Xamarin.Forms.ImageSource.FromStream(
+						() => new MemoryStream(Convert.FromBase64String(imagen_usuario)));
+				}
+				return null;
+			}
+		}
 	}
 }
 

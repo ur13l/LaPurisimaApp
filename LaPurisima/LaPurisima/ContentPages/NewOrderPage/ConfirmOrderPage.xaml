@@ -7,15 +7,15 @@
 					
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="{i18n:Translate NameAltaText}" TextColor="#4F4F4F" />
-						<Entry x:Name="EntryNameProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate NameAltaText}" />
+						<Entry x:Name="EntryNameProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate NameAltaText}" IsEnabled="false" />
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="{i18n:Translate CalleAltaText}" TextColor="#4F4F4F" />
-						<Entry x:Name="EntryCalleProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CalleAltaText}" />
+						<Entry x:Name="EntryCalleProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CalleAltaText}" IsEnabled="false"/>
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="{i18n:Translate ColoniaAltaText}" TextColor="#4F4F4F" />
-						<Entry x:Name="EntryColoniaProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}" />
+						<Entry x:Name="EntryColoniaProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}" IsEnabled="false"/>
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="Referencias" TextColor="#4F4F4F" />

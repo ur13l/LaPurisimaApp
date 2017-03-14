@@ -31,6 +31,7 @@ namespace LaPurisima
 					nombre = EntryNameAlta.Text,
 					password = EntryPassAlta.Text,
 					referencia = Referencias.Text,
+					telefono = EntryTelAlta.Text,
 					tipo_usuario_id = 3,
 				};
  
