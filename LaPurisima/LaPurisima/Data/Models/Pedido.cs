@@ -131,68 +131,35 @@ namespace LaPurisima
 		}
 
 		[Newtonsoft.Json.JsonIgnore]
-		public double Total
+public double Total
 		{
 			get
 			{
 
-				//double total = detalles.Sum(x => x.producto.precio * x.cantidad);
-				//double desc_percent = 0;
-				//if (detalles_descuento != null)
-				//{
-				//	//double descuento = detalles_descuento.Sum(x => x.descuento);
-
-				//	var descuento = detalles_descuento.Sum(x =>
-				//	{
-				//		int sum = 0;
-
-				//		//sum += ) * x.descuento.descuento;
-				//		var prod = detalles.Where(y => y.producto_id == x.descuento.producto_id).Select(y => y.producto).FirstOrDefault();
-				//		if (prod != null)
-				//		{
-
-				//		}
-				//		else {
-
-				//			if (x.descuento.descuento_porcentaje != 0)
-				//			{
-
-				//			}
-				//			else {
-				//				return x.descuento.descuento;
-				//			}
-				//		}
-
-				//		return sum;
-				//	});
-
-				//	total = total - descuento;
-				//}
-
 				if (this.total == null)
 					this.total = 0;
 
-				double total = (double) this.total;
+				double total = (double)this.total;
 				double descuento = 0;
 				foreach (var d in detalles_descuento)
 				{
 					//if(d.descuento.producto_id
-					if ( d.descuento!=null && d.descuento.producto_id != null)
+					if (d.descuento != null && d.descuento.producto_id != null)
 					{
 
-						var detalle = detalles.Where(x => x.producto_id == d.descuento.producto_id).FirstOrDefault();
-						if (detalle.producto != null)
+						var dd = detalles.Where(x => x.producto_id == d.descuento.producto_id).FirstOrDefault();
+						if (dd.producto != null)
 						{
-							var p = detalle.producto;
+							var p = dd.producto;
 
 							if (d.descuento.descuento_porcentaje > 0)
 							{
-								var n = p.precio - (((double)d.descuento.descuento_porcentaje * 100) / p.precio);
-								descuento += n * detalle.cantidad;
+								var n = p.precio * ((double)d.descuento.descuento_porcentaje / 100);
+								descuento += n * ((d.cantidad != null) ? (int)d.cantidad : 1);
 							}
 							else {
-								var n = d.descuento.descuento;
-								descuento += n * detalle.cantidad;
+								if (d.descuento.descuento != null)
+									descuento += ((int)d.descuento.descuento) * ((d.cantidad != null) ? (int)d.cantidad : 1);
 							}
 						}
 
@@ -206,7 +173,8 @@ namespace LaPurisima
 								descuento += (total * ((double)d.descuento.descuento_porcentaje / 100.0));
 							}
 							else {
-								descuento += d.descuento.descuento;
+								if (d.descuento.descuento != null)
+									descuento += (int)d.descuento.descuento;
 							}
 						}
 					}
@@ -267,6 +235,25 @@ namespace LaPurisima
 		}
 
 
+
+		public string Distancia
+		{
+			get
+			{
+
+				if (LocationHelper.Instance.CurrentPosition != null && (latitud != null && longitud != null))
+				{
+					var lat = (double)latitud;
+					var lon = (double)longitud;
+					var distance = DistanceCalculation.GeoCodeCalc.CalcDistance(LocationHelper.Instance.CurrentPosition.Latitude, LocationHelper.Instance.CurrentPosition.Longitude, lat, lon);
+					return string.Format("Distancia: {0:N1}Km.",distance);
+				}
+
+				return null;
+			}
+		}
+
+
 	}
 
 	//public class Pedido
@@ -293,18 +280,20 @@ namespace LaPurisima
 		public Producto producto { get; set; }
 	}
 
+
 	public class Descuento
 	{
 		public int id { get; set; }
 		public int user_id { get; set; }
-		public int? producto_id { get; set; }
+		public int producto_id { get; set; }
 		public int descuento { get; set; }
-		public int? descuento_porcentaje { get; set; }
+		public int descuento_porcentaje { get; set; }
 		public string fecha_vencimiento { get; set; }
-		public int? usos_restantes { get; set; }
-		public DateTime created_at { get; set; }
-		public DateTime? updated_at { get; set; }
-		public DateTime? deleted_at { get; set; }
+		public int usos_restantes { get; set; }
+		public string created_at { get; set; }
+		public string updated_at { get; set; }
+		public object deleted_at { get; set; }
+		public string descripcion { get; set; }
 	}
 
 	public class DetallesDescuento
@@ -313,8 +302,10 @@ namespace LaPurisima
 		public int pedido_id { get; set; }
 		public int descuento_id { get; set; }
 		public Descuento descuento { get; set; }
-		public DateTime? created_at { get; set; }
-		public DateTime? updated_at { get; set; }
+		public string created_at { get; set; }
+		public string updated_at { get; set; }
+		public int cantidad { get; set; }
 	}
+
 
 }

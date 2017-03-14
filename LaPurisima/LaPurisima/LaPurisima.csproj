@@ -148,6 +148,9 @@
     <Compile Include="ContentPages\RecoverPass\VerifyCodePass.xaml.cs">
       <DependentUpon>VerifyCodePass.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Providers\IValidUrl.cs" />
+    <Compile Include="Helpers\LaunchMapApp.cs" />
+    <Compile Include="Helpers\DistanceCalculation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

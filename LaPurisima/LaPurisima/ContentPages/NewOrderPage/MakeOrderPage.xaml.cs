@@ -17,20 +17,20 @@ namespace LaPurisima
 
 			Title = "Hacer un pedido";
 
-			_confirmLocationBtn.Clicked += (sender, e) =>
-			{
-				_confirmLocationBtn.IsVisible = false;
-				//Device.BeginInvokeOnMainThread(async () =>
-				//{
-				//	await Task.WhenAll(new Task[] { _confirmLocationBtn.FadeTo(0, 250, Easing.SinIn), _confirmLocationBtn.TranslateTo(0, 50) });
-				//});
+			//_confirmLocationBtn.Clicked += (sender, e) =>
+			//{
+			//	_confirmLocationBtn.IsVisible = false;
+			//	//Device.BeginInvokeOnMainThread(async () =>
+			//	//{
+			//	//	await Task.WhenAll(new Task[] { _confirmLocationBtn.FadeTo(0, 250, Easing.SinIn), _confirmLocationBtn.TranslateTo(0, 50) });
+			//	//});
 
-				//var googleMaps = await ClientLaPurisima.GetAddresForPosition(_lastPosition);
-				////System.Diagnostics.Debug.WriteLine(googleMaps);
-				//Traverse(googleMaps);
-				UpdateView();
-				SaveInfo(new Position(-1,-1));
-			};
+			//	//var googleMaps = await ClientLaPurisima.GetAddresForPosition(_lastPosition);
+			//	////System.Diagnostics.Debug.WriteLine(googleMaps);
+			//	//Traverse(googleMaps);
+			//	UpdateView();
+			//	SaveInfo(new Position(-1,-1));
+			//};
 
 
 			Map.PropertyChanged += async (sender, e) =>
@@ -57,6 +57,8 @@ namespace LaPurisima
 						   _progress.IsVisible = false;
 					   });
 
+						_nextBTN.Text = "Confirmar ubicacion";
+
 						UpdateView();
 						//SaveInfo();
 					}
@@ -77,10 +79,21 @@ namespace LaPurisima
 		   };
 		}
 
+
+		bool isFirstTime = true;
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			GetLocation();
+
+			if(isFirstTime)
+				GetLocation();
+
+			isFirstTime = false;
+
+			Device.BeginInvokeOnMainThread(() =>
+			{
+				_nextBTN.Text = "Continuar";
+			});
 		}
 
 		async void GetLocation()
@@ -102,7 +115,7 @@ namespace LaPurisima
 			var googleMaps = await ClientLaPurisima.GetAddresForPosition(START_POINT);
 			//System.Diagnostics.Debug.WriteLine(googleMaps);
 			Traverse(googleMaps);
-			SaveInfo(START_POINT);
+			SaveInfo();
 		}
 
 		async void SearchByAddress()
@@ -141,7 +154,7 @@ namespace LaPurisima
 
 			//}
 
-			_confirmLocationBtn.IsVisible = true;
+			//_confirmLocationBtn.IsVisible = true;
 		}
 
 		void UpdateView()
@@ -150,9 +163,6 @@ namespace LaPurisima
 			AnimateText(_colony, colony);
 			AnimateText(_number, streetNumber);
 			AnimateText(_street, street);
-
-			//await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => BackgroundColor = c, 5000);
-			//await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 		}
 
 		async void AnimateText(Entry label, string newText)
@@ -166,7 +176,7 @@ namespace LaPurisima
 			label.Text = newText;
 		}
 
-		void SaveInfo(Position p)
+		void SaveInfo()
 		{
 
 			if (HelperOrdenPage.Pedido == null&& PropertiesManager.GetUserInfo() != null)
@@ -180,11 +190,11 @@ namespace LaPurisima
 					},
 				};
 
-			if (p.Latitude != -1)
-			{
-				HelperOrdenPage.Pedido.latitud = p.Latitude;
-				HelperOrdenPage.Pedido.longitud = p.Longitude;
-			}
+			//if (p.Latitude != -1)
+			//{
+			//	HelperOrdenPage.Pedido.latitud = p.Latitude;
+			//	HelperOrdenPage.Pedido.longitud = p.Longitude;
+			//}
 
 			HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
 			HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
@@ -257,7 +267,7 @@ namespace LaPurisima
 
 		void MakeOrder(object sender, System.EventArgs e)
 		{
-
+			SaveInfo();
 			NextPage(this);
 		}
 	}

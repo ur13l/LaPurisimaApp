@@ -44,7 +44,6 @@ namespace LaPurisima
 					var userInfo = JsonConvert.DeserializeObject<User>(response);
 					PropertiesManager.SaveUserInfo(userInfo);
 
-					//ShowProgressType(IProgressType.Done);
 					ShowProgress(IProgressType.Done);
 					await Task.Delay(1000);
 					HideProgress();

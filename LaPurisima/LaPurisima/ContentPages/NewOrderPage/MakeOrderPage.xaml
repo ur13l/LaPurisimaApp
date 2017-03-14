@@ -11,7 +11,7 @@
 				<local:CustomMap x:Name="Map" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsShowingUser="true" MapType="Street" />
 				<Image HeightRequest="50" TranslationY="-15" VerticalOptions="Center" HorizontalOptions="Center" Source="pin.png" />
 				<BoxView HeightRequest="4" WidthRequest="4" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Red" />
-				<Button x:Name="_confirmLocationBtn"  Text="Confirmar ubicacion" VerticalOptions="End" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#31B404"   />
+				<!--<Button x:Name="_confirmLocationBtn"  Text="Confirmar ubicacion" VerticalOptions="End" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#31B404"   />-->
 			</Grid>
 			<Grid Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" BackgroundColor="White">
 				<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
@@ -36,7 +36,7 @@
 						<Label Grid.Column="0" Text="Colonia" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center"/>
 						<Entry Grid.Column="1" Text=" " x:Name="_colony" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292"/>
 					</Grid>
-					<Button Text="Hacer Pedido" TextColor="White" BackgroundColor="#31B404" Clicked="MakeOrder" />
+					<Button x:Name="_nextBTN" Text="Hacer Pedido" TextColor="White" BackgroundColor="#31B404" Clicked="MakeOrder" />
 				</StackLayout>
 				<Grid x:Name="_progress" BackgroundColor="#ccFFFFFF" IsVisible="false">
 					<ActivityIndicator x:Name="_activityIndicator" HorizontalOptions="Center" VerticalOptions="Center" IsRunning="true" IsVisible="true" />

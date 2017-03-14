@@ -32,7 +32,6 @@ namespace LaPurisima.iOS
 			if (type == IProgressType.Done)
 			{
 				BTProgressHUD.ShowSuccessWithStatus(LaPurisima.Localize.GetString("DoneLabel"),1000);
-				
 			}
 		}
 	}
