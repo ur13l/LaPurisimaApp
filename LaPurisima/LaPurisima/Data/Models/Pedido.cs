@@ -130,8 +130,9 @@ namespace LaPurisima
 			return string.Format("{0} ml", contenido);
 		}
 
+
 		[Newtonsoft.Json.JsonIgnore]
-public double Total
+		public double Total
 		{
 			get
 			{
@@ -155,19 +156,11 @@ public double Total
 							if (d.descuento.descuento_porcentaje > 0)
 							{
 								var n = p.precio * ((double)d.descuento.descuento_porcentaje / 100);
-<<<<<<< HEAD
 								descuento += n * ((d.cantidad != null) ? (int)d.cantidad : 1);
 							}
 							else {
 								if (d.descuento.descuento != null)
 									descuento += ((int)d.descuento.descuento) * ((d.cantidad != null) ? (int)d.cantidad : 1);
-=======
-								descuento += n * ((d.cantidad!=null)?(int)d.cantidad:1);
-							}
-							else {
-								if(d.descuento.descuento!=null)
-									descuento += ((int) d.descuento.descuento) * ((d.cantidad != null) ? (int)d.cantidad : 1);
->>>>>>> cba8e236318dc351628d1ddbe1fb2798c1f91ab8
 							}
 						}
 
@@ -181,13 +174,8 @@ public double Total
 								descuento += (total * ((double)d.descuento.descuento_porcentaje / 100.0));
 							}
 							else {
-<<<<<<< HEAD
 								if (d.descuento.descuento != null)
 									descuento += (int)d.descuento.descuento;
-=======
-								if(d.descuento.descuento!=null)
-									descuento += (int) d.descuento.descuento;
->>>>>>> cba8e236318dc351628d1ddbe1fb2798c1f91ab8
 							}
 						}
 					}
