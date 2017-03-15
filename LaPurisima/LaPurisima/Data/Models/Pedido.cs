@@ -130,8 +130,9 @@ namespace LaPurisima
 			return string.Format("{0} ml", contenido);
 		}
 
+
 		[Newtonsoft.Json.JsonIgnore]
-public double Total
+		public double Total
 		{
 			get
 			{
