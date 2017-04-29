@@ -112,6 +112,7 @@ namespace LaPurisima
 			{
 				return null;
 			}
+
 			return jsonResponse;
 		}
 

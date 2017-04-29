@@ -54,8 +54,12 @@ namespace LaPurisima
 				}
 				EntryCPProfile.Text = user.codigo_postal;
 
-				if(user.imagen_usuario!=null)
+				if (user.imagen_usuario != null && !user.imagen_usuario.StartsWith("http"))
 					_imageView.Source = user.Image;
+				else if (user.imagen_usuario!=null && user.imagen_usuario.StartsWith("http"))
+				{
+					_imageView.Source = user.imagen_usuario;
+				}
 			}
 
 			EntryNameProfile.IsEnabled = false;
