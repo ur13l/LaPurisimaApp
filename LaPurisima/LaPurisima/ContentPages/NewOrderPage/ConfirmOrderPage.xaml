@@ -17,10 +17,19 @@
 						<Label HorizontalOptions="Start" Text="{i18n:Translate ColoniaAltaText}" TextColor="#4F4F4F" />
 						<Entry x:Name="EntryColoniaProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}" IsEnabled="false"/>
 					</StackLayout>
-					<StackLayout Spacing="10" Orientation="Vertical">
+					<StackLayout Spacing="20" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="Referencias" TextColor="#4F4F4F" />
 						<Entry x:Name="_referencias" HorizontalOptions="FillAndExpand" Placeholder="Entre calle y calle" />
 					</StackLayout>
+					<StackLayout Spacing="10" Orientation="Horizontal">
+						<Label HorizontalOptions="Start" Text="{i18n:Translate Cash}" TextColor="#4F4F4F" />
+						<Switch x:Name="_cash" HorizontalOptions="FillAndExpand" IsToggled="true" Toggled="switcher_Toggled" />
+					</StackLayout>
+					<StackLayout Spacing="20" Orientation="Vertical">
+						<Entry x:Name="_amount" HorizontalOptions="FillAndExpand" IsVisible="true" Placeholder="{i18n:Translate cambio}" />
+						<Label x:Name="_creditcardMessage" HorizontalOptions="Start" Text="{i18n:Translate creditcard}" IsVisible="false" TextColor="#4F4F4F" />
+					</StackLayout>
+					
 					<Label Text="Productos: " HorizontalOptions="Start" FontSize="22" FontAttributes="Bold" Margin="10" />
 					<ListView x:Name="_listView" HasUnevenRows="true" Margin="15,5,0,0">
 						<ListView.ItemTemplate>

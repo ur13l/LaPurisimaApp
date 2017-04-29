@@ -31,6 +31,7 @@ namespace LaPurisima
 					nombre = EntryNameAlta.Text,
 					password = EntryPassAlta.Text,
 					referencia = Referencias.Text,
+					telefono_casa = EntryTelCasaAlta.Text,
 					tipo_usuario_id = 3,
 				};
  
@@ -40,8 +41,9 @@ namespace LaPurisima
 				if (ClientLaPurisima.IsGood(resp))
 				{
 					//await DisplayAlert("", "Usuario Creado Correctamente", "OK");
-					var response = await ClientLaPurisima.LoginUser(user.email, user.password);
-					var userInfo = JsonConvert.DeserializeObject<User>(response);
+					//ERROR 
+ 					var response = await ClientLaPurisima.LoginUser(user.email, user.password);
+					var userInfo = JsonConvert.DeserializeObject<User>(response); //response es null
 					PropertiesManager.SaveUserInfo(userInfo);
 
 					ShowProgress(IProgressType.Done);

@@ -41,7 +41,7 @@ namespace LaPurisima
 			switch (method)
 			{
 				case WEB_METHODS.Autenticate:
-					return "usuario/authenticate";
+					return "/usuario/authenticate";
 				case WEB_METHODS.PassForgot:
 					return "password/email";
 				case WEB_METHODS.CrearUsuario:

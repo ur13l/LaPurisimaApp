@@ -46,7 +46,15 @@
 								</OnPlatform>
 							</Entry.FontFamily>
 						</Entry>
-						<Entry x:Name="EntryTelAlta" Keyboard="Email" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate TelAltaText}">
+						<Entry x:Name="EntryTelAlta" Keyboard="Telephone" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate TelAltaText}">
+							<Entry.FontFamily>
+								<OnPlatform x:TypeArguments="x:String">
+									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
+									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
+								</OnPlatform>
+							</Entry.FontFamily>
+						</Entry>
+						<Entry x:Name="EntryTelCasaAlta" Keyboard="Telephone" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate TelAltaCasaText}">
 							<Entry.FontFamily>
 								<OnPlatform x:TypeArguments="x:String">
 									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
