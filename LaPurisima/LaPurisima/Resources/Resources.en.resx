@@ -1,206 +1,153 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<resheader
-		name="resmimetype">
+	<resheader name="resmimetype">
 		<value>text/microsoft-resx</value>
 	</resheader>
-	<resheader
-		name="version">
+	<resheader name="version">
 		<value>2.0</value>
 	</resheader>
-	<resheader
-		name="reader">
+	<resheader name="reader">
 		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-	<resheader
-		name="writer">
+	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-	<data
-		name="MailLabel"
-		xml:space="preserve">
+	<data name="MailLabel" xml:space="preserve">
 	    <value>E-mail</value>
 	    <comment>label from mail input</comment>
 	</data>
-	<data
-		name="PassLabel"
-		xml:space="preserve">
+	<data name="PassLabel" xml:space="preserve">
 	    <value>Password</value>
 	    <comment>label from pass input</comment>
 	</data>
-	<data
-		name="LoginButtonText"
-		xml:space="preserve">
+	<data name="LoginButtonText" xml:space="preserve">
 	    <value>Log in</value>
 	    <comment>label for pass input</comment>
 	</data>
-	<data
-		name="ForgotPassButtonText"
-		xml:space="preserve">
+	<data name="ForgotPassButtonText" xml:space="preserve">
 	    <value>Forgot your password?</value>
 	    <comment>label for forgot pass</comment>
 	</data>
-	<data
-		name="RecuperarButtonText"
-		xml:space="preserve">
+	<data name="RecuperarButtonText" xml:space="preserve">
 	    <value>Reset Password</value>
 	    <comment>Reset Password</comment>
 	</data>
-	<data
-		name="IngresaText"
-		xml:space="preserve">
+	<data name="IngresaText" xml:space="preserve">
 	    <value>Enter the code</value>
 	    <comment>Enter the code</comment>
 	</data>
-	<data
-		name="CodeLabelText"
-		xml:space="preserve">
+	<data name="CodeLabelText" xml:space="preserve">
 	    <value>XXXXX</value>
 	    <comment>XXXXX</comment>
 	</data>
-	<data
-		name="VerifyCodeText"
-		xml:space="preserve">
+	<data name="VerifyCodeText" xml:space="preserve">
 	    <value>Verify Code</value>
 	    <comment>Verify Code</comment>
 	</data>
-	<data
-		name="CambiarText"
-		xml:space="preserve">
+	<data name="CambiarText" xml:space="preserve">
 	    <value>Change</value>
 	    <comment>Change</comment>
 	</data>
-	<data
-		name="NuevoPassText"
-		xml:space="preserve">
+	<data name="NuevoPassText" xml:space="preserve">
 	    <value>New Password</value>
 	    <comment>New Password</comment>
 	</data>
-	<data
-		name="NuevoPassConfText"
-		xml:space="preserve">
+	<data name="NuevoPassConfText" xml:space="preserve">
 	    <value>Repeat Password</value>
 	    <comment>Repeat Password</comment>
 	</data>
 	<!-- UserSingUp-->
-
-	<data
-		name="MensajeAltaText"
-		xml:space="preserve">
+	<data name="MensajeAltaText" xml:space="preserve">
 	    <value>Join to La Purísima</value>
 	    <comment>Join to La Purísima</comment>
 	</data>
-	<data
-		name="NameAltaText"
-		xml:space="preserve">
+	<data name="NameAltaText" xml:space="preserve">
 	    <value>Name</value>
 	    <comment>Name</comment>
 	</data>
-	<data
-		name="MailAltaText"
-		xml:space="preserve">
+	<data name="MailAltaText" xml:space="preserve">
 	    <value>E-mail</value>
 	    <comment>E-mail</comment>
 	</data>
-	<data
-		name="PassAltaText"
-		xml:space="preserve">
+	<data name="PassAltaText" xml:space="preserve">
 	    <value>Password</value>
 	    <comment>Password</comment>
 	</data>
-	<data
-		name="PassConAltaText"
-		xml:space="preserve">
+	<data name="PassConAltaText" xml:space="preserve">
 	    <value>Repeat Password</value>
 	    <comment>Repeat Password</comment>
 	</data>
-	<data
-		name="CalleAltaText"
-		xml:space="preserve">
+	<data name="CalleAltaText" xml:space="preserve">
 	    <value>Street</value>
 	    <comment>Street</comment>
 	</data>
-	<data
-		name="ColoniaAltaText"
-		xml:space="preserve">
+	<data name="ColoniaAltaText" xml:space="preserve">
 	    <value>Colony</value>
 	    <comment>Colony</comment>
 	</data>
-	<data
-		name="CPAltaText"
-		xml:space="preserve">
+	<data name="CPAltaText" xml:space="preserve">
 	    <value>Postal Code</value>
 	    <comment>Postal Code</comment>
 	</data>
-	<data
-		name="BetweenAltaText"
-		xml:space="preserve">
+	<data name="BetweenAltaText" xml:space="preserve">
 	    <value>Between Streets</value>
 	    <comment>Between Streets</comment>
 	</data>
-	<data
-		name="UploadImageButtonText"
-		xml:space="preserve">
+	<data name="UploadImageButtonText" xml:space="preserve">
 	    <value>Upload Image</value>
 	    <comment>Upload Image</comment>
 	</data>
-	<data
-		name="RegistrarButtonText"
-		xml:space="preserve">
+	<data name="RegistrarButtonText" xml:space="preserve">
 	    <value>Sign up</value>
 	    <comment>Sign up</comment>
 	</data>
-
 	<!-- Profile -->
-	<data
-		name="NombreProfileText"
-		xml:space="preserve">
+	<data name="NombreProfileText" xml:space="preserve">
 	    <value>Name</value>
 	    <comment>Name</comment>
 	</data>
-	<data
-		name="GuardarProfileText"
-		xml:space="preserve">
+	<data name="GuardarProfileText" xml:space="preserve">
 	    <value>Guardar</value>
 	    <comment>Save</comment>
 	</data>
-	<data
-		name="EditText"
-		xml:space="preserve">
+	<data name="EditText" xml:space="preserve">
 	    <value>Edit</value>
 	    <comment>Edit</comment>
 	</data>
-	<data
-		name="NewUserText"
-		xml:space="preserve">
+	<data name="NewUserText" xml:space="preserve">
 	    <value>Sign up</value>
 	    <comment>label for new user</comment>
-	</data> 
-	<data
-		name="ErrorMessageEmail"
-		xml:space="preserve">
+	</data>
+	<data name="ErrorMessageEmail" xml:space="preserve">
 	    <value>Verify your e-mail</value>
 	    <comment>Error message</comment>
-	</data> 
-	<data
-		name="ErrorMessageDoesntExist"
-		xml:space="preserve">
+	</data>
+	<data name="ErrorMessageDoesntExist" xml:space="preserve">
 	    <value>This e-mail doesn't exist</value>
 	    <comment>Error message</comment>
-	</data> 
-
-	<data
-		name="MakeOrder"
-		xml:space="preserve">
+	</data>
+	<data name="MakeOrder" xml:space="preserve">
 	    <value>Make order</value>
 	    <comment>ask a service</comment>
-	</data> 
-
-		<data
-		name="Carrito"
-		xml:space="preserve">
+	</data>
+	<data name="Carrito" xml:space="preserve">
 	    <value>Shopping Car</value>
 	    <comment>carrito </comment>
-	</data> 
+	</data>
+	<data name="TelAltaCasaText" xml:space="preserve">
+	    <value>Home Phone</value>
+	    <comment>Home Phone </comment>
+	</data>
+	<data name="Cash" xml:space="preserve">
+	    <value>Cash</value>
+	    <comment>Cash</comment>
+	</data>
+	<data name="cambio" xml:space="preserve">
+	    <value>How much change do you need?</value>
+	    <comment>How much change do you need?</comment>
+	</data>
+	<data name="creditcard" xml:space="preserve">
+	    <value>You're using credit card</value>
+	    <comment>Credit Card</comment>
+	</data>
 </root>
-

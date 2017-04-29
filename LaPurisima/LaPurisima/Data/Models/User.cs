@@ -16,6 +16,7 @@ namespace LaPurisima
 		public string referencia { get; set; }
 		public string imagen_usuario { get; set; }
 		public string telefono { get; set; }
+		public string telefono_casa { get; set; }
 		public int? tipo_usuario_id { get; set; }
 		public string created_at { get; set; }
 		public string updated_at { get; set; }

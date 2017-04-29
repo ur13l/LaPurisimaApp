@@ -222,6 +222,10 @@ namespace LaPurisima
 				_precioLabel.Text = string.Format("{0:C}", precio);
 				_descuentoLabel.Text = string.Format("{0:C}", _pedido.total - _pedido.Total);
 				var total = _pedido.Total;
+				if (total < 0)
+				{
+					total = 0;
+				}
 				_totalLabel.Text = string.Format("{0:C}", total);
 
 				if (_pedido.detalles_descuento != null && _pedido.detalles_descuento.Count == 0)
