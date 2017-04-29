@@ -15,6 +15,10 @@
 					<Label HorizontalOptions="Start" Text="Referencias:" FontSize="20" TextColor="#4F4F4F" FontAttributes="Bold" Margin="5,0,0,0" />
 					<Label x:Name="_referencias" HorizontalOptions="FillAndExpand" TextColor="#848484" Margin="10,0,0,0"/>
 				</StackLayout>
+				<StackLayout Spacing="2" Orientation="Vertical" x:Name="_payContainer">
+					<Label HorizontalOptions="Start" Text="Pago:" FontSize="20" TextColor="#4F4F4F" FontAttributes="Bold" Margin="5,0,0,0" />
+					<Label x:Name="_payLabel" HorizontalOptions="FillAndExpand" TextColor="#848484" Margin="10,0,0,0"/>
+				</StackLayout>
 				<Label Text="Productos: " HorizontalOptions="Start" FontSize="20" TextColor="#4F4F4F" FontAttributes="Bold" Margin="5,0,0,0" />
 				<ListView x:Name="_listView" HasUnevenRows="true" Margin="15,5,0,0">
 					<ListView.ItemTemplate>

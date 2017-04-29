@@ -226,5 +226,29 @@ namespace LaPurisima.Resources {
                 return ResourceManager.GetString("Carrito", resourceCulture);
             }
         }
+        
+        internal static string TelAltaCasaText {
+            get {
+                return ResourceManager.GetString("TelAltaCasaText", resourceCulture);
+            }
+        }
+        
+        internal static string Cash {
+            get {
+                return ResourceManager.GetString("Cash", resourceCulture);
+            }
+        }
+        
+        internal static string cambio {
+            get {
+                return ResourceManager.GetString("cambio", resourceCulture);
+            }
+        }
+        
+        internal static string creditcard {
+            get {
+                return ResourceManager.GetString("creditcard", resourceCulture);
+            }
+        }
     }
 }

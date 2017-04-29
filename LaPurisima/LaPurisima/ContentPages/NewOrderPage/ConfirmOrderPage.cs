@@ -36,6 +36,11 @@ namespace LaPurisima
 						producto = prod,
 					});
 				}
+
+				HelperOrdenPage.Pedido.tipo_pago_id = (_cash.IsToggled) ? 1 : 2;
+				HelperOrdenPage.Pedido.cantidad_pago = (_cash.IsToggled)? float.Parse(_amount.Text) : 0.0f;
+
+
 				var response = await ClientLaPurisima.MakeOrder(HelperOrdenPage.Pedido);
 
 
@@ -61,6 +66,21 @@ namespace LaPurisima
 					NextPage(this);
 			}
 
+		}
+
+		void switcher_Toggled(object sender, ToggledEventArgs e)
+		{
+			if (_cash.IsToggled == false)
+			{
+				_creditcardMessage.IsVisible = true;
+				_amount.IsVisible = false;
+
+			}
+			else
+			{
+				_creditcardMessage.IsVisible = false;
+				_amount.IsVisible = true;
+			}
 		}
 
 		async Task<bool> Valid()

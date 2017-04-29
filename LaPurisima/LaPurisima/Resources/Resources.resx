@@ -381,4 +381,30 @@
 	    <value>Usuario Valido</value>
 	    <comment></comment>
 	</data>
+
+		<data
+		name="TelAltaCasaText"
+		xml:space="preserve">
+	    <value>Teléfono de Casa</value>
+	    <comment>Teléfono de Casa</comment>
+	</data> 
+	<data
+		name="Cash"
+		xml:space="preserve">
+	    <value>Efectivo</value>
+	    <comment>Efectivo</comment>
+	</data> 
+	<data
+		name="cambio"
+		xml:space="preserve">
+	    <value>¿Cambio de cuánto?</value>
+	    <comment>¿Cambio de cuánto?</comment>
+	</data> 
+	<data
+		name="creditcard"
+		xml:space="preserve">
+	    <value>Pagará con tarjeta débito/crédito</value>
+	    <comment>Tarjeta débito/crédito</comment>
+	</data> 
+
 </root>

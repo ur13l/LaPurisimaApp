@@ -222,6 +222,10 @@ namespace LaPurisima
 				_precioLabel.Text = string.Format("{0:C}", precio);
 				_descuentoLabel.Text = string.Format("{0:C}", _pedido.total - _pedido.Total);
 				var total = _pedido.Total;
+				if (total < 0)
+				{
+					total = 0;
+				}
 				_totalLabel.Text = string.Format("{0:C}", total);
 
 				if (_pedido.detalles_descuento != null && _pedido.detalles_descuento.Count == 0)
@@ -239,6 +243,23 @@ namespace LaPurisima
 				else {
 					_cancelar.IsVisible = false;
 				}
+
+
+				string resPayment = "";
+				if (_pedido.tipo_pago_id != null && _pedido.tipo_pago_id == 1)
+				{
+					resPayment = string.Format("En efectivo, cambio de {0:C}",_pedido.cantidad_pago);
+				}
+				else if (_pedido.tipo_pago_id != null && _pedido.tipo_pago_id == 2)
+				{
+					resPayment = "Con tarjeta";
+				}
+
+				_payLabel.Text = resPayment;
+
+				if(_pedido.tipo_pago_id==null)
+					_payContainer.IsVisible = false;
+
 			}
 		}
 	}

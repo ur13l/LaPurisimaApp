@@ -202,5 +202,22 @@
 	    <value>Shopping Car</value>
 	    <comment>carrito </comment>
 	</data> 
+		<data name="TelAltaCasaText" xml:space="preserve">
+	    <value>Home Phone</value>
+	    <comment>Home Phone </comment>
+	</data>
+	<data name="Cash" xml:space="preserve">
+	    <value>Cash</value>
+	    <comment>Cash</comment>
+	</data>
+	<data name="cambio" xml:space="preserve">
+	    <value>How much change do you need?</value>
+	    <comment>How much change do you need?</comment>
+	</data>
+	<data name="creditcard" xml:space="preserve">
+	    <value>You're using credit card</value>
+	    <comment>Credit Card</comment>
+	</data>
+
 </root>
 

@@ -75,6 +75,10 @@ namespace LaPurisima
 				return DateTime.MinValue;
 			}
 		}
+
+		public int? tipo_pago_id { get; set; }
+		public float? cantidad_pago { get; set; }
+
 		public List<Producto> productos { get; set; }
 		public List<DetallePedido> detalles { get; set; }
 		public List<DetallesDescuento> detalles_descuento { get; set; }

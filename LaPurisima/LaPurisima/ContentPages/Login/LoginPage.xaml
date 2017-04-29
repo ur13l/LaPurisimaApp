@@ -5,7 +5,7 @@
 			<StackLayout Padding="25,10,25,10">
 				<Image WidthRequest="130" Source="logo.png" Aspect="AspectFit" Margin="30" />
 				<StackLayout Spacing="6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-					<StackLayout Spacing="3" Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
+					<StackLayout Spacing="5" Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
 						<Entry x:Name="EntryEmail" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate MailLabel}" Keyboard="Email" />
 						<Entry x:Name="EntryPass" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate PassLabel}" IsPassword="true" />
 					</StackLayout>

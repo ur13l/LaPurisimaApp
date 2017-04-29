@@ -4,24 +4,32 @@
 		<StackLayout Padding="10" Spacing="10" Orientation="Vertical">
 			<ScrollView>
 				<StackLayout BackgroundColor="#fff">
-					
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="{i18n:Translate NameAltaText}" TextColor="#4F4F4F" />
 						<Entry x:Name="EntryNameProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate NameAltaText}" IsEnabled="false" />
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="{i18n:Translate CalleAltaText}" TextColor="#4F4F4F" />
-						<Entry x:Name="EntryCalleProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CalleAltaText}" IsEnabled="false"/>
+						<Entry x:Name="EntryCalleProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CalleAltaText}" IsEnabled="false" />
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="{i18n:Translate ColoniaAltaText}" TextColor="#4F4F4F" />
-						<Entry x:Name="EntryColoniaProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}" IsEnabled="false"/>
+						<Entry x:Name="EntryColoniaProfile" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}" IsEnabled="false" />
 					</StackLayout>
 					<StackLayout Spacing="10" Orientation="Vertical">
 						<Label HorizontalOptions="Start" Text="Referencias" TextColor="#4F4F4F" />
 						<Entry x:Name="_referencias" HorizontalOptions="FillAndExpand" Placeholder="Entre calle y calle" />
 					</StackLayout>
-					<Label Text="Productos: " HorizontalOptions="Start" FontSize="22" FontAttributes="Bold" Margin="10" />
+					<BoxView BackgroundColor="#c9c9c9" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,10,0,10" />
+					<StackLayout Spacing="10" Orientation="Horizontal">
+						<Label HorizontalOptions="Start" Text="{i18n:Translate Cash}" TextColor="#4F4F4F" VerticalOptions="Center" />
+						<Switch x:Name="_cash" HorizontalOptions="FillAndExpand" IsToggled="true" Toggled="switcher_Toggled" />
+					</StackLayout>
+					<StackLayout Spacing="10" Orientation="Vertical">
+						<Entry x:Name="_amount" HorizontalOptions="FillAndExpand"  IsVisible="true" Placeholder="{i18n:Translate cambio}" Keyboard="Numeric"/>
+						<Label x:Name="_creditcardMessage" HorizontalOptions="Start" Text="{i18n:Translate creditcard}" IsVisible="false" TextColor="#4F4F4F" />
+					</StackLayout>
+					<Label Text="Productos: " HorizontalOptions="Start" FontSize="22" FontAttributes="Bold" Margin="0,10,10,10" />
 					<ListView x:Name="_listView" HasUnevenRows="true" Margin="15,5,0,0">
 						<ListView.ItemTemplate>
 							<DataTemplate>
@@ -29,16 +37,15 @@
 									<StackLayout BackgroundColor="White" Orientation="Horizontal" HeightRequest="45" Spacing="0" HorizontalOptions="FillAndExpand" Padding="5">
 										<Label Text="{Binding cantidad,StringFormat='{0}'}" Margin="0,0,5,0" TextColor="#848484" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" />
 										<Label Text="{Binding nombre}" TextColor="#4F4F4F" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" />
-										<Label Text="{Binding total,StringFormat=': ${0}'}"  TextColor="#A4A4A4" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" />
+										<Label Text="{Binding total,StringFormat=': ${0}'}" TextColor="#A4A4A4" FontSize="14" FontAttributes="Bold" VerticalOptions="Center" />
 									</StackLayout>
 								</ViewCell>
 							</DataTemplate>
 						</ListView.ItemTemplate>
 						<ListView.Footer>
-							<Label x:Name="_totalLabel" Text="Total:" HorizontalOptions="End"   TextColor="#4F4F4F" FontSize="22" FontAttributes="Bold" />
+							<Label x:Name="_totalLabel" Text="Total:" HorizontalOptions="End" TextColor="#4F4F4F" FontSize="22" FontAttributes="Bold" />
 						</ListView.Footer>
 					</ListView>
-					
 				</StackLayout>
 			</ScrollView>
 			<Button x:Name="SaveButton" Text="Hacer pedido" TextColor="White" BackgroundColor="#31B404" Clicked="Pedir" />
