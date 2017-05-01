@@ -8,7 +8,6 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Plugin.Permissions;
-using Android;
 
 namespace LaPurisima.Droid
 {
@@ -23,13 +22,6 @@ namespace LaPurisima.Droid
 			base.OnCreate(bundle);
 
 			global::Xamarin.Forms.Forms.Init(this, bundle);
-
-			if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.M)
-			{
-				int mycode = 0;
-				Android.Support.V4.App.ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.AccessFineLocation }, mycode);
-			}
-
 
 			LoadApplication(new App());
 		}

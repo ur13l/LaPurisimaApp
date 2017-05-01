@@ -56,7 +56,7 @@ namespace LaPurisima
 
 				if (user.imagen_usuario != null && !user.imagen_usuario.StartsWith("http"))
 					_imageView.Source = user.Image;
-				else if (user.imagen_usuario != null && user.imagen_usuario.StartsWith("http"))
+				else if (user.imagen_usuario!=null && user.imagen_usuario.StartsWith("http"))
 				{
 					_imageView.Source = user.imagen_usuario;
 				}

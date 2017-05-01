@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.DrawerListPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" BackgroundColor="White">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.DrawerListPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" BackgroundColor="White"
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
 	<ContentPage.Content>
 		<StackLayout Margin="0,0,0,0">
 			<StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="5" BackgroundColor="White" Padding="0,0,0,5">
@@ -9,7 +10,7 @@
 					HeightRequest="70"
 					WidthRequest="70"
 					Margin="10" />-->
-				<Image HorizontalOptions="Center" Source="logo.png" HeightRequest="90" Margin="10" />
+				<ffimageloading:CachedImage Source="logo.png" WidthRequest="90" HeightRequest="90" HorizontalOptions="Center" VerticalOptions="Center" DownsampleToViewSize="true" />
 				<Label x:Name="_labelNombre" Text="Nombre" HorizontalOptions="Center" FontSize="18"   TextColor="#848484" />
 				<Label x:Name="_labelMail" Text="E-mail" HorizontalOptions="Center"  FontSize="18" TextColor="#848484" />
 				<!--<StackLayout.IsVisible>

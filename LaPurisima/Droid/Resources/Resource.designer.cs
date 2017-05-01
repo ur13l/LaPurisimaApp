@@ -26,43 +26,6 @@ namespace LaPurisima.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::AndroidHUD.Resource.Attribute.ahBarColor = global::LaPurisima.Droid.Resource.Attribute.ahBarColor;
-			global::AndroidHUD.Resource.Attribute.ahBarLength = global::LaPurisima.Droid.Resource.Attribute.ahBarLength;
-			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::LaPurisima.Droid.Resource.Attribute.ahBarWidth;
-			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::LaPurisima.Droid.Resource.Attribute.ahCircleColor;
-			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::LaPurisima.Droid.Resource.Attribute.ahDelayMillis;
-			global::AndroidHUD.Resource.Attribute.ahRadius = global::LaPurisima.Droid.Resource.Attribute.ahRadius;
-			global::AndroidHUD.Resource.Attribute.ahRimColor = global::LaPurisima.Droid.Resource.Attribute.ahRimColor;
-			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::LaPurisima.Droid.Resource.Attribute.ahRimWidth;
-			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::LaPurisima.Droid.Resource.Attribute.ahSpinSpeed;
-			global::AndroidHUD.Resource.Attribute.ahText = global::LaPurisima.Droid.Resource.Attribute.ahText;
-			global::AndroidHUD.Resource.Attribute.ahTextColor = global::LaPurisima.Droid.Resource.Attribute.ahTextColor;
-			global::AndroidHUD.Resource.Attribute.ahTextSize = global::LaPurisima.Droid.Resource.Attribute.ahTextSize;
-			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::LaPurisima.Droid.Resource.Drawable.ic_errorstatus;
-			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::LaPurisima.Droid.Resource.Drawable.ic_successstatus;
-			global::AndroidHUD.Resource.Drawable.roundedbg = global::LaPurisima.Droid.Resource.Drawable.roundedbg;
-			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::LaPurisima.Droid.Resource.Drawable.roundedbgdark;
-			global::AndroidHUD.Resource.Id.loadingImage = global::LaPurisima.Droid.Resource.Id.loadingImage;
-			global::AndroidHUD.Resource.Id.loadingProgressBar = global::LaPurisima.Droid.Resource.Id.loadingProgressBar;
-			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::LaPurisima.Droid.Resource.Id.loadingProgressWheel;
-			global::AndroidHUD.Resource.Id.textViewStatus = global::LaPurisima.Droid.Resource.Id.textViewStatus;
-			global::AndroidHUD.Resource.Layout.loading = global::LaPurisima.Droid.Resource.Layout.loading;
-			global::AndroidHUD.Resource.Layout.loadingimage = global::LaPurisima.Droid.Resource.Layout.loadingimage;
-			global::AndroidHUD.Resource.Layout.loadingprogress = global::LaPurisima.Droid.Resource.Layout.loadingprogress;
-			global::AndroidHUD.Resource.String.library_name = global::LaPurisima.Droid.Resource.String.library_name;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahRadius;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahText;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::LaPurisima.Droid.Resource.Attribute.actionBarSize;
 			global::com.refractored.monodroidtoolkit.Resource.Attribute.circleColor = global::LaPurisima.Droid.Resource.Attribute.circleColor;
 			global::com.refractored.monodroidtoolkit.Resource.Attribute.circularProgressBarStyle = global::LaPurisima.Droid.Resource.Attribute.circularProgressBarStyle;
@@ -169,6 +132,43 @@ namespace LaPurisima.Droid
 			global::com.refractored.monodroidtoolkit.Resource.Styleable.ProgressButton_unpinnedDrawable = global::LaPurisima.Droid.Resource.Styleable.ProgressButton_unpinnedDrawable;
 			global::com.refractored.monodroidtoolkit.Resource.Styleable.Theme = global::LaPurisima.Droid.Resource.Styleable.Theme;
 			global::com.refractored.monodroidtoolkit.Resource.Styleable.Theme_circularProgressBarStyle = global::LaPurisima.Droid.Resource.Styleable.Theme_circularProgressBarStyle;
+			global::AndroidHUD.Resource.Attribute.ahBarColor = global::LaPurisima.Droid.Resource.Attribute.ahBarColor;
+			global::AndroidHUD.Resource.Attribute.ahBarLength = global::LaPurisima.Droid.Resource.Attribute.ahBarLength;
+			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::LaPurisima.Droid.Resource.Attribute.ahBarWidth;
+			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::LaPurisima.Droid.Resource.Attribute.ahCircleColor;
+			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::LaPurisima.Droid.Resource.Attribute.ahDelayMillis;
+			global::AndroidHUD.Resource.Attribute.ahRadius = global::LaPurisima.Droid.Resource.Attribute.ahRadius;
+			global::AndroidHUD.Resource.Attribute.ahRimColor = global::LaPurisima.Droid.Resource.Attribute.ahRimColor;
+			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::LaPurisima.Droid.Resource.Attribute.ahRimWidth;
+			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::LaPurisima.Droid.Resource.Attribute.ahSpinSpeed;
+			global::AndroidHUD.Resource.Attribute.ahText = global::LaPurisima.Droid.Resource.Attribute.ahText;
+			global::AndroidHUD.Resource.Attribute.ahTextColor = global::LaPurisima.Droid.Resource.Attribute.ahTextColor;
+			global::AndroidHUD.Resource.Attribute.ahTextSize = global::LaPurisima.Droid.Resource.Attribute.ahTextSize;
+			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::LaPurisima.Droid.Resource.Drawable.ic_errorstatus;
+			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::LaPurisima.Droid.Resource.Drawable.ic_successstatus;
+			global::AndroidHUD.Resource.Drawable.roundedbg = global::LaPurisima.Droid.Resource.Drawable.roundedbg;
+			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::LaPurisima.Droid.Resource.Drawable.roundedbgdark;
+			global::AndroidHUD.Resource.Id.loadingImage = global::LaPurisima.Droid.Resource.Id.loadingImage;
+			global::AndroidHUD.Resource.Id.loadingProgressBar = global::LaPurisima.Droid.Resource.Id.loadingProgressBar;
+			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::LaPurisima.Droid.Resource.Id.loadingProgressWheel;
+			global::AndroidHUD.Resource.Id.textViewStatus = global::LaPurisima.Droid.Resource.Id.textViewStatus;
+			global::AndroidHUD.Resource.Layout.loading = global::LaPurisima.Droid.Resource.Layout.loading;
+			global::AndroidHUD.Resource.Layout.loadingimage = global::LaPurisima.Droid.Resource.Layout.loadingimage;
+			global::AndroidHUD.Resource.Layout.loadingprogress = global::LaPurisima.Droid.Resource.Layout.loadingprogress;
+			global::AndroidHUD.Resource.String.library_name = global::LaPurisima.Droid.Resource.String.library_name;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahRadius;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahText;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::LaPurisima.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 		}
 		
 		public partial class Animation
@@ -340,41 +340,41 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0100df
 			public const int activityChooserViewStyle = 2130772191;
 			
-			// aapt resource value: 0x7f01016b
-			public const int ahBarColor = 2130772331;
+			// aapt resource value: 0x7f010156
+			public const int ahBarColor = 2130772310;
 			
-			// aapt resource value: 0x7f010173
-			public const int ahBarLength = 2130772339;
+			// aapt resource value: 0x7f01015e
+			public const int ahBarLength = 2130772318;
 			
-			// aapt resource value: 0x7f010172
-			public const int ahBarWidth = 2130772338;
+			// aapt resource value: 0x7f01015d
+			public const int ahBarWidth = 2130772317;
 			
-			// aapt resource value: 0x7f010170
-			public const int ahCircleColor = 2130772336;
+			// aapt resource value: 0x7f01015b
+			public const int ahCircleColor = 2130772315;
 			
-			// aapt resource value: 0x7f01016f
-			public const int ahDelayMillis = 2130772335;
+			// aapt resource value: 0x7f01015a
+			public const int ahDelayMillis = 2130772314;
 			
-			// aapt resource value: 0x7f010171
-			public const int ahRadius = 2130772337;
+			// aapt resource value: 0x7f01015c
+			public const int ahRadius = 2130772316;
 			
-			// aapt resource value: 0x7f01016c
-			public const int ahRimColor = 2130772332;
+			// aapt resource value: 0x7f010157
+			public const int ahRimColor = 2130772311;
 			
-			// aapt resource value: 0x7f01016d
-			public const int ahRimWidth = 2130772333;
+			// aapt resource value: 0x7f010158
+			public const int ahRimWidth = 2130772312;
 			
-			// aapt resource value: 0x7f01016e
-			public const int ahSpinSpeed = 2130772334;
+			// aapt resource value: 0x7f010159
+			public const int ahSpinSpeed = 2130772313;
 			
-			// aapt resource value: 0x7f010168
-			public const int ahText = 2130772328;
+			// aapt resource value: 0x7f010153
+			public const int ahText = 2130772307;
 			
-			// aapt resource value: 0x7f010169
-			public const int ahTextColor = 2130772329;
+			// aapt resource value: 0x7f010154
+			public const int ahTextColor = 2130772308;
 			
-			// aapt resource value: 0x7f01016a
-			public const int ahTextSize = 2130772330;
+			// aapt resource value: 0x7f010155
+			public const int ahTextSize = 2130772309;
 			
 			// aapt resource value: 0x7f010102
 			public const int alertDialogButtonGroupStyle = 2130772226;
@@ -514,38 +514,38 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f01010d
 			public const int checkedTextViewStyle = 2130772237;
 			
-			// aapt resource value: 0x7f010156
-			public const int circleColor = 2130772310;
+			// aapt resource value: 0x7f010162
+			public const int circleColor = 2130772322;
 			
 			// aapt resource value: 0x7f010016
 			public const int circleCrop = 2130771990;
 			
-			// aapt resource value: 0x7f010167
-			public const int circularProgressBarStyle = 2130772327;
+			// aapt resource value: 0x7f010173
+			public const int circularProgressBarStyle = 2130772339;
 			
-			// aapt resource value: 0x7f01015f
-			public const int circular_gravity = 2130772319;
+			// aapt resource value: 0x7f01016b
+			public const int circular_gravity = 2130772331;
 			
-			// aapt resource value: 0x7f010165
-			public const int circular_indeterminate = 2130772325;
+			// aapt resource value: 0x7f010171
+			public const int circular_indeterminate = 2130772337;
 			
-			// aapt resource value: 0x7f010166
-			public const int circular_indeterminate_interval = 2130772326;
+			// aapt resource value: 0x7f010172
+			public const int circular_indeterminate_interval = 2130772338;
 			
-			// aapt resource value: 0x7f010162
-			public const int circular_marker_progress = 2130772322;
+			// aapt resource value: 0x7f01016e
+			public const int circular_marker_progress = 2130772334;
 			
-			// aapt resource value: 0x7f010161
-			public const int circular_progress = 2130772321;
+			// aapt resource value: 0x7f01016d
+			public const int circular_progress = 2130772333;
 			
-			// aapt resource value: 0x7f010164
-			public const int circular_progress_background_color = 2130772324;
+			// aapt resource value: 0x7f010170
+			public const int circular_progress_background_color = 2130772336;
 			
-			// aapt resource value: 0x7f010163
-			public const int circular_progress_color = 2130772323;
+			// aapt resource value: 0x7f01016f
+			public const int circular_progress_color = 2130772335;
 			
-			// aapt resource value: 0x7f010160
-			public const int circular_stroke_width = 2130772320;
+			// aapt resource value: 0x7f01016c
+			public const int circular_stroke_width = 2130772332;
 			
 			// aapt resource value: 0x7f01012f
 			public const int closeIcon = 2130772271;
@@ -781,20 +781,20 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0100e6
 			public const int imageButtonStyle = 2130772198;
 			
-			// aapt resource value: 0x7f01015d
-			public const int indeterminate = 2130772317;
+			// aapt resource value: 0x7f010169
+			public const int indeterminate = 2130772329;
 			
 			// aapt resource value: 0x7f010094
 			public const int indeterminateProgressStyle = 2130772116;
 			
-			// aapt resource value: 0x7f01015e
-			public const int indeterminate_interval = 2130772318;
+			// aapt resource value: 0x7f01016a
+			public const int indeterminate_interval = 2130772330;
 			
 			// aapt resource value: 0x7f01009f
 			public const int initialActivityCount = 2130772127;
 			
-			// aapt resource value: 0x7f01015b
-			public const int innerSize = 2130772315;
+			// aapt resource value: 0x7f010167
+			public const int innerSize = 2130772327;
 			
 			// aapt resource value: 0x7f010062
 			public const int insetForeground = 2130772066;
@@ -892,8 +892,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f010000
 			public const int mapType = 2130771968;
 			
-			// aapt resource value: 0x7f010155
-			public const int max = 2130772309;
+			// aapt resource value: 0x7f010161
+			public const int max = 2130772321;
 			
 			// aapt resource value: 0x7f010064
 			public const int maxActionInlineWidth = 2130772068;
@@ -1000,11 +1000,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0100f5
 			public const int panelMenuListWidth = 2130772213;
 			
-			// aapt resource value: 0x7f01015c
-			public const int pinned = 2130772316;
+			// aapt resource value: 0x7f010168
+			public const int pinned = 2130772328;
 			
-			// aapt resource value: 0x7f010158
-			public const int pinnedDrawable = 2130772312;
+			// aapt resource value: 0x7f010164
+			public const int pinnedDrawable = 2130772324;
 			
 			// aapt resource value: 0x7f0100e2
 			public const int popupMenuStyle = 2130772194;
@@ -1021,8 +1021,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f010058
 			public const int pressedTranslationZ = 2130772056;
 			
-			// aapt resource value: 0x7f010154
-			public const int progress = 2130772308;
+			// aapt resource value: 0x7f010160
+			public const int progress = 2130772320;
 			
 			// aapt resource value: 0x7f010095
 			public const int progressBarPadding = 2130772117;
@@ -1030,11 +1030,11 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f010093
 			public const int progressBarStyle = 2130772115;
 			
-			// aapt resource value: 0x7f010153
-			public const int progressButtonStyle = 2130772307;
+			// aapt resource value: 0x7f01015f
+			public const int progressButtonStyle = 2130772319;
 			
-			// aapt resource value: 0x7f010157
-			public const int progressColor = 2130772311;
+			// aapt resource value: 0x7f010163
+			public const int progressColor = 2130772323;
 			
 			// aapt resource value: 0x7f010136
 			public const int queryBackground = 2130772278;
@@ -1081,8 +1081,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f0100db
 			public const int selectableItemBackgroundBorderless = 2130772187;
 			
-			// aapt resource value: 0x7f01015a
-			public const int shadowDrawable = 2130772314;
+			// aapt resource value: 0x7f010166
+			public const int shadowDrawable = 2130772326;
 			
 			// aapt resource value: 0x7f010124
 			public const int showAsAction = 2130772260;
@@ -1306,8 +1306,8 @@ namespace LaPurisima.Droid
 			// aapt resource value: 0x7f01000c
 			public const int uiZoomGestures = 2130771980;
 			
-			// aapt resource value: 0x7f010159
-			public const int unpinnedDrawable = 2130772313;
+			// aapt resource value: 0x7f010165
+			public const int unpinnedDrawable = 2130772325;
 			
 			// aapt resource value: 0x7f01005a
 			public const int useCompatPadding = 2130772058;
@@ -6013,14 +6013,14 @@ namespace LaPurisima.Droid
 			
 			public static int[] HoloCircularProgressBar = new int[]
 			{
-					2130772319,
-					2130772320,
-					2130772321,
-					2130772322,
-					2130772323,
-					2130772324,
-					2130772325,
-					2130772326};
+					2130772331,
+					2130772332,
+					2130772333,
+					2130772334,
+					2130772335,
+					2130772336,
+					2130772337,
+					2130772338};
 			
 			// aapt resource value: 0
 			public const int HoloCircularProgressBar_circular_gravity = 0;
@@ -6415,17 +6415,17 @@ namespace LaPurisima.Droid
 					16842970,
 					16842981,
 					16843534,
-					2130772308,
-					2130772309,
-					2130772310,
-					2130772311,
-					2130772312,
-					2130772313,
-					2130772314,
-					2130772315,
-					2130772316,
-					2130772317,
-					2130772318};
+					2130772320,
+					2130772321,
+					2130772322,
+					2130772323,
+					2130772324,
+					2130772325,
+					2130772326,
+					2130772327,
+					2130772328,
+					2130772329,
+					2130772330};
 			
 			// aapt resource value: 1
 			public const int ProgressButton_android_clickable = 1;
@@ -6471,18 +6471,18 @@ namespace LaPurisima.Droid
 			
 			public static int[] ProgressWheel = new int[]
 			{
-					2130772328,
-					2130772329,
-					2130772330,
-					2130772331,
-					2130772332,
-					2130772333,
-					2130772334,
-					2130772335,
-					2130772336,
-					2130772337,
-					2130772338,
-					2130772339};
+					2130772307,
+					2130772308,
+					2130772309,
+					2130772310,
+					2130772311,
+					2130772312,
+					2130772313,
+					2130772314,
+					2130772315,
+					2130772316,
+					2130772317,
+					2130772318};
 			
 			// aapt resource value: 3
 			public const int ProgressWheel_ahBarColor = 3;
@@ -6894,7 +6894,7 @@ namespace LaPurisima.Droid
 			
 			public static int[] Theme = new int[]
 			{
-					2130772327};
+					2130772339};
 			
 			// aapt resource value: 0
 			public const int Theme_circularProgressBarStyle = 0;

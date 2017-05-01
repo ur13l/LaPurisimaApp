@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.LoginPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima">
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.LoginPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima"
+		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
 	<local:BasePage.Content>
 		<ScrollView>
 			<StackLayout Padding="25,10,25,10">
-				<Image WidthRequest="130" Source="logo.png" Aspect="AspectFit" Margin="30" />
+				<ffimageloading:CachedImage Source="logo.png" WidthRequest="130" Margin="30" HorizontalOptions="Center" VerticalOptions="Center" DownsampleToViewSize="true" LoadingDelay="200" FadeAnimationEnabled="true"/>
 				<StackLayout Spacing="6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 					<StackLayout Spacing="5" Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
-						<Entry x:Name="EntryEmail" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate MailLabel}" Keyboard="Email" />
-						<Entry x:Name="EntryPass" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate PassLabel}" IsPassword="true" />
+						<Entry x:Name="EntryEmail" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate MailLabel}"  Keyboard="Email" HeightRequest="45"/>
+						<Entry x:Name="EntryPass" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate PassLabel}" IsPassword="true" HeightRequest="45"/>
 					</StackLayout>
 					<Button Text="{i18n:Translate LoginButtonText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="LoginClicked" />
 					<Button Text="{i18n:Translate ForgotPassButtonText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="ForgotPassClicked" />

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Realms;
 using Xamarin.Forms;
-using Realms.Exceptions;
 
 namespace LaPurisima
 {
@@ -22,7 +21,7 @@ namespace LaPurisima
 			{
 				var x = Realm.GetInstance();
 			}
-			catch (RealmMigrationNeededException  e)
+			catch (RealmMigrationNeededException e)
 			{
 				try
 				{

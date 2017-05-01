@@ -31,28 +31,17 @@ namespace LaPurisima
 
 	public class Config
 	{
-<<<<<<< HEAD
-		//public static string URL = "http://10.0.3.2/lapurisimaweb/public/";
-		//public static string URL = "http://localhost/lapurisimaweb/public/";
-		//public static string URL = "https://lapurisimaweb.herokuapp.com/";
-		//public static string URL = "http://10.0.7.42/LaPurisimaWeb/public/";
-
-		//public static string URL = "http://localhost/lapurisimaweb/public/";
-		public static string URL = "https://lapurisimaweb.herokuapp.com/";
-public static string GetURLForMethod(WEB_METHODS method)
-=======
 		//public static string URL = "http://10.0.7.42/LaPurisimaWeb/public/";
 		//public static string URL = "http://localhost/lapurisimaweb/public/";
 		public static string URL = "https://lapurisimaweb.herokuapp.com/";
 
 		public static string GetURLForMethod(WEB_METHODS method)
->>>>>>> b4843e6c83c5eceaad5b720e78525e7d3a3a4423
 		{
 
 			switch (method)
 			{
 				case WEB_METHODS.Autenticate:
-					return "/usuario/authenticate";
+					return "usuario/authenticate";
 				case WEB_METHODS.PassForgot:
 					return "password/email";
 				case WEB_METHODS.CrearUsuario:

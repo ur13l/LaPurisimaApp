@@ -37,8 +37,25 @@ namespace LaPurisima
 					});
 				}
 
+				if (_cash.IsToggled)
+				{
+					if (string.IsNullOrEmpty(_amount.Text))
+					{
+						_amount.Text = "0";
+					}
+
+					var total = HelperOrdenPage.Pedido.productos.Sum(x => x.total);
+
+					if (float.Parse(_amount.Text) < total)
+					{
+						await DisplayAlert("", "Ingresa un cambio mayor que el total.", Localize.GetString("OkButtonLabel", ""));
+						HideProgress();
+						return;
+					}
+				}
+
 				HelperOrdenPage.Pedido.tipo_pago_id = (_cash.IsToggled) ? 1 : 2;
-				HelperOrdenPage.Pedido.cantidad_pago = (_cash.IsToggled)? float.Parse(_amount.Text) : 0.0f;
+				HelperOrdenPage.Pedido.cantidad_pago = (_cash.IsToggled) ? float.Parse(_amount.Text) : 0.0f;
 
 
 				var response = await ClientLaPurisima.MakeOrder(HelperOrdenPage.Pedido);
@@ -52,8 +69,7 @@ namespace LaPurisima
 					await Task.Delay(800);
 					HideProgress();
 				}
-				else
-				{
+				else {
 					HideProgress();
 					var result = await DisplayAlert(Localize.GetString("ErrorTitleText", ""), Localize.GetString("ErrorMakingOrder", ""), Localize.GetString("OkButtonLabel", ""), Localize.GetString("MakeOrderAgain", ""));
 					if (!result)
@@ -107,7 +123,7 @@ namespace LaPurisima
 
 			if (HelperOrdenPage.Pedido.productos == null || HelperOrdenPage.Pedido.productos.Count == 0)
 			{
-				await DisplayAlert("", "Seleccione algun producto.", "Ok");
+				await DisplayAlert("","Seleccione algun producto.","Ok");
 				return false;
 			}
 
@@ -118,22 +134,6 @@ namespace LaPurisima
 		public ConfirmOrderPage(Pedido pedido = null)
 		{
 			InitializeComponent();
-		}
-
-
-		void switcher_Toggled(object sender, ToggledEventArgs e)
-		{
-			if (_cash.IsToggled == false)
-			{
-				_creditcardMessage.IsVisible = true;
-				_amount.IsVisible = false;
-
-			}
-			else
-			{
-				_creditcardMessage.IsVisible = false;
-				_amount.IsVisible = true;
-			}
 		}
 
 		internal void UpdateView()
@@ -147,7 +147,6 @@ namespace LaPurisima
 			//EntryColoniaProfile.Text = string.Format("{0} {1},{2}", HelperOrdenPage.colony, HelperOrdenPage.city,HelperOrdenPage.state);
 
 			EntryColoniaProfile.Text = string.Format("{0}", HelperOrdenPage.colony);
-
 
 			//if (HelperOrdenPage.Pedido == null)
 			//	_pedido = new Pedido()
