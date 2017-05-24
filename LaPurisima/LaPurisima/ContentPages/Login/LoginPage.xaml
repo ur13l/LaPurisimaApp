@@ -4,11 +4,19 @@
 	<local:BasePage.Content>
 		<ScrollView>
 			<StackLayout Padding="25,10,25,10">
-				<ffimageloading:CachedImage Source="logo.png" WidthRequest="130" Margin="30" HorizontalOptions="Center" VerticalOptions="Center" DownsampleToViewSize="true" LoadingDelay="200" FadeAnimationEnabled="true"/>
+				<ffimageloading:CachedImage Source="logo.png" WidthRequest="200" Margin="30" HorizontalOptions="Center" VerticalOptions="Center" DownsampleToViewSize="true" LoadingDelay="200" FadeAnimationEnabled="true"/>
 				<StackLayout Spacing="6" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 					<StackLayout Spacing="5" Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="0,0,0,20">
-						<Entry x:Name="EntryEmail" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate MailLabel}"  Keyboard="Email" HeightRequest="45"/>
-						<Entry x:Name="EntryPass" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate PassLabel}" IsPassword="true" HeightRequest="45"/>
+						<Entry x:Name="EntryEmail" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate MailLabel}"  Keyboard="Email" >
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
+						</Entry>
+						<Entry x:Name="EntryPass" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate PassLabel}" IsPassword="true" >
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
+						</Entry>
 					</StackLayout>
 					<Button Text="{i18n:Translate LoginButtonText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="LoginClicked" />
 					<Button Text="{i18n:Translate ForgotPassButtonText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="ForgotPassClicked" />

@@ -11,7 +11,7 @@ namespace LaPurisima
 		{
 
 			var pagina1 = new OrdersPage();
-			var pagina2 = new MakeOrderPage();
+			var pagina2 = new ChooseAddresPage();
 
 			pagina1.NextPage = NextPage;
 			pagina2.NextPage = NextPage;

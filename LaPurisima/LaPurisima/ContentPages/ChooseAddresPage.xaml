@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" x:Class="LaPurisima.ChooseAddresPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima">
+	<ContentPage.Content>
+		<ScrollView>
+			<Grid Padding="10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+					<local:CustomMap x:Name="Map" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsShowingUser="true" MapType="Street" />
+					<Image HeightRequest="50" TranslationY="-15" VerticalOptions="Center" HorizontalOptions="Center" Source="pin.png" />
+					<BoxView HeightRequest="4" WidthRequest="4" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Red" />
+					<!--<Button x:Name="_confirmLocationBtn"  Text="Confirmar ubicacion" VerticalOptions="End" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#31B404"   />-->
+					<Image x:Name="_location" HeightRequest="38" WidthRequest="38" VerticalOptions="End" HorizontalOptions="End" Source="locator.png" Margin="8">
+						<Image.GestureRecognizers>
+							<TapGestureRecognizer Tapped="CenterInUser" />
+						</Image.GestureRecognizers>
+					</Image>
+				</Grid>
+				<Grid Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+					<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+						<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="2">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="1*" />
+								<ColumnDefinition Width="20" />
+								<ColumnDefinition Width="80" />
+							</Grid.ColumnDefinitions>
+							<Label Grid.Row="0" Grid.Column="0" Text="Calle" HorizontalOptions="Center" HorizontalTextAlignment="End" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" />
+							<Entry Grid.Row="0" Grid.Column="1" Text=" " x:Name="_street" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292" />
+							<Label Grid.Row="0" Grid.Column="2" Text="#" HorizontalTextAlignment="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" />
+							<Entry Grid.Row="0" Grid.Column="3" Text=" " x:Name="_number" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292" />
+						</Grid>
+						<BoxView BackgroundColor="#c9c9c9" HeightRequest="0.5" />
+						<Grid HorizontalOptions="FillAndExpand" ColumnSpacing="3">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="1*" />
+							</Grid.ColumnDefinitions>
+							<Label Grid.Column="0" Text="Colonia" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" FontSize="18" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" VerticalTextAlignment="Center" />
+							<Entry Grid.Column="1" Text=" " x:Name="_colony" HorizontalOptions="FillAndExpand" FontSize="18" TextColor="#929292" />
+						</Grid>
+						<Button x:Name="_nextBTN" Text="Hacer Pedido" TextColor="White" BackgroundColor="#31B404" Clicked="MakeOrder" />
+					</StackLayout>
+					<Grid x:Name="_progress" BackgroundColor="#ccFFFFFF" IsVisible="false">
+						<ActivityIndicator x:Name="_activityIndicator" HorizontalOptions="Center" VerticalOptions="Center" IsRunning="true" IsVisible="true" />
+					</Grid>
+					<Grid x:Name="_error" BackgroundColor="#ccFF0000" IsVisible="false">
+						<Label x:Name="_labelError" Text="ERROR" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="true" />
+					</Grid>
+				</Grid>
+			</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</local:BasePage>

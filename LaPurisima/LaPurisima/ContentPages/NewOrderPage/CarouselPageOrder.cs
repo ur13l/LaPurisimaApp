@@ -13,7 +13,7 @@ namespace LaPurisima
 
 			var pagina1 = new SelectProductoPage();
 
-			var pagina2 = new MakeOrderPage();
+			var pagina2 = new ChooseAddresPage();
 			_confirmOrder = new ConfirmOrderPage();
 
 			pagina1.NextPage = NextPage;

@@ -21,7 +21,7 @@ namespace LaPurisima
 			{
 				var x = Realm.GetInstance();
 			}
-			catch (RealmMigrationNeededException e)
+			catch (Exception e)
 			{
 				try
 				{

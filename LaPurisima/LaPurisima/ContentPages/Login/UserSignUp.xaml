@@ -1,133 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.UserSignUp" xmlns:i18n="clr-namespace:LaPurisima;assembly=LaPurisima" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" Title="{i18n:Translate NewUserText}">
 	<local:BasePage.Content>
-		<ScrollView>
-			<StackLayout Padding="40,10,40,10">
+		<ScrollView HorizontalOptions="FillAndExpand">
+			<StackLayout Padding="14,10,14,10" HorizontalOptions="FillAndExpand">
 				<Image HorizontalOptions="FillAndExpand" Source="logo.png" HeightRequest="200" />
 				<StackLayout Spacing="15" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-					<StackLayout Spacing="15" Orientation="Vertical">
-						<Label HorizontalOptions="Center" Text="{i18n:Translate MensajeAltaText}" TextColor="#000000">
-							<Label.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Label.FontFamily>
-						</Label>
+					<StackLayout Spacing="8" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+						<Label HorizontalOptions="Center" Text="{i18n:Translate MensajeAltaText}" TextColor="#000000" />
 						<Entry x:Name="EntryNameAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate NameAltaText}">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
 						</Entry>
 						<Entry x:Name="EntryEmailAlta" Keyboard="Email" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate MailAltaText}">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
 						</Entry>
 						<Entry x:Name="EntryPassAlta" IsPassword="true" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate PassAltaText}">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
 						</Entry>
 						<Entry x:Name="EntryPassConfAlta" IsPassword="true" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate PassConAltaText}">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
 						</Entry>
 						<Entry x:Name="EntryTelAlta" Keyboard="Telephone" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate TelAltaText}">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
 						</Entry>
 						<Entry x:Name="EntryTelCasaAlta" Keyboard="Telephone" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate TelAltaCasaText}">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
 						</Entry>
-						<Label HorizontalOptions="Start" Text="{i18n:Translate UserLocationLabel}" TextColor="#000000">
-							<Label.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Label.FontFamily>
-						</Label>
-						<StackLayout Orientation="Vertical">
-							<Entry x:Name="EntryCalleAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CalleAltaText}">
-								<Entry.FontFamily>
-									<OnPlatform x:TypeArguments="x:String">
-										<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-										<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-									</OnPlatform>
-								</Entry.FontFamily>
-							</Entry>
-							<Entry x:Name="EntryColoniaAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate ColoniaAltaText}">
-								<Entry.FontFamily>
-									<OnPlatform x:TypeArguments="x:String">
-										<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-										<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-									</OnPlatform>
-								</Entry.FontFamily>
-							</Entry>
-							<Entry x:Name="EntryCPAlta" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate CPAltaText}">
-								<Entry.FontFamily>
-									<OnPlatform x:TypeArguments="x:String">
-										<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-										<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-									</OnPlatform>
-								</Entry.FontFamily>
-							</Entry>
+						<Label HorizontalOptions="Start" Text="{i18n:Translate UserLocationLabel}" TextColor="#000000" />
+						<Button Text="Elegir ubicación predeterminada" Clicked="PickAddress" />
+						<StackLayout x:Name="StackUbicacion" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+							<Label x:Name="EntryCalleAlta" HorizontalOptions="FillAndExpand" />
+							<!--Placeholder="{i18n:Translate CalleAltaText}"-->
+							<Label x:Name="EntryColoniaAlta" HorizontalOptions="FillAndExpand" />
+							<!--Placeholder="{i18n:Translate ColoniaAltaText}"-->
+							<Label x:Name="EntryCPAlta" HorizontalOptions="FillAndExpand" />
+							<!--Placeholder="{i18n:Translate CPAltaText}"-->
 						</StackLayout>
-						<Label HorizontalOptions="Start" Text="{i18n:Translate References}" TextColor="#000000">
-							<Label.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Label.FontFamily>
-						</Label>
+						<Label HorizontalOptions="Start" Text="{i18n:Translate References}" TextColor="#000000" />
 						<Entry x:Name="Referencias" HorizontalOptions="FillAndExpand" Placeholder="{i18n:Translate References}">
-							<Entry.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Entry.FontFamily>
+							<Entry.HeightRequest>
+								<OnPlatform x:TypeArguments="x:Double" iOS="38" Android="44" />
+							</Entry.HeightRequest>
 						</Entry>
-						<Button Text="{i18n:Translate UploadImageButtonText}" TextColor="#3F92DC" BackgroundColor="White" IsVisible="false">
-							<Button.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Button.FontFamily>
-						</Button>
-						<Button Text="{i18n:Translate RegistrarButtonText}" TextColor="#3F92DC" BackgroundColor="White" Clicked="SignUpClicked">
-							<Button.FontFamily>
-								<OnPlatform x:TypeArguments="x:String">
-									<OnPlatform.iOS>Avenir</OnPlatform.iOS>
-									<OnPlatform.Android>Droid Sans Mono</OnPlatform.Android>
-								</OnPlatform>
-							</Button.FontFamily>
-						</Button>
+						<Button Text="{i18n:Translate UploadImageButtonText}" TextColor="#3F92DC" BackgroundColor="White" IsVisible="false" />
+						<Button Text="{i18n:Translate RegistrarButtonText}" TextColor="#fff" BackgroundColor="#3F92DC" Clicked="SignUpClicked" />
 					</StackLayout>
 				</StackLayout>
 			</StackLayout>

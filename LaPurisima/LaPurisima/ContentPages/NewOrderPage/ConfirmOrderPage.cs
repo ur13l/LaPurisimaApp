@@ -9,134 +9,34 @@ namespace LaPurisima
 	public partial class ConfirmOrderPage : BasePage
 	{
 
-		async void Pedir(object sender, System.EventArgs e)
-		{
-
-			if (await Valid())
-			{
-
-				Device.BeginInvokeOnMainThread(() => ShowProgress("Validando"));
-
-
-
-				string refe = "";
-				if (!string.IsNullOrEmpty(_referencias.Text))
-				{
-					refe = "Referencias: " + _referencias.Text;
-				}
-
-				HelperOrdenPage.Pedido.direccion = string.Format("{0} #{1}, {2}. {3}", HelperOrdenPage.street, HelperOrdenPage.streetNumber, HelperOrdenPage.colony, refe);
-				HelperOrdenPage.Pedido.detalles = new List<DetallePedido>();
-				foreach (var prod in HelperOrdenPage.Pedido.productos)
-				{
-					HelperOrdenPage.Pedido.detalles.Add(new DetallePedido()
-					{
-						producto_id = prod.id,
-						cantidad = prod.cantidad,
-						producto = prod,
-					});
-				}
-
-				if (_cash.IsToggled)
-				{
-					if (string.IsNullOrEmpty(_amount.Text))
-					{
-						_amount.Text = "0";
-					}
-
-					var total = HelperOrdenPage.Pedido.productos.Sum(x => x.total);
-
-					if (float.Parse(_amount.Text) < total)
-					{
-						await DisplayAlert("", "Ingresa un cambio mayor que el total.", Localize.GetString("OkButtonLabel", ""));
-						HideProgress();
-						return;
-					}
-				}
-
-				HelperOrdenPage.Pedido.tipo_pago_id = (_cash.IsToggled) ? 1 : 2;
-				HelperOrdenPage.Pedido.cantidad_pago = (_cash.IsToggled) ? float.Parse(_amount.Text) : 0.0f;
-
-
-				var response = await ClientLaPurisima.MakeOrder(HelperOrdenPage.Pedido);
-
-
-
-				if (response != null)
-				{
-					OrdersPage._pedidos = null;
-					ShowProgress(IProgressType.Done);
-					await Task.Delay(800);
-					HideProgress();
-				}
-				else {
-					HideProgress();
-					var result = await DisplayAlert(Localize.GetString("ErrorTitleText", ""), Localize.GetString("ErrorMakingOrder", ""), Localize.GetString("OkButtonLabel", ""), Localize.GetString("MakeOrderAgain", ""));
-					if (!result)
-						Pedir(null, null);
-					return;
-				}
-
-				HideProgress();
-
-				if (NextPage != null)
-					NextPage(this);
-			}
-
-		}
-
-		void switcher_Toggled(object sender, ToggledEventArgs e)
-		{
-			if (_cash.IsToggled == false)
-			{
-				_creditcardMessage.IsVisible = true;
-				_amount.IsVisible = false;
-
-			}
-			else
-			{
-				_creditcardMessage.IsVisible = false;
-				_amount.IsVisible = true;
-			}
-		}
-
-		async Task<bool> Valid()
-		{
-
-			if (string.IsNullOrEmpty(EntryCalleProfile.Text) || EntryCalleProfile.Text.Length <= 1)
-			{
-				await DisplayAlert("", "Ingrese una calle", "ok");
-				return false;
-			}
-
-			if (string.IsNullOrEmpty(EntryColoniaProfile.Text))
-			{
-				await DisplayAlert("", "Ingrese una colonia", "ok");
-				return false;
-			}
-
-			if (string.IsNullOrEmpty(_referencias.Text))
-			{
-				await DisplayAlert("", "Ingrese unas referencias", "ok");
-				return false;
-			}
-
-			if (HelperOrdenPage.Pedido.productos == null || HelperOrdenPage.Pedido.productos.Count == 0)
-			{
-				await DisplayAlert("","Seleccione algun producto.","Ok");
-				return false;
-			}
-
-
-			return true;
-		}
+		bool payWithCash = true;
 
 		public ConfirmOrderPage(Pedido pedido = null)
 		{
 			InitializeComponent();
+
+			InitView();
 		}
 
-		internal void UpdateView()
+		void InitView()
+		{
+			var info = PropertiesManager.GetUserInfo();
+			if (info != null)
+			{
+				if (info.referencia != null && info.referencia.Contains(";"))
+				{
+					var str = info.referencia.Split(';')[0];
+					_referencias.Text = str;
+				}
+				else {
+					_referencias.Text = info.referencia;
+				}
+			}
+
+
+		}
+
+		public void UpdateView()
 		{
 			//EntryNameProfile.IsEnabled = false;
 			//EntryCalleProfile.IsEnabled = false;
@@ -177,6 +77,143 @@ namespace LaPurisima
 				_listView.HeightRequest = (HelperOrdenPage.Pedido.productos.Count() * 60) + 60;
 				_totalLabel.Text = string.Format("Total: ${0}", HelperOrdenPage.Pedido.productos.Sum(x => x.total));
 			}
+		}
+
+		async void Pedir(object sender, System.EventArgs e)
+		{
+
+			if (await Valid())
+			{
+
+				Device.BeginInvokeOnMainThread(() => ShowProgress("Validando"));
+
+
+
+				string refe = "";
+				if (!string.IsNullOrEmpty(_referencias.Text))
+				{
+					refe = "Referencias: " + _referencias.Text;
+				}
+
+				HelperOrdenPage.Pedido.direccion = string.Format("{0} #{1}, {2}. {3}", HelperOrdenPage.street, HelperOrdenPage.streetNumber, HelperOrdenPage.colony, refe);
+				HelperOrdenPage.Pedido.detalles = new List<DetallePedido>();
+				foreach (var prod in HelperOrdenPage.Pedido.productos)
+				{
+					HelperOrdenPage.Pedido.detalles.Add(new DetallePedido()
+					{
+						producto_id = prod.id,
+						cantidad = prod.cantidad,
+						producto = prod,
+					});
+				}
+
+				if (payWithCash)
+				{
+					if (string.IsNullOrEmpty(_amount.Text))
+					{
+						_amount.Text = "0";
+					}
+
+					var total = HelperOrdenPage.Pedido.productos.Sum(x => x.total);
+
+					if (float.Parse(_amount.Text) < total)
+					{
+						await DisplayAlert("", "Ingresa cuanto cambio necesitas.", Localize.GetString("OkButtonLabel", ""));
+						_amount.Focus();
+						HideProgress();
+						return;
+					}
+				}
+
+				HelperOrdenPage.Pedido.tipo_pago_id = (payWithCash) ? 1 : 2;
+				HelperOrdenPage.Pedido.cantidad_pago = (payWithCash) ? float.Parse(_amount.Text) : 0.0f;
+
+
+				var response = await ClientLaPurisima.MakeOrder(HelperOrdenPage.Pedido);
+
+
+
+				if (response != null)
+				{
+					OrdersPage._pedidos = null;
+					ShowProgress(IProgressType.Done);
+					await Task.Delay(800);
+					HideProgress();
+				}
+				else {
+					HideProgress();
+					var result = await DisplayAlert(Localize.GetString("ErrorTitleText", ""), Localize.GetString("ErrorMakingOrder", ""), Localize.GetString("OkButtonLabel", ""), Localize.GetString("MakeOrderAgain", ""));
+					if (!result)
+						Pedir(null, null);
+					return;
+				}
+
+				HideProgress();
+
+				if (NextPage != null)
+					NextPage(this);
+			}
+
+		}
+
+		void ChangePayMethod(object sender, System.EventArgs e)
+		{
+			if (sender == _cashBTN)
+			{
+				payWithCash = true;
+				_cashBTN.Opacity = 1;
+				_cardBTN.Opacity = 0.2;
+			}
+			else {
+				payWithCash = false;
+				_cashBTN.Opacity = 0.2;
+				_cardBTN.Opacity = 1;
+			}
+
+			if (payWithCash)
+			{
+				_amount.IsVisible = true;
+			}
+			else
+			{
+				_amount.IsVisible = false;
+			}
+		}
+
+		void UpdateCashView()
+		{
+
+		}
+
+		async Task<bool> Valid()
+		{
+
+			if (string.IsNullOrEmpty(EntryCalleProfile.Text) || EntryCalleProfile.Text.Length <= 1)
+			{
+				await DisplayAlert("", "Ingrese una calle", "ok");
+				return false;
+			}
+
+			if (string.IsNullOrEmpty(EntryColoniaProfile.Text))
+			{
+				await DisplayAlert("", "Ingrese una colonia", "ok");
+				return false;
+			}
+
+			if (string.IsNullOrEmpty(_referencias.Text))
+			{
+				await DisplayAlert("", "Ingrese unas referencias", "ok");
+				return false;
+			}
+
+			if (HelperOrdenPage.Pedido.productos == null || HelperOrdenPage.Pedido.productos.Count == 0)
+			{
+				await DisplayAlert("", "Seleccione algun producto.", "Ok");
+				return false;
+			}
+
+
+			return true;
 		}
 	}
 }

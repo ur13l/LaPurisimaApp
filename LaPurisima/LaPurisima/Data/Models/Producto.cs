@@ -6,7 +6,7 @@ namespace LaPurisima
 {
 
 
-public class Producto : Realms.RealmObject
+	public class Producto : Realms.RealmObject
 	{
 		public int id { get; set; }
 		public string nombre { get; set; }
@@ -30,13 +30,16 @@ public class Producto : Realms.RealmObject
 		{
 			get
 			{
-					return id;
+				return id;
 			}
 		}
 		[Ignored]
 		public int cantidad { get; set; }
 		[Ignored]
-		public double total { get {
+		public double total
+		{
+			get
+			{
 				var t = (cantidad * precio);
 				return t;
 			}
@@ -95,6 +98,7 @@ public class Producto : Realms.RealmObject
 		}
 		#endregion
 	}
+
 	//public class Producto : Realms.RealmObject
 	//{
 	//	public int id { get; set; }

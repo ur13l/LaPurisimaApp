@@ -46,9 +46,6 @@
     <EmbeddedResource Include="ContentPages\Drawer\DrawerListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContentPages\NewOrderPage\MakeOrderPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="ContentPages\NewOrderPage\ConfirmOrderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -76,6 +73,9 @@
     <EmbeddedResource Include="ContentPages\RecoverPass\VerifyCodePass.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\ChooseAddresPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -99,14 +99,10 @@
       <DependentUpon>DrawerListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContentPages\Drawer\RootPage.cs" />
-    <Compile Include="PropertiesManager.cs" />
     <Compile Include="Providers\IProgress.cs" />
     <Compile Include="ContentPages\BasePage.cs" />
     <Compile Include="CustomViews\TintedImage.cs" />
     <Compile Include="ContentPages\NewOrderPage\CarouselPageOrder.cs" />
-    <Compile Include="ContentPages\NewOrderPage\MakeOrderPage.xaml.cs">
-      <DependentUpon>MakeOrderPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ContentPages\NewOrderPage\ConfirmOrderPage.cs">
       <DependentUpon>ConfirmOrderPage.xaml</DependentUpon>
     </Compile>
@@ -153,6 +149,11 @@
     <Compile Include="Providers\IValidUrl.cs" />
     <Compile Include="Helpers\LaunchMapApp.cs" />
     <Compile Include="Helpers\DistanceCalculation.cs" />
+    <Compile Include="Helpers\PropertiesManager.cs" />
+    <Compile Include="ContentPages\ChooseAddresPage.xaml.cs">
+      <DependentUpon>ChooseAddresPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\UserPreferences.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

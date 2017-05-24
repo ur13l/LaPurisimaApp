@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.purisima.lapurisima" android:versionCode="3" android:versionName="3">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cero_ocho_bits.lapurisima" android:versionName="1.2" android:versionCode="3">
 	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -9,7 +9,10 @@
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<!--GOOGLE MAPS APIKEY:
+	Oscar Debug: AIzaSyDEuTuKJe7j5My6W0D87dB_Cg89cTFXz-E
+	Oscar Release: AIzaSyBiKLmowjBEbDwM6TotCXDYgqpfLmBebcQ-->
 	<application android:label="La Purisima" android:icon="@drawable/icon" android:theme="@style/MyTheme" android:hardwareAccelerated="true">
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAKNzFax2rE03DGlL5lE96M6QmThzJ9VGM" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBiKLmowjBEbDwM6TotCXDYgqpfLmBebcQ" />
 	</application>
 </manifest>

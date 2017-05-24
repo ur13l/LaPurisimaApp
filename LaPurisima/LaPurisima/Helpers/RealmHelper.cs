@@ -45,5 +45,40 @@ namespace LaPurisima
 		}
 
 		#endregion
+
+		#region USER_PREFERNECES
+
+		public static void SetUserPrefs(UserPreferences userPreferences)
+		{
+			var realm = Realm.GetInstance();
+
+			realm.Write(() =>
+			{
+				realm.RemoveAll<UserPreferences>();
+
+				var prefRealm = realm.CreateObject<UserPreferences>();
+				prefRealm.City = userPreferences.City;
+				prefRealm.Latitude = userPreferences.Latitude;
+				prefRealm.Longitude = userPreferences.Longitude;
+				prefRealm.Neighborhood = userPreferences.Neighborhood;
+				prefRealm.PostalCode = userPreferences.PostalCode;
+				prefRealm.References = userPreferences.References;
+				prefRealm.Street = userPreferences.Street;
+				prefRealm.Street = userPreferences.Street;
+
+
+			});
+		}
+
+		public static UserPreferences GetUsersPref()
+		{
+			var realm = Realm.GetInstance();
+
+			var productos = realm.All<UserPreferences>().ToList();
+
+			return productos.LastOrDefault();
+		}
+
+		#endregion
 	}
 }

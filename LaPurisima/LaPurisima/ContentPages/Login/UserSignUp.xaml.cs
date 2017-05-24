@@ -14,12 +14,23 @@ namespace LaPurisima
 			InitializeComponent();
 
 			//System.Diagnostics.Debug.WriteLine(Localize.GetString("NewUserText", ""));
+			NavigationPage.SetBackButtonTitle(this, "Registro");
 		}
 
 		async void SignUpClicked(object sender, System.EventArgs e)
 		{
+
+			if (ChooseAddresPage.LastPosition == null)
+			{
+				await DisplayAlert("","Elige tu ubicación","OK");
+				return;
+			}
+
+			Xamarin.Forms.Maps.Position position = (Xamarin.Forms.Maps.Position)ChooseAddresPage.LastPosition;
+
 			if (await Validate())
 			{
+				
 				var user = new User()
 				{
 					calle = EntryCalleAlta.Text,
@@ -30,11 +41,11 @@ namespace LaPurisima
 					telefono = EntryTelAlta.Text,
 					nombre = EntryNameAlta.Text,
 					password = EntryPassAlta.Text,
-					referencia = Referencias.Text,
+					referencia = string.Format("{0};{1},{2}",Referencias.Text,position.Latitude,position.Longitude),
 					telefono_casa = EntryTelCasaAlta.Text,
 					tipo_usuario_id = 3,
 				};
- 
+
 				ShowProgress("Validando");
 
 				var resp = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.CrearUsuario, true);
@@ -106,17 +117,39 @@ namespace LaPurisima
 				return false;
 			}
 
-			if (!ValidateEntry(EntryCalleAlta, "EnterStreetLabel"))
+			if (!ValidateText(EntryCalleAlta.Text, "EnterStreetLabel"))
 			{
 				return false;
 			}
 
-			if (!ValidateEntry(EntryColoniaAlta, "EnterColonyLabel"))
+			if (!ValidateText(EntryColoniaAlta.Text, "EnterColonyLabel"))
 			{
 				return false;
 			}
 
 			return true;
+		}
+
+		bool ValidateText(string text, string label, string regex = null, RegexOptions options = RegexOptions.IgnoreCase)
+		{
+			bool valid = true;
+			if (string.IsNullOrEmpty(text))
+			{
+				valid = false;
+			}
+
+			if (!string.IsNullOrEmpty(regex))
+			{
+				valid = Regex.IsMatch(text, regex, options);
+			}
+
+			if (!valid)
+			{
+				//entry.Focus();
+				ShowErrorMessage(label);
+			}
+
+			return valid;
 		}
 
 		bool ValidateEntry(Entry entry, string label, string regex = null, RegexOptions options = RegexOptions.IgnoreCase)
@@ -139,6 +172,19 @@ namespace LaPurisima
 			}
 
 			return valid;
+		}
+
+		async void PickAddress(object sender, System.EventArgs e)
+		{
+			var p = new ChooseAddresPage(true);
+			p.AddresChoosed += (ss, ee) =>
+			{
+				EntryCalleAlta.Text = string.Format("{0} # {1}", ChooseAddresPage.street, ChooseAddresPage.streetNumber);
+				EntryColoniaAlta.Text = ChooseAddresPage.colony;
+				EntryCPAlta.Text = ChooseAddresPage.postalCode;
+
+			};
+			await Navigation.PushAsync(p);
 		}
 
 		public async void ShowErrorMessage(string label)

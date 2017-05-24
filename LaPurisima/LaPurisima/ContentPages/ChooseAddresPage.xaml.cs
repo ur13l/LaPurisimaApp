@@ -6,16 +6,28 @@ using Xamarin.Forms.Maps;
 
 namespace LaPurisima
 {
-	public partial class MakeOrderPage : BasePage
+	public partial class ChooseAddresPage : BasePage
 	{
-		string street = null, streetNumber, colony = null, city = null, postalCode = null, state = null, country = null;
+
+		public event EventHandler AddresChoosed;
+
+		public static string street = null, streetNumber, colony = null, city = null, postalCode = null, state = null, country = null;
+
 		Position START_POINT = new Position(26.9034632, -101.4199217);
-		Distance START_DISTANCE = Distance.FromMiles(1.7);
-		public MakeOrderPage()
+		Distance START_DISTANCE = Distance.FromKilometers(0.2);
+
+		bool chooseAddress;
+
+		public ChooseAddresPage(bool onlyChooseAddress = false)
 		{
+			chooseAddress = onlyChooseAddress;
 			InitializeComponent();
 
-			Title = "Hacer un pedido";
+
+			if (chooseAddress)
+				Title = "Elige tu dirección";
+			else
+				Title = "Hacer un pedido";
 
 			//_confirmLocationBtn.Clicked += (sender, e) =>
 			//{
@@ -48,7 +60,7 @@ namespace LaPurisima
 							_progress.IsVisible = true;
 						});
 
-						var googleMaps = await ClientLaPurisima.GetAddresForPosition(_lastPosition);
+						var googleMaps = await ClientLaPurisima.GetAddresForPosition(Map.VisibleRegion.Center);
 						//System.Diagnostics.Debug.WriteLine(googleMaps);
 						Traverse(googleMaps);
 
@@ -57,13 +69,26 @@ namespace LaPurisima
 						   _progress.IsVisible = false;
 					   });
 
-						_nextBTN.Text = "Confirmar ubicacion";
+						if (chooseAddress)
+							_nextBTN.Text = "Confirmar dirección";
+						else
+							_nextBTN.Text = "Confirmar ubicacion";
 
 						UpdateView();
 						//SaveInfo();
 					}
 				};
-			Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));
+
+
+			var pref = RealmHelper.GetUsersPref();
+			if (pref != null)
+			{
+				Map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(pref.Latitude, pref.Longitude), START_DISTANCE));
+			}
+			else {
+				Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));
+			}
+
 
 
 			_street.Completed += (sender, e) =>
@@ -77,6 +102,12 @@ namespace LaPurisima
 
 			   SearchByAddress();
 		   };
+
+			if (Device.OS == TargetPlatform.Android)
+			{
+				_location.IsVisible = false;
+			}
+
 		}
 
 
@@ -85,7 +116,7 @@ namespace LaPurisima
 		{
 			base.OnAppearing();
 
-			if(isFirstTime)
+			if (isFirstTime)
 				GetLocation();
 
 			isFirstTime = false;
@@ -99,15 +130,51 @@ namespace LaPurisima
 		async void GetLocation()
 		{
 
+			var info = PropertiesManager.GetUserInfo();
+			if (info != null)
+			{
+
+				if (info.referencia != null && info.referencia.Contains(";"))
+				{
+					try
+					{
+						var str = info.referencia.Split(';')[1];
+						var arr = str.Split(',');
+						var lat = double.Parse(arr[0]);
+						var lon = double.Parse(arr[1]);
+						START_POINT = new Position(lat, lon);
+
+						Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));
+
+						var response = await ClientLaPurisima.GetAddresForPosition(START_POINT);
+						//System.Diagnostics.Debug.WriteLine(googleMaps);
+						Traverse(response);
+
+						if (!chooseAddress)
+							SaveInfo();
+
+						return;
+					}
+					catch (Exception ex)
+					{
+
+					}
+				}
+			}
+
+
+			CenterInUser(null,null);
+		}
+
+		async void CenterInUser(object sender, EventArgs args)
+		{
 			if (LocationHelper.Instance.CurrentPosition != null)
 			{
 				START_POINT = new Position(LocationHelper.Instance.CurrentPosition.Latitude, LocationHelper.Instance.CurrentPosition.Longitude);
-				START_DISTANCE = Distance.FromKilometers(0.3);
 			}
 			else {
 				var l = await LocationHelper.Instance.Geolocator.GetPositionAsync(10000);
 				START_POINT = new Position(l.Latitude, l.Longitude);
-				START_DISTANCE = Distance.FromKilometers(0.3);
 			}
 
 			Map.MoveToRegion(MapSpan.FromCenterAndRadius(START_POINT, START_DISTANCE));
@@ -115,7 +182,9 @@ namespace LaPurisima
 			var googleMaps = await ClientLaPurisima.GetAddresForPosition(START_POINT);
 			//System.Diagnostics.Debug.WriteLine(googleMaps);
 			Traverse(googleMaps);
-			SaveInfo();
+
+			if (!chooseAddress)
+				SaveInfo();
 		}
 
 		async void SearchByAddress()
@@ -124,12 +193,10 @@ namespace LaPurisima
 			try
 			{
 
-				var resultModel = await ClientLaPurisima.GetObject<GoogleMapsLocation>(WEB_METHODS.GetAddressCoordenates, false, string.Format("{0}+{1}+,{2},+{3}+{4}", _number.Text, String.Join("+", _street.Text.Split(' ')), _colony.Text, "Monclova", "Coahuila"));
-				Map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(resultModel.results[0].geometry.location.lat, resultModel.results[0].geometry.location.lng), Distance.FromKilometers(2)));
+				var resultModel = await ClientLaPurisima.GetObject<GoogleMapsLocation>(WEB_METHODS.GetAddressCoordenates, false, string.Format("{0}+{1}+,{2},+{3}+{4}", _number.Text, String.Join("+", _street.Text.Split(' ')), _colony.Text, city, state));
+				Map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(resultModel.results[0].geometry.location.lat, resultModel.results[0].geometry.location.lng), START_DISTANCE));
 				Traverse(resultModel);
 				UpdateView();
-
-
 			}
 			catch
 			{
@@ -141,10 +208,10 @@ namespace LaPurisima
 
 		}
 
-		Position _lastPosition;
+		public static Position? LastPosition;
 		async void UpdatePoints(Position position)
 		{
-			_lastPosition = position;
+			LastPosition = position;
 			//if (_confirmLocationBtn.Opacity < 1)
 			//{
 			//	Device.BeginInvokeOnMainThread(async () =>
@@ -179,7 +246,7 @@ namespace LaPurisima
 		void SaveInfo()
 		{
 
-			if (HelperOrdenPage.Pedido == null&& PropertiesManager.GetUserInfo() != null)
+			if (HelperOrdenPage.Pedido == null && PropertiesManager.GetUserInfo() != null)
 				HelperOrdenPage.Pedido = new Pedido()
 				{
 					api_token = PropertiesManager.GetUserInfo().api_token,
@@ -245,7 +312,7 @@ namespace LaPurisima
 						{
 							streetNumber = addresComponent.long_name;
 						}
-						else if (item == "sublocality" && colony == null)
+						else if ((item == "sublocality" || item == "neighborhood") && colony == null)
 						{
 							colony = addresComponent.long_name;
 						}
@@ -268,10 +335,25 @@ namespace LaPurisima
 			}
 		}
 
-		void MakeOrder(object sender, System.EventArgs e)
+		async void MakeOrder(object sender, System.EventArgs e)
 		{
-			SaveInfo();
-			NextPage(this);
+
+			if (chooseAddress)
+			{
+				if (AddresChoosed != null)
+				{
+					AddresChoosed(this, null);
+				}
+				await Navigation.PopAsync();
+			}
+			else {
+				if (NextPage != null)
+				{
+					SaveInfo();
+					NextPage(this);
+				}
+			}
+
 		}
 	}
 

@@ -8,6 +8,9 @@ namespace LaPurisima
 {
 	public partial class Profile : BasePage
 	{
+
+		string References,LatLang;
+
 		public Profile()
 		{
 			InitializeComponent();
@@ -50,7 +53,19 @@ namespace LaPurisima
 					EntryBetweenProfile.Text = "";
 				}
 				else {
-					EntryBetweenProfile.Text = user.referencia;
+
+					if (user.referencia != null && user.referencia.Contains(";"))
+					{
+						var strs = user.referencia.Split(';');
+						References = strs[0];
+						LatLang = strs[1];
+						EntryBetweenProfile.Text = References;
+					}
+					else {
+						EntryBetweenProfile.Text = user.referencia;
+					}
+
+
 				}
 				EntryCPProfile.Text = user.codigo_postal;
 
@@ -91,7 +106,7 @@ namespace LaPurisima
 			user.nombre = EntryNameProfile.Text;
 			user.calle = EntryCalleProfile.Text;
 			user.colonia = EntryColoniaProfile.Text;
-			user.referencia = EntryBetweenProfile.Text;
+			user.referencia = EntryBetweenProfile.Text + ";"+LatLang;
 			user.codigo_postal = EntryCPProfile.Text;
 
 			if (Base64Image != null)
@@ -123,7 +138,7 @@ namespace LaPurisima
 
 		bool ValidateResponse(string response)
 		{
-			if (ClientLaPurisima.IsErrorFalse(response))
+			if (!ClientLaPurisima.IsErrorFalse(response))
 			{
 				ShowErrorMessage("ErrorMessageDoesntExist");
 				return false;

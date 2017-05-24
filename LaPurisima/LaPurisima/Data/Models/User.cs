@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace LaPurisima
 {
 
-	public class User
+	public class User : Realms.RealmObject
 	{
 		public int? id { get; set; }
 		public string nombre { get; set; }
@@ -29,6 +29,7 @@ namespace LaPurisima
 		public double longitud { get; set; }
 
 
+		[Realms.Ignored]
 		[JsonIgnore]
 		public Xamarin.Forms.ImageSource Image
 		{
