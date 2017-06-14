@@ -84,8 +84,10 @@ namespace LaPurisima
 		public List<DetallesDescuento> detalles_descuento { get; set; }
 
 		public int? status { get; set; }
-		public int? total { get; set; }
-		public Repartidor repartidor { get; set; }
+		public double? total { get; set; }
+
+		//public int? id_repartidor { get; set; }
+		public User repartidor { get; set; }
 
 		public int id { get; set; }
 		public int id_pedido { get { return id; } }

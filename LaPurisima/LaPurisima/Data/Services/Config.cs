@@ -18,6 +18,7 @@ namespace LaPurisima
 		CancelarPedido,
 		FinalizarPedido,
 		GetAddressCoordenates,
+		SetStockRepartidor
 	}
 
 	public enum WEB_ERROR
@@ -68,6 +69,8 @@ namespace LaPurisima
 					return "pedido/cancelar";
 				case WEB_METHODS.FinalizarPedido:
 					return "pedido/finalizar";
+				case WEB_METHODS.SetStockRepartidor:
+					return "producto/setStockRepartidor";
 				case WEB_METHODS.GetAddressCoordenates:
 					return "http://maps.google.com/maps/api/geocode/json?address=";
 				default:

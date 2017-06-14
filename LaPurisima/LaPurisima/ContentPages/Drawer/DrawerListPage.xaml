@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.DrawerListPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" BackgroundColor="White"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LaPurisima.DrawerListPage" xmlns:local="clr-namespace:LaPurisima;assembly=LaPurisima" BackgroundColor="Transparent"
 		xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
 	<ContentPage.Content>
-		<StackLayout Margin="0,0,0,0">
+		<StackLayout BackgroundColor="White" Padding="0,8,0,0">
+			<StackLayout.Margin>
+				<OnPlatform x:TypeArguments="Thickness" Android="0,25,0,0" iOS="0" />
+			</StackLayout.Margin>
 			<StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="5" BackgroundColor="White" Padding="0,0,0,5">
 				<!--<Image
 					Source="profile.jpeg"
@@ -20,6 +23,10 @@
 						<OnPlatform.Android>true</OnPlatform.Android>
 					</OnPlatform>
 				</StackLayout.IsVisible>-->
+				<StackLayout x:Name="_statusRepartidorContainer" BackgroundColor="#f1f1f1" Orientation="Horizontal" Padding="8,6,8,6">
+					<Switch x:Name="_switchOnline" VerticalOptions="Center" /> 
+					<Label x:Name="_labelStatus" Text="_ESTATUS_" TextColor="#848484" FontSize="17" VerticalTextAlignment="Center"/>
+				</StackLayout>
 			</StackLayout>
 			<ListView Margin="0,15,0,0" x:Name="ListView"  SeparatorVisibility="Default" SeparatorColor="#d2d2d2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" HasUnevenRows="true">
 				<ListView.ItemTemplate>

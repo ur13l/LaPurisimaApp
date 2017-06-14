@@ -35,6 +35,8 @@ namespace LaPurisima
 				}
 			}
 
+			//MainPage = new TestPage();
+			//return;
 
 			if (PropertiesManager.IsLogedIn())
 			{
@@ -61,25 +63,29 @@ namespace LaPurisima
 			{
 				if (user.tipo_usuario_id == 2)
 				{
-					try
-					{
-						user.status = 1; //activo
-						var res = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
-					}
-					catch (Exception ex)
-					{
-						System.Diagnostics.Debug.WriteLine("error updating status. " + ex.Message);
-					}
 
-					LocationHelper.Instance.Geolocator.PositionChanged += async (sender, e) =>
+					RepartidorHelper.SetEstatusRepartidor(online: true, updateEstatusAndLocationWeb: true);
+
+					LocationHelper.Instance.Geolocator.PositionChanged += (sender, e) =>
 					{
 						try
 						{
-							user.status = 1; //activo
-							user.latitud = e.Position.Latitude;
-							user.longitud = e.Position.Longitude;
-							var res = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
-							System.Diagnostics.Debug.WriteLine("RES UPDATE STATUS REPARIDOR: " + res);
+
+							user = PropertiesManager.GetUserInfo();
+
+
+							Realm.GetInstance().Write(() =>
+							{
+								//user.status = 1; //activo la que tenga
+								user.latitud = e.Position.Latitude;
+								user.longitud = e.Position.Longitude;
+							});
+
+
+							RepartidorHelper.UpdateLocationStatusRepartidor(user);
+
+							//var res = await ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
+							//System.Diagnostics.Debug.WriteLine("RES UPDATE STATUS REPARIDOR: " + res);
 						}
 						catch (Exception ex)
 						{
@@ -115,4 +121,3 @@ namespace LaPurisima
 		}
 	}
 }
-

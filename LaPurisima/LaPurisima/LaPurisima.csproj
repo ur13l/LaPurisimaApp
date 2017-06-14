@@ -76,6 +76,9 @@
     <EmbeddedResource Include="ContentPages\ChooseAddresPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContentPages\TestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -154,6 +157,10 @@
       <DependentUpon>ChooseAddresPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Models\UserPreferences.cs" />
+    <Compile Include="Helpers\RepartidorHelper.cs" />
+    <Compile Include="ContentPages\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

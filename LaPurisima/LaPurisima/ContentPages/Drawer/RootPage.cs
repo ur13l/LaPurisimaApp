@@ -46,15 +46,7 @@ namespace LaPurisima
 						{
 							if (user.tipo_usuario_id == 2)
 							{
-								try
-								{
-									user.status = 2; //inactivo
-									var res = ClientLaPurisima.PostObject<User>(user, WEB_METHODS.SetStatusRepartidor);
-								}
-								catch (Exception ex)
-								{
-									System.Diagnostics.Debug.WriteLine("error updating status. " + ex.Message);
-								}
+								RepartidorHelper.SetEstatusRepartidor(false, true);
 							}
 						}
 

@@ -58,6 +58,21 @@ namespace LaPurisima
 		}
 
 
+		public static async Task<string> ModificarStockRepartidor(Pedido _pedido)
+		{
+			_pedido.api_token = PropertiesManager.GetUserInfo().api_token;
+			_pedido.fecha = DateTime.Now.ToString("yyyy-MM-dd HH:MM:ss");
+			var jsonResponse = await PostObject<Pedido>(_pedido, WEB_METHODS.SetStockRepartidor);
+
+			if (jsonResponse == null)
+			{
+				return null;
+			}
+
+			return jsonResponse;
+		}
+
+
 		/*
 {
 "api_token": "neMdEyQE9xz7SKaRFObZm7fY3bCcNw7TxNvTGokk5abi1SH7Lq8SEfxJOtav",

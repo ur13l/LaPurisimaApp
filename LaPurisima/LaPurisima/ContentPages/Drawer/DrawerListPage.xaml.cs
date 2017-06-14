@@ -27,12 +27,48 @@ namespace LaPurisima
 
 			Title = "     ";
 
+			InitViews();
+		}
 
+		void InitViews()
+		{
+			SetListView();
 
+			UpdateView();
 
+			if (PropertiesManager.IsLogedIn())
+			{
+				var user = PropertiesManager.GetUserInfo();
+
+				if (user.tipo_usuario_id == 2)
+				{
+
+					_labelStatus.Text = user.status == 1 ? "En línea" : "Desconectado";
+
+					_switchOnline.Toggled += (sender, e) =>
+					{
+						var isOnline = e.Value;
+						RepartidorHelper.SetEstatusRepartidor(isOnline, true);
+
+						_labelStatus.Text = e.Value ? "En línea" : "Desconectado";
+
+					};
+				}
+				else {
+					_statusRepartidorContainer.IsVisible = false;
+				}
+			}
+
+			if (Device.OS == TargetPlatform.iOS)
+			{
+				Icon = "menu_icon.png";
+				var x = Icon;
+			}
+		}
+
+		void SetListView()
+		{
 			var list = new List<ItemDrawer>();
-
-
 
 			//CONDUCTOR
 			if (PropertiesManager.GetUserInfo().tipo_usuario_id == 2)
@@ -107,7 +143,6 @@ namespace LaPurisima
 				if (PageSelected != null)
 					PageSelected(item.Page);
 			};
-
 		}
 
 		public void UpdateView()
@@ -117,6 +152,11 @@ namespace LaPurisima
 				var user = PropertiesManager.GetUserInfo();
 				_labelMail.Text = user.email;
 				_labelNombre.Text = user.nombre;
+
+				if (user.tipo_usuario_id == 2)
+				{
+					_switchOnline.IsToggled = user.status == 1;
+				}
 			}
 		}
 

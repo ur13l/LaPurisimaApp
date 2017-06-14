@@ -17,6 +17,9 @@ namespace LaPurisima
 		public static double latitud { get; set; }
 		public static double longitud { get; set; }
 
-		public static Pedido Pedido { get; set;}
+		public static Pedido Pedido { get; set; }
+
+
+		public static Pedido StockRepartidor { get; set; }
 	}
 }

@@ -85,9 +85,7 @@ namespace LaPurisima
 			if (await Valid())
 			{
 
-				Device.BeginInvokeOnMainThread(() => ShowProgress("Validando"));
-
-
+				ShowProgress("Validando");
 
 				string refe = "";
 				if (!string.IsNullOrEmpty(_referencias.Text))
@@ -118,9 +116,11 @@ namespace LaPurisima
 
 					if (float.Parse(_amount.Text) < total)
 					{
+						HideProgress();
+
 						await DisplayAlert("", "Ingresa cuanto cambio necesitas.", Localize.GetString("OkButtonLabel", ""));
 						_amount.Focus();
-						HideProgress();
+
 						return;
 					}
 				}
@@ -130,8 +130,6 @@ namespace LaPurisima
 
 
 				var response = await ClientLaPurisima.MakeOrder(HelperOrdenPage.Pedido);
-
-
 
 				if (response != null)
 				{
@@ -172,10 +170,12 @@ namespace LaPurisima
 
 			if (payWithCash)
 			{
+				_amountMoneySymbol.IsVisible = true;
 				_amount.IsVisible = true;
 			}
 			else
 			{
+				_amountMoneySymbol.IsVisible = false;
 				_amount.IsVisible = false;
 			}
 		}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cero_ocho_bits.lapurisima" android:versionName="1.2" android:versionCode="3">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cero_ocho_bits.lapurisima" android:versionName="1.3" android:versionCode="4">
 	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
