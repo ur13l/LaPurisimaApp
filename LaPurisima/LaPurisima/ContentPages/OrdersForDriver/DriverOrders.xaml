@@ -17,7 +17,26 @@
 										<Label Text="{Binding direccionLabel}" TextColor="#4F4F4F" />
 										<Label 	Text ="{Binding fechaDateTime, StringFormat='{}{0:d \\de MMMM yyyy a \\la\\s h:mm tt}'}"  TextColor="#4F4F4F" HorizontalOptions="End" />
 										<local:AutoAdjustLabel Text="{Binding ProductosLabel}"  TextColor="#848484" />
-										<Label Text="{Binding Distancia}" FontSize="14"  TextColor="#848484" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+										<Grid>
+									<Frame
+													Grid.Column="0"
+										x:Name           ="_statusContainer"
+										HorizontalOptions="Start"
+										BackgroundColor  ="{Binding StatusColor}"
+										HasShadow        ="false"
+										Padding          ="5">
+										<Frame.Content>
+											<Label
+												x:Name               ="_status"
+												Text                 ="{Binding StatusLabel}"
+												FontAttributes       ="Bold"
+												TextColor            ="White"
+												VerticalTextAlignment="Center" />
+										</Frame.Content>
+									</Frame>
+											<Label Grid.Column="1" Text="{Binding Distancia}" FontSize="14"  TextColor="#848484" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+								</Grid>
+										
 									</StackLayout>
 									<local:AutoAdjustLabel Grid.Column="1" Text="{Binding Total, StringFormat='${0}'}" TextColor="#4F4F4F" VerticalOptions="Center" FontSize="20" />
 								</Grid>

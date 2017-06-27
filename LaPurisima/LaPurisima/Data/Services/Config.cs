@@ -18,7 +18,8 @@ namespace LaPurisima
 		CancelarPedido,
 		FinalizarPedido,
 		GetAddressCoordenates,
-		SetStockRepartidor
+		SetStockRepartidor,
+		PedidoEnCamino
 	}
 
 	public enum WEB_ERROR
@@ -34,7 +35,13 @@ namespace LaPurisima
 	{
 		//public static string URL = "http://10.0.7.42/LaPurisimaWeb/public/";
 		//public static string URL = "http://localhost/lapurisimaweb/public/";
-		public static string URL = "http://104.236.176.95/";
+
+
+		public static string URL {
+			get{
+				return "http://lapurisimaadmin.club/";// 104.236.176.95;
+			}
+		}
 
 		public static string GetURLForMethod(WEB_METHODS method)
 		{
@@ -69,6 +76,9 @@ namespace LaPurisima
 					return "pedido/cancelar";
 				case WEB_METHODS.FinalizarPedido:
 					return "pedido/finalizar";
+				case WEB_METHODS.PedidoEnCamino:
+					return "pedido/encamino";
+
 				case WEB_METHODS.SetStockRepartidor:
 					return "producto/setStockRepartidor";
 				case WEB_METHODS.GetAddressCoordenates:

@@ -25,9 +25,67 @@ namespace LaPurisima
 			{
 				_navigatie.IsVisible = false;
 				_entregar.IsVisible = false;
+				_enCamino.IsVisible = false;
 				_contNombre.IsVisible = false;
 			}
 
+			UpdateView();
+
+		}
+
+		void UpdateView()
+		{
+			if (_pedido != null)
+			{
+				var user = PropertiesManager.GetUserInfo();
+
+				switch (_pedido.status)
+				{
+					case 1:
+						//return "Solicitado";
+
+						break;
+					case 2:
+						//return "Asignado";
+						if (user.tipo_usuario_id == 2)
+						{
+							_enCamino.IsVisible = true;
+							_entregar.IsVisible = false;
+						}
+						break;
+
+					case 3:
+						//return "En camino";
+						if (user.tipo_usuario_id == 2)
+						{
+							_enCamino.IsVisible = false;
+							_entregar.IsVisible = true;
+						}
+						break;
+					case 4:
+						//return "Entregado";
+						if (user.tipo_usuario_id == 2)
+						{
+							_enCamino.IsVisible = false;
+							_entregar.IsVisible = false;
+						}
+						break;
+					case 5:
+						//return "Cancelado";
+						break;
+					case 6:
+						if (user.tipo_usuario_id == 2)
+						{
+							_enCamino.IsVisible = false;
+							_entregar.IsVisible = false;
+						}
+						//return "Fallido";
+						break;
+					default:
+						//return "";
+						break;
+				}
+			}
 		}
 
 		async void ComoLlegar(object sender, System.EventArgs e)
@@ -119,6 +177,31 @@ namespace LaPurisima
 			}
 		}
 
+		async void EnCamino(object sender, System.EventArgs e)
+		{
+			OrdersPage.Changed = true;
+			var user = PropertiesManager.GetUserInfo();
+			if (user != null)
+			{
+				ShowProgress("Actualizando");
+				_pedido.api_token = user.api_token;
+				var res = await ClientLaPurisima.PostObject<Pedido>(_pedido, WEB_METHODS.PedidoEnCamino);
+				if (ClientLaPurisima.IsErrorFalse(res))
+				{
+					HideProgress();
+				}
+				else {
+					HideProgress();
+					ShowProgress(IProgressType.Done);
+					await Task.Delay(600);
+					HideProgress();
+					await DisplayAlert("", "Pedido actualizado correctamente", "ok");
+					//await Navigation.PopAsync();
+				}
+
+			}
+		}
+
 		async void Cancelar(object sender, System.EventArgs e)
 		{
 			OrdersPage.Changed = true;
@@ -187,7 +270,7 @@ namespace LaPurisima
 						}
 						else {
 							var n = des.descuento.descuento;
-							if(n!=null)
+							if (n != null)
 								descuento += (int)n;
 						}
 
@@ -199,7 +282,7 @@ namespace LaPurisima
 							{
 								precio = -descuento,
 								imagen = null,
-								nombre = "DESCUENTO: "+item.producto.nombre,
+								nombre = "DESCUENTO: " + item.producto.nombre,
 								cantidad = 1,
 								IsImageVisible = false,
 							});
@@ -248,7 +331,7 @@ namespace LaPurisima
 				string resPayment = "";
 				if (_pedido.tipo_pago_id != null && _pedido.tipo_pago_id == 1)
 				{
-					resPayment = string.Format("En efectivo, cambio de {0:C}",_pedido.cantidad_pago);
+					resPayment = string.Format("En efectivo, cambio de {0:C}", _pedido.cantidad_pago);
 				}
 				else if (_pedido.tipo_pago_id != null && _pedido.tipo_pago_id == 2)
 				{
@@ -257,7 +340,7 @@ namespace LaPurisima
 
 				_payLabel.Text = resPayment;
 
-				if(_pedido.tipo_pago_id==null)
+				if (_pedido.tipo_pago_id == null)
 					_payContainer.IsVisible = false;
 
 			}

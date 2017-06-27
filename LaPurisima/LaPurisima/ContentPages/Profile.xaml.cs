@@ -9,7 +9,7 @@ namespace LaPurisima
 	public partial class Profile : BasePage
 	{
 
-		string References,LatLang;
+		string References, LatLang;
 
 		public Profile()
 		{
@@ -23,7 +23,7 @@ namespace LaPurisima
 				if (LastView is FFImageLoading.Forms.CachedImage)
 					(LastView as FFImageLoading.Forms.CachedImage).Source = Source;
 
-				_imageView.Source = Source;
+				//_imageView.Source = Source;
 
 				//await PostLastFoto();
 			};
@@ -36,7 +36,7 @@ namespace LaPurisima
 
 		async void ChangePicture(object sender, EventArgs e)
 		{
-			if(SaveButton.IsVisible)
+			if (SaveButton.IsVisible)
 				TakePictureActionSheet(_imageView);
 		}
 
@@ -52,7 +52,8 @@ namespace LaPurisima
 				{
 					EntryBetweenProfile.Text = "";
 				}
-				else {
+				else
+				{
 
 					if (user.referencia != null && user.referencia.Contains(";"))
 					{
@@ -61,7 +62,8 @@ namespace LaPurisima
 						LatLang = strs[1];
 						EntryBetweenProfile.Text = References;
 					}
-					else {
+					else
+					{
 						EntryBetweenProfile.Text = user.referencia;
 					}
 
@@ -70,8 +72,10 @@ namespace LaPurisima
 				EntryCPProfile.Text = user.codigo_postal;
 
 				if (user.imagen_usuario != null && !user.imagen_usuario.StartsWith("http"))
+				{
 					_imageView.Source = user.Image;
-				else if (user.imagen_usuario!=null && user.imagen_usuario.StartsWith("http"))
+				}
+				else if (user.imagen_usuario != null && user.imagen_usuario.StartsWith("http"))
 				{
 					_imageView.Source = user.imagen_usuario;
 				}
@@ -81,7 +85,7 @@ namespace LaPurisima
 			EntryCalleProfile.IsEnabled = false;
 			EntryColoniaProfile.IsEnabled = false;
 			EntryBetweenProfile.IsEnabled = false;
-			EntryCPProfile.IsEnabled =false;
+			EntryCPProfile.IsEnabled = false;
 		}
 
 
@@ -103,15 +107,18 @@ namespace LaPurisima
 			EditClicked(null, null);
 
 			var user = PropertiesManager.GetUserInfo();
-			user.nombre = EntryNameProfile.Text;
-			user.calle = EntryCalleProfile.Text;
-			user.colonia = EntryColoniaProfile.Text;
-			user.referencia = EntryBetweenProfile.Text + ";"+LatLang;
-			user.codigo_postal = EntryCPProfile.Text;
+			Realms.Realm.GetInstance().Write(() =>
+			{
+				user.nombre = EntryNameProfile.Text;
+				user.calle = EntryCalleProfile.Text;
+				user.colonia = EntryColoniaProfile.Text;
+				user.referencia = EntryBetweenProfile.Text + ";" + LatLang;
+				user.codigo_postal = EntryCPProfile.Text;
 
-			if (Base64Image != null)
-				user.imagen_usuario = Base64Image;
+				if (Base64Image != null)
+					user.imagen_usuario = Base64Image;
 
+			});
 
 			ToolbarItems.Add(EditButton);
 
@@ -138,12 +145,13 @@ namespace LaPurisima
 
 		bool ValidateResponse(string response)
 		{
-			if (!ClientLaPurisima.IsErrorFalse(response))
+			if (ClientLaPurisima.IsErrorFalse(response))
 			{
 				ShowErrorMessage("ErrorMessageDoesntExist");
 				return false;
 			}
-			else {
+			else
+			{
 				return true;
 			}
 		}

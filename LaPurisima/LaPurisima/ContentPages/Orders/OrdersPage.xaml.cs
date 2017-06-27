@@ -96,7 +96,15 @@ namespace LaPurisima
 				// Update the UI (because of async/await magic, this is still in the UI thread!)
 				if (_keepPolling)
 				{
-					await Task.Delay(TimeSpan.FromSeconds(60), token);
+					try
+					{
+						await Task.Delay(TimeSpan.FromSeconds(60), token);
+					}
+					catch
+					{
+						_keepPolling = false;
+					}
+
 				}
 			}
 		}
@@ -115,8 +123,8 @@ namespace LaPurisima
 
 				//solicitados, asignados o en camino que no tengan mas de 7 dias
 				_pedidos = _pedidos.Where(x => x.cliente_id == user.id  //.OrderByDescending(x => x.fechaDateTime).ToList();
-										  && x.status <= 3
-										  && ((DateTime.Now - x.fechaDateTime).TotalDays <= 7)).
+				                          && x.status <= 3).
+										//  && ((DateTime.Now - x.fechaDateTime).TotalDays <= 7)).
 								   OrderByDescending(x => x.fechaDateTime).ToList();
 
 				_itemsList.Clear();

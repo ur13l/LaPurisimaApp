@@ -75,6 +75,7 @@
 				<StackLayout Spacing="4" Orientation="Vertical">
 					<Button x:Name="_navigatie" Text="Como Llegar" TextColor="White" BackgroundColor="#0493DB" Clicked="ComoLlegar"/>
 					<Button x:Name="_entregar" Text="Entregar" TextColor="White" BackgroundColor="#5CB85C" Clicked="Entregar" />
+					<Button x:Name="_enCamino" Text="Voy en camino" TextColor="White" BackgroundColor="#5CB85C" Clicked="EnCamino" />
 					<Button x:Name="_cancelar" Text="Cancelar" TextColor="White" BackgroundColor="Red" Clicked="Cancelar" />
 				</StackLayout>
 			</StackLayout>

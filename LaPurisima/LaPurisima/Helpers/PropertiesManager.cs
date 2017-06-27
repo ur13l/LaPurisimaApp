@@ -60,22 +60,23 @@ namespace LaPurisima
 
 				}
 				else {
-					var x = realm.CreateObject<User>();
-					x.api_token = user.api_token;
-					x.calle = user.calle;
-					x.codigo_postal = user.codigo_postal;
-					x.colonia = user.colonia;
-					x.email = user.email;
-					x.id = user.id;
-					x.imagen_usuario = user.imagen_usuario;
-					x.latitud = user.latitud;
-					x.longitud = user.longitud;
-					x.nombre = user.nombre;
-					x.password = user.password;
-					x.status = user.status;
-					x.telefono = user.telefono;
-					x.telefono_casa = user.telefono_casa;
-					x.tipo_usuario_id = user.tipo_usuario_id;
+					//var x = realm.CreateObject<User>();
+					//x.api_token = user.api_token;
+					//x.calle = user.calle;
+					//x.codigo_postal = user.codigo_postal;
+					//x.colonia = user.colonia;
+					//x.email = user.email;
+					//x.id = user.id;
+					//x.imagen_usuario = user.imagen_usuario;
+					//x.latitud = user.latitud;
+					//x.longitud = user.longitud;
+					//x.nombre = user.nombre;
+					//x.password = user.password;
+					//x.status = user.status;
+					//x.telefono = user.telefono;
+					//x.telefono_casa = user.telefono_casa;
+					//x.tipo_usuario_id = user.tipo_usuario_id;
+					realm.Add(user);
 				}
 			});
 		}
@@ -91,8 +92,11 @@ namespace LaPurisima
 
 			var n = realm.All<User>().ToList();
 			if (n.Count > 0)
-				return n.Last();
+			{
+				var x = n.Last();
 
+				return x;
+			}
 			return null;
 		}
 

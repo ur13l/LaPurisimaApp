@@ -16,7 +16,7 @@ namespace LaPurisima
 		public static HttpClient GetHttpClient()
 		{
 			HttpClient httpClient = new HttpClient();
-			httpClient.Timeout = TimeSpan.FromSeconds(30);
+			httpClient.Timeout = TimeSpan.FromSeconds(120);
 			httpClient.DefaultRequestHeaders.ExpectContinue = true;
 			httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 			httpClient.DefaultRequestHeaders.AcceptCharset.Add(new StringWithQualityHeaderValue("UTF-8"));

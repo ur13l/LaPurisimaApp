@@ -253,7 +253,6 @@ namespace LaPurisima
 			label.Text = newText;
 		}
 
-
 		class ItemLista
 		{
 			public int id { get; set; }

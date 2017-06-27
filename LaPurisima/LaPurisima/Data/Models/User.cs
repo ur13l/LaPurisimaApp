@@ -37,12 +37,12 @@ namespace LaPurisima
 			{
 				if (imagen_usuario != null)
 				{
+					var n = imagen_usuario;
 					return Xamarin.Forms.ImageSource.FromStream(
-						() => new MemoryStream(Convert.FromBase64String(imagen_usuario)));
+						() => new MemoryStream(Convert.FromBase64String(n)));
 				}
 				return null;
 			}
 		}
 	}
 }
-

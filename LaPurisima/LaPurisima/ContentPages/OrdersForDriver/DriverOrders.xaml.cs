@@ -88,7 +88,7 @@ namespace LaPurisima
 				// Update the UI (because of async/await magic, this is still in the UI thread!)
 				if (_keepPolling)
 				{
-					await Task.Delay(TimeSpan.FromSeconds(15),token);
+					await Task.Delay(TimeSpan.FromSeconds(60),token);
 				}
 			}
 		}

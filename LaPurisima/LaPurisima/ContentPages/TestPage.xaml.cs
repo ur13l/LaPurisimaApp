@@ -38,7 +38,7 @@ namespace LaPurisima
 			};
 
 			GetProductos();
-			await UpdateHelper.UpdateInfo();
+			UpdateHelper.UpdateInfo();
 			GetProductos();
 			UpdateView();
 		}
