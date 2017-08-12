@@ -263,8 +263,12 @@ namespace LaPurisima
 			//	HelperOrdenPage.Pedido.longitud = p.Longitude;
 			//}
 
-			HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
-			HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
+			if (Map.VisibleRegion != null && Map.VisibleRegion.Center != null)
+			{
+
+				HelperOrdenPage.Pedido.latitud = Map.VisibleRegion.Center.Latitude;
+				HelperOrdenPage.Pedido.longitud = Map.VisibleRegion.Center.Longitude;
+			}
 			//HelperOrdenPage.street = street;
 			//HelperOrdenPage.city = city;
 			//HelperOrdenPage.streetNumber = streetNumber;
